@@ -5,6 +5,7 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
+# Build marker: modern-use release
 TERMS = ROOT / "terms.csv"
 QUESTIONS = ROOT / "questions.csv"
 OUT = ROOT / "word_data.json"
