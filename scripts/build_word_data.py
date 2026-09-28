@@ -253,6 +253,39 @@ DEFINITION_OVERRIDES.update({
 })
 
 # Concrete, saved context notes for distinctive or easily misunderstood words.
+DEFINITION_OVERRIDES.update({
+    "acquiescent": "Willing to accept or agree without protest, objection, or resistance.",
+    "conniption": "A sudden fit of anger, panic, or agitation.",
+    "conducer": "A person, thing, or factor that helps bring about a result.",
+    "covenantal": "Relating to a solemn agreement or promise, especially in a religious context.",
+    "decantate": "To pour a liquid carefully into another container, usually leaving sediment behind.",
+    "deflowerer": "A person who takes another person's virginity; a historical sexual term.",
+    "deftly": "Skillfully, quickly, and neatly.",
+    "doltish": "Stupid, clumsy, or foolish.",
+    "expressible": "Able to be stated, shown, represented, or communicated.",
+    "farcically": "In an absurdly comic or ridiculous way.",
+    "fatigable": "Prone to becoming physically or mentally tired.",
+    "gelatinization": "The process of thickening into a gel-like state, especially when starch absorbs water and is heated.",
+    "gendarme": "A police officer, especially one in France or another country with a military-style national police force.",
+    "harnesser": "A person or device that controls, channels, or puts something to practical use.",
+    "hostelry": "An inn, hotel, or other place that provides lodging to travelers.",
+    "indisposition": "A mild illness or temporary feeling of being unwell.",
+    "intellection": "The mental process of understanding, reasoning, or grasping an idea.",
+    "latticed": "Arranged in a crisscross framework or open grid pattern.",
+    "literalism": "Strict adherence to the exact wording or surface meaning of a text, rule, or statement.",
+    "meniscal": "Relating to a crescent-shaped structure, especially cartilage in a joint or the curved surface of a liquid.",
+    "myelination": "The formation of an insulating fatty sheath around nerve fibers.",
+    "normative": "Establishing, relating to, or conforming to standards of what ought to be.",
+    "pronator": "A muscle that rotates the forearm so the palm faces downward or backward.",
+    "puppyhood": "The early period of a dog's life before adulthood.",
+    "pyloric": "Relating to the opening between the stomach and the small intestine.",
+    "riotous": "Wildly disorderly or boisterous; also involving a public disturbance.",
+    "slangy": "Using a lot of informal or colloquial language.",
+    "systolic": "Relating to the phase when the heart contracts and pumps blood; especially the higher number in a blood-pressure reading.",
+    "trackside": "Located beside a railroad, racetrack, or other track.",
+    "usherette": "A woman whose job is to guide patrons to seats in a theater or cinema; the term is now dated."
+})
+
 MODERN_CONTEXT_OVERRIDES = {
     "gendarme": [
         "French news or travel writing — referring to officers of the national gendarmerie.",
@@ -285,6 +318,74 @@ MODERN_CONTEXT_OVERRIDES = {
     "verisimilitude": [
         "Film and book criticism — judging whether a fictional world feels convincingly real.",
         "Historical fiction and games — discussing believable detail without requiring literal accuracy."
+    ],
+    "cask": [
+        "Wine, beer, and whisky writing — describing aging or storage in wooden barrels.",
+        "Brewery and distillery tours — distinguishing cask-aged products from tank- or bottle-aged ones."
+    ],
+    "catatonia": [
+        "Psychiatry and hospital documentation — describing a serious syndrome involving movement and responsiveness.",
+        "Medical journalism — explaining why immobility or mutism can require urgent clinical assessment."
+    ],
+    "jaunty": [
+        "Fashion or style writing — a hat, scarf, or outfit worn with cheerful confidence.",
+        "Fiction and profiles — describing someone's upbeat, self-assured walk or manner."
+    ],
+    "allayed": [
+        "News reporting — fears or concerns reduced after new evidence, reassurance, or action.",
+        "Medical or personal writing — pain, anxiety, or discomfort becoming less intense."
+    ],
+    "acmes": [
+        "History or criticism — comparing several peak periods in a career, movement, or civilization.",
+        "Science and technical writing — referring to multiple maximum stages or high points."
+    ],
+    "pyrrhic": [
+        "Politics, war, and business analysis — a win whose cost nearly cancels its benefit.",
+        "Sports commentary — a victory that leaves a team too depleted to capitalize on it."
+    ],
+    "detente": [
+        "International-relations news — a period when rival states deliberately reduce hostility.",
+        "Cold War history — describing diplomatic easing without implying full friendship or alliance."
+    ],
+    "rapport": [
+        "Therapy, interviews, and teaching — building an easy, trusting connection with another person.",
+        "Workplace communication — describing a relationship where conversation feels natural and cooperative."
+    ],
+    "sump": [
+        "Home maintenance — the basin beneath a basement sump pump that collects groundwater.",
+        "Automotive and industrial systems — the low reservoir where oil or other liquid collects."
+    ],
+    "waddle": [
+        "Nature writing — ducks, penguins, or other animals moving with short side-to-side steps.",
+        "Humorous narration — describing a person walking with a pronounced swaying gait."
+    ],
+    "whispering": [
+        "Fiction and dialogue — speech kept deliberately quiet so nearby people cannot easily hear.",
+        "Voice and audio work — describing very soft vocal delivery, from stage acting to ASMR."
+    ],
+    "matchlock": [
+        "Military history and museum labels — identifying early firearms that used a burning match for ignition.",
+        "Historical fiction or reenactment — distinguishing pre-flintlock firearm technology."
+    ],
+    "millinery": [
+        "Fashion history and costume museums — the craft and trade of designing or selling hats.",
+        "Vintage shopping and theater wardrobe — specialist language for hat-making and hat departments."
+    ],
+    "plebiscite": [
+        "Election and constitutional news — a direct public vote on a major political question.",
+        "History writing — votes over borders, sovereignty, or national status."
+    ],
+    "morass": [
+        "Political or business commentary — a figurative tangle of rules, disputes, or bureaucracy.",
+        "Nature writing — literally, soft marshy ground that is difficult to cross."
+    ],
+    "conniption": [
+        "Informal American conversation — an exaggerated burst of anger, panic, or agitation.",
+        "Humorous fiction — describing someone dramatically losing their composure."
+    ],
+    "tote": [
+        "Retail and everyday speech — carrying groceries, gear, or a large tote bag.",
+        "Warehousing and logistics — a reusable plastic tote used to move goods."
     ]
 }
 
@@ -626,6 +727,7 @@ def build_one(word):
         "definition":definition,
         "quizDefinition":quiz_definition(word,definition,raw_gloss),
         "rawDictionaryDefinition":raw_gloss,
+        "linkedLemma":form_reference(raw_gloss),
         "sourceDefinition":source_definition,
         "partOfSpeech":pos,
         "etymology":ety,
@@ -667,7 +769,7 @@ def main():
                 data[w]={
                     "word":w,"definition":(src.get("definitions") or [""])[0],
                     "quizDefinition":(src.get("definitions") or [""])[0],
-                    "rawDictionaryDefinition":"",
+                    "rawDictionaryDefinition":"","linkedLemma":"",
                     "sourceDefinition":(src.get("definitions") or [""])[0],
                     "partOfSpeech":"","etymology":"",
                     "example":fallback_example(w,(src.get("definitions") or [""])[0],""),
