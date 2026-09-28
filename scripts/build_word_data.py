@@ -106,6 +106,188 @@ DEFINITION_OVERRIDES = {
     "usherette": "A female usher, especially one who shows patrons to seats in a theater or cinema; the term is now dated."
 }
 
+# Second-pass teaching overrides. These replace technically valid but misleading,
+# circular, overly niche, or morphology-only dictionary glosses with concise,
+# answer-safe definitions suitable for learning and retrieval practice.
+DEFINITION_OVERRIDES.update({
+    "abettor": "A person who assists, encourages, or instigates wrongdoing.",
+    "abrogative": "Serving to repeal, cancel, or abolish a law, rule, or agreement.",
+    "acmes": "Highest points, peak stages, or culminations.",
+    "adroitly": "With skill, cleverness, and dexterity.",
+    "affecter": "A person who pretends to possess a quality, attitude, or knowledge they do not genuinely have.",
+    "agglomerations": "Masses or clusters formed by gathering separate things together.",
+    "allayed": "Calmed, relieved, or made less intense.",
+    "alluvions": "Deposits or additions of sediment left by flowing water.",
+    "ambulated": "Walked or moved about on foot.",
+    "amusingness": "The quality of being entertaining, funny, or enjoyable.",
+    "anaphoric": "Referring back to an earlier word, phrase, or idea in language.",
+    "apotheoses": "Highest or idealized culminations; also elevations of people to divine or exalted status.",
+    "approbated": "Approved, sanctioned, or officially authorized.",
+    "asininity": "Extreme foolishness or stupidity.",
+    "assuaged": "Made pain, distress, hunger, fear, or another unpleasant feeling less intense.",
+    "bandoleer": "An ammunition belt worn across the shoulder, with loops or pockets for cartridges.",
+    "besotting": "Making someone foolish, stupefied, or excessively infatuated.",
+    "bifurcation": "A division into two branches, parts, or paths.",
+    "blandishments": "Flattering or coaxing words and actions intended to persuade.",
+    "blitheness": "Cheerful lightheartedness or carefree happiness.",
+    "bugaboo": "Something that causes persistent fear, worry, or annoyance; originally an imaginary frightening creature.",
+    "cairn": "A deliberately piled mound of stones used as a marker, memorial, or landmark.",
+    "canniness": "Shrewdness, practical judgment, and careful cleverness.",
+    "cask": "A large barrel-shaped container for storing liquids, especially wine, beer, or spirits.",
+    "catatonia": "A neuropsychiatric state marked by severe abnormalities of movement, responsiveness, or behavior, sometimes including immobility or mutism.",
+    "causticity": "Biting sharpness or severity, especially in speech or humor; chemically, corrosiveness.",
+    "cherub": "An angelic being; in Western art, often shown as a winged child or child's face.",
+    "chiasm": "A crossing or X-shaped arrangement, especially of anatomical structures such as nerves.",
+    "cogitation": "Deep thought, reflection, or careful consideration.",
+    "concoction": "A mixture made by combining several ingredients, sometimes improvised or unusual.",
+    "confidentialness": "The quality of being private, secret, or intended to be kept from others.",
+    "consubstantiation": "A theological doctrine that Christ's body and blood coexist with the bread and wine of the Eucharist.",
+    "contrastively": "In a way that emphasizes a difference or contrast.",
+    "corroder": "A person, substance, or process that gradually wears away or damages material by chemical action.",
+    "courter": "A person seeking someone's affection, romantic interest, or marriage.",
+    "covenantal": "Relating to a formal covenant, especially a solemn religious agreement or promise.",
+    "crosstie": "A transverse beam supporting railroad rails and holding them at the correct spacing.",
+    "cryonic": "Relating to preservation at extremely low temperatures, especially of bodies or biological material.",
+    "cudgels": "Short, heavy clubs used as weapons; as a verb, strikes or beats with such a club.",
+    "daystar": "The sun; in older or poetic usage, sometimes a bright morning star.",
+    "deluges": "Floods or overwhelms with a very large amount; as a noun, large floods or overwhelming quantities.",
+    "demureness": "Reserved, modest, or quietly composed behavior or appearance.",
+    "detente": "A relaxation of tension or hostility, especially between countries.",
+    "determinativeness": "The quality of being decisive, conclusive, or able to settle an issue.",
+    "discomposing": "Causing someone to lose calm or composure; unsettling.",
+    "doggedness": "Persistent determination and refusal to give up.",
+    "downing": "The act of bringing something down, defeating it, or consuming a drink quickly.",
+    "doughtiness": "Courage, toughness, and determined bravery.",
+    "ducat": "A historic European gold or silver coin; by extension, money.",
+    "elfin": "Small, delicate, mischievous, or otherwise suggestive of an elf.",
+    "enspheres": "Surrounds or encloses something as if within a sphere.",
+    "environs": "The surrounding area or nearby surroundings of a place.",
+    "equitableness": "Fairness and impartiality.",
+    "euphoniousness": "Pleasantness or smoothness of sound.",
+    "exceptionably": "In an objectionable, questionable, or open-to-criticism manner.",
+    "exchequer": "A treasury or supply of public funds, especially in British government usage.",
+    "exertive": "Requiring or involving physical or mental effort.",
+    "expiatory": "Intended to make amends, atone for wrongdoing, or remove guilt.",
+    "extractive": "Serving to remove, draw out, or obtain something from a source.",
+    "facsimile": "An exact or very close copy or reproduction of something.",
+    "federacy": "A political union in which constituent regions retain substantial autonomy.",
+    "flaunter": "A person who ostentatiously displays possessions, qualities, or achievements.",
+    "flyweight": "A very light weight class in boxing and other combat sports; more generally, something very light or minor.",
+    "foibles": "Minor weaknesses, quirks, or character flaws.",
+    "foliation": "Arrangement into layers or leaflike structures; in geology, the planar layering or alignment of minerals in rock.",
+    "forbiddingness": "An intimidating, threatening, or unwelcoming quality.",
+    "forwent": "Did without, gave up, or chose not to have something.",
+    "fussbudgety": "Fussy and overly concerned with minor or trivial details.",
+    "gelatinization": "The process of becoming gelatinous; especially the thickening that occurs when starch granules absorb water and swell with heat.",
+    "gendarme": "A police officer, especially a member of a national gendarmerie in France or another French-speaking country.",
+    "genteel": "Polite, refined, and respectable in manner or appearance, sometimes in an affected way.",
+    "gorger": "A person who eats greedily or excessively.",
+    "greenroom": "A room in a theater, studio, or venue where performers wait before or after appearing.",
+    "hammy": "Overacted, exaggerated, or theatrically showy.",
+    "heap": "A pile or mound of things placed or thrown together; informally, a large amount.",
+    "iconoclastically": "In a way that challenges or attacks established beliefs, traditions, or revered institutions.",
+    "implacability": "The quality of being impossible to appease, soften, or reconcile.",
+    "individualizer": "Something that distinguishes one person or thing from others or treats it as a distinct individual.",
+    "ingenuousness": "Openness, sincerity, and freedom from deceit or guile.",
+    "insectivorous": "Feeding on insects; insect-eating.",
+    "instillation": "The gradual introduction of a liquid drop by drop, or the gradual introduction of an idea or attitude.",
+    "intercessor": "A person who intervenes or pleads on behalf of another.",
+    "invidiousness": "The quality of being unfairly discriminatory, offensive, or likely to provoke resentment.",
+    "invitingly": "In an attractive, welcoming, or tempting way.",
+    "jaunty": "Lively, cheerful, self-confident, and stylish in manner or appearance.",
+    "knave": "A dishonest or unscrupulous man; historically, also the jack in a deck of playing cards.",
+    "layback": "A backward-leaning position or maneuver; in climbing, a technique that uses opposing pulls with the hands and feet.",
+    "lineally": "In a direct line of descent from an ancestor.",
+    "malefactions": "Crimes, offenses, or evil deeds.",
+    "matchlock": "An early firearm ignition mechanism that used a slow-burning match to ignite the gunpowder.",
+    "mound": "A raised heap or rounded mass of earth, stones, or other material.",
+    "modularity": "The quality of being built from separate parts that can be combined, replaced, or used independently.",
+    "mulatto": "A dated and often offensive historical term for a person of mixed Black and white ancestry.",
+    "obdurateness": "Stubborn refusal to change one's opinion, attitude, or course of action.",
+    "operand": "A value or quantity on which a mathematical or logical operation is performed.",
+    "orb": "A spherical object or globe; especially a round celestial body or ceremonial sphere.",
+    "owlishly": "In a solemn, observant, or supposedly wise-looking manner.",
+    "patchouli": "A fragrant tropical plant and the strong earthy-scented oil or perfume made from its leaves.",
+    "peccadilloes": "Minor faults, offenses, or sins.",
+    "persnickety": "Fussy and excessively concerned with small details.",
+    "pertinacity": "Persistent determination; stubborn tenacity.",
+    "polestar": "A star near a celestial pole; figuratively, a guiding principle, ideal, or standard.",
+    "presaging": "Indicating or warning that something is likely to happen in the future; foreshadowing.",
+    "pressmark": "A mark identifying a printer or publisher; in libraries, a shelf or call mark identifying a book's location.",
+    "pronominally": "In the manner or grammatical function of a pronoun.",
+    "putatively": "According to what is generally supposed or believed, though not necessarily proved.",
+    "pyrrhic": "Achieved at such great cost that the success or victory is barely worthwhile.",
+    "rapport": "A close, harmonious relationship marked by mutual understanding and easy communication.",
+    "recallable": "Able to be remembered, retrieved, or called back.",
+    "receptivity": "Willingness or ability to receive ideas, impressions, signals, or influences.",
+    "redolence": "A noticeable fragrance or an evocative quality that strongly suggests or recalls something.",
+    "reduplicative": "Involving repetition of all or part of a word, sound, or grammatical form.",
+    "retrogressive": "Moving backward or returning to an earlier, less advanced state.",
+    "ribald": "Vulgar, indecent, or humorously coarse in language or behavior.",
+    "scruffiest": "Most untidy, shabby, or unkempt.",
+    "scurrilousness": "The quality of being grossly abusive, defamatory, or vulgarly insulting.",
+    "sententiousness": "A tendency to speak or write in brief, moralizing, self-important statements.",
+    "shrewdness": "Sharp practical judgment and an ability to understand situations quickly.",
+    "shoofly": "A term used for several things associated with shooing flies, including a swinging fly-deterrent; in U.S. food culture, also a molasses crumb pie.",
+    "sigmoid": "S-shaped; especially describing an S-shaped curve, function, or anatomical structure.",
+    "skiffle": "A style of folk-influenced popular music, especially associated with 1950s Britain and simple or improvised instruments.",
+    "slangy": "Containing or characterized by frequent informal slang.",
+    "somnambulistic": "Relating to sleepwalking or resembling the automatic behavior of a sleepwalker.",
+    "stoutness": "The quality of being sturdy, strong, thick, or heavily built.",
+    "sump": "A pit, basin, or low reservoir where liquid collects, especially in drainage, machinery, or mining systems.",
+    "sumptuousness": "Richness, luxury, or magnificence.",
+    "superposed": "Placed over, above, or on top of something else; superimposed.",
+    "systolic": "Relating to systole, the phase when the heart contracts and pumps blood; especially the higher number in a blood-pressure reading.",
+    "tangs": "Sharp, distinctive tastes or smells.",
+    "temperance": "Moderation or self-restraint, especially in eating or drinking alcohol.",
+    "terseness": "Brevity and concision, sometimes to the point of abruptness.",
+    "tillage": "The preparation and cultivation of soil for growing crops; also land cultivated in this way.",
+    "tote": "To carry or haul something; as a noun, a large carrying bag or container.",
+    "traipsed": "Walked about in a casual, weary, or aimless way.",
+    "turnbuckle": "A metal device with threaded ends used to adjust the tension or length of rods, cables, or wires.",
+    "verisimilitude": "The appearance of being true, real, or lifelike; plausibility.",
+    "waddle": "To walk with short steps while swaying from side to side.",
+    "ward": "A person or place under someone's care or protection; also a division of a hospital, city, or institution.",
+    "whispering": "Speaking or communicating in a very soft, quiet voice.",
+    "zaniness": "Wild, eccentric, or absurdly comic behavior or quality."
+})
+
+# Concrete, saved context notes for distinctive or easily misunderstood words.
+MODERN_CONTEXT_OVERRIDES = {
+    "gendarme": [
+        "French news or travel writing — referring to officers of the national gendarmerie.",
+        "Crime, history, or fiction set in France — distinguishing gendarmes from municipal police."
+    ],
+    "gabardine": [
+        "Vintage clothing listings — coats, suits, and trousers described by their tightly woven fabric.",
+        "Tailoring and fashion history — comparing durable wool fabrics used for structured garments."
+    ],
+    "torpid": [
+        "Nature writing — describing an animal that is unusually sluggish or inactive.",
+        "Essays and reviews — describing a person, institution, or response that feels slow and inert."
+    ],
+    "umbra": [
+        "Astronomy and eclipse coverage — naming the region of total shadow.",
+        "Optics or technical diagrams — distinguishing the darkest shadow from the surrounding penumbra."
+    ],
+    "systolic": [
+        "Medical visits and health reports — the upper number in a blood-pressure reading.",
+        "Cardiology and physiology — describing the phase when the heart contracts."
+    ],
+    "skiffle": [
+        "Music history — discussing the 1950s British scene that influenced early rock musicians.",
+        "Record reviews or museum exhibits — describing folk/blues music played on simple or improvised instruments."
+    ],
+    "turnbuckle": [
+        "Rigging, fencing, and construction — tightening cables, rods, or guy wires.",
+        "Sailing and stagecraft — adjusting tension in standing rigging or suspended equipment."
+    ],
+    "verisimilitude": [
+        "Film and book criticism — judging whether a fictional world feels convincingly real.",
+        "Historical fiction and games — discussing believable detail without requiring literal accuracy."
+    ]
+}
+
 def urls(word):
     q = urllib.parse.quote
     a = q(word[0].lower(), safe="")
@@ -228,30 +410,20 @@ def pick_entry(entries, word, src):
     return {}, {}
 
 def resolve_reference_definition(gloss, depth=0):
+    """Resolve morphology/spelling-only glosses to semantic content without naming the lemma."""
     if depth>1: return gloss
     lemma=form_reference(gloss)
     if not lemma or normalize_word(lemma)==normalize_word(gloss): return gloss
     entries,_=get_jsonl(lemma)
     if not entries: return gloss
-    e,s=pick_entry(entries,lemma,{"definitions":[],"neighbors":[]})
-    base=sense_gloss(s)
-    if not base or form_reference(base): return gloss
-    low=clean(gloss).lower()
-    if low.startswith("plural"):
-        lead=f"Plural of “{lemma}”"
-    elif low.startswith("superlative"):
-        lead=f"Superlative form of “{lemma}”"
-    elif low.startswith("comparative"):
-        lead=f"Comparative form of “{lemma}”"
-    elif "past" in low:
-        lead=f"Past-tense form of “{lemma}”"
-    elif "participle" in low:
-        lead=f"Participle of “{lemma}”"
-    elif "alternative" in low or "standard" in low or "spelling" in low:
-        lead=f"Variant of “{lemma}”"
-    else:
-        lead=f"Form of “{lemma}”"
-    return f"{lead}: {base[0].lower()+base[1:] if base else base}"
+    e,sense=pick_entry(entries,lemma,{"definitions":[],"neighbors":[]})
+    base=sense_gloss(sense)
+    if not base: return gloss
+    if form_reference(base):
+        return resolve_reference_definition(base, depth+1)
+    base=clean(base)
+    if base and base[-1] not in ".!?": base+="."
+    return base
 
 def improve_definition(word, gloss, sense, pos):
     if word in DEFINITION_OVERRIDES:
@@ -321,43 +493,126 @@ def related_words(entry, sense):
             if w and w not in vals: vals.append(w)
     return vals[:12]
 
+def clean_etymology_text(text):
+    t=clean(text)
+    if not t: return ""
+    if t.startswith("Etymology tree"):
+        for marker in ("Borrowed from ", "Inherited from ", "Learned borrowing from ", "Ultimately from "):
+            p=t.rfind(marker)
+            if p>=0:
+                return t[p:]
+        # Last-resort: retain only the last reasonably sentence-like "From ..." clause.
+        p=t.rfind(" From ")
+        if p>=0:
+            return t[p+1:]
+    return t
+
 def modern_uses(word, definition, pos, labels):
+    if word in MODERN_CONTEXT_OVERRIDES:
+        return MODERN_CONTEXT_OVERRIDES[word]
     d=clean(definition).lower()
     rare=any(x in (labels or []) for x in ("archaic","obsolete","rare","dated","historical","literary"))
     domains=[
-        (("fabric","cloth","garment","hat","clothing","wool","cotton","dress","coat"), ["Clothing or product descriptions","Tailoring and textile discussions","Fashion history or vintage catalogs"]),
-        (("anatom","body","bone","muscle","organ","tissue","medical","disease","surgical"), ["Medical or anatomy writing","Clinical or health discussions","Biology coursework"]),
-        (("food","dish","meal","cook","meat","sauce","drink","bread"), ["Menus and food writing","Cooking discussions","Restaurant or travel descriptions"]),
-        (("law","legal","crime","court","government","politic"), ["News and public-affairs writing","Legal or policy discussions","History and civics coursework"]),
-        (("plant","animal","bird","insect","fish","species","genus"), ["Biology or field guides","Nature writing","Museum or science descriptions"]),
-        (("word","language","speech","grammar","letter","sound","linguistic"), ["Language and linguistics","Editing or literary analysis","Vocabulary and wordplay"]),
-        (("money","trade","business","market","economic","finance"), ["Business or finance writing","News reporting","Workplace discussions"]),
-        (("emotion","feeling","mood","behavior","person","character"), ["Character descriptions","Psychology or social writing","Conversation and storytelling"]),
-        (("building","architecture","room","house","wall","road"), ["Architecture or design","Property descriptions","Historical or travel writing"]),
+        (("fabric","cloth","garment","hat","tailor","wool","cotton","dress","coat","shoe"), [
+            "Product listings or fashion writing — identifying materials, garments, or period styles.",
+            "Museum, costume, or tailoring discussions — describing how an item is made or worn."
+        ]),
+        (("heart","blood","vein","lung","bone","muscle","organ","tissue","medical","disease","surgical","uterus","anatom"), [
+            "Clinical or health writing — naming a body structure, symptom, condition, or measurement.",
+            "Biology and anatomy coursework — using the precise technical term rather than a loose everyday substitute."
+        ]),
+        (("gene","chromosome","cell","protein","species","animal","bird","insect","fish","plant","biology","axon"), [
+            "Biology textbooks or field guides — naming an organism, structure, or biological process.",
+            "Science reporting or museum material — explaining the term to a general audience."
+        ]),
+        (("chemical","compound","polymer","acid","carbon","oxide","material","mineral","rock","molten"), [
+            "Chemistry, geology, or materials writing — identifying a substance, structure, or process.",
+            "Lab manuals and technical reports — using the precise term in a procedure or description."
+        ]),
+        (("law","legal","court","crime","government","vote","country","treaty","policy","trustee"), [
+            "News and public-affairs writing — describing a legal, political, or diplomatic event.",
+            "History, civics, or policy analysis — using a formal term with a specific institutional meaning."
+        ]),
+        (("money","coin","fund","debt","business","market","trade","insured","finance"), [
+            "Business or financial reporting — naming a payment, fund, transaction, or economic relationship.",
+            "Contracts and workplace documents — where the technical term is more precise than everyday wording."
+        ]),
+        (("language","speech","grammar","pronoun","word","sound","syllable","vowel","consonant"), [
+            "Linguistics, grammar, or editing — analyzing how language, sounds, or references work.",
+            "Literary criticism and wordplay — discussing style, diction, or structure."
+        ]),
+        (("music","note","sung","instrument","song","melody"), [
+            "Music reviews or program notes — naming a technique, style, or musical feature.",
+            "Music history and lessons — identifying the term in a score, performance, or genre discussion."
+        ]),
+        (("food","dish","meal","cook","meat","sauce","drink","bread","stew","herb"), [
+            "Menus, cookbooks, or food journalism — naming an ingredient, dish, preparation, or flavor.",
+            "Travel and restaurant writing — identifying something a reader might actually encounter on a menu."
+        ]),
+        (("weapon","ammunition","firearm","sword","military","soldier","battle","war"), [
+            "Military history or museum labels — identifying equipment, ranks, weapons, or practices.",
+            "Historical nonfiction — using the period-specific term in context."
+        ]),
+        (("marriage","religious","church","priest","theolog","angel","worship","divine"), [
+            "Religious history or theology — naming a doctrine, office, ritual, or institution.",
+            "Historical fiction or museum interpretation — vocabulary tied to a particular period or tradition."
+        ]),
+        (("room","building","roof","architecture","railroad","track","cable","road","land","soil"), [
+            "Architecture, engineering, or property descriptions — naming a specific structure or component.",
+            "Technical manuals and historical descriptions — where the exact physical term matters."
+        ]),
+        (("emotion","mood","behavior","person","character","foolish","stubborn","cheerful","angry","calm"), [
+            "Character sketches, profiles, or reviews — describing a person's manner, mood, or behavior precisely.",
+            "Fiction and narrative nonfiction — giving a more exact shade of personality than a generic adjective."
+        ]),
     ]
     for keys,uses in domains:
         if any(k in d for k in keys):
             return uses
     if rare:
-        return ["Historical writing","Literary or period dialogue","Older texts and archives"]
+        return [
+            "Historical fiction, older essays, or archival material — vocabulary that signals period or register.",
+            "Literary criticism — discussing why an author chose an uncommon or old-fashioned term."
+        ]
     p=(pos or "").lower()
     if p=="verb":
-        return ["Essays and nonfiction","Work or academic writing","Storytelling and dialogue"]
+        return [
+            "Narrative prose — describing a specific action more precisely than a generic verb.",
+            "News, history, or essays — compressing a fairly specific action into one word."
+        ]
     if p in ("adj","adjective","adv","adverb"):
-        return ["Precise description","Literary or analytical writing","Conversation and storytelling"]
-    return ["Essays and nonfiction","Academic or specialist writing","Literary and descriptive prose"]
+        return [
+            "Book reviews, profiles, or essays — giving a precise judgment about tone, behavior, or quality.",
+            "Fiction and descriptive prose — adding a more exact shade of description."
+        ]
+    return [
+        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
+        "Specialist or academic writing — where a compact technical or literary term is useful."
+    ]
+
+def quiz_definition(word, definition, raw_gloss):
+    """Return an answer-safe clue: no target word and no morphology-only linked lemma."""
+    q=clean(definition)
+    target=re.compile(r"\\b"+re.escape(word)+r"\\b",re.I)
+    q=target.sub("the term",q)
+    lemma=form_reference(raw_gloss)
+    if lemma:
+        q=re.sub(r"\\b"+re.escape(lemma)+r"\\b","",q,flags=re.I)
+        q=re.sub(r"\\s+"," ",q).replace("“”","").strip(" :;,-")
+    return q
 
 def build_one(word):
     src=SOURCE.get(word, {"definitions":[],"neighbors":[],"questions":[]})
     entries,url=get_jsonl(word)
     entry,sense=pick_entry(entries,word,src)
-    definition=improve_definition(word,sense_gloss(sense),sense,clean(entry.get("pos") or ""))
+    raw_gloss=sense_gloss(sense)
+    definition=improve_definition(word,raw_gloss,sense,clean(entry.get("pos") or ""))
     if src.get("definitions"):
         # The source-test sense is authoritative for these items; dictionary gloss adds detail separately.
         source_definition=src["definitions"][0]
     else:
         source_definition=""
-    ety=clean(entry.get("etymology_text") or "")
+    ety=clean_etymology_text(entry.get("etymology_text") or "")
     ex,exref=example_from(sense,entry)
     pos=clean(entry.get("pos") or "")
     ipas,audio=pronunciation(entry)
@@ -369,6 +624,8 @@ def build_one(word):
     return word,{
         "word":word,
         "definition":definition,
+        "quizDefinition":quiz_definition(word,definition,raw_gloss),
+        "rawDictionaryDefinition":raw_gloss,
         "sourceDefinition":source_definition,
         "partOfSpeech":pos,
         "etymology":ety,
@@ -409,6 +666,8 @@ def main():
                 src=SOURCE.get(w,{})
                 data[w]={
                     "word":w,"definition":(src.get("definitions") or [""])[0],
+                    "quizDefinition":(src.get("definitions") or [""])[0],
+                    "rawDictionaryDefinition":"",
                     "sourceDefinition":(src.get("definitions") or [""])[0],
                     "partOfSpeech":"","etymology":"",
                     "example":fallback_example(w,(src.get("definitions") or [""])[0],""),
