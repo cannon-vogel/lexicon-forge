@@ -755,6 +755,18 @@ ENCOUNTER_OVERRIDES = {
     "bountifully": [
         {"place":"Food or gardening writing","phrase":"“the orchard yielded bountifully”"},
         {"place":"Literary prose","phrase":"“the table was bountifully supplied”"}
+    ],
+    "ammonic": [
+        {"place":"Neuroanatomy textbook","phrase":"“the Ammonic fields of the hippocampus”"},
+        {"place":"Histology or neuroscience paper","phrase":"“Ammonic neurons in the hippocampal formation”"}
+    ],
+    "consubstantiation": [
+        {"place":"Christian-theology textbook","phrase":"“the doctrine of consubstantiation”"},
+        {"place":"Reformation-history essay","phrase":"“a debate over consubstantiation”"}
+    ],
+    "contraindicate": [
+        {"place":"Drug label or prescribing information","phrase":"“kidney disease may contraindicate this treatment”"},
+        {"place":"Clinical guideline","phrase":"“findings that contraindicate surgery”"}
     ]
 }
 
