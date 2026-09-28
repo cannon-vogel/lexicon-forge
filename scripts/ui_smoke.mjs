@@ -124,6 +124,15 @@ await waitFor(()=>document.getElementById('shopFlock')?.textContent==='1 / 7','p
 assert(document.getElementById('shopSpent').textContent==='75 XP','Pigeon purchase did not deduct 75 XP');
 assert(!document.getElementById('pigeonHabitat').classList.contains('hidden'),'Purchased pigeon did not appear in habitat');
 
+// Every shop bird must use the single shared pigeon head/body geometry.
+// Accessories may add circles, but never another 27px head.
+for(const card of document.querySelectorAll('#pigeonShop .pigeon-card')){
+  const svg=card.querySelector('svg');
+  assert(svg,'Pigeon SVG missing');
+  assert(svg.querySelectorAll("circle[r='27']").length===1,'Pigeon does not have a single shared pigeon head');
+  assert(svg.querySelectorAll("ellipse[cx='80'][cy='103']").length===1,'Pigeon does not have a single shared body');
+}
+
 // 5. No runtime error should have been raised by any tested interaction.
 if(errors.length)throw errors[0];
 
@@ -132,3 +141,4 @@ console.log('  wrong quick-check -> feedback + correct reveal + next');
 console.log('  correct quick-check -> feedback + next');
 console.log('  wrong source-deck choice -> feedback + next');
 console.log('  pigeon adoption -> wallet + habitat update');
+console.log('  all pigeon accessories share one aligned head/body geometry');
