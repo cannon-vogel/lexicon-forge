@@ -567,6 +567,39 @@ ETYMOLOGY_OVERRIDES = {
     "circumstantial": "From Latin circumstantia, “surrounding condition,” from circum, “around,” + stare, “to stand.”",
 }
 
+ETYMOLOGY_OVERRIDES.update({
+    "amorist": "Built from Latin amor, “love,” + -ist: a person associated with love or writing about love. Compare amorous.",
+    "anachronously": "Built on anachronism / anachronous. The Greek roots are ana- + chronos, “time”; chronology contains the same chronos root.",
+    "apotheoses": "The singular apotheosis comes from Greek apotheōsis, “deification,” built on theos, “god.” Compare theology for the same theos root.",
+    "bayed": "The base verb bay is an old hunting word for the barking or howling of hounds and came into English through French; bayed is its regular past form.",
+    "boric": "Part of the boron / borax word-family. Borax came into European languages through Arabic and Persian; -ic forms the chemical adjective.",
+    "castigation": "From Latin castigatio, “correction, reproof,” from castigare, “to correct or punish.” The same Latin verb gives castigate.",
+    "consubstantiation": "Built from Latin con-, “together,” + substantia, “substance,” + -ation: literally coexistence in substance. Compare substance.",
+    "cringle": "A nautical word probably from Dutch or Low German words for a ring or circle; its physical meaning is still a small ring or loop in sail rigging.",
+    "crosstie": "A transparent compound of cross + tie: a member laid across the rails that ties them together at a fixed spacing.",
+    "decantate": "Built on decant, the word for carefully pouring liquid away from sediment. Compare decanter, the vessel named from the same verb.",
+    "delineation": "From Latin delineare, “to sketch with lines,” built on linea, “line.” The line connection is still visible in delineate.",
+    "dextral": "From Latin dexter, “right-hand / on the right.” Compare dexterous, which developed from the positive associations of right-handed skill.",
+    "dietarian": "Built from diet + -arian. Diet came through Greek and Latin words for a way of life or regimen; compare dietary.",
+    "disapprobative": "Built from dis- + the approbation / approve family. Latin approbare meant “to approve”; dis- reverses the evaluation.",
+    "disposure": "Built on dispose, from Latin disponere, “to arrange or place apart.” The same ponere, “to place,” root appears in position.",
+    "excursive": "From the Latin excurs- family, from excurrere, “to run out.” Compare excursion: both carry the idea of ranging away from a main course.",
+    "execratory": "Built on execrate, from Latin exsecrari, “to curse.” Compare execrable, something deserving strong condemnation.",
+    "extrusive": "Built on extrude, from Latin extrudere, “to thrust out.” Compare extrusion, especially in geology and manufacturing.",
+    "federacy": "From the federal / federation family, ultimately Latin foedus, “treaty, compact.” The root idea is people or states joined by agreement.",
+    "fussbudgety": "A modern adjective built from fussbudget + -y. Fussbudget is an American colloquial word for a person who fusses excessively over small things.",
+    "lancelet": "Built from lance + the diminutive -let, referring to the animal’s small, narrow, pointed shape.",
+    "pronator": "From the pronation family, ultimately Latin pronus, “bent forward / face downward.” A pronator is therefore a muscle that turns toward the prone orientation.",
+    "redolence": "From Latin redolere, “to give off a smell.” Compare redolent, which can mean fragrant or strongly suggestive of something.",
+    "retrogressive": "Built on retrogress, ultimately Latin retrogradi, “to go backward.” Compare retrograde: both preserve the idea of backward movement.",
+    "scruffiest": "The superlative of scruffy, a 19th-century adjective for something shabby or unkempt; the word is probably connected with scruff.",
+    "shoofly": "A transparent compound of shoo + fly, originally naming things intended to drive flies away; later it was applied to several specific objects and foods.",
+    "stultification": "Built on stultify, from Latin stultus, “foolish.” The history explains the sense of making something foolish, ineffective, or intellectually dull.",
+    "suspensor": "From the suspend / suspension family, ultimately Latin suspendere, “to hang up.” The original physical idea is something that supports by suspension.",
+    "swivet": "An American slang word of uncertain origin, recorded for a flustered, agitated, or exasperated state. Its deeper source is not securely known.",
+    "whicker": "Probably imitative of a horse’s soft breathy call; it belongs semantically with neigh and whinny, though its deeper historical origin is uncertain."
+})
+
 ENCOUNTER_OVERRIDES = {
     "gendarme": [
         {"place":"French news report or police procedural","phrase":"“a gendarme waved the cars through”"},
@@ -925,9 +958,16 @@ def derivational_info(word, raw_ety, raw_gloss):
     lemma=form_reference(raw_gloss)
     if lemma:
         return lemma, ""
-    m=re.match(r"^(?:From|Equivalent to)\s+([A-Za-z][A-Za-z'’-]*)\s+\+\s+(-[A-Za-z-]+)", clean(raw_ety), re.I)
-    if m and normalize_word(m.group(1))!=normalize_word(word):
-        return clean(m.group(1)), clean(m.group(2))
+    t=clean(raw_ety)
+    for lead in ("From ","Equivalent to "):
+        if t.startswith(lead):
+            rest=t[len(lead):]
+            if " + -" in rest:
+                base,tail=rest.split(" + -",1)
+                base=clean(base)
+                suffix="-"+re.split(r"[^A-Za-z-]",tail,1)[0]
+                if re.fullmatch(r"[A-Za-z][A-Za-z'’-]*",base) and normalize_word(base)!=normalize_word(word):
+                    return base,suffix
     return "", ""
 
 def base_word_info(base):
@@ -1052,45 +1092,83 @@ def phrase_from_example(word, example):
 def indefinite(word):
     return "an" if word[:1].lower() in "aeiou" else "a"
 
-def generic_phrase(word, pos, definition, index=0, place=""):
+def domain_has(text, keys):
+    toks=set(re.findall(r"[a-z]+",clean(text).lower()))
+    for k in keys:
+        if k.endswith("*"):
+            stem=k[:-1]
+            if any(t.startswith(stem) for t in toks):
+                return True
+        elif k in toks:
+            return True
+    return False
+
+def generic_phrase(word, pos, definition, index=0, place="", domain="general"):
     p=(pos or "").lower()
     d=clean(definition).lower()
-    pl=place.lower()
+    person=bool(re.search(r"^(?:a|an)\s+(?:person|man|woman|someone)|^one who",d))
+    abstract=bool(re.match(r"^(?:the )?(?:act|state|quality|process|condition|practice|ability|degree)\b",d))
     if p in ("adj","adjective"):
-        noun="finding" if "medical" in pl or "clinic" in pl else "provision" if "legal" in pl or "court" in pl else "style" if "fashion" in pl else "response"
-        return f"“{indefinite(word)} {word} {noun}”"
+        nouns={"fashion":"style","medical":"finding","biology":"trait","chemistry":"compound","legal":"provision","finance":"policy","language":"construction","music":"passage","food":"flavor","military":"description","religion":"doctrine","engineering":"component","personality":"remark"}
+        return f"“{indefinite(word)} {word} {nouns.get(domain,'description')}”"
     if p in ("adv","adverb"):
-        return f"“responded {word}”" if index==0 else f"“described it {word}”"
+        verbs={"medical":"presented","legal":"argued","music":"played","personality":"responded"}
+        return f"“{verbs.get(domain,'responded')} {word}”"
     if p=="verb":
         if word.endswith("ed"):
             if any(k in d for k in ("calm","reliev","less intense","reduce")):
                 return f"“their fears were {word}”"
-            return f"“they had {word} before noon”"
+            return f"“they had {word} it by then”"
         if word.endswith("ing"):
             return f"“kept {word} through the scene”"
-        if any(k in d for k in ("crime","wrongdoing","assist","encourage")):
-            return f"“to {word} the scheme”"
-        if any(k in d for k in ("reject","renounce","disavow")):
-            return f"“to {word} the old belief”"
-        if any(k in d for k in ("walk","move","wander")):
-            return f"“to {word} across the room”"
-        return f"“to {word} the problem”"
-    person=re.search(r"^(?:a|an)\s+(?:person|man|woman|someone)|^one who",d)
+        frames=[
+            (("humiliat","degrad","lower"),"someone publicly"),
+            (("crime","wrongdoing","assist","encourage"),"the scheme"),
+            (("reject","renounce","disavow"),"the old belief"),
+            (("walk","wander","move"),"across the room"),
+            (("deceive","defraud","cheat"),"an unsuspecting buyer"),
+            (("prevent","hinder","avert"),"a larger problem"),
+            (("praise","extol"),"the achievement"),
+            (("adorn","decorate"),"the hall"),
+            (("drink","alcohol"),"after dinner"),
+            (("block","obstruct"),"the opening"),
+            (("pour","liquid"),"the wine carefully"),
+        ]
+        for keys,obj in frames:
+            if any(k in d for k in keys):
+                return f"“to {word} {obj}”"
+        return f"“decided to {word}”"
     if person:
-        return f"“{indefinite(word)} {word} in the story”"
-    if "court" in pl or "legal" in pl:
+        return f"“{indefinite(word)} {word} in the account”"
+    if domain=="medical":
+        return f"“the {word} on the scan”" if any(k in d for k in ("bone","muscle","membrane","organ","structure")) else f"“{word} noted in the chart”"
+    if domain=="biology":
+        return f"“the {word} in the specimen”"
+    if domain=="chemistry":
+        return f"“the {word} in the sample”"
+    if domain=="legal":
         return f"“the {word} in the filing”"
-    if "medical" in pl or "clinic" in pl:
-        return f"“{word} noted in the chart”"
-    if "museum" in pl or "exhibit" in pl:
-        return f"“the {word} on display”"
-    if "menu" in pl or "cookbook" in pl:
+    if domain=="finance":
+        return f"“the {word} in the policy”"
+    if domain=="language":
+        return f"“the {word} in the sentence”"
+    if domain=="music":
+        return f"“a {word} in the score”"
+    if domain=="food":
         return f"“{word} on the menu”"
+    if domain=="military":
+        return f"“the {word} in the museum collection”"
+    if domain=="religion":
+        return f"“the {word} in the theology text”"
+    if domain=="engineering":
+        return f"“the {word} in the assembly”"
+    if domain=="fashion":
+        return f"“the {word} in the catalog”"
+    if domain=="personality" or abstract:
+        return f"“a striking display of {word}”"
     if word.endswith("s") and not word.endswith(("ss","us")):
         return f"“several {word} in the account”"
-    if re.match(r"^(?:the )?(?:act|state|quality|process|condition|practice|ability)\b",d):
-        return f"“a striking example of {word}”"
-    return f"“the {word} described in the article”"
+    return f"“{indefinite(word)} {word} in the passage”"
 
 def encounter_cards(word, definition, pos, labels, example):
     if word in ENCOUNTER_OVERRIDES:
@@ -1098,50 +1176,57 @@ def encounter_cards(word, definition, pos, labels, example):
     d=clean(definition).lower()
     rare=any(x in (labels or []) for x in ("archaic","obsolete","rare","dated","historical","literary"))
     domains=[
-        (("fabric","cloth","garment","hat","tailor","wool","cotton","dress","coat","shoe"),
+        ("fashion",("fabric","cloth","garment","hat","tailor*","wool","cotton","dress","coat","shoe"),
          ["Vintage clothing listing","Costume-museum or fashion-history label"]),
-        (("heart","blood","vein","lung","bone","muscle","organ","tissue","medical","disease","surgical","uterus","anatom","psychiatr"),
+        ("medical",("heart","blood","vein","lung","bone","muscle","organ","tissue","medical","disease","surgical","uterus","anatom*","psychiatr*"),
          ["Medical chart or clinic handout","Anatomy / physiology textbook"]),
-        (("gene","chromosome","cell","protein","species","animal","bird","insect","fish","plant","biology","axon"),
+        ("biology",("gene","chromosome","cell","protein","species","animal","bird","insect","fish","plant","biology","axon"),
          ["Biology textbook or lab handout","Field guide or science-museum label"]),
-        (("chemical","compound","polymer","acid","carbon","oxide","mineral","molten"),
+        ("chemistry",("chemical","compound","polymer","acid","carbon","oxide","mineral","molten"),
          ["Chemistry / materials-science lab manual","Technical datasheet or geology textbook"]),
-        (("law","legal","court","crime","government","vote","treaty","policy","trustee"),
+        ("legal",("law","legal","court","crime","government","vote","treaty","policy","trustee"),
          ["Court filing or legal explainer","Newspaper public-affairs article"]),
-        (("money","coin","fund","debt","business","market","insured","finance"),
+        ("finance",("money","coin","fund","debt","business","market","insured","finance"),
          ["Insurance policy or financial statement","Business-news article"]),
-        (("language","speech","grammar","pronoun","syllable","vowel","consonant","linguist"),
+        ("language",("language","speech","grammar","pronoun","syllable","vowel","consonant","linguist*"),
          ["Grammar / linguistics textbook","Editor’s margin note or literary analysis"]),
-        (("music","note","sung","instrument","song","melody"),
+        ("music",("music","note","sung","instrument","song","melody"),
          ["Album review or concert program","Music-history textbook"]),
-        (("food","dish","meal","cook","meat","sauce","drink","bread","stew","herb"),
+        ("food",("food","dish","meal","cook*","meat","sauce","drink","bread","stew","herb"),
          ["Restaurant menu or food review","Cookbook or culinary-history article"]),
-        (("weapon","ammunition","firearm","sword","military","soldier","battle","war"),
+        ("military",("weapon","ammunition","firearm","sword","military","soldier","battle","war"),
          ["Military-museum label","Historical nonfiction or reenactment guide"]),
-        (("marriage","religious","church","priest","theolog","angel","worship","divine"),
+        ("religion",("marriage","religious","church","priest","theolog*","angel","worship","divine"),
          ["Religion / theology textbook","Church-history or museum exhibit"]),
-        (("room","building","roof","architecture","railroad","track","cable","road","soil","construction"),
+        ("engineering",("room","building","roof","architecture","railroad","track","cable","road","soil","construction"),
          ["Engineering / maintenance manual","Architecture or infrastructure description"]),
-        (("emotion","mood","behavior","foolish","stubborn","cheerful","angry","calm","style","manner"),
+        ("personality",("emotion","mood","behavior","foolish","stubborn","cheerful","angry","calm","style","manner"),
          ["Character description in a novel","Book / film review"]),
     ]
-    places=None
-    for keys,p in domains:
-        if any(re.search(r"\b"+re.escape(k)+r"\w*\b",d) for k in keys):
-            places=p; break
+    domain="general"; places=None
+    for name,keys,p in domains:
+        if domain_has(d,keys):
+            domain=name; places=p; break
     if not places:
+        person=bool(re.search(r"^(?:a|an)\s+(?:person|man|woman|someone)|^one who",d))
+        abstract=bool(re.match(r"^(?:the )?(?:act|state|quality|process|condition|practice|ability|degree)\b",d))
         if rare:
             places=["Historical novel or archival document","Literary commentary on older language"]
+        elif person:
+            places=["Biography, profile, or character sketch","Novel or historical account"]
+        elif abstract:
+            places=["Essay, review, or long-form article","Academic or cultural criticism"]
         elif (pos or "").lower() in ("adj","adjective","adv","adverb"):
             places=["Book / film review","Character description in fiction"]
         elif (pos or "").lower()=="verb":
             places=["Long-form news feature","Novel or memoir"]
         else:
-            places=["Feature article / reference book","Specialist textbook or museum label"]
-    p1=generic_phrase(word,pos,definition,0,places[0])
-    p2=phrase_from_example(word,example) or generic_phrase(word,pos,definition,1,places[1])
+            places=["Magazine feature or reference entry","Textbook, catalog, or museum label"]
+    ex=phrase_from_example(word,example)
+    p1=generic_phrase(word,pos,definition,0,places[0],domain)
+    p2=ex or generic_phrase(word,pos,definition,1,places[1],domain)
     if p2==p1:
-        p2=generic_phrase(word,pos,definition,1,places[1])
+        p2=generic_phrase(word,pos,definition,1,places[1],domain)
     return [{"place":places[0],"phrase":p1},{"place":places[1],"phrase":p2}]
 
 def modern_uses(word, definition, pos, labels):
