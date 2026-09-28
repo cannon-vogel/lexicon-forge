@@ -23,7 +23,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Validate JavaScript\n        run: node --check app.js\n      - name: Configure Pages
+      - name: Validate JavaScript
+        run: node --check app.js
+      - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
