@@ -32,4 +32,5 @@ jobs:
           git add word_data.json word_data_stats.json
           git diff --cached --quiet && exit 0
           git commit -m "Build static word enrichment"
+          git pull --rebase origin main
           git push
