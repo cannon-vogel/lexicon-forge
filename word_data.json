@@ -435,11 +435,11 @@
     },
     "acmes": {
       "word": "acmes",
-      "definition": "Plural of acme: a high point: the highest point of any range, the most developed stage of any process, or the culmination of any field or historical period.",
+      "definition": "plural of acme.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “acmes” names or describes Plural of acme: a high point: the highest point of any range, the most developed stage of any process, or the culmination of any field or historical period.",
+      "example": "In context, “acmes” names or describes plural of acme.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -463,9 +463,9 @@
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ac/acmes.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 156,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 15,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -811,11 +811,11 @@
     },
     "agglomerations": {
       "word": "agglomerations",
-      "definition": "Plural of agglomeration: the act or process of collecting in a mass; a heaping together.",
+      "definition": "plural of agglomeration.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “agglomerations” names or describes Plural of agglomeration: the act or process of collecting in a mass; a heaping together.",
+      "example": "In context, “agglomerations” names or describes plural of agglomeration.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -833,8 +833,8 @@
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ag/agglomerations.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 88,
+        "selfContained": true,
+        "length": 24,
         "clarityPenalty": 55
       },
       "entryAvailable": true
@@ -975,11 +975,11 @@
     },
     "alluvions": {
       "word": "alluvions",
-      "definition": "Plural of alluvion: the increase in the area of land due to the deposition of sediment (alluvium) by a river.",
+      "definition": "plural of alluvion.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “alluvions” names or describes Plural of alluvion: the increase in the area of land due to the deposition of sediment (alluvium) by a river.",
+      "example": "In context, “alluvions” names or describes plural of alluvion.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -1005,9 +1005,9 @@
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/al/alluvions.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 109,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 19,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -1501,11 +1501,11 @@
     },
     "apotheoses": {
       "word": "apotheoses",
-      "definition": "Form of apotheose: synonym of apotheosize.",
+      "definition": "Plural of apotheosis: the highest point or idealized culmination of something; also the elevation of a person to divine or exalted status.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "",
-      "example": "The writer chose the verb “apotheoses” to convey the idea “Form of apotheose: synonym of apotheosize.”",
+      "example": "The writer chose the verb “apotheoses” to convey the idea “Plural of apotheosis: the highest point or idealized culmination of something; also the elevation of a person to divine or exalted status.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/09/LL-Q1860_%28eng%29-Wodencafe-apotheoses.wav/LL-Q1860_%28eng%29-Wodencafe-apotheoses.wav.mp3",
@@ -1520,9 +1520,9 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Work or academic writing",
-        "Storytelling and dialogue"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [
         82
@@ -1530,8 +1530,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ap/apotheoses.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 42,
-        "clarityPenalty": 0
+        "length": 138,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -2039,11 +2039,11 @@
     },
     "ax": {
       "word": "ax",
-      "definition": "Variant of axe: a dismissal or rejection.",
+      "definition": "An axe: a tool with a heavy bladed head on a handle, used especially for chopping wood; figuratively, a dismissal or cut.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “ax” names or describes Variant of axe: a dismissal or rejection.",
+      "example": "In context, “ax” names or describes An axe: a tool with a heavy bladed head on a handle, used especially for chopping wood; figuratively, a dismissal or cut.",
       "exampleCitation": "",
       "ipa": [
         "/æks/"
@@ -2082,7 +2082,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ax/ax.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 41,
+        "length": 121,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -2126,7 +2126,7 @@
     },
     "bandoleer": {
       "word": "bandoleer",
-      "definition": "Variant of bandolier: an ammunition belt, worn over the shoulder, having loops or pockets for cartridges.",
+      "definition": "Alternative form of bandolier.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -2149,8 +2149,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/ba/bandoleer.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 105,
-        "clarityPenalty": 0
+        "length": 30,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -2387,11 +2387,11 @@
     },
     "besotting": {
       "word": "besotting",
-      "definition": "Inflected form of besot: to muddle, stupefy, or cause to act foolishly, as with alcoholic liquor or infatuation.",
+      "definition": "present participle and gerund of besot.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "",
-      "example": "The writer chose the verb “besotting” to convey the idea “Inflected form of besot: to muddle, stupefy, or cause to act foolishly, as with alcoholic liquor or infatuation.”",
+      "example": "The writer chose the verb “besotting” to convey the idea “present participle and gerund of besot.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -2412,8 +2412,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/be/besotting.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 112,
-        "clarityPenalty": 0
+        "length": 39,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -2611,7 +2611,7 @@
     },
     "blandishments": {
       "word": "blandishments",
-      "definition": "Plural of blandishment: often in the plural form blandishments: a flattering speech or action designed to influence or persuade.",
+      "definition": "plural of blandishment.",
       "sourceDefinition": "flatteries",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -2635,9 +2635,9 @@
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/bl/blandishments.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 128,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 23,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -3190,7 +3190,7 @@
     },
     "bugaboo": {
       "word": "bugaboo",
-      "definition": "Variant of bug-a-boo: a mythical, nocturnal creature; a hobgoblin.",
+      "definition": "Alternative spelling of bug-a-boo.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -3215,8 +3215,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/bu/bugaboo.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 66,
-        "clarityPenalty": 0
+        "length": 34,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -4181,11 +4181,11 @@
     },
     "chiasm": {
       "word": "chiasm",
-      "definition": "Variant of chiasma: a crossing of two nerves, ligaments etc.",
+      "definition": "Alternative form of chiasma.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Latin; in sense 1, from chiasma, from Ancient Greek χίασμα (khiasma); in sense 2, from chiasmus, from Ancient Greek χιασμός (khiasmos \"crossing, diagonal arrangement\"), from χιάζειν (khiázein, “to mark with a chi”), from χ (kh, “chi”)",
-      "example": "In context, “chiasm” names or describes Variant of chiasma: a crossing of two nerves, ligaments etc.",
+      "example": "In context, “chiasm” names or describes Alternative form of chiasma.",
       "exampleCitation": "",
       "ipa": [
         "/ˈkaɪ.æzəm/"
@@ -4209,8 +4209,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ch/chiasm.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 60,
-        "clarityPenalty": 0
+        "length": 28,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -4902,7 +4902,7 @@
     },
     "conglomerate": {
       "word": "conglomerate",
-      "definition": "A cluster of heterogeneous things.",
+      "definition": "A group made up of unlike parts; in business, a corporation composed of several different companies.",
       "sourceDefinition": "empire",
       "partOfSpeech": "noun",
       "etymology": "First attested in the second part of the 16ᵗʰ century; from Latin conglomerātus, perfect passive participle of conglomerō (“to pile into a heap, to roll together”) (see -ate (Etymology 1, 2 and 3)), from con- (prefix indicating a being or bringing together of several objects) (ultimately from Proto-Indo-European *ḱóm (“beside, by, near, with”)) + glomerāre (from glomerō (“to pile into a heap, to make into a ball, glomerate”), from glomus (“ball of thread; ball-shaped mass”), from Proto-Indo-European *gel- (“to form into a ball; ball”)).",
@@ -4934,9 +4934,9 @@
       "courseSynonyms": [],
       "courseCue": "empire",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Business or finance writing",
+        "News reporting",
+        "Workplace discussions"
       ],
       "sourceQuestions": [
         2
@@ -4944,7 +4944,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/co/conglomerate.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 34,
+        "length": 100,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -5572,7 +5572,7 @@
     },
     "crosstie": {
       "word": "crosstie",
-      "definition": "Variant of cross-tie: a sleeper supporting and connecting the rails, and holding them in place.",
+      "definition": "Alternative form of cross-tie.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -5595,8 +5595,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/cr/crosstie.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 95,
-        "clarityPenalty": 0
+        "length": 30,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -5638,11 +5638,11 @@
     },
     "cudgels": {
       "word": "cudgels",
-      "definition": "Form of cudgel: a short heavy club with a rounded head used as a weapon.",
+      "definition": "third-person singular simple present indicative of cudgel.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "",
-      "example": "The writer chose the verb “cudgels” to convey the idea “Form of cudgel: a short heavy club with a rounded head used as a weapon.”",
+      "example": "The writer chose the verb “cudgels” to convey the idea “third-person singular simple present indicative of cudgel.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -5653,16 +5653,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Work or academic writing",
-        "Storytelling and dialogue"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/cu/cudgels.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 72,
-        "clarityPenalty": 0
+        "length": 58,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -5914,7 +5914,7 @@
     },
     "delineation": {
       "word": "delineation",
-      "definition": "A graphic verbal description.",
+      "definition": "A description, outline, or representation that clearly shows the form, features, or boundaries of something.",
       "sourceDefinition": "sketch",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -5936,9 +5936,9 @@
       "courseSynonyms": [],
       "courseCue": "sketch",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Clothing or product descriptions",
+        "Tailoring and textile discussions",
+        "Fashion history or vintage catalogs"
       ],
       "sourceQuestions": [
         16
@@ -5946,7 +5946,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/delineation.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 29,
+        "length": 108,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -5995,11 +5995,11 @@
     },
     "deluges": {
       "word": "deluges",
-      "definition": "Form of deluge: an overwhelming amount of something; anything that overwhelms or causes great destruction.",
+      "definition": "third-person singular simple present indicative of deluge.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "",
-      "example": "The writer chose the verb “deluges” to convey the idea “Form of deluge: an overwhelming amount of something; anything that overwhelms or causes great destruction.”",
+      "example": "The writer chose the verb “deluges” to convey the idea “third-person singular simple present indicative of deluge.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -6016,9 +6016,9 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Clothing or product descriptions",
-        "Tailoring and textile discussions",
-        "Fashion history or vintage catalogs"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [
         95
@@ -6026,8 +6026,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/deluges.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 106,
-        "clarityPenalty": 0
+        "length": 58,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -6208,7 +6208,7 @@
     },
     "detente": {
       "word": "detente",
-      "definition": "Variant of détente: relaxing of tension, especially between countries; (countable) an instance of this.",
+      "definition": "Alternative form of détente.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -6239,8 +6239,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/detente.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 103,
-        "clarityPenalty": 0
+        "length": 28,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -7554,11 +7554,11 @@
     },
     "enspheres": {
       "word": "enspheres",
-      "definition": "Form of ensphere: to place in a sphere; to surround in all directions (as if) by a sphere (one of the concentric hollow transparent globes formerly believed to rotate around the Earth).",
+      "definition": "third-person singular simple present indicative of ensphere.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "",
-      "example": "The writer chose the verb “enspheres” to convey the idea “Form of ensphere: to place in a sphere; to surround in all directions (as if) by a sphere (one of the concentric hollow transparent globes formerly believed to rotate around the Earth).”",
+      "example": "The writer chose the verb “enspheres” to convey the idea “third-person singular simple present indicative of ensphere.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -7569,16 +7569,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Work or academic writing",
-        "Storytelling and dialogue"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/en/enspheres.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 185,
-        "clarityPenalty": 0
+        "length": 60,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -7606,7 +7606,7 @@
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/en/environs.jsonl",
       "definitionQuality": {
-        "selfContained": false,
+        "selfContained": true,
         "length": 53,
         "clarityPenalty": 55
       },
@@ -7713,7 +7713,7 @@
     },
     "evanescent": {
       "word": "evanescent",
-      "definition": "Disappearing, vanishing.",
+      "definition": "Quickly fading or disappearing; short-lived or fleeting.",
       "sourceDefinition": "brief",
       "partOfSpeech": "adj",
       "etymology": "Borrowed from French évanescent (“evanescent”), from Latin ēvānēscēns (“disappearing, vanishing”), present participle of ēvānēscō (“to disappear, vanish; to die out, fade away; to lapse”), from ē- (variant of ex- (prefix meaning ‘away, out’)) + vānēscō (“to vanish”) (from vānus (“empty, vacant, void”), from Proto-Indo-European *h₁weh₂- (“to abandon, leave”)) + -ēscō (suffix forming verbs with the sense ‘to become’)).",
@@ -7749,7 +7749,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/ev/evanescent.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 24,
+        "length": 56,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -7823,7 +7823,7 @@
     },
     "excursive": {
       "word": "excursive",
-      "definition": "Tending to digress.",
+      "definition": "Wandering or digressive; tending to stray from a direct course or main topic.",
       "sourceDefinition": "wandering",
       "partOfSpeech": "adj",
       "etymology": "",
@@ -7853,8 +7853,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/ex/excursive.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 19,
-        "clarityPenalty": 7
+        "length": 77,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -8299,7 +8299,7 @@
     },
     "exultancy": {
       "word": "exultancy",
-      "definition": "exultance, exultation.",
+      "definition": "A state or expression of triumphant joy; exultation.",
       "sourceDefinition": "celebration",
       "partOfSpeech": "noun",
       "etymology": "From Latin exsultantia.",
@@ -8324,8 +8324,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/ex/exultancy.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 22,
-        "clarityPenalty": 7
+        "length": 52,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -8801,11 +8801,11 @@
     },
     "foibles": {
       "word": "foibles",
-      "definition": "Plural of foible: a weakness or failing of character.",
+      "definition": "plural of foible.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “foibles” names or describes Plural of foible: a weakness or failing of character.",
+      "example": "In context, “foibles” names or describes plural of foible.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -8822,18 +8822,18 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Character descriptions",
-        "Psychology or social writing",
-        "Conversation and storytelling"
+        "Essays and nonfiction",
+        "Academic or specialist writing",
+        "Literary and descriptive prose"
       ],
       "sourceQuestions": [
         103
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/f/fo/foibles.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 53,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 17,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -9164,11 +9164,11 @@
     },
     "forwent": {
       "word": "forwent",
-      "definition": "Inflected form of forgo: to do without (something enjoyable); to relinquish.",
+      "definition": "simple past of forgo.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "From for- + went.",
-      "example": "The writer chose the verb “forwent” to convey the idea “Inflected form of forgo: to do without (something enjoyable); to relinquish.”",
+      "example": "The writer chose the verb “forwent” to convey the idea “simple past of forgo.”",
       "exampleCitation": "",
       "ipa": [
         "/fɔɹˈwɛnt/"
@@ -9189,8 +9189,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/f/fo/forwent.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 76,
-        "clarityPenalty": 0
+        "length": 21,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -9817,7 +9817,7 @@
     },
     "greenroom": {
       "word": "greenroom",
-      "definition": "Variant of green room: in a television studio, theatre or concert hall, the room where performers await their entrance.",
+      "definition": "Alternative form of green room.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -9840,8 +9840,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/g/gr/greenroom.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 119,
-        "clarityPenalty": 0
+        "length": 31,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -11658,11 +11658,11 @@
     },
     "inundations": {
       "word": "inundations",
-      "definition": "Plural of inundation: the state of being inundated; flooding.",
+      "definition": "plural of inundation.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “inundations” names or describes Plural of inundation: the state of being inundated; flooding.",
+      "example": "In context, “inundations” names or describes plural of inundation.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -11688,9 +11688,9 @@
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/in/inundations.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 61,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 21,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -12709,11 +12709,11 @@
     },
     "malefactions": {
       "word": "malefactions",
-      "definition": "Plural of malefaction: a crime, an offense, an evil deed.",
+      "definition": "plural of malefaction.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “malefactions” names or describes Plural of malefaction: a crime, an offense, an evil deed.",
+      "example": "In context, “malefactions” names or describes plural of malefaction.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -12730,18 +12730,18 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "News and public-affairs writing",
-        "Legal or policy discussions",
-        "History and civics coursework"
+        "Essays and nonfiction",
+        "Academic or specialist writing",
+        "Literary and descriptive prose"
       ],
       "sourceQuestions": [
         103
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/m/ma/malefactions.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 57,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 22,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -13024,7 +13024,7 @@
     },
     "millinery": {
       "word": "millinery",
-      "definition": "The business and work that a milliner engages in.",
+      "definition": "The making and selling of hats, especially women's hats; also hats collectively.",
       "sourceDefinition": "a type of hat",
       "partOfSpeech": "noun",
       "etymology": "From milliner + -y (nominalizer).",
@@ -13054,7 +13054,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/m/mi/millinery.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 49,
+        "length": 80,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -13238,7 +13238,7 @@
     },
     "morass": {
       "word": "morass",
-      "definition": "A tract of soft, wet ground; a marsh; a fen.",
+      "definition": "Literally, soft marshy ground; figuratively, a complicated or confusing situation that is difficult to escape.",
       "sourceDefinition": "entanglement",
       "partOfSpeech": "noun",
       "etymology": "From Dutch moeras (“marsh, swamp”), an alteration (with influence from Dutch moer (“moor”)) of a direct descendant of Middle Dutch marasch (“marsh”). The Middle Dutch word is a borrowing from Old French mareis, from Proto-West Germanic *marisk. Doublet of marish and marsh, and linked in part to moor. Compare quagmire.",
@@ -13260,9 +13260,9 @@
       "courseSynonyms": [],
       "courseCue": "entanglement",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Clothing or product descriptions",
+        "Tailoring and textile discussions",
+        "Fashion history or vintage catalogs"
       ],
       "sourceQuestions": [
         42
@@ -13270,7 +13270,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/m/mo/morass.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 44,
+        "length": 110,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -13617,7 +13617,7 @@
     },
     "natty": {
       "word": "natty",
-      "definition": "Natural, as opposed to steroid enhanced.",
+      "definition": "Neat, stylish, and smart in appearance or dress.",
       "sourceDefinition": "stylish",
       "partOfSpeech": "adj",
       "etymology": "Clipping of natural + -y.",
@@ -13636,9 +13636,9 @@
       "courseSynonyms": [],
       "courseCue": "stylish",
       "modernUses": [
-        "Precise description",
-        "Literary or analytical writing",
-        "Conversation and storytelling"
+        "Clothing or product descriptions",
+        "Tailoring and textile discussions",
+        "Fashion history or vintage catalogs"
       ],
       "sourceQuestions": [
         45
@@ -13646,7 +13646,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/n/na/natty.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 40,
+        "length": 48,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -14663,11 +14663,11 @@
     },
     "peccadilloes": {
       "word": "peccadilloes",
-      "definition": "Plural of peccadillo: a small flaw or sin.",
+      "definition": "plural of peccadillo.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “peccadilloes” names or describes Plural of peccadillo: a small flaw or sin.",
+      "example": "In context, “peccadilloes” names or describes plural of peccadillo.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -14684,24 +14684,24 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "News and public-affairs writing",
-        "Legal or policy discussions",
-        "History and civics coursework"
+        "Essays and nonfiction",
+        "Academic or specialist writing",
+        "Literary and descriptive prose"
       ],
       "sourceQuestions": [
         103
       ],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pe/peccadilloes.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 42,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 21,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
     "perambulation": {
       "word": "perambulation",
-      "definition": "An English legal ceremony in which an official from a town or parish walks around it to delineate and record its boundaries.",
+      "definition": "The act of walking around or through a place; a stroll, walk, or walking tour.",
       "sourceDefinition": "stroll",
       "partOfSpeech": "noun",
       "etymology": "From Middle English perambulacioun, from Anglo-Norman and Latin. By surface analysis, perambulate + -ation, or, by surface analysis, per- + ambulate + -ion.",
@@ -14727,9 +14727,9 @@
       "courseSynonyms": [],
       "courseCue": "stroll",
       "modernUses": [
-        "News and public-affairs writing",
-        "Legal or policy discussions",
-        "History and civics coursework"
+        "Essays and nonfiction",
+        "Academic or specialist writing",
+        "Literary and descriptive prose"
       ],
       "sourceQuestions": [
         29
@@ -14737,7 +14737,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pe/perambulation.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 124,
+        "length": 78,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -14794,7 +14794,7 @@
     },
     "persnickety": {
       "word": "persnickety",
-      "definition": "Variant of pernickety: fussy; paying undue attention to minor details; fastidious.",
+      "definition": "US standard form of pernickety.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "From Scots persnickety, whence also pernickety. More at pernickety.",
@@ -14831,7 +14831,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pe/persnickety.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 82,
+        "length": 31,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -15455,7 +15455,7 @@
     },
     "polemics": {
       "word": "polemics",
-      "definition": "The art or practice of making arguments or controversies.",
+      "definition": "Strong written or spoken arguments attacking a position or opponent; controversial debate.",
       "sourceDefinition": "diatribes",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -15482,14 +15482,14 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/po/polemics.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 57,
+        "length": 90,
         "clarityPenalty": 0
       },
       "entryAvailable": true
     },
     "polestar": {
       "word": "polestar",
-      "definition": "Variant of pole star: the star visible to the naked eye which was in the past, is now, or will be in the future nearest a celestial pole of a planet.",
+      "definition": "Alternative form of pole star.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
@@ -15512,8 +15512,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/po/polestar.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 149,
-        "clarityPenalty": 0
+        "length": 30,
+        "clarityPenalty": 55
       },
       "entryAvailable": true
     },
@@ -16607,7 +16607,7 @@
     },
     "ramified": {
       "word": "ramified",
-      "definition": "simple past and past participle of ramify.",
+      "definition": "Divided or spread into branches or subdivisions; extensively branched.",
       "sourceDefinition": "disjoined",
       "partOfSpeech": "verb",
       "etymology": "",
@@ -16632,8 +16632,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/r/ra/ramified.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 42,
-        "clarityPenalty": 55
+        "length": 70,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -17700,7 +17700,7 @@
     },
     "scruffiest": {
       "word": "scruffiest",
-      "definition": "superlative form of scruffy: most scruffy",
+      "definition": "superlative form of scruffy: most scruffy.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "",
@@ -17722,8 +17722,8 @@
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/sc/scruffiest.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 41,
+        "selfContained": true,
+        "length": 42,
         "clarityPenalty": 55
       },
       "entryAvailable": true
@@ -18158,7 +18158,7 @@
     },
     "sinuousness": {
       "word": "sinuousness",
-      "definition": "The state or condition of being sinuous.",
+      "definition": "The quality of curving, winding, or bending in a smooth, wave-like way.",
       "sourceDefinition": "a type of wavy form",
       "partOfSpeech": "noun",
       "etymology": "Etymology tree English sinuous Proto-Germanic *-inōną Proto-Indo-European *-dyé- Proto-Germanic *-atjaną Proto-Indo-European *-tus Proto-Germanic *-þuz Proto-Germanic *-assuz Proto-Germanic *-inassuz Proto-West Germanic *-nassī Old English -nes Middle English -nesse English -ness English sinuousness From sinuous + -ness.",
@@ -18183,7 +18183,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/si/sinuousness.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 40,
+        "length": 71,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -18596,11 +18596,11 @@
     },
     "soya": {
       "word": "soya",
-      "definition": "Variant of soy: a common East Asian liquid sauce, made by subjecting boiled beans to long fermentation and then long digestion in salt and water.",
+      "definition": "Soy or soybean, especially in British usage; also food or products made from soybeans.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from Dutch soja; from the Satsuma dialectal Japanese そや (soya), which is the topicalized form of 醤油 (そい, soi) (cognate to standard Japanese 醤油 (しょうゆ, shōyu)), from Late Middle Japanese 醤油 (しやうゆ, shiyauyu), orthographic borrowing from Middle Chinese 醬油 (tsjàng-yuw), from 醬 (tsjangᴴ, “bean paste”) + 油 (“oil”).",
-      "example": "In context, “soya” names or describes Variant of soy: a common East Asian liquid sauce, made by subjecting boiled beans to long fermentation and then long digestion in salt and water.",
+      "example": "In context, “soya” names or describes Soy or soybean, especially in British usage; also food or products made from soybeans.",
       "exampleCitation": "",
       "ipa": [
         "/ˈsɔɪ.ə/"
@@ -18626,7 +18626,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/so/soya.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 145,
+        "length": 86,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -19574,11 +19574,11 @@
     },
     "tangs": {
       "word": "tangs",
-      "definition": "Plural of tang: a refreshingly sharp aroma or flavor.",
+      "definition": "plural of tang.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “tangs” names or describes Plural of tang: a refreshingly sharp aroma or flavor.",
+      "example": "In context, “tangs” names or describes plural of tang.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -19596,9 +19596,9 @@
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/ta/tangs.jsonl",
       "definitionQuality": {
-        "selfContained": false,
-        "length": 53,
-        "clarityPenalty": 55
+        "selfContained": true,
+        "length": 15,
+        "clarityPenalty": 62
       },
       "entryAvailable": true
     },
@@ -20076,7 +20076,7 @@
     },
     "torpid": {
       "word": "torpid",
-      "definition": "An inferior racing boat, or one who rows in such a boat.",
+      "definition": "Sluggish, inactive, or lacking energy; moving or responding slowly.",
       "sourceDefinition": "sluggish",
       "partOfSpeech": "noun",
       "etymology": "Etymology tree Proto-Indo-European *terp- Proto-Indo-European *-éh₁ti Proto-Indo-European *-yeti Proto-Indo-European *-éh₁yeti Proto-Indo-European *tr̥péh₁yeti Proto-Italic *torpēō Latin torpeō Proto-Indo-European *dʰeh₁-der. Proto-Italic *-iðos Latin -idus Latin torpidus English torpid From Latin torpidus (“tired, numb”).",
@@ -20101,7 +20101,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/to/torpid.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 56,
+        "length": 67,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -20457,7 +20457,7 @@
     },
     "trusteeship": {
       "word": "trusteeship",
-      "definition": "Office or function of a trustee.",
+      "definition": "The office, responsibility, or guardianship of a trustee: managing property or affairs on behalf of another.",
       "sourceDefinition": "auspices",
       "partOfSpeech": "noun",
       "etymology": "Etymology tree English trustee Proto-Germanic *skapjaną Proto-Germanic *-skapiz Proto-West Germanic *-skapi Old English -sċiepe Middle English -schipe English -ship English trusteeship From trustee + -ship.",
@@ -20482,7 +20482,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/tr/trusteeship.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 32,
+        "length": 108,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -20521,7 +20521,7 @@
     },
     "umbra": {
       "word": "umbra",
-      "definition": "An element of the umbral calculus.",
+      "definition": "A shadow, especially the darkest central part of a shadow, such as the region of total shadow in an eclipse.",
       "sourceDefinition": "shadows",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from Latin umbra (“shadow”). Doublet of umber.",
@@ -20559,7 +20559,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/u/um/umbra.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 34,
+        "length": 108,
         "clarityPenalty": 0
       },
       "entryAvailable": true
