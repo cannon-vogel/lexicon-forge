@@ -9,6 +9,16 @@ let STATIC_WORD_DATA={};
 const KEY='lexiconForge.v1';
 const DAY=86400000;
 const INTERVALS=[0,5*60*1000,20*60*1000,DAY,3*DAY,7*DAY,14*DAY,30*DAY,90*DAY];
+const FULL_XP_MILESTONE=88794;
+const PIGEONS=[
+  {id:'crumb',name:'Crumb Scout',price:75,rarity:'TINY',style:1,desc:'A practical sidewalk pigeon with three emergency crumbs.'},
+  {id:'scarf',name:'Scarf Pigeon',price:225,rarity:'COZY',style:2,desc:'Soft scarf. Excellent posture. Knows where the warm vents are.'},
+  {id:'rain',name:'Drizzle Bird',price:650,rarity:'DAPPER',style:3,desc:'Tiny yellow raincoat for extremely serious puddle inspection.'},
+  {id:'prof',name:'Professor Pigeon',price:1600,rarity:'SCHOLAR',style:4,desc:'Mortarboard, spectacles, and strong opinions about seminar formatting.'},
+  {id:'disco',name:'Disco Pigeon',price:4200,rarity:'FANCY',style:5,desc:'Star glasses and maximum dance-floor confidence.'},
+  {id:'royal',name:'Pigeon Royal',price:9500,rarity:'REGAL',style:6,desc:'A velvet cape and crown for a bird with absolutely no constitutional limits.'},
+  {id:'cosmic',name:'Cosmic Grandpigeon',price:FULL_XP_MILESTONE,requiresFull:true,rarity:'MYTHIC',style:7,desc:'The final bird: jeweled crown, nebula plumage, and the full-course XP requirement.'}
+];
 const ENRICH_TTL=30*DAY;
 let state=null;
 let session=null;
@@ -88,7 +98,7 @@ function buildSourceInfo(){
   CORE_WORDS=ordered;
 }
 
-function freshState(){return {version:1,xp:0,core:{},full:{},dict:{},enrich:{},learn:{},history:[],settings:{sessionSize:12}}}
+function freshState(){return {version:1,xp:0,xpSpent:0,pigeons:{},core:{},full:{},dict:{},enrich:{},learn:{},history:[],settings:{sessionSize:12}}}
 function loadState(){
   try{
     const x=JSON.parse(localStorage.getItem(KEY));
@@ -96,7 +106,7 @@ function loadState(){
     const s=freshState();
     Object.assign(s,x);
     s.settings=Object.assign({sessionSize:12},x.settings||{});
-    s.core=x.core||{};s.full=x.full||{};s.dict=x.dict||{};s.enrich=x.enrich||{};s.learn=x.learn||{};s.history=x.history||[];
+    s.core=x.core||{};s.full=x.full||{};s.dict=x.dict||{};s.enrich=x.enrich||{};s.learn=x.learn||{};s.history=x.history||[];s.xpSpent=Number(x.xpSpent||0);s.pigeons=x.pigeons||{};
     for(const [w,d] of Object.entries(s.dict))if(d?.error)delete s.dict[w];
     return s;
   }catch{return freshState()}
@@ -107,6 +117,7 @@ function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Ma
 function normalize(s){return String(s||'').toLowerCase().trim().replace(/[’']/g,"'").replace(/[^a-z0-9' -]+/g,'').replace(/\s+/g,' ')}
 function setEq(a,b){a=[...a].map(normalize).sort();b=[...b].map(normalize).sort();return a.length===b.length&&a.every((x,i)=>x===b[i])}
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('show'),2800)}
+function availableXP(){return Math.max(0,Math.floor((state?.xp||0)-(state?.xpSpent||0)))}
 function level(){return Math.floor(Math.sqrt(state.xp/80))+1}
 function stageName(s){return ['new','fresh','learning','1 day','3 days','1 week','2 weeks','1 month','3 months'][Math.min(s,8)]}
 function fmtDue(ts){if(!ts||ts<=Date.now())return 'due';const d=ts-Date.now();if(d<3600000)return Math.ceil(d/60000)+'m';if(d<DAY)return Math.ceil(d/3600000)+'h';return Math.ceil(d/DAY)+'d'}
@@ -116,16 +127,18 @@ function countMastered(root){return Object.values(root).filter(p=>p.stage>=5).le
 function introducedCount(){return Object.values(state.learn||{}).filter(x=>x?.introduced).length}
 function updateDashboard(){
   const cm=countMastered(state.core),due=countDue(state.core)+countDue(state.full),acc=recentAccuracy();
-  document.getElementById('levelTop').textContent=level();document.getElementById('xpTop').textContent=state.xp;document.getElementById('dueTop').textContent=due;
+  document.getElementById('levelTop').textContent=level();document.getElementById('xpTop').textContent=availableXP();document.getElementById('dueTop').textContent=due;
   document.getElementById('learnedCount').textContent=introducedCount();document.getElementById('coreMastered').textContent=cm;document.getElementById('reviewDue').textContent=due;document.getElementById('retention').textContent=acc===null?'—':acc+'%';
   document.getElementById('coreBar').style.width=(100*cm/Math.max(1,QUESTIONS.length))+'%';
   document.getElementById('sessionSize').value=state.settings.sessionSize||12;
+  renderHabitat();
+  if(document.getElementById('pigeonShop'))renderPigeonShop();
 }
 
 function switchView(id){
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
   document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.view===id));
-  if(id==='words')renderWords();window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='words')renderWords();if(id==='pigeons')renderPigeonShop();window.scrollTo({top:0,behavior:'smooth'});
 }
 document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
 
@@ -179,7 +192,8 @@ function localStory(word){
   const neighbors=src.neighbors||[];
   const meta=WORD_META[word]||{};
   let sourceCue='';
-  if(definition)sourceCue='The source test defines it as “'+definition+'.”';
+  if(definition)sourceCue='Course cue: “'+definition+'”';
+  else if(neighbors.length)sourceCue='Course synonym/group: '+neighbors.join(', ')+'.';
   else if(relation)sourceCue=relation;
   else if(meta.questionNumbers?.length)sourceCue='This word appears in source question '+meta.questionNumbers.join(', ')+'.';
   return {word,definition,relation,neighbors,sourceCue,questions:src.questions||meta.questionNumbers||[]};
@@ -206,7 +220,7 @@ function renderLessonWord(){
   top.append(wh,speak);card.append(top);
 
   const grid=el('div',{class:'storygrid'});
-  const meaning=story.sourceDefinition||story.definition||local.definition||local.relation||'Meaning unavailable.';
+  const meaning=story.definition||local.definition||local.relation||'Meaning unavailable.';
   grid.append(storyPanel('Meaning','storyMeaning',meaning));
 
   const history=story.etymology||'No etymology was available in the bundled lexical record.';
@@ -221,21 +235,36 @@ function renderLessonWord(){
   if(story.exampleCitation)context.append(el('div',{class:'sourcefoot'},story.exampleCitation));
   grid.append(context);
 
+  const modern=el('div',{class:'storypanel full'});
+  modern.append(el('h4',{},'Where it might show up now'));
+  const uses=el('ul',{class:'use-list'});
+  const modernUses=(story.modernUses||[]).length?story.modernUses:[
+    'Reading or writing where a more precise word would replace a longer paraphrase.',
+    'School, work, or news contexts where this meaning is relevant.',
+    'Conversation or creative writing when you want a more specific tone.'
+  ];
+  for(const use of modernUses.slice(0,3))uses.append(el('li',{},use));
+  modern.append(uses);grid.append(modern);
+
   const connect=el('div',{class:'storypanel full'});
   connect.append(el('h4',{},'Connections'));
-  if(local.sourceCue)connect.append(el('p',{},local.sourceCue));
-
-  const related=[...(story.synonyms||[]),...(story.sourceNeighbors||[]),...(story.related||[])];
-  const uniq=[...new Set(related.filter(x=>normalize(x)!==normalize(word)))].slice(0,10);
-  if(uniq.length){
-    const chips=el('div',{class:'connection-list'});
-    for(const n of uniq)chips.append(el('span',{class:'connection'},n));
-    connect.append(chips);
+  const courseSyns=[...new Set([...(story.courseSynonyms||[]),...(story.sourceNeighbors||[])].filter(x=>normalize(x)!==normalize(word)))];
+  if(story.courseCue)connect.append(el('p',{class:'course-line'},'Course cue: “'+story.courseCue+'”'));
+  if(courseSyns.length){
+    connect.append(el('div',{class:'connection-label'},courseSyns.length===1?'Course synonym':'Course synonyms / group'));
+    const cc=el('div',{class:'connection-list'});
+    for(const n of courseSyns)cc.append(el('span',{class:'connection'},n));
+    connect.append(cc);
   }
-  if((story.usageLabels||[]).length){
-    connect.append(el('p',{class:'micro',style:'margin-top:10px'},'Usage: '+story.usageLabels.join(' · ')));
+  const dictRelated=[...new Set([...(story.synonyms||[]),...(story.related||[])].filter(x=>normalize(x)!==normalize(word)&&!courseSyns.includes(x)))].slice(0,8);
+  if(dictRelated.length){
+    connect.append(el('div',{class:'connection-label'},'Dictionary neighbors'));
+    const dc=el('div',{class:'connection-list'});
+    for(const n of dictRelated)dc.append(el('span',{class:'connection'},n));
+    connect.append(dc);
   }
-  if(!local.sourceCue&&!uniq.length)connect.append(el('p',{},'This word has no encoded source-test relation beyond its lexical entry.'));
+  if((story.usageLabels||[]).length)connect.append(el('p',{class:'micro',style:'margin-top:10px'},'Usage: '+story.usageLabels.join(' · ')));
+  if(!story.courseCue&&!courseSyns.length&&!dictRelated.length)connect.append(el('p',{},'No additional connections are bundled for this word.'));
   grid.append(connect);card.append(grid);
 
   const actions=el('div',{class:'teachactions'});
@@ -276,7 +305,7 @@ function learningDistractors(word,n){
   pool=[...new Set([...pool,...shuffle(ALL_WORDS.filter(x=>!avoid.has(x)))])];return pool.slice(0,n);
 }
 function markIntroduced(word){
-  const x=state.learn[word]||{introduced:false,exposures:0};x.introduced=true;x.exposures=(x.exposures||0)+1;x.lastSeen=Date.now();state.learn[word]=x;state.xp+=2;save();
+  const x=state.learn[word]||{introduced:false,exposures:0};const first=!x.introduced;x.introduced=true;x.exposures=(x.exposures||0)+1;x.lastSeen=Date.now();state.learn[word]=x;if(first)state.xp+=2;save();
 }
 function finishLesson(){
   document.getElementById('learnBar').style.width='100%';const card=document.getElementById('learnCard'),words=[...lesson.words];card.innerHTML='';card.append(el('div',{class:'eyebrow'},'LESSON COMPLETE'),el('div',{class:'prompt'},'You gave '+words.length+' words a first set of retrieval cues.'),el('p',{class:'lede'},'A good next step is a short review while the material is still fresh; later successful retrievals will push it farther apart.'));
@@ -303,6 +332,9 @@ function staticWordStory(word){
     related:Array.isArray(d.related)?d.related:[],
     usageLabels:Array.isArray(d.usageLabels)?d.usageLabels:[],
     sourceNeighbors:Array.isArray(d.sourceNeighbors)?d.sourceNeighbors:[],
+    courseSynonyms:Array.isArray(d.courseSynonyms)?d.courseSynonyms:[],
+    courseCue:d.courseCue||'',
+    modernUses:Array.isArray(d.modernUses)?d.modernUses:[],
     sourceQuestions:Array.isArray(d.sourceQuestions)?d.sourceQuestions:[],
     entryAvailable:!!d.entryAvailable,
     sourceCue:local.sourceCue
@@ -379,6 +411,70 @@ function renderWords(){
 }
 function safeId(s){return s.replace(/[^a-z0-9]/gi,'_')}
 document.getElementById('wordSearch').oninput=()=>{wordRandom=null;wordPage=60;renderWords()};document.getElementById('moreWords').onclick=()=>{wordRandom=null;wordPage+=60;renderWords()};document.getElementById('shuffleWords').onclick=()=>{wordRandom=shuffle(ALL_WORDS).slice(0,30);renderWords()};
+
+// ---------- Pigeon Plaza ----------
+function pigeonSVG(p,small=false){
+  const gid='pg_'+p.id;
+  const accessory={
+    1:'<circle cx="22" cy="111" r="4" fill="#d8a950"/><circle cx="30" cy="116" r="3" fill="#e5bd69"/><circle cx="16" cy="118" r="2.7" fill="#c99342"/>',
+    2:'<path d="M48 55 Q67 67 87 57" fill="none" stroke="#ef7f70" stroke-width="9" stroke-linecap="round"/><path d="M79 61 l16 20" stroke="#ef7f70" stroke-width="8" stroke-linecap="round"/>',
+    3:'<path d="M43 70 Q68 58 94 72 L101 105 Q71 120 38 104 Z" fill="#f4c74f" opacity=".95"/><path d="M52 49 Q70 35 87 49 L84 55 Q69 50 55 56 Z" fill="#f4c74f"/>',
+    4:'<path d="M50 39 L73 29 L98 40 L74 49 Z" fill="#39495c"/><path d="M92 40 v17" stroke="#39495c" stroke-width="3"/><circle cx="93" cy="59" r="3" fill="#f0b94e"/><circle cx="61" cy="52" r="8" fill="none" stroke="#36495c" stroke-width="2"/><circle cx="80" cy="52" r="8" fill="none" stroke="#36495c" stroke-width="2"/><path d="M69 52 h4" stroke="#36495c" stroke-width="2"/>',
+    5:'<path d="M52 49 l7 -8 7 8 9 -7 7 9 -8 6 -8 -5 -7 6 Z" fill="#f48fb1"/><path d="M48 47 l8 -5 7 6 -7 7 Z M71 48 l8 -6 7 7 -8 6 Z" fill="#7b68d8"/><circle cx="106" cy="34" r="3" fill="#f4c74f"/><path d="M105 27 v14 M99 34 h14" stroke="#f4c74f" stroke-width="2"/>',
+    6:'<path d="M50 39 L57 24 L67 34 L76 20 L86 34 L97 24 L101 42 Z" fill="#f4c74f" stroke="#d69e2d" stroke-width="2"/><circle cx="58" cy="33" r="2.5" fill="#8d7be8"/><circle cx="76" cy="29" r="2.5" fill="#ef7f70"/><circle cx="96" cy="33" r="2.5" fill="#4eb89f"/><path d="M39 75 Q31 96 41 113 Q54 104 59 83 Z" fill="#8d4f77" opacity=".85"/>',
+    7:`<defs><radialGradient id="${gid}" cx="45%" cy="35%"><stop offset="0" stop-color="#b8f3e2"/><stop offset=".45" stop-color="#8d7be8"/><stop offset="1" stop-color="#354a70"/></radialGradient></defs><ellipse cx="68" cy="85" rx="35" ry="31" fill="url(#${gid})"/><path d="M48 38 L55 21 L66 33 L76 16 L87 33 L99 21 L104 42 Z" fill="#ffe27a" stroke="#cfa93b" stroke-width="2"/><circle cx="55" cy="30" r="3" fill="#ef7f70"/><circle cx="76" cy="24" r="3" fill="#55c7b0"/><circle cx="99" cy="30" r="3" fill="#9a86ef"/><ellipse cx="71" cy="52" rx="29" ry="24" fill="none" stroke="#dfd7ff" stroke-width="2" opacity=".8"/><circle cx="112" cy="55" r="2.5" fill="#f9dc74"/><circle cx="31" cy="62" r="2" fill="#f5a8c3"/><circle cx="105" cy="91" r="2" fill="#b8f3e2"/>`
+  }[p.style]||'';
+  const cosmic=p.style===7;
+  return `<svg viewBox="0 0 140 140" role="img" aria-label="${p.name}">
+    ${cosmic?'':`<path d="M42 99 L24 113 L48 111 Z" fill="#6f8090"/><path d="M52 104 L42 122 L62 112 Z" fill="#718594"/>
+    <ellipse cx="68" cy="85" rx="34" ry="31" fill="#8598a8"/>
+    <ellipse cx="58" cy="88" rx="22" ry="26" fill="#738797" transform="rotate(15 58 88)"/>
+    <ellipse cx="70" cy="58" rx="23" ry="24" fill="#88a4a2"/>
+    <circle cx="73" cy="45" r="22" fill="#91a4b3"/>`}
+    <path d="M91 47 L111 53 L92 59 Z" fill="#e8a948"/>
+    <circle cx="80" cy="41" r="5" fill="#fff"/><circle cx="81" cy="42" r="2.4" fill="#27394a"/>
+    <path d="M56 72 Q68 66 82 73" fill="none" stroke="#60b8a1" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+    <path d="M56 111 v13 M78 111 v13" stroke="#c3745f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M50 125 h12 M72 125 h12" stroke="#c3745f" stroke-width="3" stroke-linecap="round"/>
+    ${accessory}
+  </svg>`;
+}
+function renderPigeonShop(){
+  const shop=document.getElementById('pigeonShop');if(!shop||!state)return;
+  const available=availableXP(),owned=state.pigeons||{};
+  const sx=document.getElementById('shopXp'),ss=document.getElementById('shopSpent'),sf=document.getElementById('shopFlock');
+  if(sx)sx.textContent=available.toLocaleString()+' XP';if(ss)ss.textContent=(state.xpSpent||0).toLocaleString()+' XP';if(sf)sf.textContent=Object.keys(owned).filter(k=>owned[k]).length+' / '+PIGEONS.length;
+  shop.innerHTML='';
+  for(const p of PIGEONS){
+    const have=!!owned[p.id],fullLocked=p.requiresFull&&state.xp<FULL_XP_MILESTONE,canBuy=!have&&!fullLocked&&available>=p.price;
+    const card=el('div',{class:'pigeon-card '+(have?'owned':(!canBuy?'locked':''))});
+    card.append(el('span',{class:'rarity'},p.rarity));
+    const art=el('div',{class:'pigeon-art'});art.innerHTML=pigeonSVG(p);card.append(art);
+    card.append(el('h3',{},p.name),el('p',{},p.desc));
+    if(p.requiresFull)card.append(el('div',{class:'full-xp-note'},'Requires '+FULL_XP_MILESTONE.toLocaleString()+' lifetime XP — the full-course milestone.'));
+    const row=el('div',{class:'pigeon-price'}),price=el('strong',{},p.price.toLocaleString()+' XP');
+    let b;
+    if(have)b=el('button',{class:'btn mini secondary',disabled:true},'In your flock');
+    else if(fullLocked)b=el('button',{class:'btn mini',disabled:true},'Full XP required');
+    else if(available<p.price)b=el('button',{class:'btn mini',disabled:true},'Need '+(p.price-available).toLocaleString());
+    else {b=el('button',{class:'btn mini primary'},'Adopt');b.onclick=()=>buyPigeon(p.id)}
+    row.append(price,b);card.append(row);shop.append(card);
+  }
+}
+function buyPigeon(id){
+  const p=PIGEONS.find(x=>x.id===id);if(!p||state.pigeons?.[id])return;
+  if(p.requiresFull&&state.xp<FULL_XP_MILESTONE){toast('This pigeon waits for the full-course XP milestone.');return}
+  if(availableXP()<p.price){toast('Not enough spendable XP yet.');return}
+  state.xpSpent=(state.xpSpent||0)+p.price;state.pigeons=state.pigeons||{};state.pigeons[id]=true;save();
+  toast(p.name+' joined your flock.');
+}
+function renderHabitat(){
+  const habitat=document.getElementById('pigeonHabitat'),perch=document.getElementById('pigeonPerch');if(!habitat||!perch||!state)return;
+  const owned=PIGEONS.filter(p=>state.pigeons?.[p.id]);perch.innerHTML='';
+  if(!owned.length){habitat.classList.add('hidden');return}
+  habitat.classList.remove('hidden');
+  for(const p of owned){const bird=el('div',{class:'perch-bird',title:p.name});bird.innerHTML=pigeonSVG(p,true);perch.append(bird)}
+}
 
 // ---------- Utilities/settings ----------
 function el(tag,attrs={},text){const x=document.createElement(tag);for(const [k,v] of Object.entries(attrs)){if(k==='class')x.className=v;else if(k==='style')x.setAttribute('style',v);else if(k==='disabled')x.disabled=!!v;else x.setAttribute(k,v)}if(text!==undefined)x.textContent=text;return x}
