@@ -244,9 +244,11 @@ function renderLessonWord(){
   ];
   for(const e of encounters.slice(0,2)){
     const item=el('div',{class:'encounter'});
+    const phrase=el('div',{class:'encounter-phrase'});
+    phrase.append(el('span',{class:'encounter-try'},'Try it: '),document.createTextNode(e.phrase||('“'+word+'”')));
     item.append(
       el('div',{class:'encounter-label'},e.place||'In context'),
-      el('div',{class:'encounter-phrase'},e.phrase||('“'+word+'”'))
+      phrase
     );
     uses.append(item);
   }
