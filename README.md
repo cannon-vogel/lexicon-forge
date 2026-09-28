@@ -23,6 +23,17 @@ The bundled dataset contains definitions, etymology when available, examples, pr
 
 The static build audits all 537 entries for self-contained definitions. It penalizes secondary/context-dependent glosses, resolves inflected and spelling-variant forms into definitions of their base word, and uses curated overrides for high-risk ambiguous words such as `torpid`, `umbra`, `natty`, and `gabardine`. Modern-use suggestions are stored as short context labels rather than repeated paraphrases.
 
+## Teaching-definition pipeline
+
+The learning cards use a separate **teaching definition** and **quiz definition** rather than exposing raw dictionary glosses directly.
+
+- Polysemous words are scored for a common/useful sense and high-risk ambiguous entries have curated overrides.
+- Inflected and spelling-variant entries are resolved to semantic definitions rather than clues such as “past tense of …” or “variant of …”.
+- Quick-check clues are automatically checked so neither the answer nor a linked base/conjugate appears in the clue.
+- Examples are selected from the same sense as the teaching definition; selected ambiguous entries use reviewed examples.
+- “Where you might actually encounter it” gives two concrete contexts rather than generic statements about essays or conversation.
+- The generated `word_data.json` contains all of this content, so study sessions remain static and do not depend on live dictionary services.
+
 ## Source data
 
 - **108 source relations/questions** from the captured TakeTest full form.
