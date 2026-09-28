@@ -13,12 +13,13 @@
 <div class="shell">
   <header class="topbar">
     <div class="brand"><div class="mark">Lf</div><div><h1>Lexicon Forge</h1><div class="subtitle">Meet the word. Make connections. Then retrieve it.</div></div></div>
-    <div class="topstats"><span class="pill">Level <b id="levelTop">1</b></span><span class="pill">XP <b id="xpTop">0</b></span><span class="pill">Due <b id="dueTop">0</b></span></div>
+    <div class="topstats"><span class="pill">Level <b id="levelTop">1</b></span><span class="pill">Spendable XP <b id="xpTop">0</b></span><span class="pill">Due <b id="dueTop">0</b></span></div>
   </header>
   <nav aria-label="Primary">
     <button class="navbtn active" data-view="home">Home</button>
     <button class="navbtn" data-view="learn">Learn</button>
     <button class="navbtn" data-view="words">Word bank</button>
+    <button class="navbtn" data-view="pigeons">Pigeons</button>
     <button class="navbtn" data-view="settings">Progress</button>
   </nav>
 
@@ -88,6 +89,23 @@
       <div class="actions center"><button class="btn" id="moreWords">Show more</button></div>
     </section>
 
+    <section id="pigeons" class="view">
+      <div class="pigeon-hero card">
+        <div>
+          <div class="eyebrow">PIGEON PLAZA</div>
+          <h2>Spend XP on increasingly ridiculous little pigeons.</h2>
+          <p class="lede">XP you earn from learning stays part of your lifetime level, but a separate spendable balance pays for pigeons. Once bought, they perch at the edge of the screen while you study.</p>
+        </div>
+        <div class="pigeon-wallet">
+          <div><span>Available</span><strong id="shopXp">0 XP</strong></div>
+          <div><span>Spent</span><strong id="shopSpent">0 XP</strong></div>
+          <div><span>Flock</span><strong id="shopFlock">0 / 7</strong></div>
+        </div>
+      </div>
+      <div class="sectiontitle"><div><h3>The flock shop</h3><small>Every pigeon is original inline SVG art stored directly in the repository. The fanciest bird also requires the full-course XP milestone.</small></div></div>
+      <div id="pigeonShop" class="pigeon-shop"></div>
+    </section>
+
     <section id="settings" class="view">
       <div class="settingsgrid">
         <div class="card"><h3>Progress portability</h3><p class="lede">Everything stays in your browser. Export a small JSON backup to move progress between devices.</p><div class="actions"><button class="btn" id="exportBtn">Export progress</button><label class="btn filelabel">Import progress<input id="importInput" type="file" accept="application/json"></label></div></div>
@@ -98,6 +116,11 @@
   </main>
   <div class="footer">Source deck derived from the supplied TakeTest HAR capture. Lexical enrichment is prebuilt from Wiktionary-derived Kaikki/Wiktextract data and stored locally with the site.</div>
 </div>
+<aside id="pigeonHabitat" class="pigeon-habitat hidden" aria-label="Your pigeon flock">
+  <div class="habitat-label">your flock</div>
+  <div id="pigeonPerch" class="pigeon-perch"></div>
+  <div class="ledge"></div>
+</aside>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="app.js" defer></script>
 </body>
