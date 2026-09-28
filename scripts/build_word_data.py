@@ -1131,6 +1131,51 @@ def etymology_brief(word, entries, entry, raw_gloss):
         return brief
     return "No reliable deeper origin is included in the bundled dictionary source."
 
+SUFFIX_HINTS = {
+    "-ly":"forms an adverb describing manner",
+    "-ness":"forms a noun for a state or quality",
+    "-ity":"forms a noun for a state or quality",
+    "-cy":"forms a noun for a state or condition",
+    "-er":"often marks a person or thing that performs an action",
+    "-or":"often marks a person or thing that performs an action",
+    "-ist":"often marks a person associated with an activity or idea",
+    "-ive":"forms an adjective meaning tending to or characterized by",
+    "-ic":"forms an adjective meaning relating to",
+    "-al":"forms an adjective meaning relating to",
+    "-ous":"forms an adjective meaning having the quality of",
+    "-ful":"means full of or characterized by",
+    "-less":"means without or lacking",
+    "-able":"means capable of or able to be",
+    "-ible":"means capable of or able to be",
+    "-ion":"forms an action or process noun",
+    "-ation":"forms an action or process noun",
+    "-ism":"forms a noun for a system, practice, or doctrine",
+    "-y":"often forms an adjective meaning characterized by",
+}
+
+def ensure_expanded_etymology(word, brief, raw_ety, raw_gloss):
+    """Never leave the learner with only 'X + suffix'; explain the base or suffix."""
+    if word in ETYMOLOGY_OVERRIDES:
+        return brief
+    b=clean(brief)
+    if not re.match(r"^(?:From|Built from)\s+\S+\s+\+\s+-[^.]+\.$",b,re.I):
+        return b
+    base,suffix=derivational_info(word,raw_ety,raw_gloss)
+    if not base:
+        return b
+    base_gloss,base_raw=base_word_info(base)
+    bg=clean(base_gloss).rstrip(".")
+    if len(bg)>90:
+        bg=bg[:87].rsplit(" ",1)[0]+"…"
+    lead=f"Built from {base}" + (f" (“{bg}”)" if bg else "") + (f" + {suffix}" if suffix else "") + "."
+    origin=origin_for_base(base)
+    if origin and not re.match(r"^(?:From|Built from)\s+"+re.escape(base)+r"\s+\+\s+-[^.]+\.$",origin,re.I):
+        return (lead+" "+origin)[:520]
+    hint=SUFFIX_HINTS.get(suffix)
+    if hint:
+        return f"{lead} The suffix {suffix} {hint}; the base word supplies the core meaning."
+    return lead+" The base word supplies the core meaning."
+
 def phrase_from_example(word, example):
     e=clean(example)
     if not e or e.startswith(("In context,", "The writer chose", "The description was", "In this vocabulary set")):
