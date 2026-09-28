@@ -1565,6 +1565,11 @@ def main():
     }
     (ROOT/"word_data_stats.json").write_text(json.dumps(cov,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(cov,indent=2))
+    # Never commit a partial fallback build. The finished site is deliberately
+    # self-contained, so a transient source failure should leave the previous
+    # complete dataset intact rather than silently degrading it.
+    if failures:
+        raise RuntimeError(f"Static lexical build incomplete: {len(failures)} failed entries")
 
 if __name__=="__main__":
     main()
