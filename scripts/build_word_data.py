@@ -322,6 +322,11 @@ DEFINITION_OVERRIDES.update({
     "vacuole": "A membrane-bound sac inside a cell used for storage, waste handling, or water balance; more generally, a small cavity."
 })
 
+DEFINITION_OVERRIDES.update({
+    "ax": "A chopping tool with a heavy bladed head on a handle; figuratively, a dismissal or cut.",
+    "soya": "The soybean plant or foods and products made from its beans, especially in British usage."
+})
+
 MODERN_CONTEXT_OVERRIDES = {
     "gendarme": [
         "French news or travel writing — referring to officers of the national gendarmerie.",
