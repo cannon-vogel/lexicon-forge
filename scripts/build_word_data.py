@@ -3,6 +3,7 @@ import csv, json, re, time, urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 import requests
+from functools import lru_cache
 
 ROOT = Path(__file__).resolve().parents[1]
 # Build marker: definition-audit final
@@ -508,6 +509,175 @@ EXAMPLE_OVERRIDES = {
     "conniption": "He nearly had a conniption when he saw the repair estimate."
 }
 
+
+ETYMOLOGY_OVERRIDES = {
+    "gendarme": "From French gendarme, shortened from gens d’armes, literally “people of arms.” The gens element is the same old “people/kind” family seen in words such as genteel and gentle.",
+    "gabardine": "The fabric name is an early-1900s reshaping of gaberdine, an older word for a coarse outer garment. The older form travelled through Spanish and French and was associated with a traveller’s or pilgrim’s cloak.",
+    "torpid": "From Latin torpidus, “numb” or “sluggish,” from torpere, “to be numb or inactive.” The same root appears in torpor.",
+    "umbra": "Directly from Latin umbra, “shadow.” Penumbra adds Latin paene, “almost,” giving the useful pair umbra / penumbra.",
+    "systolic": "From Greek systolē, “contraction” or “drawing together.” The same root gives systole, the contraction phase of the heartbeat.",
+    "skiffle": "The musical sense developed in the 20th century from an older word associated with light, improvised entertainment. In Britain it became the name for folk/blues music played on simple or homemade instruments.",
+    "verisimilitude": "From Latin veri similitudo, literally “likeness to truth”: verus means “true” and similitudo means “likeness.” Compare verity and similar.",
+    "pyrrhic": "Named for King Pyrrhus of Epirus, whose costly victories against Rome inspired the phrase “Pyrrhic victory”: a success bought at ruinous cost.",
+    "rapport": "Borrowed from French rapport, “relationship” or “connection,” from rapporter, “to bring back / relate.” It is in the same broad word-family as report.",
+    "détente": "Borrowed from French détente, “relaxation” or “release of tension,” from détendre, “to loosen.” English uses it especially for easing political tension.",
+    "detente": "Borrowed from French détente, “relaxation” or “release of tension,” from détendre, “to loosen.” English uses it especially for easing political tension.",
+    "morass": "Borrowed through Dutch/French forms for marshy ground. The literal sense of a bog or swamp produced the figurative sense of a complicated situation that is hard to escape.",
+    "conniption": "An American English word from the 19th century. Its deeper origin is uncertain, but it has long meant a fit of agitation, anger, or panic.",
+    "pithiness": "Built from pithy + -ness. Pithy comes from pith, the dense core of a plant stem, which developed the figurative sense “the essential substance” of something.",
+    "vicissitude": "From French vicissitude and Latin vicissitudo, “change” or “alternation.” The Latin root for change/turning is also visible in vice versa.",
+    "vociferous": "From Latin vox, “voice,” + ferre, “to carry”: literally something like “voice-carrying.” The vox root is also behind vocal and voice.",
+    "ward": "From Old English weard, “guarding, protection.” It belongs to the same old Germanic family as wary; guard is a parallel form that entered English through French.",
+    "wastrel": "Built from waste + the disparaging suffix -rel in the 19th century: literally a person characterized by wasting.",
+    "weighty": "Built from weight + -y. The literal idea of heaviness developed the figurative sense “important” or “serious,” as in a weighty argument.",
+    "zaniness": "Built from zany + -ness. Zany ultimately comes from Italian Zanni, a stock comic servant in commedia dell’arte, which explains the sense of wild comic absurdity.",
+    "allayed": "The base word allay came through Old French with the sense “to soften, lessen, or calm.” Its history is closely related in meaning to words such as alleviate.",
+    "ambulated": "The base ambulate comes from Latin ambulare, “to walk about.” The same walking root appears in ambulatory and perambulate.",
+    "acmes": "The singular acme comes from Greek akmē, “point, edge, highest point,” which naturally developed the sense “peak” or “culmination.”",
+    "ax": "This is the common American spelling of axe. The word is ancient Germanic, going back through Old English æx; cognates occur across Germanic languages.",
+    "soya": "Soya is a British variant of soy. English borrowed the word through Dutch soja from Japanese, ultimately connected with the East Asian word for soy sauce.",
+    "turnbuckle": "A transparent English compound of turn + buckle: turning the central body draws the threaded ends inward or outward to change tension.",
+    "millinery": "From milliner, originally a trader in fashionable goods associated with Milan. The word later narrowed to the making and selling of hats.",
+    "hostelry": "From Middle English and Old French forms meaning an inn or lodging place; it is closely related to hostel and ultimately to the same hospitality word-family.",
+    "catatonia": "Coined in 19th-century medical German from Greek roots meaning roughly “down/tight tension.” It entered international psychiatric vocabulary from German Katatonie.",
+    "jaunty": "Related historically to genteel/gentle through French gentil. Its modern sense shifted toward a lively, stylish, self-confident manner.",
+    "cask": "The modern barrel sense is old in English, though the deeper history is uncertain and has competing proposals. It is not etymologically just a shortened form of another modern English word.",
+    "chamois": "Borrowed from French chamois, the name of the Alpine goat-antelope. The leather and cleaning-cloth senses come from the animal’s hide.",
+    "tintype": "A 19th-century American compound of tin + type. Despite the name, the photographic plate was usually iron rather than tin.",
+    "plebiscite": "From Latin plebis scitum, literally “decree of the common people”: plebs means “the common people.” Compare plebeian.",
+    "philanthropy": "From Greek philanthrōpia, “love of humanity,” built from philos, “loving,” + anthrōpos, “human being.” Compare anthropological words such as anthropology.",
+    "demurrer": "From Anglo-Norman / Old French demurrer, “to remain, delay.” In law it became the name for an objection that stops a case at the pleading stage.",
+    "egregious": "From Latin egregius, literally “standing out from the flock” (ex, “out of,” + grex, “flock”). It once meant outstanding in a good sense before becoming strongly negative.",
+    "quiddity": "From Medieval Latin quidditas, built on quid, “what?”: literally the “what-ness” or essential nature of a thing.",
+    "ineffable": "From Latin ineffabilis, “unspeakable,” from in- “not” + effari “to speak out.” The same basic idea survives directly in its modern meaning.",
+    "perspicacious": "From Latin perspicax, “sharp-sighted, discerning,” from perspicere, “to look through.” It is related to perspective and perspicuity.",
+    "lugubrious": "From Latin lugubris, “mournful,” from lugere, “to mourn.” English has preserved the strongly gloomy sense.",
+    "mendacity": "From Latin mendacitas, “falsehood,” built from mendax, “lying.” It belongs to the same Latin family as mendacious.",
+    "aplomb": "Borrowed from French à plomb, literally “according to the plumb line.” Physical upright balance became the figurative sense of confident composure.",
+    "bonhomie": "Borrowed from French bonhomie, from bon homme, literally “good man.” The phrase developed the sense of warm, easy good nature.",
+    "canard": "Borrowed from French canard, literally “duck,” which also developed the French sense “hoax / false story.” English borrowed that figurative sense.",
+    "prestidigitation": "From French prestidigitation, built from roots for “quick” and “finger.” The structure points directly to sleight-of-hand magic.",
+    "somnambulistic": "Built on somnambulism, from Latin somnus, “sleep,” + ambulare, “to walk.” Compare ambulate: both contain the Latin walking root.",
+    "intrauterine": "Built from intra-, “within,” + uterine, “of the uterus.” The structure literally means “within the uterus.”",
+    "oxyacetylene": "A transparent chemical compound of oxy- (oxygen) + acetylene, naming a fuel-gas mixture of oxygen and acetylene.",
+    "misogamist": "Built from Greek misos, “hatred,” + gamos, “marriage,” + -ist: literally a person opposed to marriage. Compare monogamy and polygamy for the gamos root.",
+    "primogenitary": "Built on primogeniture, from Latin primus, “first,” + genitura, “birth.” The root structure points to inheritance by the firstborn.",
+    "perambulation": "From Latin perambulare, “to walk through,” from per-, “through,” + ambulare, “to walk.” Compare ambulate and ambulatory.",
+    "genuflect": "From Medieval Latin genuflectere, “to bend the knee,” from genu, “knee,” + flectere, “to bend.” Compare flex / inflection for the bending root.",
+    "circumstantial": "From Latin circumstantia, “surrounding condition,” from circum, “around,” + stare, “to stand.”",
+}
+
+ENCOUNTER_OVERRIDES = {
+    "gendarme": [
+        {"place":"French news report or police procedural","phrase":"“a gendarme waved the cars through”"},
+        {"place":"Travel writing about rural France","phrase":"“the local gendarmes arrived first”"}
+    ],
+    "gabardine": [
+        {"place":"Vintage clothing listing","phrase":"“a navy gabardine trench coat”"},
+        {"place":"Costume-museum label","phrase":"“tailored in wool gabardine”"}
+    ],
+    "torpid": [
+        {"place":"Field guide or nature documentary","phrase":"“the cold lizard remained torpid”"},
+        {"place":"Political or institutional commentary","phrase":"“a torpid response to the crisis”"}
+    ],
+    "umbra": [
+        {"place":"Eclipse map or astronomy article","phrase":"“inside the Moon’s umbra”"},
+        {"place":"Optics textbook diagram","phrase":"“the central umbra and outer penumbra”"}
+    ],
+    "systolic": [
+        {"place":"Blood-pressure reading at a clinic","phrase":"“a systolic pressure of 118 mmHg”"},
+        {"place":"Cardiology or physiology textbook","phrase":"“during systolic contraction”"}
+    ],
+    "skiffle": [
+        {"place":"British music-history documentary","phrase":"“the 1950s skiffle boom”"},
+        {"place":"Record review or museum exhibit","phrase":"“a skiffle band with washboard and guitar”"}
+    ],
+    "verisimilitude": [
+        {"place":"Film or book review","phrase":"“the period detail adds verisimilitude”"},
+        {"place":"Historical-game criticism","phrase":"“verisimilitude without strict realism”"}
+    ],
+    "pyrrhic": [
+        {"place":"War or political analysis","phrase":"“a Pyrrhic victory at enormous cost”"},
+        {"place":"Sports column","phrase":"“a Pyrrhic win that exhausted the roster”"}
+    ],
+    "rapport": [
+        {"place":"Therapy, interviewing, or teaching notes","phrase":"“build rapport before asking difficult questions”"},
+        {"place":"Workplace profile","phrase":"“she had an easy rapport with the team”"}
+    ],
+    "morass": [
+        {"place":"Business or policy commentary","phrase":"“a morass of permits and appeals”"},
+        {"place":"Nature writing","phrase":"“the trail ended in a muddy morass”"}
+    ],
+    "conniption": [
+        {"place":"Informal American conversation","phrase":"“he had a conniption over the bill”"},
+        {"place":"Comic fiction","phrase":"“she nearly had a conniption”"}
+    ],
+    "turnbuckle": [
+        {"place":"Rigging or fencing hardware instructions","phrase":"“tighten the turnbuckle until the cable is taut”"},
+        {"place":"Sailing manual","phrase":"“adjust the stay with the turnbuckle”"}
+    ],
+    "millinery": [
+        {"place":"Costume department or fashion museum","phrase":"“the production hired a millinery specialist”"},
+        {"place":"Vintage department-store history","phrase":"“the millinery department was upstairs”"}
+    ],
+    "plebiscite": [
+        {"place":"Constitutional-history article","phrase":"“the territory held a plebiscite on sovereignty”"},
+        {"place":"International news explainer","phrase":"“a nationwide plebiscite on the proposal”"}
+    ],
+    "catatonia": [
+        {"place":"Psychiatry note or hospital handoff","phrase":"“the team evaluated her for catatonia”"},
+        {"place":"Medical news article","phrase":"“catatonia can include mutism and immobility”"}
+    ],
+    "jaunty": [
+        {"place":"Fashion review","phrase":"“a jaunty hat tilted to one side”"},
+        {"place":"Character description in a novel","phrase":"“he walked in with a jaunty step”"}
+    ],
+    "cask": [
+        {"place":"Whisky label or distillery tour","phrase":"“matured for twelve years in an oak cask”"},
+        {"place":"Beer review","phrase":"“a traditional cask ale”"}
+    ],
+    "hostelry": [
+        {"place":"Historical travel writing","phrase":"“a roadside hostelry for weary travelers”"},
+        {"place":"Older novel or local-history book","phrase":"“the village’s last surviving hostelry”"}
+    ],
+    "tintype": [
+        {"place":"Photography museum label","phrase":"“an 1860s tintype portrait”"},
+        {"place":"Antiques listing","phrase":"“a small tintype in a leather case”"}
+    ],
+    "demurrer": [
+        {"place":"Civil-procedure textbook or court filing","phrase":"“the defendant filed a demurrer”"},
+        {"place":"Legal news report","phrase":"“the judge overruled the demurrer”"}
+    ],
+    "pithiness": [
+        {"place":"Editor’s margin note","phrase":"“keep the pithiness of the opening line”"},
+        {"place":"Speech or book review","phrase":"“the slogan’s pithiness made it memorable”"}
+    ],
+    "vicissitude": [
+        {"place":"Literary essay or biography","phrase":"“the vicissitudes of a long career”"},
+        {"place":"Historical writing","phrase":"“through every vicissitude of the war”"}
+    ],
+    "vociferous": [
+        {"place":"News report on a public meeting","phrase":"“vociferous opposition from residents”"},
+        {"place":"Book or theater review","phrase":"“a vociferous crowd in the final scene”"}
+    ],
+    "waddle": [
+        {"place":"Zoo sign or nature story","phrase":"“the penguins waddle toward the water”"},
+        {"place":"Humorous character description","phrase":"“he waddled across the room”"}
+    ],
+    "ward": [
+        {"place":"Hospital sign or chart","phrase":"“admitted to the surgical ward”"},
+        {"place":"Court or guardianship document","phrase":"“a ward of the state”"}
+    ],
+    "weighty": [
+        {"place":"Editorial or book review","phrase":"“a weighty argument about responsibility”"},
+        {"place":"Formal speech","phrase":"“a weighty decision with lasting consequences”"}
+    ],
+    "zaniness": [
+        {"place":"Comedy review","phrase":"“the show’s cheerful zaniness”"},
+        {"place":"Animation or game criticism","phrase":"“lean into the visual zaniness”"}
+    ]
+}
+
 def urls(word):
     q = urllib.parse.quote
     a = q(word[0].lower(), safe="")
@@ -518,6 +688,7 @@ def urls(word):
         f"https://kaikki.org/dictionary/All%20languages%20combined/meaning/{a}/{b}/{w}.jsonl",
     ]
 
+@lru_cache(maxsize=2048)
 def get_jsonl(word):
     s = requests.Session()
     s.headers.update({"User-Agent": UA, "Accept": "application/json,text/plain,*/*"})
@@ -720,6 +891,184 @@ def related_words(entry, sense):
             if w and w not in vals: vals.append(w)
     return vals[:12]
 
+
+LANGUAGE_RE = re.compile(
+    r"\b(Middle English|Old English|Late Middle English|Anglo-Norman|Middle French|Old French|French|Late Latin|Medieval Latin|New Latin|Latin|Ancient Greek|Greek|Old Norse|Old High German|Middle High German|German|Middle Dutch|Old Dutch|Dutch|Italian|Spanish|Portuguese|Arabic|Persian|Japanese|Sanskrit|Proto-West Germanic|Proto-Germanic|Proto-Indo-European)\s+([*A-Za-zÀ-žĀ-žÆæŒœØøÞþÐðʾʿ'’.-]+)(?:\s*\([“\"]([^”\"]{1,80})[”\"]\))?",
+    re.I
+)
+
+def best_raw_etymology(entries, preferred):
+    t=clean((preferred or {}).get("etymology_text") or "")
+    if t:
+        return t
+    for e in entries or []:
+        t=clean(e.get("etymology_text") or "")
+        if t:
+            return t
+    return ""
+
+def derivational_info(word, raw_ety, raw_gloss):
+    lemma=form_reference(raw_gloss)
+    if lemma:
+        return lemma, ""
+    m=re.match(r"^(?:From|Equivalent to)\s+([A-Za-z][A-Za-z'’-]*)\s+\+\s+(-[A-Za-z-]+)", clean(raw_ety), re.I)
+    if m and normalize_word(m.group(1))!=normalize_word(word):
+        return clean(m.group(1)), clean(m.group(2))
+    return "", ""
+
+def base_word_info(base):
+    if not base:
+        return "", ""
+    entries,_=get_jsonl(base)
+    if not entries:
+        return "", ""
+    entry,sense=pick_entry(entries,base,{"definitions":[],"neighbors":[]})
+    gloss=sense_gloss(sense)
+    raw=best_raw_etymology(entries,entry)
+    return clean(gloss), clean(raw)
+
+def concise_origin(raw, max_chars=300):
+    t=clean_etymology_text(raw)
+    if not t:
+        return ""
+    # Remove long afterthought sections that are useful to lexicographers but noisy for learners.
+    t=re.split(r"\b(?:Cognates?|Further reading|References?|Etymology note)\b",t,maxsplit=1,flags=re.I)[0].strip(" ;")
+    matches=[]
+    for m in LANGUAGE_RE.finditer(t):
+        lang=m.group(1)
+        form=m.group(2)
+        gloss=clean(m.group(3) or "")
+        key=(lang.lower(),form.lower())
+        if key not in {(x[0].lower(),x[1].lower()) for x in matches}:
+            matches.append((lang,form,gloss))
+    if len(matches)>=2:
+        first=matches[0]; last=matches[-1]
+        a=f"{first[0]} {first[1]}" + (f" (“{first[2]}”)" if first[2] else "")
+        b=f"{last[0]} {last[1]}" + (f" (“{last[2]}”)" if last[2] else "")
+        out=f"From {a}, ultimately from {b}."
+        return out[:max_chars]
+    # First sentence is usually enough once trees/cognate catalogues are removed.
+    sent=re.split(r"(?<=[.!?])\s+",t)[0]
+    if len(sent)<=max_chars:
+        return sent
+    cut=sent[:max_chars].rsplit(",",1)[0].rsplit(";",1)[0].strip()
+    return (cut if len(cut)>80 else sent[:max_chars].rstrip())+"…"
+
+def etymology_brief(word, entries, entry, raw_gloss):
+    if word in ETYMOLOGY_OVERRIDES:
+        return ETYMOLOGY_OVERRIDES[word]
+    raw=best_raw_etymology(entries,entry)
+    base,suffix=derivational_info(word,raw,raw_gloss)
+    if base:
+        base_gloss,base_raw=base_word_info(base)
+        origin=concise_origin(base_raw)
+        gloss_part=""
+        if base_gloss:
+            bg=clean(base_gloss).rstrip(".")
+            if len(bg)>100: bg=bg[:97].rsplit(" ",1)[0]+"…"
+            gloss_part=f" (“{bg}”)"
+        if suffix:
+            lead=f"Built from {base}{gloss_part} + {suffix}."
+        else:
+            lead=f"The base word is {base}{gloss_part}."
+        if origin:
+            # Avoid a second bare morphology statement such as “From base + -ness.”
+            if re.match(r"^(?:From|Equivalent to)\s+"+re.escape(base)+r"\s+\+\s+-",origin,re.I):
+                _,_,deeper=base_word_info(base)
+                origin=concise_origin(deeper)
+            if origin:
+                return f"{lead} {origin}"
+        return lead+" The bundled dictionary source does not give a deeper origin."
+    brief=concise_origin(raw)
+    if brief:
+        return brief
+    return "No reliable deeper origin is included in the bundled dictionary source."
+
+def phrase_from_example(word, example):
+    e=clean(example)
+    if not e or e.startswith(("In context,", "The writer chose", "The description was", "In this vocabulary set")):
+        return ""
+    m=re.search(r"\b"+re.escape(word)+r"\b",e,re.I)
+    if not m:
+        return ""
+    before=e[:m.start()].split()
+    after=e[m.end():].split()
+    chunk=" ".join(before[-5:]+[e[m.start():m.end()]]+after[:6]).strip(" ,;:")
+    if len(chunk)>105:
+        chunk=chunk[:102].rsplit(" ",1)[0]+"…"
+    return "“"+chunk.rstrip(".")+"”"
+
+def generic_phrase(word, pos, definition, index=0):
+    p=(pos or "").lower()
+    d=clean(definition).lower()
+    if p in ("adj","adjective"):
+        return f"“a {word} response”" if index==0 else f"“the tone felt {word}”"
+    if p in ("adv","adverb"):
+        return f"“answered {word}”" if index==0 else f"“moved {word} through the scene”"
+    if p=="verb":
+        if word.endswith("ed"):
+            return f"“concerns were {word}”" if any(k in d for k in ("calm","reliev","less intense","reduce")) else f"“they had {word} by then”"
+        if word.endswith("ing"):
+            return f"“kept {word} through the scene”"
+        return f"“to {word} rather than wait”"
+    # noun-ish fallbacks; choose syntax that works for count and mass nouns alike.
+    if word.endswith("s") and not word.endswith(("ss","us")):
+        return f"“the {word} described in the report”"
+    return f"“the word {word} in context”"
+
+def encounter_cards(word, definition, pos, labels, example):
+    if word in ENCOUNTER_OVERRIDES:
+        return ENCOUNTER_OVERRIDES[word]
+    d=clean(definition).lower()
+    rare=any(x in (labels or []) for x in ("archaic","obsolete","rare","dated","historical","literary"))
+    domains=[
+        (("fabric","cloth","garment","hat","tailor","wool","cotton","dress","coat","shoe"),
+         ["Vintage clothing listing","Costume-museum or fashion-history label"]),
+        (("heart","blood","vein","lung","bone","muscle","organ","tissue","medical","disease","surgical","uterus","anatom","psychiatr"),
+         ["Medical chart or clinic handout","Anatomy / physiology textbook"]),
+        (("gene","chromosome","cell","protein","species","animal","bird","insect","fish","plant","biology","axon"),
+         ["Biology textbook or lab handout","Field guide or science-museum label"]),
+        (("chemical","compound","polymer","acid","carbon","oxide","mineral","molten"),
+         ["Chemistry or materials-science lab manual","Technical datasheet or geology text"]),
+        (("law","legal","court","crime","government","vote","treaty","policy","trustee"),
+         ["Court filing / legal explainer","Newspaper public-affairs article"]),
+        (("money","coin","fund","debt","business","market","insured","finance"),
+         ["Insurance policy or financial statement","Business-news article"]),
+        (("language","speech","grammar","pronoun","syllable","vowel","consonant","linguist"),
+         ["Grammar / linguistics textbook","Editor’s note or literary analysis"]),
+        (("music","note","sung","instrument","song","melody"),
+         ["Album review or concert program","Music-history textbook"]),
+        (("food","dish","meal","cook","meat","sauce","drink","bread","stew","herb"),
+         ["Restaurant menu or food review","Cookbook or culinary-history article"]),
+        (("weapon","ammunition","firearm","sword","military","soldier","battle","war"),
+         ["Military-museum label","Historical nonfiction or reenactment guide"]),
+        (("marriage","religious","church","priest","theolog","angel","worship","divine"),
+         ["Religion / theology textbook","Church-history or museum exhibit"]),
+        (("room","building","roof","architecture","railroad","track","cable","road","soil","construction"),
+         ["Engineering / maintenance manual","Architecture or infrastructure description"]),
+        (("emotion","mood","behavior","foolish","stubborn","cheerful","angry","calm","style","manner"),
+         ["Novel or character profile","Book / film review"]),
+    ]
+    places=None
+    for keys,p in domains:
+        if any(re.search(r"\b"+re.escape(k)+r"\w*\b",d) for k in keys):
+            places=p; break
+    if not places:
+        if rare:
+            places=["Historical novel or archival document","Literary commentary on older language"]
+        elif (pos or "").lower() in ("adj","adjective","adv","adverb"):
+            places=["Book / film review","Character description in fiction"]
+        elif (pos or "").lower()=="verb":
+            places=["Narrative nonfiction or news feature","Novel or memoir"]
+        else:
+            places=["Feature article or nonfiction book","Specialist textbook / museum label"]
+    ex_phrase=phrase_from_example(word,example)
+    p1=ex_phrase or generic_phrase(word,pos,definition,0)
+    p2=generic_phrase(word,pos,definition,1)
+    if p2==p1:
+        p2=f"“{word}”"
+    return [{"place":places[0],"phrase":p1},{"place":places[1],"phrase":p2}]
+
 def clean_etymology_text(text):
     t=clean(text)
     if not t: return ""
@@ -839,7 +1188,9 @@ def build_one(word):
         source_definition=src["definitions"][0]
     else:
         source_definition=""
-    ety=clean_etymology_text(entry.get("etymology_text") or "")
+    raw_ety=best_raw_etymology(entries,entry)
+    ety=clean_etymology_text(raw_ety)
+    ety_brief=etymology_brief(word,entries,entry,raw_gloss)
     ex,exref=example_from(word,sense,entry)
     pos=clean(entry.get("pos") or "")
     ipas,audio=pronunciation(entry)
@@ -857,6 +1208,7 @@ def build_one(word):
         "sourceDefinition":source_definition,
         "partOfSpeech":pos,
         "etymology":ety,
+        "etymologyBrief":ety_brief,
         "example":ex,
         "exampleCitation":exref,
         "ipa":ipas,
@@ -868,6 +1220,7 @@ def build_one(word):
         "courseSynonyms":src.get("neighbors",[]),
         "courseCue":source_definition,
         "modernUses":modern_uses(word, definition, pos, labels),
+        "encounters":encounter_cards(word,definition,pos,labels,ex),
         "sourceQuestions":src.get("questions",[]),
         "kaikkiUrl":url or "",
         "definitionQuality":{
@@ -898,12 +1251,14 @@ def main():
                     "rawDictionaryDefinition":"","linkedLemma":"",
                     "sourceDefinition":(src.get("definitions") or [""])[0],
                     "partOfSpeech":"","etymology":"",
+                    "etymologyBrief":"No reliable deeper origin is included in the bundled dictionary source.",
                     "example":fallback_example(w,(src.get("definitions") or [""])[0],""),
                     "exampleCitation":"","ipa":[],"audio":"","synonyms":[],"related":[],
                     "usageLabels":[],"sourceNeighbors":src.get("neighbors",[]),
                     "courseSynonyms":src.get("neighbors",[]),
                     "courseCue":(src.get("definitions") or [""])[0],
                     "modernUses":modern_uses(w,(src.get("definitions") or [""])[0],"",[]),
+                    "encounters":encounter_cards(w,(src.get("definitions") or [""])[0],"",[],fallback_example(w,(src.get("definitions") or [""])[0],"")),
                     "sourceQuestions":src.get("questions",[]),"kaikkiUrl":"","entryAvailable":False
                 }
             done+=1
@@ -921,6 +1276,7 @@ def main():
       "entries":sum(1 for x in ordered.values() if x["entryAvailable"]),
       "definitions":sum(1 for x in ordered.values() if x["definition"]),
       "etymologies":sum(1 for x in ordered.values() if x["etymology"]),
+      "etymology_briefs":sum(1 for x in ordered.values() if x.get("etymologyBrief")),
       "examples":sum(1 for x in ordered.values() if x["example"]),
       "core":len(core),
       "core_entries":sum(1 for w in core if ordered[w]["entryAvailable"]),
