@@ -324,6 +324,7 @@ DEFINITION_OVERRIDES.update({
 })
 
 DEFINITION_OVERRIDES.update({
+    "ammonic": "Relating to the cornu ammonis, an older anatomical name for the hippocampal formation of the brain.",
     "ax": "A chopping tool with a heavy bladed head on a handle; figuratively, a dismissal or cut.",
     "soya": "The soybean plant or foods and products made from its beans, especially in British usage."
 })
