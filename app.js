@@ -428,28 +428,47 @@ document.getElementById('wordSearch').oninput=()=>{wordRandom=null;wordPage=60;r
 // ---------- Pigeon Plaza ----------
 function pigeonSVG(p,small=false){
   const gid='pg_'+p.id;
-  const accessory={
-    1:'<circle cx="22" cy="111" r="4" fill="#d8a950"/><circle cx="30" cy="116" r="3" fill="#e5bd69"/><circle cx="16" cy="118" r="2.7" fill="#c99342"/>',
-    2:'<path d="M48 55 Q67 67 87 57" fill="none" stroke="#ef7f70" stroke-width="9" stroke-linecap="round"/><path d="M79 61 l16 20" stroke="#ef7f70" stroke-width="8" stroke-linecap="round"/>',
-    3:'<path d="M43 70 Q68 58 94 72 L101 105 Q71 120 38 104 Z" fill="#f4c74f" opacity=".95"/><path d="M52 49 Q70 35 87 49 L84 55 Q69 50 55 56 Z" fill="#f4c74f"/>',
-    4:'<path d="M50 39 L73 29 L98 40 L74 49 Z" fill="#39495c"/><path d="M92 40 v17" stroke="#39495c" stroke-width="3"/><circle cx="93" cy="59" r="3" fill="#f0b94e"/><circle cx="61" cy="52" r="8" fill="none" stroke="#36495c" stroke-width="2"/><circle cx="80" cy="52" r="8" fill="none" stroke="#36495c" stroke-width="2"/><path d="M69 52 h4" stroke="#36495c" stroke-width="2"/>',
-    5:'<path d="M52 49 l7 -8 7 8 9 -7 7 9 -8 6 -8 -5 -7 6 Z" fill="#f48fb1"/><path d="M48 47 l8 -5 7 6 -7 7 Z M71 48 l8 -6 7 7 -8 6 Z" fill="#7b68d8"/><circle cx="106" cy="34" r="3" fill="#f4c74f"/><path d="M105 27 v14 M99 34 h14" stroke="#f4c74f" stroke-width="2"/>',
-    6:'<path d="M50 39 L57 24 L67 34 L76 20 L86 34 L97 24 L101 42 Z" fill="#f4c74f" stroke="#d69e2d" stroke-width="2"/><circle cx="58" cy="33" r="2.5" fill="#8d7be8"/><circle cx="76" cy="29" r="2.5" fill="#ef7f70"/><circle cx="96" cy="33" r="2.5" fill="#4eb89f"/><path d="M39 75 Q31 96 41 113 Q54 104 59 83 Z" fill="#8d4f77" opacity=".85"/>',
-    7:`<defs><radialGradient id="${gid}" cx="45%" cy="35%"><stop offset="0" stop-color="#b8f3e2"/><stop offset=".45" stop-color="#8d7be8"/><stop offset="1" stop-color="#354a70"/></radialGradient></defs><ellipse cx="68" cy="85" rx="35" ry="31" fill="url(#${gid})"/><path d="M48 38 L55 21 L66 33 L76 16 L87 33 L99 21 L104 42 Z" fill="#ffe27a" stroke="#cfa93b" stroke-width="2"/><circle cx="55" cy="30" r="3" fill="#ef7f70"/><circle cx="76" cy="24" r="3" fill="#55c7b0"/><circle cx="99" cy="30" r="3" fill="#9a86ef"/><ellipse cx="71" cy="52" rx="29" ry="24" fill="none" stroke="#dfd7ff" stroke-width="2" opacity=".8"/><circle cx="112" cy="55" r="2.5" fill="#f9dc74"/><circle cx="31" cy="62" r="2" fill="#f5a8c3"/><circle cx="105" cy="91" r="2" fill="#b8f3e2"/>`
+  const palette={
+    1:['#91a3b2','#7f929f','#67b59f'],
+    2:['#9aa9b8','#8798a5','#69b8a4'],
+    3:['#8fa3b5','#7c91a0','#67b59f'],
+    4:['#93a5b4','#7e929f','#69b8a4'],
+    5:['#8d9fb4','#75899f','#6ec1ad'],
+    6:['#8d9cb0','#74869a','#63b5a2'],
+    7:['#8d7be8','#5d69a9','#69d0b2']
+  }[p.style]||['#91a3b2','#7f929f','#67b59f'];
+  const [body,wing,neck]=palette;
+  const defs=p.style===7?`<defs><radialGradient id='${gid}_body' cx='40%' cy='28%'><stop offset='0' stop-color='#baf2e4'/><stop offset='.48' stop-color='#8d7be8'/><stop offset='1' stop-color='#465783'/></radialGradient></defs>`:'';
+  const bodyFill=p.style===7?`url(#${gid}_body)`:body;
+  const behind={
+    3:`<path d='M48 79 Q80 62 112 79 L118 117 Q80 137 42 117 Z' fill='#f2c84f' opacity='.98'/>`,
+    6:`<path d='M43 78 Q31 103 45 128 L61 116 L80 130 L99 116 L116 128 Q129 103 117 78 Q102 90 80 91 Q58 90 43 78 Z' fill='#7b4f7e' opacity='.9'/>`
   }[p.style]||'';
-  const cosmic=p.style===7;
-  return `<svg viewBox="0 0 140 140" role="img" aria-label="${p.name}">
-    ${cosmic?'':`<path d="M42 99 L24 113 L48 111 Z" fill="#6f8090"/><path d="M52 104 L42 122 L62 112 Z" fill="#718594"/>
-    <ellipse cx="68" cy="85" rx="34" ry="31" fill="#8598a8"/>
-    <ellipse cx="58" cy="88" rx="22" ry="26" fill="#738797" transform="rotate(15 58 88)"/>
-    <ellipse cx="70" cy="58" rx="23" ry="24" fill="#88a4a2"/>
-    <circle cx="73" cy="45" r="22" fill="#91a4b3"/>`}
-    <path d="M91 47 L111 53 L92 59 Z" fill="#e8a948"/>
-    <circle cx="80" cy="41" r="5" fill="#fff"/><circle cx="81" cy="42" r="2.4" fill="#27394a"/>
-    <path d="M56 72 Q68 66 82 73" fill="none" stroke="#60b8a1" stroke-width="4" stroke-linecap="round" opacity=".85"/>
-    <path d="M56 111 v13 M78 111 v13" stroke="#c3745f" stroke-width="3" stroke-linecap="round"/>
-    <path d="M50 125 h12 M72 125 h12" stroke="#c3745f" stroke-width="3" stroke-linecap="round"/>
-    ${accessory}
+  const front={
+    1:`<circle cx='35' cy='132' r='4' fill='#d8a950'/><circle cx='46' cy='136' r='3.2' fill='#e5bd69'/><circle cx='27' cy='138' r='2.7' fill='#c99342'/>`,
+    2:`<path d='M54 76 Q80 86 107 76' fill='none' stroke='#ef7f70' stroke-width='10' stroke-linecap='round'/><path d='M96 80 L109 105' stroke='#ef7f70' stroke-width='8' stroke-linecap='round'/><path d='M102 101 l10 5 M104 108 l9 5' stroke='#ffd2cb' stroke-width='2'/>`,
+    3:`<path d='M53 83 Q80 74 107 83 L111 117 Q80 129 49 117 Z' fill='#f4c74f'/><path d='M63 84 v32 M97 84 v32' stroke='#e2af2e' stroke-width='2'/><circle cx='80' cy='96' r='2.8' fill='#d4912b'/><path d='M58 47 Q80 26 103 47' fill='none' stroke='#f4c74f' stroke-width='8' stroke-linecap='round'/>`,
+    4:`<path d='M48 30 L80 17 L114 31 L80 43 Z' fill='#39495c'/><path d='M108 31 v18' stroke='#39495c' stroke-width='3'/><circle cx='108' cy='51' r='3' fill='#efb94e'/><circle cx='69' cy='51' r='10' fill='none' stroke='#34495d' stroke-width='2.6'/><circle cx='91' cy='51' r='10' fill='none' stroke='#34495d' stroke-width='2.6'/><path d='M79 51 h2' stroke='#34495d' stroke-width='3'/>`,
+    5:`<path d='M60 48 l4 -8 4 8 8 -2 -5 7 5 7 -8 -2 -4 8 -4 -8 -8 2 5 -7 -5 -7 Z M88 48 l4 -8 4 8 8 -2 -5 7 5 7 -8 -2 -4 8 -4 -8 -8 2 5 -7 -5 -7 Z' fill='#f48fb1'/><circle cx='123' cy='33' r='3' fill='#f4c74f'/><path d='M123 24 v18 M114 33 h18' stroke='#f4c74f' stroke-width='2'/>`,
+    6:`<path d='M51 33 L58 16 L69 29 L80 12 L91 29 L102 16 L109 35 Z' fill='#f4c74f' stroke='#d69e2d' stroke-width='2'/><circle cx='59' cy='25' r='2.6' fill='#8d7be8'/><circle cx='80' cy='20' r='2.6' fill='#ef7f70'/><circle cx='101' cy='25' r='2.6' fill='#4eb89f'/>`,
+    7:`<path d='M48 32 L56 13 L68 27 L80 8 L92 27 L104 13 L112 34 Z' fill='#ffe27a' stroke='#cfa93b' stroke-width='2'/><circle cx='57' cy='23' r='3' fill='#ef7f70'/><circle cx='80' cy='17' r='3' fill='#55c7b0'/><circle cx='103' cy='23' r='3' fill='#9a86ef'/><circle cx='128' cy='47' r='2.7' fill='#f9dc74'/><circle cx='28' cy='59' r='2.3' fill='#f5a8c3'/><circle cx='118' cy='103' r='2.2' fill='#b8f3e2'/><path d='M123 40 v14 M116 47 h14 M32 52 v13 M26 58 h12' stroke='#f8e59a' stroke-width='1.8'/>`
+  }[p.style]||'';
+  return `<svg viewBox='0 0 160 160' role='img' aria-label='${p.name}'>
+    ${defs}${behind}
+    <path d='M48 112 L29 129 L54 126 Z' fill='#687c8b'/>
+    <path d='M112 112 L131 129 L106 126 Z' fill='#687c8b'/>
+    <ellipse cx='80' cy='103' rx='42' ry='37' fill='${bodyFill}'/>
+    <ellipse cx='51' cy='104' rx='18' ry='29' fill='${wing}' transform='rotate(14 51 104)'/>
+    <ellipse cx='109' cy='104' rx='18' ry='29' fill='${wing}' transform='rotate(-14 109 104)'/>
+    <ellipse cx='80' cy='76' rx='28' ry='27' fill='${neck}' opacity='.96'/>
+    <circle cx='80' cy='52' r='27' fill='${bodyFill}'/>
+    <circle cx='70' cy='48' r='5.2' fill='#fff'/><circle cx='90' cy='48' r='5.2' fill='#fff'/>
+    <circle cx='71' cy='49' r='2.5' fill='#293a4c'/><circle cx='89' cy='49' r='2.5' fill='#293a4c'/>
+    <path d='M72 59 L80 54 L88 59 L80 67 Z' fill='#e9aa49'/>
+    <path d='M60 73 Q80 80 100 73' fill='none' stroke='#55b79f' stroke-width='4' stroke-linecap='round' opacity='.9'/>
+    <path d='M65 131 v14 M95 131 v14' stroke='#c87965' stroke-width='3.4' stroke-linecap='round'/>
+    <path d='M57 146 h15 M88 146 h15' stroke='#c87965' stroke-width='3.4' stroke-linecap='round'/>
+    ${front}
   </svg>`;
 }
 function renderPigeonShop(){
