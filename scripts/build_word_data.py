@@ -1337,15 +1337,15 @@ def encounter_cards(word, definition, pos, labels, example, example_citation="")
         if rare:
             places=["Historical novel or archival document","Literary commentary on older language"]
         elif person:
-            places=["Biography, profile, or character sketch","Novel or historical account"]
+            places=["Magazine profile or biography","Novel or historical account"]
         elif abstract:
-            places=["Essay, review, or long-form article","Academic or cultural criticism"]
+            places=["Essay or newspaper editorial","Literary / academic criticism"]
         elif (pos or "").lower() in ("adj","adjective","adv","adverb"):
-            places=["Book / film review","Character description in fiction"]
+            places=["Book or film review","Character description in a novel"]
         elif (pos or "").lower()=="verb":
-            places=["Long-form news feature","Novel or memoir"]
+            places=["Long-form journalism","Novel or memoir"]
         else:
-            places=["Magazine feature or reference entry","Textbook, catalog, or museum label"]
+            places=["Encyclopedia or museum catalog","Historical / specialist nonfiction"]
     ex=phrase_from_example(word,example)
     citation_place=source_place_from_citation(example_citation)
     p1=generic_phrase(word,pos,definition,0,places[0],domain)
