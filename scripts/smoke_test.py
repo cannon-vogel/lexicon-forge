@@ -37,6 +37,31 @@ assert not missing_examples, missing_examples[:10]
 assert not missing_uses, missing_uses[:10]
 assert not missing_course_fields, missing_course_fields[:10]
 
+# Definition audit across all 537 entries: no context-dependent secondary glosses
+# and no unresolved morphology-only definitions.
+bad_defs=[]
+formula=re.compile(r"^(plural|comparative|superlative|simple past|past participle|present participle|third-person singular|alternative (?:form|spelling)|(?:us|uk) standard (?:form|spelling))",re.I)
+for w,d in words.items():
+    definition=str(d.get("definition","")).strip()
+    if re.match(r"^(?:a|an|the)?\s*similar\b",definition,re.I):
+        bad_defs.append((w,definition))
+    if definition.endswith(":"):
+        bad_defs.append((w,definition))
+    if formula.match(definition) and ":" not in definition:
+        bad_defs.append((w,definition))
+assert not bad_defs, bad_defs[:15]
+
+# The known high-risk polysemous items must stay on useful modern/common senses.
+assert words["torpid"]["definition"].startswith("Sluggish")
+assert words["umbra"]["definition"].startswith("A shadow")
+assert words["natty"]["definition"].startswith("Neat, stylish")
+assert "woolen cloth" in words["gabardine"]["definition"]
+assert "making and selling of hats" in words["millinery"]["definition"]
+
+# Modern-use prompts should be concise labels, not repeated paraphrases of the definition.
+verbose_uses=[(w,u) for w,d in words.items() for u in (d.get("modernUses") or []) if len(u)>60 or " — " in u]
+assert not verbose_uses, verbose_uses[:15]
+
 # Regression check for the user's first visible lesson card.
 bond=words["bondman"]
 assert len(bond["definition"])>10 and bond["definition"].strip().lower()!="slave"
@@ -73,6 +98,8 @@ print("  108 source items")
 print("  537 lexical entries")
 print("  186 core targets")
 print("  537 definitions + examples + >=3 modern-use ideas")
+print("  definition audit: no unresolved/secondary-sense patterns")
+print("  modern-use labels are concise")
 print("  7-pigeon shop with full-XP mythic bird")
 print("  no runtime dictionary API dependency")
 print("  quick-check empty-class regression guarded")
