@@ -1441,6 +1441,7 @@ def build_one(word):
     raw_ety=best_raw_etymology(entries,entry)
     ety=clean_etymology_text(raw_ety)
     ety_brief=etymology_brief(word,entries,entry,raw_gloss)
+    ety_brief=ensure_expanded_etymology(word,ety_brief,raw_ety,raw_gloss)
     ex,exref=example_from(word,sense,entry)
     pos=clean(entry.get("pos") or "")
     ipas,audio=pronunciation(entry)
