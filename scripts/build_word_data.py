@@ -892,6 +892,20 @@ def related_words(entry, sense):
     return vals[:12]
 
 
+def clean_etymology_text(text):
+    t=clean(text)
+    if not t:
+        return ""
+    if t.startswith("Etymology tree"):
+        for marker in ("Borrowed from ", "Inherited from ", "Learned borrowing from ", "Ultimately from "):
+            p=t.rfind(marker)
+            if p>=0:
+                return t[p:]
+        p=t.rfind(" From ")
+        if p>=0:
+            return t[p+1:]
+    return t
+
 LANGUAGE_RE = re.compile(
     r"\b(Middle English|Old English|Late Middle English|Anglo-Norman|Middle French|Old French|French|Late Latin|Medieval Latin|New Latin|Latin|Ancient Greek|Greek|Old Norse|Old High German|Middle High German|German|Middle Dutch|Old Dutch|Dutch|Italian|Spanish|Portuguese|Arabic|Persian|Japanese|Sanskrit|Proto-West Germanic|Proto-Germanic|Proto-Indo-European)\s+([*A-Za-zÀ-žĀ-žÆæŒœØøÞþÐðʾʿ'’.-]+)(?:\s*\([“\"]([^”\"]{1,80})[”\"]\))?",
     re.I
@@ -1290,6 +1304,7 @@ def main():
                 word,row=fut.result(); data[word]=row
                 if not row["entryAvailable"]: failures.append(word)
             except Exception as e:
+                print(f"FAILED {w}: {type(e).__name__}: {e}")
                 failures.append(w)
                 src=SOURCE.get(w,{})
                 data[w]={
