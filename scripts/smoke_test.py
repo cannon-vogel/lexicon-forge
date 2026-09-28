@@ -32,10 +32,23 @@ missing_defs=[w for w,d in words.items() if not str(d.get("definition","")).stri
 missing_examples=[w for w,d in words.items() if not str(d.get("example","")).strip()]
 missing_uses=[w for w,d in words.items() if len(d.get("modernUses") or [])<3]
 missing_course_fields=[w for w,d in words.items() if "courseSynonyms" not in d or "courseCue" not in d]
+missing_quiz=[w for w,d in words.items() if not str(d.get("quizDefinition","")).strip()]
 assert not missing_defs, missing_defs[:10]
 assert not missing_examples, missing_examples[:10]
 assert not missing_uses, missing_uses[:10]
 assert not missing_course_fields, missing_course_fields[:10]
+assert not missing_quiz, missing_quiz[:10]
+
+# Quick-check clues must not leak the answer or a linked conjugation/base form.
+answer_leaks=[]
+for w,d in words.items():
+    q=str(d.get("quizDefinition",""))
+    if re.search(r"\b"+re.escape(w)+r"\b",q,re.I):
+        answer_leaks.append((w,"answer",q))
+    lemma=str(d.get("linkedLemma","") or "")
+    if lemma and re.search(r"\b"+re.escape(lemma)+r"\b",q,re.I):
+        answer_leaks.append((w,"lemma:"+lemma,q))
+assert not answer_leaks, answer_leaks[:15]
 
 # Definition audit across all 537 entries: no context-dependent secondary glosses
 # and no unresolved morphology-only definitions.
@@ -53,6 +66,10 @@ assert not bad_defs, bad_defs[:15]
 
 # The known high-risk polysemous items must stay on useful modern/common senses.
 assert words["torpid"]["definition"].startswith("Sluggish")
+assert words["gendarme"]["definition"].startswith("A police officer")
+assert words["cask"]["definition"].startswith("A large barrel-shaped")
+assert "heart contracts" in words["systolic"]["definition"]
+assert "folk-influenced popular music" in words["skiffle"]["definition"]
 assert words["umbra"]["definition"].startswith("A shadow")
 assert words["natty"]["definition"].startswith("Neat, stylish")
 assert "woolen cloth" in words["gabardine"]["definition"]
@@ -103,4 +120,5 @@ print("  modern-use labels are concise")
 print("  7-pigeon shop with full-XP mythic bird")
 print("  no runtime dictionary API dependency")
 print("  quick-check empty-class regression guarded")
+print("  all quiz clues are answer-safe and lemma-safe")
 print("  license + third-party notice + subtle disclaimer present")
