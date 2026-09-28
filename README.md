@@ -19,6 +19,10 @@ Lexical enrichment is generated ahead of time and committed as `word_data.json`.
 
 The bundled dataset contains definitions, etymology when available, examples, pronunciation metadata, dictionary relationships, course/source relationships, and modern-use ideas for the finite 537-word pool. The build script derives the lexical material from Wiktionary through Kaikki.org / Wiktextract.
 
+## Definition quality
+
+The static build audits all 537 entries for self-contained definitions. It penalizes secondary/context-dependent glosses, resolves inflected and spelling-variant forms into definitions of their base word, and uses curated overrides for high-risk ambiguous words such as `torpid`, `umbra`, `natty`, and `gabardine`. Modern-use suggestions are stored as short context labels rather than repeated paraphrases.
+
 ## Source data
 
 - **108 source relations/questions** from the captured TakeTest full form.
