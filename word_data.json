@@ -533,11 +533,11 @@
       ],
       "encounters": [
         {
-          "place": "Long-form journalism",
+          "place": "Character description in a novel",
           "phrase": "“decided to abut”"
         },
         {
-          "place": "Novel or memoir",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“was ready to abut”"
         }
       ],
@@ -769,8 +769,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an acumen in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of acumen”"
         },
         {
           "place": "Real quotation — 1842, [anonymous collaborator of Letitia Elizabeth Landon], chapter XXXVII",
@@ -818,8 +818,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an adamancy in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of adamancy”"
         },
         {
           "place": "Real quotation — 1979 December 29, Andy Beck, “Parents of Gays”",
@@ -880,8 +880,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an adenosine in the passage”"
+          "place": "Biology textbook or lab handout",
+          "phrase": "“the adenosine in the specimen”"
         },
         {
           "place": "Real quotation — 2001, Leslie Iversen, Drugs: A Very Short Introduction",
@@ -1030,7 +1030,7 @@
           "phrase": "“an affectless remark”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“the remark seemed affectless”"
         }
       ],
@@ -1134,7 +1134,7 @@
           "phrase": "“a striking display of agitation”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“She causes great agitation within me”"
         }
       ],
@@ -1460,11 +1460,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "History / social-science textbook",
           "phrase": "“an amity in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Newspaper analysis or political essay",
           "phrase": "“a reference to amity”"
         }
       ],
@@ -1950,11 +1950,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an aplomb in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of aplomb”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“His nonchalance and aplomb during hard times have always”"
         }
       ],
@@ -2207,7 +2207,7 @@
       ],
       "encounters": [
         {
-          "place": "Essay or newspaper editorial",
+          "place": "History / social-science textbook",
           "phrase": "“a striking display of ascendancy”"
         },
         {
@@ -2556,8 +2556,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an avarice in the passage”"
+          "place": "Insurance policy or financial statement",
+          "phrase": "“the avarice in the policy”"
         },
         {
           "place": "Real quotation — 1788, Publius [pseudonym; Alexander Hamilton], “Number XII”",
@@ -2606,11 +2606,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Technical manual or engineering documentation",
           "phrase": "“several avionics in the account”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Technology / aviation article",
           "phrase": "“the avionics mentioned in the text”"
         }
       ],
@@ -2713,11 +2713,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“an ax in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Museum object label or restoration guide",
           "phrase": "“a reference to ax”"
         }
       ],
@@ -3166,7 +3166,7 @@
           "phrase": "“kept besotting through the scene”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“was besotting again”"
         }
       ],
@@ -4358,7 +4358,7 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“a bung in the passage”"
         },
         {
@@ -4553,11 +4553,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“a cabinetwork in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Museum object label or restoration guide",
           "phrase": "“a reference to cabinetwork”"
         }
       ],
@@ -4600,7 +4600,7 @@
           "phrase": "“responded caddishly”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“did so caddishly”"
         }
       ],
@@ -4818,12 +4818,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a canniness in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of canniness”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to canniness”"
+          "place": "Profile, review, or psychology writing",
+          "phrase": "“showed remarkable canniness”"
         }
       ],
       "sourceQuestions": [
@@ -5058,8 +5058,8 @@
       ],
       "encounters": [
         {
-          "place": "Historical novel or archival document",
-          "phrase": "“a castigation in the passage”"
+          "place": "Court filing or legal explainer",
+          "phrase": "“the castigation in the filing”"
         },
         {
           "place": "Real quotation — 1859, George Meredith, chapter 5",
@@ -5327,8 +5327,8 @@
       ],
       "encounters": [
         {
-          "place": "Essay or newspaper editorial",
-          "phrase": "“a striking display of chastisement”"
+          "place": "Court filing or legal explainer",
+          "phrase": "“the chastisement in the filing”"
         },
         {
           "place": "Real quotation — c. 1596–1599 (date written), William Shakespeare, “The Second Part of Henry the Fourth",
@@ -5550,8 +5550,8 @@
       ],
       "encounters": [
         {
-          "place": "Biology textbook or lab handout",
-          "phrase": "“the chicory in the specimen”"
+          "place": "Restaurant menu or food review",
+          "phrase": "“chicory on the menu”"
         },
         {
           "place": "Real quotation — 1829, William Law, “Letter V. A Chapter on Chicory.”",
@@ -5754,11 +5754,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Travel guide or geography textbook",
           "phrase": "“a clime in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Nature / landscape writing",
           "phrase": "“a reference to clime”"
         }
       ],
@@ -7103,11 +7103,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“a coulter in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Museum object label or restoration guide",
           "phrase": "“a reference to coulter”"
         }
       ],
@@ -7149,11 +7149,11 @@
       ],
       "encounters": [
         {
-          "place": "Religion / theology textbook",
+          "place": "History / social-science textbook",
           "phrase": "“a courter in the account”"
         },
         {
-          "place": "Church-history or museum exhibit",
+          "place": "Newspaper analysis or political essay",
           "phrase": "“described as a courter”"
         }
       ],
@@ -7247,12 +7247,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a covetousness in the passage”"
+          "place": "Insurance policy or financial statement",
+          "phrase": "“the covetousness in the policy”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to covetousness”"
+          "place": "Business-news article",
+          "phrase": "“costs associated with covetousness”"
         }
       ],
       "sourceQuestions": [
@@ -7292,7 +7292,7 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“a cringle in the passage”"
         },
         {
@@ -7648,11 +7648,11 @@
       ],
       "encounters": [
         {
-          "place": "Historical novel or archival document",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“to decantate the wine carefully”"
         },
         {
-          "place": "Literary commentary on older language",
+          "place": "Museum object label or restoration guide",
           "phrase": "“they chose to decantate the wine carefully”"
         }
       ],
@@ -9114,8 +9114,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a divan in the passage”"
+          "place": "Engineering / maintenance manual",
+          "phrase": "“the divan in the assembly”"
         },
         {
           "place": "Real quotation — 1932, Maurice Baring, chapter 20",
@@ -9229,8 +9229,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a doggedness in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of doggedness”"
         },
         {
           "place": "Real quotation — 1919, W[illiam] Somerset Maugham, “chapter 26”",
@@ -9383,8 +9383,8 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“a dopey description”"
+          "place": "Character description in a novel",
+          "phrase": "“a dopey remark”"
         },
         {
           "place": "Real quotation — 1951 July 16, J[erome] D[avid] Salinger, The Catcher in the Rye",
@@ -10277,7 +10277,7 @@
           "phrase": "“responded exceptionably”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“did so exceptionably”"
         }
       ],
@@ -10610,7 +10610,7 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "History / social-science textbook",
           "phrase": "“an expo in the passage”"
         },
         {
@@ -10820,8 +10820,8 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“an extenuating description”"
+          "place": "Court filing or legal explainer",
+          "phrase": "“an extenuating provision”"
         },
         {
           "place": "Real quotation — 1976, Harry N. Casselman, “Case No. 7”",
@@ -11250,11 +11250,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "History / social-science textbook",
           "phrase": "“a federacy in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Newspaper analysis or political essay",
           "phrase": "“a reference to federacy”"
         }
       ],
@@ -11639,12 +11639,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a flyweight in the passage”"
+          "place": "Military-museum label",
+          "phrase": "“the flyweight in the museum collection”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to flyweight”"
+          "place": "Historical nonfiction or reenactment guide",
+          "phrase": "“a period flyweight”"
         }
       ],
       "sourceQuestions": [],
@@ -12879,11 +12879,11 @@
       ],
       "encounters": [
         {
-          "place": "Magazine profile or biography",
+          "place": "Library catalog or bibliography",
           "phrase": "“a glossarist in the account”"
         },
         {
-          "place": "Novel or historical account",
+          "place": "Antiquarian bookseller / archive description",
           "phrase": "“described as a glossarist”"
         }
       ],
@@ -13023,8 +13023,8 @@
       ],
       "encounters": [
         {
-          "place": "Engineering / maintenance manual",
-          "phrase": "“the greenroom in the assembly”"
+          "place": "Encyclopedia or museum catalog",
+          "phrase": "“a greenroom in the passage”"
         },
         {
           "place": "Real quotation — 1906, Montgomery Schuyler, Jr.",
@@ -13112,7 +13112,7 @@
       ],
       "encounters": [
         {
-          "place": "Magazine profile or biography",
+          "place": "Technical manual or engineering documentation",
           "phrase": "“a harnesser in the account”"
         },
         {
@@ -13658,12 +13658,12 @@
       ],
       "encounters": [
         {
-          "place": "Character description in a novel",
-          "phrase": "“a striking display of hook”"
+          "place": "Technical manual or engineering documentation",
+          "phrase": "“a hook in the passage”"
         },
         {
-          "place": "Book / film review",
-          "phrase": "“showed remarkable hook”"
+          "place": "Technology / aviation article",
+          "phrase": "“a reference to hook”"
         }
       ],
       "sourceQuestions": [
@@ -14399,7 +14399,7 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
+          "place": "Travel guide or geography textbook",
           "phrase": "“an inclement description”"
         },
         {
@@ -14503,7 +14503,7 @@
           "phrase": "“an inconsistent remark”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“He gave an inconsistent account of the evening, saying”"
         }
       ],
@@ -14643,11 +14643,11 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“an indiscriminate description”"
+          "place": "Character description in a novel",
+          "phrase": "“an indiscriminate remark”"
         },
         {
-          "place": "Character description in a novel",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“can anyone be so indiscriminate in making friends as he”"
         }
       ],
@@ -14944,12 +14944,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an ingenuousness in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of ingenuousness”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to ingenuousness”"
+          "place": "Profile, review, or psychology writing",
+          "phrase": "“showed remarkable ingenuousness”"
         }
       ],
       "sourceQuestions": [],
@@ -15914,12 +15914,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a knave in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of knave”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to knave”"
+          "place": "Profile, review, or psychology writing",
+          "phrase": "“showed remarkable knave”"
         }
       ],
       "sourceQuestions": [
@@ -16602,11 +16602,11 @@
       ],
       "encounters": [
         {
-          "place": "Long-form journalism",
+          "place": "Character description in a novel",
           "phrase": "“decided to loll”"
         },
         {
-          "place": "Novel or memoir",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“was ready to loll”"
         }
       ],
@@ -17002,12 +17002,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a mendacity in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of mendacity”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to mendacity”"
+          "place": "Profile, review, or psychology writing",
+          "phrase": "“showed remarkable mendacity”"
         }
       ],
       "sourceQuestions": [
@@ -17050,11 +17050,11 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“a meniscal description”"
+          "place": "Engineering / maintenance manual",
+          "phrase": "“a meniscal component”"
         },
         {
-          "place": "Character description in a novel",
+          "place": "Architecture or infrastructure description",
           "phrase": "“meniscal transplantation”"
         }
       ],
@@ -17157,7 +17157,7 @@
       ],
       "encounters": [
         {
-          "place": "Long-form journalism",
+          "place": "Court filing or legal explainer",
           "phrase": "“decided to mete”"
         },
         {
@@ -17407,11 +17407,11 @@
       ],
       "encounters": [
         {
-          "place": "Religion / theology textbook",
+          "place": "History / social-science textbook",
           "phrase": "“a misogamist in the account”"
         },
         {
-          "place": "Church-history or museum exhibit",
+          "place": "Newspaper analysis or political essay",
           "phrase": "“described as a misogamist”"
         }
       ],
@@ -17816,7 +17816,7 @@
           "phrase": "“responded munificently”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“did so munificently”"
         }
       ],
@@ -18297,8 +18297,8 @@
       ],
       "encounters": [
         {
-          "place": "Religion / theology textbook",
-          "phrase": "“a nuptial doctrine”"
+          "place": "History / social-science textbook",
+          "phrase": "“a nuptial description”"
         },
         {
           "place": "Real quotation — 1988, Contemporary Dramatists, page 390",
@@ -18353,8 +18353,8 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“an oafish description”"
+          "place": "Character description in a novel",
+          "phrase": "“an oafish remark”"
         },
         {
           "place": "Real quotation — 1931, Marie MacKenzie, Trix MacKenzie",
@@ -18408,7 +18408,7 @@
           "phrase": "“a striking display of obdurateness”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“showed remarkable obdurateness”"
         }
       ],
@@ -18578,11 +18578,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Library catalog or bibliography",
           "phrase": "“an octavo in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Antiquarian bookseller / archive description",
           "phrase": "“a reference to octavo”"
         }
       ],
@@ -18942,8 +18942,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“an oxyacetylene in the passage”"
+          "place": "Chemistry / materials-science lab manual",
+          "phrase": "“the oxyacetylene in the sample”"
         },
         {
           "place": "Real quotation — 2002, “All Outta Ale”, in Daniel Dumile (lyrics)",
@@ -19265,12 +19265,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a patten in the passage”"
+          "place": "Vintage clothing listing",
+          "phrase": "“the patten in the catalog”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to patten”"
+          "place": "Costume-museum or fashion-history label",
+          "phrase": "“a vintage patten”"
         }
       ],
       "sourceQuestions": [
@@ -19653,8 +19653,8 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“a perspicacious description”"
+          "place": "Character description in a novel",
+          "phrase": "“a perspicacious remark”"
         },
         {
           "place": "Real quotation — 1982 April 17, David K. Jose, “Habeas Corpus”",
@@ -19711,7 +19711,7 @@
           "phrase": "“a striking display of pertinacity”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“my footsteps with a pertinacity which it would be difficult”"
         }
       ],
@@ -19778,11 +19778,11 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“a petulant description”"
+          "place": "Character description in a novel",
+          "phrase": "“a petulant remark”"
         },
         {
-          "place": "Character description in a novel",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“is causing Dave's recent petulant behavior”"
         }
       ],
@@ -20168,7 +20168,7 @@
           "phrase": "“responded plaintively”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“did so plaintively”"
         }
       ],
@@ -20712,11 +20712,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Library catalog or bibliography",
           "phrase": "“a pressmark in the passage”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Antiquarian bookseller / archive description",
           "phrase": "“a reference to pressmark”"
         }
       ],
@@ -21149,11 +21149,11 @@
       ],
       "encounters": [
         {
-          "place": "Magazine profile or biography",
+          "place": "History / social-science textbook",
           "phrase": "“a progenitor in the account”"
         },
         {
-          "place": "Novel or historical account",
+          "place": "Newspaper analysis or political essay",
           "phrase": "“Ibrahim, is the presumed progenitor of both the Jewish and”"
         }
       ],
@@ -21644,12 +21644,12 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a pyorrhea in the passage”"
+          "place": "Medical chart or clinic handout",
+          "phrase": "“pyorrhea noted in the chart”"
         },
         {
-          "place": "Historical / specialist nonfiction",
-          "phrase": "“a reference to pyorrhea”"
+          "place": "Anatomy / physiology textbook",
+          "phrase": "“evidence of pyorrhea”"
         }
       ],
       "sourceQuestions": [],
@@ -22188,7 +22188,7 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Technical manual or engineering documentation",
           "phrase": "“a receptivity in the passage”"
         },
         {
@@ -22257,11 +22257,11 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a reconciliation in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of reconciliation”"
         },
         {
-          "place": "Historical / specialist nonfiction",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“He longed for reconciliation with his estranged father, but”"
         }
       ],
@@ -22407,8 +22407,8 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“a reduplicative description”"
+          "place": "Grammar / linguistics textbook",
+          "phrase": "“a reduplicative construction”"
         },
         {
           "place": "Real quotation — 1848, Chevalier Bunsen, Charles Meyer",
@@ -22796,7 +22796,7 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
+          "place": "History / social-science textbook",
           "phrase": "“a riotous description”"
         },
         {
@@ -22907,12 +22907,12 @@
       ],
       "encounters": [
         {
-          "place": "Grammar / linguistics textbook",
-          "phrase": "“the roulade in the sentence”"
+          "place": "Restaurant menu or food review",
+          "phrase": "“roulade on the menu”"
         },
         {
-          "place": "Editor’s margin note or literary analysis",
-          "phrase": "“an example of roulade”"
+          "place": "Cookbook or culinary-history article",
+          "phrase": "“a recipe using roulade”"
         }
       ],
       "sourceQuestions": [],
@@ -23090,8 +23090,8 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
-          "phrase": "“a sagacious description”"
+          "place": "Character description in a novel",
+          "phrase": "“a sagacious remark”"
         },
         {
           "place": "Real quotation — 2020 July 10, Ben Williams, “The U.S. Supreme Court and sexual orientation”",
@@ -23513,7 +23513,7 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
+          "place": "Technical manual or engineering documentation",
           "phrase": "“a semaphore in the passage”"
         },
         {
@@ -23832,8 +23832,8 @@
       ],
       "encounters": [
         {
-          "place": "Encyclopedia or museum catalog",
-          "phrase": "“a shrewdness in the passage”"
+          "place": "Character description in a novel",
+          "phrase": "“a striking display of shrewdness”"
         },
         {
           "place": "Real quotation — 1837, L[etitia] E[lizabeth] L[andon], “The Interview”",
@@ -24469,7 +24469,7 @@
           "phrase": "“a somnambulistic remark”"
         },
         {
-          "place": "Book / film review",
+          "place": "Profile, review, or psychology writing",
           "phrase": "“the remark seemed somnambulistic”"
         }
       ],
@@ -26057,12 +26057,12 @@
       ],
       "encounters": [
         {
-          "place": "Biology textbook or lab handout",
-          "phrase": "“the terrine in the specimen”"
+          "place": "Restaurant menu or food review",
+          "phrase": "“terrine on the menu”"
         },
         {
-          "place": "Field guide or science-museum label",
-          "phrase": "“terrine in the field guide”"
+          "place": "Cookbook or culinary-history article",
+          "phrase": "“a recipe using terrine”"
         }
       ],
       "sourceQuestions": [],
@@ -26478,11 +26478,11 @@
       ],
       "encounters": [
         {
-          "place": "Book or film review",
+          "place": "Technical manual or engineering documentation",
           "phrase": "“responded tonally”"
         },
         {
-          "place": "Character description in a novel",
+          "place": "Technology / aviation article",
           "phrase": "“did so tonally”"
         }
       ],
@@ -26630,11 +26630,11 @@
       ],
       "encounters": [
         {
-          "place": "Long-form journalism",
+          "place": "Hardware / maker’s catalog",
           "phrase": "“decided to tote”"
         },
         {
-          "place": "Novel or memoir",
+          "place": "Museum object label or restoration guide",
           "phrase": "“She used a canvas tote to carry groceries home”"
         }
       ],
