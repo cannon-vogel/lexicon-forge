@@ -425,6 +425,34 @@ MODERN_CONTEXT_OVERRIDES = {
     ]
 }
 
+EXAMPLE_OVERRIDES = {
+    "gendarme": "A pair of gendarmes directed traffic around the closed road outside the village.",
+    "cask": "The distillery aged the whisky in an oak cask for twelve years.",
+    "catatonia": "The psychiatrist evaluated the patient for catatonia after she became nearly immobile and stopped speaking.",
+    "jaunty": "He tilted his hat at a jaunty angle and walked into the café.",
+    "systolic": "Her blood pressure was 118 over 76, so the systolic reading was 118.",
+    "skiffle": "The band began with skiffle songs played on guitar, washboard, and a homemade bass.",
+    "mound": "The archaeologists mapped a low earthen mound beside the river.",
+    "heap": "A heap of wet coats accumulated by the door.",
+    "hammy": "The actor's hammy delivery made the serious scene unexpectedly funny.",
+    "tote": "She used a canvas tote to carry groceries home.",
+    "turnbuckle": "He tightened the turnbuckle until the cable was taut.",
+    "verisimilitude": "The film's careful period details gave the story a strong sense of verisimilitude.",
+    "gabardine": "The vintage shop displayed a navy gabardine trench coat.",
+    "torpid": "After hours in the cold, the lizard was torpid and barely moved.",
+    "umbra": "Observers inside the Moon's umbra experienced totality.",
+    "millinery": "The costume department hired a millinery specialist to reproduce the elaborate hats.",
+    "pyrrhic": "The campaign won the vote, but at such a cost that observers called it a Pyrrhic victory.",
+    "rapport": "The interviewer quickly established rapport with the nervous witness.",
+    "sump": "Heavy rain triggered the sump pump in the basement.",
+    "waddle": "The ducklings waddled across the path in a tight group.",
+    "allayed": "The engineer's inspection allayed concerns about the bridge.",
+    "acmes": "The exhibition compared the artistic acmes of several dynasties.",
+    "detente": "The agreement opened a period of détente between the rival governments.",
+    "morass": "The project became trapped in a morass of overlapping permits and appeals.",
+    "conniption": "He nearly had a conniption when he saw the repair estimate."
+}
+
 def urls(word):
     q = urllib.parse.quote
     a = q(word[0].lower(), safe="")
@@ -514,6 +542,15 @@ def sense_score(word, sense, src, entry=None, ei=0, si=0):
     if not gloss: return -1000
     score=24.0-clarity_penalty(gloss)
     gt=tokens(gloss)
+    # Curated teaching definitions are independent semantic hints used to select
+    # the matching dictionary sense, not to copy the source-test wording.
+    hint=DEFINITION_OVERRIDES.get(word,"")
+    if hint:
+        ht=tokens(hint)
+        overlap=len(gt & ht)
+        score += 12*overlap
+        if ht and overlap==0:
+            score -= 18
     # Source cues distinguish the intended sense, but never substitute for a real definition.
     for d in src.get("definitions",[]):
         dt=tokens(d)
@@ -575,18 +612,16 @@ def improve_definition(word, gloss, sense, pos):
     if g and g[-1] not in ".!?": g+="."
     return g
 
-def example_from(sense, entry):
-    pools=[]
-    pools.extend(sense.get("examples") or [])
-    for s in entry.get("senses") or []:
-        pools.extend(s.get("examples") or [])
-    for ex in pools:
+def example_from(word, sense, entry):
+    if word in EXAMPLE_OVERRIDES:
+        return EXAMPLE_OVERRIDES[word], ""
+    for ex in (sense.get("examples") or []):
         if isinstance(ex, str):
             t=clean(ex); ref=""
         else:
             t=clean(ex.get("text") or ex.get("example") or "")
             ref=clean(ex.get("ref") or "")
-        if 18 <= len(t) <= 500:
+        if 18 <= len(t) <= 500 and not t.lower().startswith("for quotations using this term"):
             return t, ref
     return "", ""
 
@@ -750,7 +785,7 @@ def build_one(word):
     else:
         source_definition=""
     ety=clean_etymology_text(entry.get("etymology_text") or "")
-    ex,exref=example_from(sense,entry)
+    ex,exref=example_from(word,sense,entry)
     pos=clean(entry.get("pos") or "")
     ipas,audio=pronunciation(entry)
     labels=usage_labels(sense,entry)
