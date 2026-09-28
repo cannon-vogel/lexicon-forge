@@ -290,11 +290,24 @@ function showLearningCheck(word,story){
   box.append(el('h4',{},'One quick check'),el('p',{},'Which word best matches this clue?'),el('div',{class:'prompt'},clue));
   const options=el('div',{class:'options'}),choices=learningDistractors(word,3);choices.push(word);
   for(const w of shuffle(choices)){
-    const b=el('button',{class:'option'},w);b.onclick=()=>{
-      if(box.dataset.done)return;box.dataset.done='1';const ok=w===word;[...options.children].forEach(x=>x.disabled=true);b.classList.add(ok?'selected':'');
-      const fb=el('div',{class:'check-feedback '+(ok?'goodtxt':'badtxt')},ok?'Yes — that is '+word+'.':'The match is '+word+'. This is still learning, so nothing is lost.');box.append(fb);
+    const b=el('button',{class:'option',type:'button'},w);b.onclick=()=>{
+      if(box.dataset.done)return;
+      box.dataset.done='1';
+      const ok=w===word;
+      const buttons=[...options.children];
+      for(const x of buttons){
+        x.disabled=true;
+        if(x.textContent===word)x.classList.add('correct');
+      }
+      b.classList.add(ok?'selected':'wrong');
+      const fb=el('div',{class:'check-feedback '+(ok?'goodtxt':'badtxt')},
+        ok?'Yes — that is '+word+'.':'Not quite. The match is '+word+'. Nothing is lost; the correct answer is highlighted.');
+      box.append(fb);
       markIntroduced(word);
-      const next=el('button',{class:'btn primary',style:'margin-top:12px'},lesson.index===lesson.words.length-1?'Finish lesson':'Next word →');next.onclick=()=>{lesson.index++;renderLessonWord()};box.append(next);next.focus();
+      const next=el('button',{class:'btn primary',type:'button',style:'margin-top:12px'},lesson.index===lesson.words.length-1?'Finish lesson':'Next word →');
+      next.onclick=()=>{if(!lesson)return;lesson.index++;renderLessonWord()};
+      box.append(next);
+      next.focus();
     };options.append(b);
   }
   box.append(options);card.append(box);box.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -404,9 +417,9 @@ function finishSession(){
 function renderWords(){
   const grid=document.getElementById('wordGrid'),q=normalize(document.getElementById('wordSearch').value);grid.innerHTML='';let words=wordRandom||ALL_WORDS.filter(w=>normalize(w).includes(q));words=words.slice(0,wordPage);if(!words.length){grid.append(el('div',{class:'empty'},'No matching words.'));return}
   for(const w of words){const p=state.full[w],meta=WORD_META[w]||{},c=el('div',{class:'wordcard'});c.append(el('h4',{},w),el('div',{class:'wordmeta'},(state.learn[w]?.introduced?'introduced':'not yet learned')+(p?.attempts?(' · stage '+p.stage+' · '+fmtDue(p.due)):'')+(meta.questionNumbers?.length?' · Q'+meta.questionNumbers.join(', Q'):'')));
-    const def=el('div',{class:'definition'});const cached=state.enrich[w];if(cached?.definition)def.textContent=cached.definition;else if(localStory(w).definition||localStory(w).relation)def.textContent=localStory(w).definition||localStory(w).relation;c.append(def);
+    const def=el('div',{class:'definition'});const staticStory=staticWordStory(w);def.textContent=staticStory.definition||staticStory.relation||localStory(w).sourceCue||'';c.append(def);
     const row=el('div',{class:'minirow'}),storyBtn=el('button',{class:'btn mini'},'Word story'),learnBtn=el('button',{class:'btn mini secondary'},state.learn[w]?.introduced?'Relearn':'Learn');
-    storyBtn.onclick=()=>{const d=staticWordStory(w);def.textContent=d.sourceDefinition||d.definition||d.relation||'No meaning cue is bundled for this word.'};
+    storyBtn.onclick=()=>{const d=staticWordStory(w);def.textContent=d.definition||d.relation||'No meaning cue is bundled for this word.'};
     learnBtn.onclick=()=>{lesson={scope:'custom',words:[w],index:0,stories:{},checked:{}};document.getElementById('learnEmpty').classList.add('hidden');document.getElementById('learnStage').classList.remove('hidden');switchView('learn');renderLessonWord()};row.append(storyBtn,learnBtn);c.append(row);grid.append(c)}
 }
 function safeId(s){return s.replace(/[^a-z0-9]/gi,'_')}
@@ -483,7 +496,7 @@ function download(name,text,type='application/json'){const a=document.createElem
 document.getElementById('exportBtn').onclick=()=>download('lexicon-forge-progress.json',JSON.stringify(state,null,2));
 document.getElementById('importInput').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(x.version!==1)throw new Error('version');state=Object.assign(freshState(),x);state.learn=x.learn||{};state.enrich=x.enrich||{};save();toast('Progress imported.')}catch{toast('Could not import that progress file.')}};
 document.getElementById('sessionSize').onchange=e=>{state.settings.sessionSize=Math.max(5,Math.min(30,Number(e.target.value)||12));save()};
-document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset all Lexicon Forge progress and cached enrichment?')){state=freshState();save();renderWords();toast('Progress reset.')}};
+document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset all Lexicon Forge progress, XP purchases, and settings?')){state=freshState();save();renderWords();toast('Progress reset.')}};
 
 async function init(){
   try{await loadData();state=loadState();updateDashboard()}catch(err){console.error(err);document.querySelector('main').innerHTML='<section class="view active"><div class="card"><h2>Could not load study data</h2><p class="lede">Lexicon Forge needs to be served over HTTP so it can load its local CSV files. On GitHub Pages this happens automatically.</p></div></section>'}
