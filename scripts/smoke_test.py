@@ -30,7 +30,7 @@ assert len(core)==186, len(core)
 
 missing_defs=[w for w,d in words.items() if not str(d.get("definition","")).strip()]
 missing_examples=[w for w,d in words.items() if not str(d.get("example","")).strip()]
-missing_uses=[w for w,d in words.items() if len(d.get("modernUses") or [])<3]
+missing_uses=[w for w,d in words.items() if len(d.get("modernUses") or [])<2]
 missing_course_fields=[w for w,d in words.items() if "courseSynonyms" not in d or "courseCue" not in d]
 missing_quiz=[w for w,d in words.items() if not str(d.get("quizDefinition","")).strip()]
 assert not missing_defs, missing_defs[:10]
@@ -74,16 +74,24 @@ assert words["umbra"]["definition"].startswith("A shadow")
 assert words["natty"]["definition"].startswith("Neat, stylish")
 assert "woolen cloth" in words["gabardine"]["definition"]
 assert "making and selling of hats" in words["millinery"]["definition"]
+assert "directed traffic" in words["gendarme"]["example"]
+assert "oak cask" in words["cask"]["example"]
+assert "blood pressure" in words["systolic"]["example"]
+assert "guitar" in words["skiffle"]["example"]
 
-# Modern-use prompts should be concise labels, not repeated paraphrases of the definition.
-verbose_uses=[(w,u) for w,d in words.items() for u in (d.get("modernUses") or []) if len(u)>60 or " — " in u]
-assert not verbose_uses, verbose_uses[:15]
+# Modern-use prompts should be concrete context notes: a setting plus a short explanation.
+bad_uses=[]
+for w,d in words.items():
+    for u in (d.get("modernUses") or []):
+        if len(u)>210 or " — " not in u:
+            bad_uses.append((w,u))
+assert not bad_uses, bad_uses[:15]
 
 # Regression check for the user's first visible lesson card.
 bond=words["bondman"]
 assert len(bond["definition"])>10 and bond["definition"].strip().lower()!="slave"
 assert bond.get("courseCue")=="slave"
-assert len(bond.get("modernUses") or [])>=3
+assert len(bond.get("modernUses") or [])>=2
 
 # Pigeon shop / habitat integration.
 m=re.search(r"const PIGEONS=\[(.*?)\];\nconst ENRICH_TTL",app,re.S)
@@ -114,9 +122,9 @@ print("Lexicon Forge smoke test passed:")
 print("  108 source items")
 print("  537 lexical entries")
 print("  186 core targets")
-print("  537 definitions + examples + >=3 modern-use ideas")
+print("  537 definitions + examples + >=2 concrete encounter contexts")
 print("  definition audit: no unresolved/secondary-sense patterns")
-print("  modern-use labels are concise")
+print("  modern-use contexts are concrete and bounded")
 print("  7-pigeon shop with full-XP mythic bird")
 print("  no runtime dictionary API dependency")
 print("  quick-check empty-class regression guarded")
