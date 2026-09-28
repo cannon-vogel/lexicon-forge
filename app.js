@@ -223,7 +223,7 @@ function renderLessonWord(){
   const meaning=story.definition||local.definition||local.relation||'Meaning unavailable.';
   grid.append(storyPanel('Meaning','storyMeaning',meaning));
 
-  const history=story.etymology||'No etymology was available in the bundled lexical record.';
+  const history=story.etymologyBrief||story.etymology||'No etymology was available in the bundled lexical record.';
   const hp=storyPanel('Word history','storyEtymology',history);
   if(story.entryAvailable)hp.append(sourceLink('https://en.wiktionary.org/wiki/'+encodeURIComponent(word),'Wiktionary-derived data'));
   grid.append(hp);
@@ -238,13 +238,16 @@ function renderLessonWord(){
   const modern=el('div',{class:'storypanel full encounter-panel'});
   modern.append(el('h4',{},'Where you might actually encounter it'));
   const uses=el('div',{class:'encounter-grid'});
-  const modernUses=(story.modernUses||[]).length?story.modernUses:[
-    'Explanatory nonfiction — where a compact, precise term is useful.',
-    'Specialist or literary writing — where the word carries a particular register or nuance.'
+  const encounters=(story.encounters||[]).length?story.encounters:[
+    {place:'Feature article or nonfiction book',phrase:'“'+word+'” in context'},
+    {place:'Specialist textbook / museum label',phrase:'“'+word+'”'}
   ];
-  for(const use of modernUses.slice(0,2)){
-    const parts=String(use).split(' — '),item=el('div',{class:'encounter'});
-    item.append(el('div',{class:'encounter-label'},parts[0]||'In context'),el('div',{class:'encounter-copy'},parts.slice(1).join(' — ')||parts[0]));
+  for(const e of encounters.slice(0,2)){
+    const item=el('div',{class:'encounter'});
+    item.append(
+      el('div',{class:'encounter-label'},e.place||'In context'),
+      el('div',{class:'encounter-phrase'},e.phrase||('“'+word+'”'))
+    );
     uses.append(item);
   }
   modern.append(uses);grid.append(modern);
@@ -344,6 +347,7 @@ function staticWordStory(word){
     phonetic:Array.isArray(d.ipa)&&d.ipa.length?d.ipa[0]:'',
     audio:d.audio||'',
     etymology:d.etymology||'',
+    etymologyBrief:d.etymologyBrief||'',
     example:d.example||'',
     exampleCitation:d.exampleCitation||'',
     synonyms:Array.isArray(d.synonyms)?d.synonyms:[],
@@ -353,6 +357,7 @@ function staticWordStory(word){
     courseSynonyms:Array.isArray(d.courseSynonyms)?d.courseSynonyms:[],
     courseCue:d.courseCue||'',
     modernUses:Array.isArray(d.modernUses)?d.modernUses:[],
+    encounters:Array.isArray(d.encounters)?d.encounters:[],
     sourceQuestions:Array.isArray(d.sourceQuestions)?d.sourceQuestions:[],
     entryAvailable:!!d.entryAvailable,
     sourceCue:local.sourceCue
