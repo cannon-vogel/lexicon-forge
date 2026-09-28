@@ -422,6 +422,30 @@ MODERN_CONTEXT_OVERRIDES = {
     "tote": [
         "Retail and everyday speech — carrying groceries, gear, or a large tote bag.",
         "Warehousing and logistics — a reusable plastic tote used to move goods."
+    ],
+    "hostelry": [
+        "Travel history and older fiction — an inn or lodging house encountered on a journey.",
+        "Hospitality history — older vocabulary for commercial lodging before “hotel” became the default term."
+    ],
+    "mound": [
+        "Archaeology and landscape writing — an earthen rise that may mark a burial, settlement, or constructed site.",
+        "Everyday description — a rounded pile of soil, stones, snow, or other material."
+    ],
+    "heap": [
+        "Everyday narration — a pile of clothes, books, debris, or other loosely gathered objects.",
+        "Informal speech — “a heap of trouble” or another large, unspecified amount."
+    ],
+    "pithiness": [
+        "Editing and speechwriting — praising language that says a lot with very few words.",
+        "Reviews and criticism — describing a concise line, slogan, or observation that lands forcefully."
+    ],
+    "ranginess": [
+        "Sports and character description — a tall, long-limbed build with an extended reach.",
+        "Landscape or design writing — something spread loosely across a broad area."
+    ],
+    "stultification": [
+        "Policy or organizational criticism — rules that make a system ineffective or needlessly absurd.",
+        "Education and cultural criticism — conditions that suppress thought, growth, or intellectual energy."
     ]
 }
 
@@ -739,7 +763,7 @@ def modern_uses(word, definition, pos, labels):
         ]),
     ]
     for keys,uses in domains:
-        if any(k in d for k in keys):
+        if any(re.search(r"\\b"+re.escape(k)+r"\\w*\\b", d) for k in keys):
             return uses
     if rare:
         return [
