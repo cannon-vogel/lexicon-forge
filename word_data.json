@@ -322,7 +322,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to abjure the old belief”"
+          "phrase": "“they chose to abjure the old belief”"
         }
       ],
       "sourceQuestions": [
@@ -486,7 +486,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of abstinence”"
+          "phrase": "“showed remarkable abstinence”"
         }
       ],
       "sourceQuestions": [
@@ -538,7 +538,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to abut”"
+          "phrase": "“was ready to abut”"
         }
       ],
       "sourceQuestions": [],
@@ -934,7 +934,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded adroitly”"
+          "phrase": "“did so adroitly”"
         }
       ],
       "sourceQuestions": [
@@ -984,7 +984,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“an affecter in the account”"
+          "phrase": "“described as an affecter”"
         }
       ],
       "sourceQuestions": [],
@@ -1031,7 +1031,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“an affectless remark”"
+          "phrase": "“the remark seemed affectless”"
         }
       ],
       "sourceQuestions": [],
@@ -1074,7 +1074,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several agglomerations in the account”"
+          "phrase": "“the agglomerations mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -1247,7 +1247,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the allele in the specimen”"
+          "phrase": "“allele in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -1296,7 +1296,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several alluvions in the account”"
+          "phrase": "“the alluvions mentioned in the text”"
         }
       ],
       "sourceQuestions": [
@@ -1345,7 +1345,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of almsgiving”"
+          "phrase": "“showed remarkable almsgiving”"
         }
       ],
       "sourceQuestions": [
@@ -1394,7 +1394,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“they had ambulated it by then”"
+          "phrase": "“it was ambulated before noon”"
         }
       ],
       "sourceQuestions": [
@@ -1465,7 +1465,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an amity in the passage”"
+          "phrase": "“a reference to amity”"
         }
       ],
       "sourceQuestions": [
@@ -1481,15 +1481,15 @@
     },
     "ammonic": {
       "word": "ammonic",
-      "definition": "Relating to the cornu ammonis.",
-      "quizDefinition": "Relating to the cornu ammonis.",
+      "definition": "Relating to the cornu ammonis, an older anatomical name for the hippocampal formation of the brain.",
+      "quizDefinition": "Relating to the cornu ammonis, an older anatomical name for the hippocampal formation of the brain.",
       "rawDictionaryDefinition": "Relating to the cornu ammonis.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "From ammonia + -ic.",
-      "etymologyBrief": "From ammonia + -ic.",
-      "example": "In this vocabulary set, “ammonic” is used for the idea “Relating to the cornu ammonis.”",
+      "etymologyBrief": "Here Ammonic refers to cornu Ammonis, Latin for “horn of Ammon,” an old anatomical name for the hippocampal formation. The name evokes the curved ram’s horns associated with the god Ammon.",
+      "example": "In this vocabulary set, “ammonic” is used for the idea “Relating to the cornu ammonis, an older anatomical name for the hippocampal formation of the brain.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -1508,19 +1508,19 @@
       ],
       "encounters": [
         {
-          "place": "Book / film review",
-          "phrase": "“an ammonic description”"
+          "place": "Neuroanatomy textbook",
+          "phrase": "“the Ammonic fields of the hippocampus”"
         },
         {
-          "place": "Character description in fiction",
-          "phrase": "“an ammonic description”"
+          "place": "Histology or neuroscience paper",
+          "phrase": "“Ammonic neurons in the hippocampal formation”"
         }
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/am/ammonic.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 30,
+        "length": 99,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -1558,7 +1558,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an amorist in the passage”"
+          "phrase": "“a reference to amorist”"
         }
       ],
       "sourceQuestions": [],
@@ -1611,7 +1611,7 @@
         },
         {
           "place": "Business-news article",
-          "phrase": "“decided to amortize”"
+          "phrase": "“was ready to amortize”"
         }
       ],
       "sourceQuestions": [],
@@ -1654,7 +1654,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of amusingness”"
+          "phrase": "“showed remarkable amusingness”"
         }
       ],
       "sourceQuestions": [],
@@ -1697,7 +1697,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded anachronously”"
+          "phrase": "“did so anachronously”"
         }
       ],
       "sourceQuestions": [],
@@ -1748,7 +1748,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the anaphase in the specimen”"
+          "phrase": "“anaphase in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -1802,7 +1802,7 @@
         },
         {
           "place": "Editor’s margin note or literary analysis",
-          "phrase": "“an anaphoric construction”"
+          "phrase": "“the construction seemed anaphoric”"
         }
       ],
       "sourceQuestions": [],
@@ -1855,7 +1855,7 @@
         },
         {
           "place": "Technical datasheet or geology textbook",
-          "phrase": "“the anthracite in the sample”"
+          "phrase": "“a sample containing anthracite”"
         }
       ],
       "sourceQuestions": [],
@@ -2002,7 +2002,7 @@
         },
         {
           "place": "Church-history or museum exhibit",
-          "phrase": "“decided to apotheoses”"
+          "phrase": "“was ready to apotheoses”"
         }
       ],
       "sourceQuestions": [
@@ -2047,7 +2047,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“they had approbated it by then”"
+          "phrase": "“it was approbated before noon”"
         }
       ],
       "sourceQuestions": [],
@@ -2158,7 +2158,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an armistice in the passage”"
+          "phrase": "“a reference to armistice”"
         }
       ],
       "sourceQuestions": [
@@ -2259,7 +2259,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an asininity in the passage”"
+          "phrase": "“a reference to asininity”"
         }
       ],
       "sourceQuestions": [
@@ -2372,7 +2372,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“their fears were assuaged”"
+          "phrase": "“the pain was assuaged by morning”"
         }
       ],
       "sourceQuestions": [
@@ -2611,7 +2611,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several avionics in the account”"
+          "phrase": "“the avionics mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -2718,7 +2718,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an ax in the passage”"
+          "phrase": "“a reference to ax”"
         }
       ],
       "sourceQuestions": [
@@ -2925,7 +2925,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a barrister in the passage”"
+          "phrase": "“a reference to barrister”"
         }
       ],
       "sourceQuestions": [
@@ -2987,7 +2987,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“a bawd in the account”"
+          "phrase": "“described as a bawd”"
         }
       ],
       "sourceQuestions": [],
@@ -3032,7 +3032,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a bayed description”"
+          "phrase": "“the description seemed bayed”"
         }
       ],
       "sourceQuestions": [],
@@ -3079,7 +3079,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to bedeck the hall”"
+          "phrase": "“they chose to bedeck the hall”"
         }
       ],
       "sourceQuestions": [],
@@ -3122,7 +3122,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a bemoaning in the passage”"
+          "phrase": "“a reference to bemoaning”"
         }
       ],
       "sourceQuestions": [],
@@ -3167,7 +3167,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“kept besotting through the scene”"
+          "phrase": "“was besotting again”"
         }
       ],
       "sourceQuestions": [],
@@ -3278,7 +3278,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a bifurcation in the passage”"
+          "phrase": "“a reference to bifurcation”"
         }
       ],
       "sourceQuestions": [
@@ -3347,7 +3347,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to bilk an unsuspecting buyer”"
+          "phrase": "“they chose to bilk an unsuspecting buyer”"
         }
       ],
       "sourceQuestions": [
@@ -3409,7 +3409,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a blackleg in the account”"
+          "phrase": "“described as a blackleg”"
         }
       ],
       "sourceQuestions": [
@@ -3454,7 +3454,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several blandishments in the account”"
+          "phrase": "“the blandishments mentioned in the text”"
         }
       ],
       "sourceQuestions": [
@@ -3572,7 +3572,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a bondman in the account”"
+          "phrase": "“described as a bondman”"
         }
       ],
       "sourceQuestions": [
@@ -3700,12 +3700,12 @@
       ],
       "encounters": [
         {
-          "place": "Book / film review",
-          "phrase": "“a boric description”"
+          "place": "Chemistry / materials-science lab manual",
+          "phrase": "“a boric compound”"
         },
         {
-          "place": "Character description in fiction",
-          "phrase": "“a boric description”"
+          "place": "Technical datasheet or geology textbook",
+          "phrase": "“the compound seemed boric”"
         }
       ],
       "sourceQuestions": [],
@@ -3752,7 +3752,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a botfly in the passage”"
+          "phrase": "“a reference to botfly”"
         }
       ],
       "sourceQuestions": [],
@@ -4156,7 +4156,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a bronchus in the passage”"
+          "phrase": "“a reference to bronchus”"
         }
       ],
       "sourceQuestions": [],
@@ -4254,7 +4254,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a bulwark in the passage”"
+          "phrase": "“a reference to bulwark”"
         }
       ],
       "sourceQuestions": [
@@ -4511,7 +4511,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a cabalism in the passage”"
+          "phrase": "“a reference to cabalism”"
         }
       ],
       "sourceQuestions": [],
@@ -4558,7 +4558,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a cabinetwork in the passage”"
+          "phrase": "“a reference to cabinetwork”"
         }
       ],
       "sourceQuestions": [],
@@ -4601,7 +4601,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“responded caddishly”"
+          "phrase": "“did so caddishly”"
         }
       ],
       "sourceQuestions": [],
@@ -4664,7 +4664,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a cairn in the passage”"
+          "phrase": "“a reference to cairn”"
         }
       ],
       "sourceQuestions": [
@@ -4725,7 +4725,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a caliph in the passage”"
+          "phrase": "“a reference to caliph”"
         }
       ],
       "sourceQuestions": [],
@@ -4774,7 +4774,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a canard in the passage”"
+          "phrase": "“a reference to canard”"
         }
       ],
       "sourceQuestions": [],
@@ -4823,7 +4823,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a canniness in the passage”"
+          "phrase": "“a reference to canniness”"
         }
       ],
       "sourceQuestions": [
@@ -4941,7 +4941,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“carob on the menu”"
+          "phrase": "“a recipe using carob”"
         }
       ],
       "sourceQuestions": [],
@@ -5216,7 +5216,7 @@
         },
         {
           "place": "Costume-museum or fashion-history label",
-          "phrase": "“the chamois in the catalog”"
+          "phrase": "“a vintage chamois”"
         }
       ],
       "sourceQuestions": [],
@@ -5393,7 +5393,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a cherub in the passage”"
+          "phrase": "“a reference to cherub”"
         }
       ],
       "sourceQuestions": [],
@@ -5495,7 +5495,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“the chiasm on the scan”"
+          "phrase": "“injury near the chiasm”"
         }
       ],
       "sourceQuestions": [],
@@ -5709,7 +5709,7 @@
         },
         {
           "place": "Historical nonfiction or reenactment guide",
-          "phrase": "“the claymore in the museum collection”"
+          "phrase": "“a period claymore”"
         }
       ],
       "sourceQuestions": [
@@ -5759,7 +5759,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a clime in the passage”"
+          "phrase": "“a reference to clime”"
         }
       ],
       "sourceQuestions": [
@@ -5849,7 +5849,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a cochairman in the passage”"
+          "phrase": "“a reference to cochairman”"
         }
       ],
       "sourceQuestions": [],
@@ -5905,7 +5905,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a cogitation in the passage”"
+          "phrase": "“a reference to cogitation”"
         }
       ],
       "sourceQuestions": [
@@ -5954,7 +5954,7 @@
         },
         {
           "place": "Business-news article",
-          "phrase": "“the coinsurance in the policy”"
+          "phrase": "“costs associated with coinsurance”"
         }
       ],
       "sourceQuestions": [],
@@ -6121,7 +6121,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a concoction in the passage”"
+          "phrase": "“a reference to concoction”"
         }
       ],
       "sourceQuestions": [
@@ -6268,7 +6268,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a conducer in the account”"
+          "phrase": "“described as a conducer”"
         }
       ],
       "sourceQuestions": [],
@@ -6363,7 +6363,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of confidentialness”"
+          "phrase": "“showed remarkable confidentialness”"
         }
       ],
       "sourceQuestions": [],
@@ -6643,12 +6643,12 @@
       ],
       "encounters": [
         {
-          "place": "Medical chart or clinic handout",
-          "phrase": "“consubstantiation noted in the chart”"
+          "place": "Christian-theology textbook",
+          "phrase": "“the doctrine of consubstantiation”"
         },
         {
-          "place": "Anatomy / physiology textbook",
-          "phrase": "“consubstantiation noted in the chart”"
+          "place": "Reformation-history essay",
+          "phrase": "“a debate over consubstantiation”"
         }
       ],
       "sourceQuestions": [],
@@ -6692,12 +6692,12 @@
       ],
       "encounters": [
         {
-          "place": "Long-form news feature",
-          "phrase": "“decided to contraindicate”"
+          "place": "Drug label or prescribing information",
+          "phrase": "“kidney disease may contraindicate this treatment”"
         },
         {
-          "place": "Novel or memoir",
-          "phrase": "“decided to contraindicate”"
+          "place": "Clinical guideline",
+          "phrase": "“findings that contraindicate surgery”"
         }
       ],
       "sourceQuestions": [],
@@ -6742,7 +6742,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded contrastively”"
+          "phrase": "“did so contrastively”"
         }
       ],
       "sourceQuestions": [],
@@ -6796,7 +6796,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a contrivance in the passage”"
+          "phrase": "“a reference to contrivance”"
         }
       ],
       "sourceQuestions": [
@@ -6844,12 +6844,12 @@
       ],
       "encounters": [
         {
-          "place": "Biology textbook or lab handout",
-          "phrase": "“the copolymer in the specimen”"
+          "place": "Chemistry / materials-science lab manual",
+          "phrase": "“the copolymer in the sample”"
         },
         {
-          "place": "Field guide or science-museum label",
-          "phrase": "“the copolymer in the specimen”"
+          "place": "Technical datasheet or geology textbook",
+          "phrase": "“a sample containing copolymer”"
         }
       ],
       "sourceQuestions": [],
@@ -6939,7 +6939,7 @@
         },
         {
           "place": "Technical datasheet or geology textbook",
-          "phrase": "“a corroder in the account”"
+          "phrase": "“described as a corroder”"
         }
       ],
       "sourceQuestions": [],
@@ -7051,7 +7051,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to cosset”"
+          "phrase": "“was ready to cosset”"
         }
       ],
       "sourceQuestions": [
@@ -7108,7 +7108,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a coulter in the passage”"
+          "phrase": "“a reference to coulter”"
         }
       ],
       "sourceQuestions": [],
@@ -7154,7 +7154,7 @@
         },
         {
           "place": "Church-history or museum exhibit",
-          "phrase": "“a courter in the account”"
+          "phrase": "“described as a courter”"
         }
       ],
       "sourceQuestions": [],
@@ -7252,7 +7252,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a covetousness in the passage”"
+          "phrase": "“a reference to covetousness”"
         }
       ],
       "sourceQuestions": [
@@ -7340,7 +7340,7 @@
         },
         {
           "place": "Architecture or infrastructure description",
-          "phrase": "“the crosstie in the assembly”"
+          "phrase": "“inspect the crosstie for damage”"
         }
       ],
       "sourceQuestions": [],
@@ -7432,7 +7432,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to cudgels”"
+          "phrase": "“was ready to cudgels”"
         }
       ],
       "sourceQuestions": [],
@@ -7608,7 +7608,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“a daystar in the passage”"
+          "phrase": "“a reference to daystar”"
         }
       ],
       "sourceQuestions": [],
@@ -7653,7 +7653,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“to decantate the wine carefully”"
+          "phrase": "“they chose to decantate the wine carefully”"
         }
       ],
       "sourceQuestions": [],
@@ -7702,7 +7702,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a deflowerer in the account”"
+          "phrase": "“described as a deflowerer”"
         }
       ],
       "sourceQuestions": [],
@@ -7806,7 +7806,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a delineation in the passage”"
+          "phrase": "“a reference to delineation”"
         }
       ],
       "sourceQuestions": [
@@ -7863,7 +7863,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to deliquesce”"
+          "phrase": "“was ready to deliquesce”"
         }
       ],
       "sourceQuestions": [],
@@ -7912,7 +7912,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to deluges”"
+          "phrase": "“was ready to deluges”"
         }
       ],
       "sourceQuestions": [
@@ -7988,7 +7988,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to demote someone publicly”"
+          "phrase": "“they chose to demote someone publicly”"
         }
       ],
       "sourceQuestions": [
@@ -8190,7 +8190,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a detente in the passage”"
+          "phrase": "“a reference to detente”"
         }
       ],
       "sourceQuestions": [
@@ -8235,7 +8235,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of determinativeness”"
+          "phrase": "“showed remarkable determinativeness”"
         }
       ],
       "sourceQuestions": [],
@@ -8278,7 +8278,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a dewiness in the passage”"
+          "phrase": "“a reference to dewiness”"
         }
       ],
       "sourceQuestions": [],
@@ -8386,7 +8386,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a dextral description”"
+          "phrase": "“the description seemed dextral”"
         }
       ],
       "sourceQuestions": [
@@ -8437,7 +8437,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a diadem in the passage”"
+          "phrase": "“a reference to diadem”"
         }
       ],
       "sourceQuestions": [],
@@ -8501,7 +8501,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several diaphoresis in the account”"
+          "phrase": "“the diaphoresis mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -8547,7 +8547,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a dietarian in the passage”"
+          "phrase": "“a reference to dietarian”"
         }
       ],
       "sourceQuestions": [],
@@ -8643,7 +8643,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a disapprobative description”"
+          "phrase": "“the description seemed disapprobative”"
         }
       ],
       "sourceQuestions": [],
@@ -8785,7 +8785,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a discordance in the passage”"
+          "phrase": "“a reference to discordance”"
         }
       ],
       "sourceQuestions": [],
@@ -8828,7 +8828,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the disgorger in the specimen”"
+          "phrase": "“disgorger in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -8871,7 +8871,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a disposure in the passage”"
+          "phrase": "“a reference to disposure”"
         }
       ],
       "sourceQuestions": [],
@@ -9178,7 +9178,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to dodder across the room”"
+          "phrase": "“they chose to dodder across the room”"
         }
       ],
       "sourceQuestions": [
@@ -9335,7 +9335,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a donative in the passage”"
+          "phrase": "“a reference to donative”"
         }
       ],
       "sourceQuestions": [],
@@ -9433,7 +9433,7 @@
         },
         {
           "place": "Historical nonfiction or reenactment guide",
-          "phrase": "“the doughboy in the museum collection”"
+          "phrase": "“a period doughboy”"
         }
       ],
       "sourceQuestions": [],
@@ -9482,7 +9482,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a doughtiness in the passage”"
+          "phrase": "“a reference to doughtiness”"
         }
       ],
       "sourceQuestions": [
@@ -9529,7 +9529,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“downing on the menu”"
+          "phrase": "“a recipe using downing”"
         }
       ],
       "sourceQuestions": [],
@@ -9577,7 +9577,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a drachma in the passage”"
+          "phrase": "“a reference to drachma”"
         }
       ],
       "sourceQuestions": [],
@@ -9629,7 +9629,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a dubitable description”"
+          "phrase": "“the description seemed dubitable”"
         }
       ],
       "sourceQuestions": [],
@@ -9678,7 +9678,7 @@
         },
         {
           "place": "Business-news article",
-          "phrase": "“the ducat in the policy”"
+          "phrase": "“costs associated with ducat”"
         }
       ],
       "sourceQuestions": [],
@@ -9730,7 +9730,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an egregious description”"
+          "phrase": "“the description seemed egregious”"
         }
       ],
       "sourceQuestions": [],
@@ -9835,7 +9835,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an endogenous description”"
+          "phrase": "“the description seemed endogenous”"
         }
       ],
       "sourceQuestions": [],
@@ -9902,7 +9902,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to ennoble”"
+          "phrase": "“was ready to ennoble”"
         }
       ],
       "sourceQuestions": [],
@@ -9953,7 +9953,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to enrapture”"
+          "phrase": "“was ready to enrapture”"
         }
       ],
       "sourceQuestions": [
@@ -9998,7 +9998,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to enspheres”"
+          "phrase": "“was ready to enspheres”"
         }
       ],
       "sourceQuestions": [],
@@ -10041,7 +10041,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several environs in the account”"
+          "phrase": "“the environs mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -10084,7 +10084,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an equitableness in the passage”"
+          "phrase": "“a reference to equitableness”"
         }
       ],
       "sourceQuestions": [],
@@ -10134,7 +10134,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an esotericism in the passage”"
+          "phrase": "“a reference to esotericism”"
         }
       ],
       "sourceQuestions": [],
@@ -10179,7 +10179,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an euphoniousness in the passage”"
+          "phrase": "“a reference to euphoniousness”"
         }
       ],
       "sourceQuestions": [],
@@ -10233,7 +10233,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an evanescent description”"
+          "phrase": "“the description seemed evanescent”"
         }
       ],
       "sourceQuestions": [
@@ -10278,7 +10278,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“responded exceptionably”"
+          "phrase": "“did so exceptionably”"
         }
       ],
       "sourceQuestions": [],
@@ -10464,7 +10464,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an exertive description”"
+          "phrase": "“the description seemed exertive”"
         }
       ],
       "sourceQuestions": [],
@@ -10671,7 +10671,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an expressible description”"
+          "phrase": "“the description seemed expressible”"
         }
       ],
       "sourceQuestions": [],
@@ -10721,7 +10721,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of expunction”"
+          "phrase": "“showed remarkable expunction”"
         }
       ],
       "sourceQuestions": [],
@@ -10868,7 +10868,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“an extoller in the account”"
+          "phrase": "“described as an extoller”"
         }
       ],
       "sourceQuestions": [],
@@ -10973,7 +10973,7 @@
         },
         {
           "place": "Technical datasheet or geology textbook",
-          "phrase": "“an extrusive compound”"
+          "phrase": "“the compound seemed extrusive”"
         }
       ],
       "sourceQuestions": [],
@@ -11076,7 +11076,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a facsimile in the passage”"
+          "phrase": "“a reference to facsimile”"
         }
       ],
       "sourceQuestions": [],
@@ -11169,7 +11169,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a fatigable description”"
+          "phrase": "“the description seemed fatigable”"
         }
       ],
       "sourceQuestions": [],
@@ -11212,7 +11212,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a featherstitch in the passage”"
+          "phrase": "“a reference to featherstitch”"
         }
       ],
       "sourceQuestions": [],
@@ -11255,7 +11255,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a federacy in the passage”"
+          "phrase": "“a reference to federacy”"
         }
       ],
       "sourceQuestions": [],
@@ -11305,7 +11305,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“a fibber in the passage”"
+          "phrase": "“a reference to fibber”"
         }
       ],
       "sourceQuestions": [
@@ -11543,7 +11543,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a flaunter in the account”"
+          "phrase": "“described as a flaunter”"
         }
       ],
       "sourceQuestions": [],
@@ -11599,7 +11599,7 @@
         },
         {
           "place": "Technical datasheet or geology textbook",
-          "phrase": "“the fluorination in the sample”"
+          "phrase": "“a sample containing fluorination”"
         }
       ],
       "sourceQuestions": [],
@@ -11644,7 +11644,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a flyweight in the passage”"
+          "phrase": "“a reference to flyweight”"
         }
       ],
       "sourceQuestions": [],
@@ -11693,7 +11693,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several foibles in the account”"
+          "phrase": "“the foibles mentioned in the text”"
         }
       ],
       "sourceQuestions": [
@@ -11826,7 +11826,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to foment the scheme”"
+          "phrase": "“they chose to foment the scheme”"
         }
       ],
       "sourceQuestions": [
@@ -11875,7 +11875,7 @@
         },
         {
           "place": "Costume-museum or fashion-history label",
-          "phrase": "“the foppery in the catalog”"
+          "phrase": "“a vintage foppery”"
         }
       ],
       "sourceQuestions": [
@@ -11920,7 +11920,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a forbiddingness in the passage”"
+          "phrase": "“a reference to forbiddingness”"
         }
       ],
       "sourceQuestions": [],
@@ -11976,7 +11976,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to forestall a larger problem”"
+          "phrase": "“they chose to forestall a larger problem”"
         }
       ],
       "sourceQuestions": [
@@ -12035,7 +12035,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“to forfend a larger problem”"
+          "phrase": "“they chose to forfend a larger problem”"
         }
       ],
       "sourceQuestions": [
@@ -12156,7 +12156,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to forwent”"
+          "phrase": "“was ready to forwent”"
         }
       ],
       "sourceQuestions": [],
@@ -12425,7 +12425,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a fussbudgety description”"
+          "phrase": "“the description seemed fussbudgety”"
         }
       ],
       "sourceQuestions": [
@@ -12568,7 +12568,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to gatecrash”"
+          "phrase": "“was ready to gatecrash”"
         }
       ],
       "sourceQuestions": [],
@@ -12613,7 +12613,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of gelatinization”"
+          "phrase": "“showed remarkable gelatinization”"
         }
       ],
       "sourceQuestions": [],
@@ -12884,7 +12884,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a glossarist in the account”"
+          "phrase": "“described as a glossarist”"
         }
       ],
       "sourceQuestions": [],
@@ -12942,7 +12942,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several gnosis in the account”"
+          "phrase": "“the gnosis mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -13240,7 +13240,7 @@
         },
         {
           "place": "Business-news article",
-          "phrase": "“the haulage in the policy”"
+          "phrase": "“costs associated with haulage”"
         }
       ],
       "sourceQuestions": [
@@ -13412,7 +13412,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to hearken”"
+          "phrase": "“was ready to hearken”"
         }
       ],
       "sourceQuestions": [],
@@ -13470,7 +13470,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a hedonic description”"
+          "phrase": "“the description seemed hedonic”"
         }
       ],
       "sourceQuestions": [],
@@ -13525,7 +13525,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the herpetology in the specimen”"
+          "phrase": "“herpetology in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -13663,7 +13663,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“a striking display of hook”"
+          "phrase": "“showed remarkable hook”"
         }
       ],
       "sourceQuestions": [
@@ -14067,7 +14067,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an imperious description”"
+          "phrase": "“the description seemed imperious”"
         }
       ],
       "sourceQuestions": [],
@@ -14169,7 +14169,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of implacability”"
+          "phrase": "“showed remarkable implacability”"
         }
       ],
       "sourceQuestions": [
@@ -14449,7 +14449,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an incognizant description”"
+          "phrase": "“the description seemed incognizant”"
         }
       ],
       "sourceQuestions": [],
@@ -14740,7 +14740,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an individualizer in the passage”"
+          "phrase": "“a reference to individualizer”"
         }
       ],
       "sourceQuestions": [],
@@ -14859,7 +14859,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an inefficacious description”"
+          "phrase": "“the description seemed inefficacious”"
         }
       ],
       "sourceQuestions": [
@@ -14906,7 +14906,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to infill”"
+          "phrase": "“was ready to infill”"
         }
       ],
       "sourceQuestions": [],
@@ -14949,7 +14949,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an ingenuousness in the passage”"
+          "phrase": "“a reference to ingenuousness”"
         }
       ],
       "sourceQuestions": [],
@@ -14992,7 +14992,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an inhalational description”"
+          "phrase": "“the description seemed inhalational”"
         }
       ],
       "sourceQuestions": [],
@@ -15147,7 +15147,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an instillation in the passage”"
+          "phrase": "“a reference to instillation”"
         }
       ],
       "sourceQuestions": [],
@@ -15241,7 +15241,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to interblend”"
+          "phrase": "“was ready to interblend”"
         }
       ],
       "sourceQuestions": [],
@@ -15302,7 +15302,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“an intercessor in the account”"
+          "phrase": "“described as an intercessor”"
         }
       ],
       "sourceQuestions": [],
@@ -15464,7 +15464,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of inundations”"
+          "phrase": "“showed remarkable inundations”"
         }
       ],
       "sourceQuestions": [
@@ -15561,7 +15561,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded invitingly”"
+          "phrase": "“did so invitingly”"
         }
       ],
       "sourceQuestions": [],
@@ -15811,7 +15811,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a karting in the passage”"
+          "phrase": "“a reference to karting”"
         }
       ],
       "sourceQuestions": [],
@@ -15854,7 +15854,7 @@
         },
         {
           "place": "Costume-museum or fashion-history label",
-          "phrase": "“the kilting in the catalog”"
+          "phrase": "“a vintage kilting”"
         }
       ],
       "sourceQuestions": [],
@@ -15919,7 +15919,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a knave in the passage”"
+          "phrase": "“a reference to knave”"
         }
       ],
       "sourceQuestions": [
@@ -16095,7 +16095,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a lacuna in the passage”"
+          "phrase": "“a reference to lacuna”"
         }
       ],
       "sourceQuestions": [],
@@ -16140,7 +16140,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a lancelet in the passage”"
+          "phrase": "“a reference to lancelet”"
         }
       ],
       "sourceQuestions": [],
@@ -16298,7 +16298,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“the lavage on the scan”"
+          "phrase": "“injury near the lavage”"
         }
       ],
       "sourceQuestions": [],
@@ -16451,7 +16451,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a leatherhead in the passage”"
+          "phrase": "“a reference to leatherhead”"
         }
       ],
       "sourceQuestions": [],
@@ -16550,7 +16550,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a literalism in the passage”"
+          "phrase": "“a reference to literalism”"
         }
       ],
       "sourceQuestions": [
@@ -16607,7 +16607,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to loll”"
+          "phrase": "“was ready to loll”"
         }
       ],
       "sourceQuestions": [
@@ -16666,7 +16666,7 @@
         },
         {
           "place": "Business-news article",
-          "phrase": "“the lucre in the policy”"
+          "phrase": "“costs associated with lucre”"
         }
       ],
       "sourceQuestions": [],
@@ -16854,7 +16854,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several malefactions in the account”"
+          "phrase": "“the malefactions mentioned in the text”"
         }
       ],
       "sourceQuestions": [
@@ -16957,7 +16957,7 @@
         },
         {
           "place": "Historical nonfiction or reenactment guide",
-          "phrase": "“the matchlock in the museum collection”"
+          "phrase": "“a period matchlock”"
         }
       ],
       "sourceQuestions": [],
@@ -17007,7 +17007,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a mendacity in the passage”"
+          "phrase": "“a reference to mendacity”"
         }
       ],
       "sourceQuestions": [
@@ -17224,7 +17224,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a milksop in the passage”"
+          "phrase": "“a reference to milksop”"
         }
       ],
       "sourceQuestions": [],
@@ -17367,7 +17367,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to mislay”"
+          "phrase": "“was ready to mislay”"
         }
       ],
       "sourceQuestions": [],
@@ -17412,7 +17412,7 @@
         },
         {
           "place": "Church-history or museum exhibit",
-          "phrase": "“a misogamist in the account”"
+          "phrase": "“described as a misogamist”"
         }
       ],
       "sourceQuestions": [],
@@ -17516,7 +17516,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of modularity”"
+          "phrase": "“showed remarkable modularity”"
         }
       ],
       "sourceQuestions": [],
@@ -17770,7 +17770,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“a mulatto in the passage”"
+          "phrase": "“a reference to mulatto”"
         }
       ],
       "sourceQuestions": [],
@@ -17817,7 +17817,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“responded munificently”"
+          "phrase": "“did so munificently”"
         }
       ],
       "sourceQuestions": [
@@ -17872,7 +17872,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a myelination in the passage”"
+          "phrase": "“a reference to myelination”"
         }
       ],
       "sourceQuestions": [],
@@ -17930,7 +17930,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“a myeloid finding”"
+          "phrase": "“the finding seemed myeloid”"
         }
       ],
       "sourceQuestions": [],
@@ -18105,7 +18105,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to neigh”"
+          "phrase": "“was ready to neigh”"
         }
       ],
       "sourceQuestions": [
@@ -18409,7 +18409,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“a striking display of obdurateness”"
+          "phrase": "“showed remarkable obdurateness”"
         }
       ],
       "sourceQuestions": [
@@ -18533,7 +18533,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to occlude the opening”"
+          "phrase": "“they chose to occlude the opening”"
         }
       ],
       "sourceQuestions": [],
@@ -18583,7 +18583,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“an octavo in the passage”"
+          "phrase": "“a reference to octavo”"
         }
       ],
       "sourceQuestions": [],
@@ -18805,7 +18805,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several otosclerosis in the account”"
+          "phrase": "“the otosclerosis mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -18861,7 +18861,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the owlet in the specimen”"
+          "phrase": "“owlet in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -19111,7 +19111,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“the papilla on the scan”"
+          "phrase": "“injury near the papilla”"
         }
       ],
       "sourceQuestions": [],
@@ -19216,7 +19216,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“the patella on the scan”"
+          "phrase": "“injury near the patella”"
         }
       ],
       "sourceQuestions": [],
@@ -19270,7 +19270,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a patten in the passage”"
+          "phrase": "“a reference to patten”"
         }
       ],
       "sourceQuestions": [
@@ -19374,7 +19374,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a peahen in the passage”"
+          "phrase": "“a reference to peahen”"
         }
       ],
       "sourceQuestions": [],
@@ -19423,7 +19423,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several peccadilloes in the account”"
+          "phrase": "“the peccadilloes mentioned in the text”"
         }
       ],
       "sourceQuestions": [
@@ -19478,7 +19478,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“a striking display of perambulation”"
+          "phrase": "“showed remarkable perambulation”"
         }
       ],
       "sourceQuestions": [
@@ -19902,7 +19902,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“phlebitis noted in the chart”"
+          "phrase": "“evidence of phlebitis”"
         }
       ],
       "sourceQuestions": [],
@@ -20029,7 +20029,7 @@
         },
         {
           "place": "Music-history textbook",
-          "phrase": "“a pianoforte in the score”"
+          "phrase": "“a passage featuring pianoforte”"
         }
       ],
       "sourceQuestions": [],
@@ -20169,7 +20169,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“responded plaintively”"
+          "phrase": "“did so plaintively”"
         }
       ],
       "sourceQuestions": [],
@@ -20280,7 +20280,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a pleura in the passage”"
+          "phrase": "“a reference to pleura”"
         }
       ],
       "sourceQuestions": [],
@@ -20332,7 +20332,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“pleurisy noted in the chart”"
+          "phrase": "“evidence of pleurisy”"
         }
       ],
       "sourceQuestions": [],
@@ -20399,7 +20399,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a pliant description”"
+          "phrase": "“the description seemed pliant”"
         }
       ],
       "sourceQuestions": [],
@@ -20444,7 +20444,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several polemics in the account”"
+          "phrase": "“the polemics mentioned in the text”"
         }
       ],
       "sourceQuestions": [
@@ -20564,7 +20564,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to pound”"
+          "phrase": "“was ready to pound”"
         }
       ],
       "sourceQuestions": [
@@ -20613,7 +20613,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a presaging in the passage”"
+          "phrase": "“a reference to presaging”"
         }
       ],
       "sourceQuestions": [
@@ -20674,7 +20674,7 @@
         },
         {
           "place": "Church-history or museum exhibit",
-          "phrase": "“the presbytery in the theology text”"
+          "phrase": "“a discussion of presbytery”"
         }
       ],
       "sourceQuestions": [],
@@ -20717,7 +20717,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a pressmark in the passage”"
+          "phrase": "“a reference to pressmark”"
         }
       ],
       "sourceQuestions": [],
@@ -20871,7 +20871,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a primogenitary description”"
+          "phrase": "“the description seemed primogenitary”"
         }
       ],
       "sourceQuestions": [],
@@ -20920,7 +20920,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a primogenitor in the passage”"
+          "phrase": "“a reference to primogenitor”"
         }
       ],
       "sourceQuestions": [
@@ -21202,7 +21202,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“the pronator on the scan”"
+          "phrase": "“injury near the pronator”"
         }
       ],
       "sourceQuestions": [],
@@ -21370,7 +21370,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a pulmonic description”"
+          "phrase": "“the description seemed pulmonic”"
         }
       ],
       "sourceQuestions": [],
@@ -21539,7 +21539,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded putatively”"
+          "phrase": "“did so putatively”"
         }
       ],
       "sourceQuestions": [],
@@ -21595,7 +21595,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a pyloric description”"
+          "phrase": "“the description seemed pyloric”"
         }
       ],
       "sourceQuestions": [],
@@ -21649,7 +21649,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a pyorrhea in the passage”"
+          "phrase": "“a reference to pyorrhea”"
         }
       ],
       "sourceQuestions": [],
@@ -21744,11 +21744,11 @@
       ],
       "encounters": [
         {
-          "place": "Chemistry / materials-science lab manual",
-          "phrase": "“the quicklime in the sample”"
+          "place": "Medical chart or clinic handout",
+          "phrase": "“quicklime noted in the chart”"
         },
         {
-          "place": "Technical datasheet or geology textbook",
+          "place": "Anatomy / physiology textbook",
           "phrase": "“at, / By the quicklime on their boots”"
         }
       ],
@@ -21847,7 +21847,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“ragout on the menu”"
+          "phrase": "“a recipe using ragout”"
         }
       ],
       "sourceQuestions": [],
@@ -22003,7 +22003,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of ranginess”"
+          "phrase": "“showed remarkable ranginess”"
         }
       ],
       "sourceQuestions": [],
@@ -22310,7 +22310,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a reconvention in the passage”"
+          "phrase": "“a reference to reconvention”"
         }
       ],
       "sourceQuestions": [],
@@ -22460,7 +22460,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to renormalize”"
+          "phrase": "“was ready to renormalize”"
         }
       ],
       "sourceQuestions": [],
@@ -22511,7 +22511,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“repast on the menu”"
+          "phrase": "“a recipe using repast”"
         }
       ],
       "sourceQuestions": [
@@ -22603,7 +22603,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to resurvey”"
+          "phrase": "“was ready to resurvey”"
         }
       ],
       "sourceQuestions": [],
@@ -22646,7 +22646,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a retrogressive in the passage”"
+          "phrase": "“a reference to retrogressive”"
         }
       ],
       "sourceQuestions": [],
@@ -22692,7 +22692,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a revolute description”"
+          "phrase": "“the description seemed revolute”"
         }
       ],
       "sourceQuestions": [],
@@ -22912,7 +22912,7 @@
         },
         {
           "place": "Editor’s margin note or literary analysis",
-          "phrase": "“the roulade in the sentence”"
+          "phrase": "“an example of roulade”"
         }
       ],
       "sourceQuestions": [],
@@ -23036,7 +23036,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to sack”"
+          "phrase": "“was ready to sack”"
         }
       ],
       "sourceQuestions": [
@@ -23150,7 +23150,7 @@
         },
         {
           "place": "Technical datasheet or geology textbook",
-          "phrase": "“the salicylate in the sample”"
+          "phrase": "“a sample containing salicylate”"
         }
       ],
       "sourceQuestions": [],
@@ -23201,7 +23201,7 @@
         },
         {
           "place": "Church-history or museum exhibit",
-          "phrase": "“a sapiential doctrine”"
+          "phrase": "“the doctrine seemed sapiential”"
         }
       ],
       "sourceQuestions": [
@@ -23330,7 +23330,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“scrapple on the menu”"
+          "phrase": "“a recipe using scrapple”"
         }
       ],
       "sourceQuestions": [],
@@ -23373,7 +23373,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a scruffiest description”"
+          "phrase": "“the description seemed scruffiest”"
         }
       ],
       "sourceQuestions": [],
@@ -23416,7 +23416,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of scurrilousness”"
+          "phrase": "“showed remarkable scurrilousness”"
         }
       ],
       "sourceQuestions": [],
@@ -23462,7 +23462,7 @@
         },
         {
           "place": "Novel or historical account",
-          "phrase": "“a seizer in the account”"
+          "phrase": "“described as a seizer”"
         }
       ],
       "sourceQuestions": [],
@@ -23571,7 +23571,7 @@
         },
         {
           "place": "Music-history textbook",
-          "phrase": "“a semiquaver in the score”"
+          "phrase": "“a passage featuring semiquaver”"
         }
       ],
       "sourceQuestions": [],
@@ -23614,7 +23614,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a sententiousness in the passage”"
+          "phrase": "“a reference to sententiousness”"
         }
       ],
       "sourceQuestions": [],
@@ -23786,7 +23786,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“shoofly on the menu”"
+          "phrase": "“a recipe using shoofly”"
         }
       ],
       "sourceQuestions": [],
@@ -23944,7 +23944,7 @@
         },
         {
           "place": "Anatomy / physiology textbook",
-          "phrase": "“the sigmoid on the scan”"
+          "phrase": "“injury near the sigmoid”"
         }
       ],
       "sourceQuestions": [],
@@ -23987,7 +23987,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of sinuousness”"
+          "phrase": "“showed remarkable sinuousness”"
         }
       ],
       "sourceQuestions": [
@@ -24037,7 +24037,7 @@
         },
         {
           "place": "Cookbook or culinary-history article",
-          "phrase": "“decided to sizzle”"
+          "phrase": "“was ready to sizzle”"
         }
       ],
       "sourceQuestions": [],
@@ -24196,7 +24196,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to skitter across the room”"
+          "phrase": "“they chose to skitter across the room”"
         }
       ],
       "sourceQuestions": [],
@@ -24364,7 +24364,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the snook in the specimen”"
+          "phrase": "“snook in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -24416,7 +24416,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a sobersided description”"
+          "phrase": "“the description seemed sobersided”"
         }
       ],
       "sourceQuestions": [
@@ -24470,7 +24470,7 @@
         },
         {
           "place": "Book / film review",
-          "phrase": "“a somnambulistic remark”"
+          "phrase": "“the remark seemed somnambulistic”"
         }
       ],
       "sourceQuestions": [],
@@ -24523,7 +24523,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a sorb in the passage”"
+          "phrase": "“a reference to sorb”"
         }
       ],
       "sourceQuestions": [],
@@ -24573,7 +24573,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the soya in the specimen”"
+          "phrase": "“soya in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -24694,7 +24694,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a spendthrift description”"
+          "phrase": "“the description seemed spendthrift”"
         }
       ],
       "sourceQuestions": [
@@ -24738,12 +24738,12 @@
       ],
       "encounters": [
         {
-          "place": "Magazine feature or reference entry",
-          "phrase": "“a sputum in the passage”"
+          "place": "Medical chart or clinic handout",
+          "phrase": "“sputum noted in the chart”"
         },
         {
-          "place": "Textbook, catalog, or museum label",
-          "phrase": "“a sputum in the passage”"
+          "place": "Anatomy / physiology textbook",
+          "phrase": "“evidence of sputum”"
         }
       ],
       "sourceQuestions": [],
@@ -24795,7 +24795,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a squally description”"
+          "phrase": "“the description seemed squally”"
         }
       ],
       "sourceQuestions": [
@@ -24871,7 +24871,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a staid description”"
+          "phrase": "“the description seemed staid”"
         }
       ],
       "sourceQuestions": [
@@ -25102,7 +25102,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of stoutness”"
+          "phrase": "“showed remarkable stoutness”"
         }
       ],
       "sourceQuestions": [
@@ -25149,7 +25149,7 @@
         },
         {
           "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of stultification”"
+          "phrase": "“showed remarkable stultification”"
         }
       ],
       "sourceQuestions": [],
@@ -25199,7 +25199,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a subunit in the passage”"
+          "phrase": "“a reference to subunit”"
         }
       ],
       "sourceQuestions": [],
@@ -25273,7 +25273,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to subvert”"
+          "phrase": "“was ready to subvert”"
         }
       ],
       "sourceQuestions": [
@@ -25329,7 +25329,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a sultana in the passage”"
+          "phrase": "“a reference to sultana”"
         }
       ],
       "sourceQuestions": [],
@@ -25377,7 +25377,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to summate”"
+          "phrase": "“was ready to summate”"
         }
       ],
       "sourceQuestions": [],
@@ -25477,7 +25477,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a sumptuousness in the passage”"
+          "phrase": "“a reference to sumptuousness”"
         }
       ],
       "sourceQuestions": [],
@@ -25522,7 +25522,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a superposed description”"
+          "phrase": "“the description seemed superposed”"
         }
       ],
       "sourceQuestions": [],
@@ -25565,7 +25565,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a suspensor in the passage”"
+          "phrase": "“a reference to suspensor”"
         }
       ],
       "sourceQuestions": [],
@@ -25659,7 +25659,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“decided to susurrate”"
+          "phrase": "“was ready to susurrate”"
         }
       ],
       "sourceQuestions": [
@@ -25713,7 +25713,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a swivet in the passage”"
+          "phrase": "“a reference to swivet”"
         }
       ],
       "sourceQuestions": [
@@ -25855,7 +25855,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“several tangs in the account”"
+          "phrase": "“the tangs mentioned in the text”"
         }
       ],
       "sourceQuestions": [],
@@ -25972,7 +25972,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a temperance in the passage”"
+          "phrase": "“a reference to temperance”"
         }
       ],
       "sourceQuestions": [
@@ -26017,7 +26017,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded tenthly”"
+          "phrase": "“did so tenthly”"
         }
       ],
       "sourceQuestions": [],
@@ -26062,7 +26062,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the terrine in the specimen”"
+          "phrase": "“terrine in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -26115,7 +26115,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a terseness in the passage”"
+          "phrase": "“a reference to terseness”"
         }
       ],
       "sourceQuestions": [
@@ -26332,7 +26332,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a tippet in the passage”"
+          "phrase": "“a reference to tippet”"
         }
       ],
       "sourceQuestions": [],
@@ -26483,7 +26483,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“responded tonally”"
+          "phrase": "“did so tonally”"
         }
       ],
       "sourceQuestions": [],
@@ -26700,7 +26700,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“to totter across the room”"
+          "phrase": "“they chose to totter across the room”"
         }
       ],
       "sourceQuestions": [
@@ -26795,7 +26795,7 @@
         },
         {
           "place": "Novel or memoir",
-          "phrase": "“they had traipsed it by then”"
+          "phrase": "“it was traipsed before noon”"
         }
       ],
       "sourceQuestions": [
@@ -26848,7 +26848,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a trammel in the passage”"
+          "phrase": "“a reference to trammel”"
         }
       ],
       "sourceQuestions": [],
@@ -27031,7 +27031,7 @@
         },
         {
           "place": "Textbook, catalog, or museum label",
-          "phrase": "“a trusteeship in the passage”"
+          "phrase": "“a reference to trusteeship”"
         }
       ],
       "sourceQuestions": [
@@ -27192,7 +27192,7 @@
         },
         {
           "place": "Editor’s margin note or literary analysis",
-          "phrase": "“the umlaut in the sentence”"
+          "phrase": "“an example of umlaut”"
         }
       ],
       "sourceQuestions": [],
@@ -27387,7 +27387,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an unexhausted description”"
+          "phrase": "“the description seemed unexhausted”"
         }
       ],
       "sourceQuestions": [],
@@ -27454,7 +27454,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an unfathomable description”"
+          "phrase": "“the description seemed unfathomable”"
         }
       ],
       "sourceQuestions": [],
@@ -27497,7 +27497,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“an univalve description”"
+          "phrase": "“the description seemed univalve”"
         }
       ],
       "sourceQuestions": [],
@@ -27666,7 +27666,7 @@
         },
         {
           "place": "Literary commentary on older language",
-          "phrase": "“an usherette in the account”"
+          "phrase": "“described as an usherette”"
         }
       ],
       "sourceQuestions": [],
@@ -27724,7 +27724,7 @@
         },
         {
           "place": "Field guide or science-museum label",
-          "phrase": "“the vacuole in the specimen”"
+          "phrase": "“vacuole in the field guide”"
         }
       ],
       "sourceQuestions": [],
@@ -27825,7 +27825,7 @@
         },
         {
           "place": "Character description in fiction",
-          "phrase": "“a vendible description”"
+          "phrase": "“the description seemed vendible”"
         }
       ],
       "sourceQuestions": [],
