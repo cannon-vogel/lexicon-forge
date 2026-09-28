@@ -578,6 +578,7 @@ ETYMOLOGY_OVERRIDES = {
 }
 
 ETYMOLOGY_OVERRIDES.update({
+    "ammonic": "Here Ammonic refers to cornu Ammonis, Latin for “horn of Ammon,” an old anatomical name for the hippocampal formation. The name evokes the curved ram’s horns associated with the god Ammon.",
     "amorist": "Built from Latin amor, “love,” + -ist: a person associated with love or writing about love. Compare amorous.",
     "anachronously": "Built on anachronism / anachronous. The Greek roots are ana- + chronos, “time”; chronology contains the same chronos root.",
     "apotheoses": "The singular apotheosis comes from Greek apotheōsis, “deification,” built on theos, “god.” Compare theology for the same theos root.",
