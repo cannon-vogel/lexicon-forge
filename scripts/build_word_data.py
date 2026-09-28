@@ -1224,75 +1224,213 @@ def domain_has(text, keys):
     return False
 
 def generic_phrase(word, pos, definition, index=0, place="", domain="general"):
+    """Create a short collocation that demonstrates how the word actually sits in a sentence."""
     p=(pos or "").lower()
     d=clean(definition).lower()
-    person=bool(re.search(r"^(?:a|an)\s+(?:person|man|woman|someone)|^one who",d))
-    abstract=bool(re.match(r"^(?:the )?(?:act|state|quality|process|condition|practice|ability|degree)\b",d))
-    if p in ("adj","adjective"):
-        nouns={"fashion":"style","medical":"finding","biology":"trait","chemistry":"compound","legal":"provision","finance":"policy","language":"construction","music":"passage","food":"flavor","military":"description","religion":"doctrine","engineering":"component","personality":"remark"}
-        noun=nouns.get(domain,"description")
-        return f"“{indefinite(word)} {word} {noun}”" if index==0 else f"“the {noun} seemed {word}”"
-    if p in ("adv","adverb"):
-        verbs={"medical":"presented","legal":"argued","music":"played","personality":"responded"}
-        v=verbs.get(domain,"responded")
-        return f"“{v} {word}”" if index==0 else f"“did so {word}”"
+    def pick(a,b): return a if index==0 else b
+    def has(*parts): return any(x in d for x in parts)
+
+    # Verbs benefit most from a plausible object or complement.
     if p=="verb":
         if word.endswith("ed"):
-            if any(k in d for k in ("calm","reliev","less intense","reduce")):
-                return f"“their fears were {word}”" if index==0 else f"“the pain was {word} by morning”"
-            return f"“they had {word} it by then”" if index==0 else f"“it was {word} before noon”"
+            if has("calm","reliev","less intense","reduce"):
+                return pick(f"“their fears were {word}”",f"“the pain was {word} by morning”")
+            if has("walk","move about","on foot"):
+                return pick(f"“they {word} across the ward”",f"“she {word} down the corridor”")
+            if has("approve","sanction","authoriz"):
+                return pick(f"“the plan was {word}”",f"“the proposal had been {word}”")
+            if has("lessened","diminished","mitigat"):
+                return pick(f"“the risk was {word}”",f"“the damage had been {word}”")
+            return pick(f"“they had {word} it by then”",f"“it was {word} before noon”")
         if word.endswith("ing"):
-            return f"“kept {word} through the scene”" if index==0 else f"“was {word} again”"
+            if has("lament","sorrow","complaint"):
+                return pick(f"“kept {word} the loss”",f"“was still {word} what happened”")
+            if has("stupef","infatuat","foolish"):
+                return pick(f"“a {word} infatuation”",f"“the {word} effect of fame”")
+            return pick(f"“kept {word} through the scene”",f"“was {word} again”")
+
         frames=[
-            (("humiliat","degrad","lower"),"someone publicly"),
-            (("crime","wrongdoing","assist","encourage"),"the scheme"),
-            (("reject","renounce","disavow"),"the old belief"),
-            (("walk","wander","move"),"across the room"),
-            (("deceive","defraud","cheat"),"an unsuspecting buyer"),
-            (("prevent","hinder","avert"),"a larger problem"),
-            (("praise","extol"),"the achievement"),
-            (("adorn","decorate"),"the hall"),
-            (("drink","alcohol"),"after dinner"),
-            (("block","obstruct"),"the opening"),
-            (("pour","liquid"),"the wine carefully"),
+            (("lower","degrade","humiliat"),("“to "+word+" someone publicly”","“refused to "+word+" himself”")),
+            (("crime","wrongdoing","assist","encourage"),("“to "+word+" the scheme”","“accused of trying to "+word+" the fraud”")),
+            (("reject","renounce","disavow"),("“to "+word+" the old belief”","“publicly chose to "+word+" the claim”")),
+            (("touch by means of a mutual border","border on","lie adjacent"),("“two parcels that "+word+" the highway”","“properties that "+word+" the river”")),
+            (("debt","installment","instalment"),("“to "+word+" the loan over 30 years”","“costs "+word+" over five years”")),
+            (("attend a social event","without having been invited"),("“to "+word+" the party”","“tried to "+word+" the reception”")),
+            (("deceive","defraud","cheat"),("“to "+word+" an unsuspecting buyer”","“tried to "+word+" investors”")),
+            (("prevent","hinder","avert"),("“to "+word+" a larger crisis”","“steps meant to "+word+" trouble”")),
+            (("praise","extol"),("“to "+word+" the achievement”","“critics who "+word+" its virtues”")),
+            (("adorn","decorate","ornament"),("“to "+word+" the hall with flowers”","“walls "+word+"ed for the festival”")),
+            (("absorb","water","disappear"),("“the crystals "+word+" in humid air”","“salts that "+word+" overnight”")),
+            (("lower the rank","lower the status"),("“to "+word+" the officer”","“the board voted to "+word+" him”")),
+            (("forget","fail to remember"),("“to "+word+" his name”","“I "+word+" where I put it”")),
+            (("tremble","totter","shake"),("“to "+word+" down the path”","“began to "+word+" with age”")),
+            (("nobility","honour","grace"),("“to "+word+" the family”","“the title would "+word+" its holder”")),
+            (("great delight","captivate","fascinate"),("“to "+word+" the audience”","“a performance that could "+word+" a crowd”")),
+            (("prohibit","forbid"),("“to "+word+" such an outcome”","“may heaven "+word+" it”")),
+            (("hear","attention","regard"),("“to "+word+" the warning”","“listeners who "+word+"ed to the advice”")),
+            (("fill in a space","fill in a hole","fill in a gap"),("“to "+word+" the trench”","“material used to "+word+" the gap”")),
+            (("blend","mingle","form a union"),("“to "+word+" the two colors”","“tones that "+word+" gradually”")),
+            (("reclin","lie at ease","lazy"),("“to "+word+" on the sofa”","“spent the afternoon "+word+"ing by the pool”")),
+            (("misjudge","deem wrongly"),("“to "+word+" his motives”","“easy to "+word+" the situation”")),
+            (("wrong place","forget where"),("“to "+word+" the keys”","“she managed to "+word+" the file”")),
+            (("obstruct","cover","block"),("“to "+word+" the opening”","“a clot can "+word+" the vessel”")),
+            (("relieve the symptoms","ameliorate"),("“to "+word+" the pain”","“care intended to "+word+" symptoms”")),
+            (("strike hard","repeatedly"),("“to "+word+" on the door”","“rain began to "+word+" the roof”")),
+            (("plunder","pillage"),("“to "+word+" the captured city”","“troops threatened to "+word+" the town”")),
+            (("sound of water boiling","hot surface","hissing sound"),("“onions "+word+" in the pan”","“rain began to "+word+" on the pavement”")),
+            (("move hurriedly","scamper","scurry"),("“to "+word+" across the floor”","“mice "+word+" under the cabinet”")),
+            (("sum","add up","summation"),("“to "+word+" the measurements”","“the program will "+word+" the terms”")),
+            (("whisper",),("“leaves "+word+" in the wind”","“voices "+word+" behind the door”")),
+            (("divide or fork into three","three channels","three branches"),("“to "+word+" into three branches”","“the duct may "+word+" distally”")),
+            (("carry or haul","carry something"),("“to "+word+" groceries upstairs”","“workers "+word+"ed the gear inside”")),
+            (("sway or move unsteadily","close to collapse"),("“to "+word+" toward the chair”","“the regime began to "+word+"”")),
+            (("walk","wander","move"),("“to "+word+" across the room”","“they "+word+" along the trail”")),
+            (("pour a liquid","sediment"),("“to "+word+" the wine carefully”","“let it settle before you "+word+" it”")),
         ]
-        for keys,obj in frames:
-            if any(k in d for k in keys):
-                return f"“to {word} {obj}”" if index==0 else f"“they chose to {word} {obj}”"
-        return f"“decided to {word}”" if index==0 else f"“was ready to {word}”"
+        for keys,(a1,a2) in frames:
+            if has(*keys):
+                return pick(a1,a2)
+        return pick(f"“decided to {word}”",f"“was ready to {word}”")
+
+    # Adverbs: choose a natural host verb from the meaning.
+    if p in ("adv","adverb"):
+        if has("skill","deft","clever"):
+            return pick(f"“handled the question {word}”",f"“{word} sidestepped the objection”")
+        if has("generous","abundant","plentiful"):
+            return pick(f"“gave {word} to the relief fund”",f"“the garden produced {word}”")
+        if has("rude","selfish","dishonorable"):
+            return pick(f"“behaved {word} at dinner”",f"“spoke {word} about his rival”")
+        if has("absurd","ridiculous","farce"):
+            return pick(f"“the plan ended {word}”",f"“events unfolded {word}”")
+        if has("sad","mournful","pleading"):
+            return pick(f"“spoke {word} about the loss”",f"“the violin sounded {word}”")
+        if has("tone","pitch","tonal"):
+            return pick(f"“the music shifted {word}”",f"“a phrase shaped {word}”")
+        if has("unusual","unaccustomed"):
+            return pick(f"“behaved {word} that morning”",f"“the custom was used {word}”")
+        if has("quick","rapid","speed"):
+            return pick(f"“work proceeded {word}”",f"“the horse moved {word}”")
+        if has("attractive","welcoming","tempting"):
+            return pick(f"“the door stood {word} open”",f"“she smiled {word}”")
+        if has("confirmation","confirm"):
+            return pick(f"“reported the result {word}”",f"“the evidence pointed {word} in the same direction”")
+        return pick(f"“responded {word}”",f"“did so {word}”")
+
+    # Adjectives: pair the modifier with a noun that makes its sense concrete.
+    if p in ("adj","adjective"):
+        adjective_rules=[
+            (("harmful","injurious","noxious","pernicious"),("influence","effects")),
+            (("mocking","ridicul","derision"),("laugh","remark")),
+            (("stormy","rough weather","gusty","wind"),("weather","afternoon")),
+            (("married","wedding","marriage"),("vows","custom")),
+            (("grand scale","rich furnishings","palatial"),("interior","estate")),
+            (("calm","sluggish","not easily excited"),("temperament","manner")),
+            (("flexible","bending","readily yielding"),("material","branch")),
+            (("discernment","keen insight","perceptive","shrewd"),("observer","analysis")),
+            (("noisy outcry","clamorous","vocifer"),("protest","crowd")),
+            (("twisted","many turns","winding"),("route","argument")),
+            (("reddish","red in color"),("complexion","glow")),
+            (("serious","sedate","sober"),("demeanor","tone")),
+            (("stylish","smart in appearance","neat"),("hat","suit")),
+            (("fussy","minor details","fastidious"),("editor","routine")),
+            (("fading","disappearing","short-lived","fleeting"),("glow","moment")),
+            (("scanty","meager","few"),("evidence","supply")),
+            (("boisterous","difficult to control","energetic"),("crowd","child")),
+            (("arrogant","haughty","proud"),("manner","reply")),
+            (("unaware","lacking knowledge"),("observer","audience")),
+            (("beyond expression","unspeakable"),("beauty","grief")),
+            (("shabby","untidy","unkempt"),("coat","room")),
+            (("curving","sinuous","serpentine"),("path","river")),
+            (("spots","dots","punctures"),("surface","pattern")),
+            (("uncommon","rare","difficult to find"),("resource","edition")),
+            (("important","serious","not trivial"),("decision","argument")),
+            (("formal covenant","agreement","promise"),("obligation","relationship")),
+            (("chronologically out of place","wrong historical period"),("reference","detail")),
+        ]
+        for keys,(n1,n2) in adjective_rules:
+            if has(*keys):
+                return pick(f"“{indefinite(word)} {word} {n1}”",f"“the {n2} seemed {word}”")
+        nouns={"fashion":"style","medical":"finding","biology":"trait","chemistry":"compound","legal":"provision","finance":"policy","language":"construction","music":"passage","food":"flavor","military":"description","religion":"doctrine","engineering":"component","technology":"system","geography":"landscape","social":"policy","personality":"remark"}
+        noun=nouns.get(domain,"description")
+        return pick(f"“{indefinite(word)} {word} {noun}”",f"“the {noun} seemed {word}”")
+
+    # Nouns and noun-like entries: make a small collocation from the definition.
+    person=bool(re.search(r"^(?:a|an)\s+(?:person|man|woman|someone)|^one who",d))
+    noun_rules=[
+        (("fewness","too few","insufficient"),(f"“a {word} of evidence”",f"“the {word} of reliable data”")),
+        (("self-confidence","poise","composure"),(f"“handled the interview with {word}”",f"“showed {word} under pressure”")),
+        (("greed","excessive","inordinate desire"),(f"“driven by {word}”",f"“a warning against {word}”")),
+        (("omen","prediction","foreboding","prophecy"),(f"“an {word} of trouble”",f"“taken as an {word} of change”")),
+        (("friendly","good-natured","friendliness"),(f"“greeted them with {word}”",f"“an evening of easy {word}”")),
+        (("weakness","failing","flaw"),(f"“one of his minor {word}”",f"“forgive those {word}”")),
+        (("persistence","tenacity","determination"),(f"“showed remarkable {word}”",f"“won through sheer {word}”")),
+        (("gift","gratuity","largess"),(f"“a {word} to the soldiers”",f"“received a royal {word}”")),
+        (("coin","currency"),(f"“a gold {word}”",f"“paid in {word}s”")),
+        (("surrounding area","surroundings"),(f"“in the {word} of the city”",f"“through the rural {word}”")),
+        (("copy","reproduction","facsimile"),(f"“a {word} edition”",f"“an exact {word} of the manuscript”")),
+        (("pleasant smell","fragrance","aroma","scent"),(f"“the {word} of jasmine”",f"“a lingering {word} in the room”")),
+        (("knowledge","insight","gnostic"),(f"“mystical {word}”",f"“a claim to secret {word}”")),
+        (("false or misleading report","false report","hoax"),(f"“dismissed the story as a {word}”",f"“an old {word} resurfaced online”")),
+        (("lawyer","advocate"),(f"“consulted a {word}”",f"“the senior {word} addressed the court”")),
+        (("wall","rampart","defensive"),(f"“a stone {word} against attack”",f"“served as a {word} against invasion”")),
+        (("pile","heap","mound"),(f"“a {word} of debris”",f"“a low {word} beside the road”")),
+        (("book format","book size"),(f"“an {word} volume”",f"“issued in {word} format”")),
+        (("inflammation","periodontitis"),(f"“diagnosed with {word}”",f"“treatment for {word}”")),
+        (("nervous excitement","confusion","distress"),(f"“in a {word} over the deadline”",f"“worked himself into a {word}”")),
+        (("physical beauty","beauty"),(f"“celebrated for her {word}”",f"“the poem praises {word}”")),
+        (("meal","food or drink"),(f"“sat down to a {word}”",f"“a simple evening {word}”")),
+        (("shadow","darkest central"),(f"“inside the {word}”",f"“the {word} crossed the ground”")),
+        (("gap","blank space","vacancy"),(f"“a {word} in the record”",f"“filled an archival {word}”")),
+        (("ceremonial procession","procession"),(f"“the funeral {word}”",f"“a royal {word} through the city”")),
+        (("merrymaking","festivity"),(f"“an evening of {word}”",f"“the {word} lasted until dawn”")),
+        (("direct popular vote","popular vote"),(f"“hold a {word} on independence”",f"“the {word} produced a narrow majority”")),
+        (("money, riches","money","wealth"),(f"“chasing {word}”",f"“a fortune in {word}”")),
+        (("relationship marked by mutual","harmonious relationship"),(f"“build {word} with the client”",f"“an easy {word} with the team”")),
+        (("state of being","quality of being","condition of being"),(f"“a clear case of {word}”",f"“marked by unusual {word}”")),
+    ]
+    for keys,(a1,a2) in noun_rules:
+        if has(*keys):
+            return pick(a1,a2)
+
     if person:
-        return f"“{indefinite(word)} {word} in the account”" if index==0 else f"“described as {indefinite(word)} {word}”"
+        return pick(f"“{indefinite(word)} {word} in the account”",f"“described as {indefinite(word)} {word}”")
     if domain=="medical":
-        if any(k in d for k in ("bone","muscle","membrane","organ","structure")):
-            return f"“the {word} on the scan”" if index==0 else f"“injury near the {word}”"
-        return f"“{word} noted in the chart”" if index==0 else f"“evidence of {word}”"
+        return pick(f"“{word} noted in the chart”",f"“evidence of {word}”")
     if domain=="biology":
-        return f"“the {word} in the specimen”" if index==0 else f"“{word} in the field guide”"
+        return pick(f"“the {word} in the specimen”",f"“{word} in the field guide”")
     if domain=="chemistry":
-        return f"“the {word} in the sample”" if index==0 else f"“a sample containing {word}”"
+        return pick(f"“the {word} in the sample”",f"“a sample containing {word}”")
     if domain=="legal":
-        return f"“the {word} in the filing”" if index==0 else f"“a dispute over {word}”"
+        return pick(f"“the {word} in the filing”",f"“a dispute over {word}”")
     if domain=="finance":
-        return f"“the {word} in the policy”" if index==0 else f"“costs associated with {word}”"
+        return pick(f"“the {word} in the policy”",f"“costs associated with {word}”")
     if domain=="language":
-        return f"“the {word} in the sentence”" if index==0 else f"“an example of {word}”"
+        return pick(f"“the {word} in the sentence”",f"“an example of {word}”")
     if domain=="music":
-        return f"“a {word} in the score”" if index==0 else f"“a passage featuring {word}”"
+        return pick(f"“a {word} in the score”",f"“a passage featuring {word}”")
     if domain=="food":
-        return f"“{word} on the menu”" if index==0 else f"“a recipe using {word}”"
+        return pick(f"“{word} on the menu”",f"“a recipe using {word}”")
     if domain=="military":
-        return f"“the {word} in the museum collection”" if index==0 else f"“a period {word}”"
+        return pick(f"“the {word} in the museum collection”",f"“a period {word}”")
     if domain=="religion":
-        return f"“the {word} in the theology text”" if index==0 else f"“a discussion of {word}”"
+        return pick(f"“the {word} in the theology text”",f"“a discussion of {word}”")
     if domain=="engineering":
-        return f"“the {word} in the assembly”" if index==0 else f"“inspect the {word} for damage”"
+        return pick(f"“the {word} in the assembly”",f"“inspect the {word} for damage”")
+    if domain=="technology":
+        return pick(f"“the {word} in the system diagram”",f"“a module using {word}”")
     if domain=="fashion":
-        return f"“the {word} in the catalog”" if index==0 else f"“a vintage {word}”"
-    if domain=="personality" or abstract:
-        return f"“a striking display of {word}”" if index==0 else f"“showed remarkable {word}”"
+        return pick(f"“the {word} in the catalog”",f"“a vintage {word}”")
+    if domain=="publishing":
+        return pick(f"“the {word} in the catalog record”",f"“an edition described as {word}”")
+    if domain=="geography":
+        return pick(f"“the {word} on the map”",f"“across the {word}”")
+    if domain=="craft":
+        return pick(f"“the {word} on the workbench”",f"“replace the worn {word}”")
+    if domain in ("personality","social"):
+        return pick(f"“a striking display of {word}”",f"“showed remarkable {word}”")
     if word.endswith("s") and not word.endswith(("ss","us")):
-        return f"“several {word} in the account”" if index==0 else f"“the {word} mentioned in the text”"
-    return f"“{indefinite(word)} {word} in the passage”" if index==0 else f"“a reference to {word}”"
+        return pick(f"“several {word} in the account”",f"“the {word} mentioned in the text”")
+    return pick(f"“{indefinite(word)} {word} in the passage”",f"“a reference to {word}”")
 
 def encounter_cards(word, definition, pos, labels, example, example_citation=""):
     if word in ENCOUNTER_OVERRIDES:
