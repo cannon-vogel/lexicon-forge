@@ -74,6 +74,13 @@ await waitFor(()=>document.getElementById('xpTop')?.textContent==='1000','app in
 // 1. Wrong quick-check answer must give feedback and allow advancing.
 document.getElementById('learnBtn').click();
 const firstWord=await waitFor(()=>document.querySelector('#learnCard .wordhero h2')?.textContent,'first learning card');
+const firstData=wordData.words[firstWord];
+assert(firstData,'First learning word missing from bundled word_data.json');
+assert(document.getElementById('storyEtymology')?.textContent===firstData.etymologyBrief,'Lesson did not render the bundled learner etymology');
+const encounterCards=[...document.querySelectorAll('#learnCard .encounter')];
+assert(encounterCards.length===2,'Lesson did not render two encounter cards');
+assert(encounterCards.every(c=>c.querySelector('.encounter-label')?.textContent.trim()),'Encounter place label missing');
+assert(encounterCards.every(c=>c.querySelector('.encounter-phrase')?.textContent.includes('Try it:')),'Encounter phrase label missing');
 document.getElementById('quickCheckBtn').click();
 await waitFor(()=>document.querySelectorAll('#learnCard .checkbox .option').length===4,'quick-check choices');
 let options=[...document.querySelectorAll('#learnCard .checkbox .option')];
@@ -137,6 +144,7 @@ for(const card of document.querySelectorAll('#pigeonShop .pigeon-card')){
 if(errors.length)throw errors[0];
 
 console.log('UI smoke test passed:');
+console.log('  learner etymology + two practical encounter cards render from static data');
 console.log('  wrong quick-check -> feedback + correct reveal + next');
 console.log('  correct quick-check -> feedback + next');
 console.log('  wrong source-deck choice -> feedback + next');
