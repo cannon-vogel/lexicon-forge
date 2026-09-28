@@ -77,4 +77,5 @@ nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.navbtn,.btn{border:1
 .encounter-label{font-size:.75rem;font-weight:850;letter-spacing:.04em;color:#4f9f8d;margin-bottom:4px}
 .encounter-copy{color:#40546a;font-size:.92rem;line-height:1.45}
 .encounter-phrase{font-family:Georgia,'Times New Roman',serif;color:#31465e;font-size:1rem;line-height:1.45;padding-top:2px}
+.encounter-try{font-family:inherit;font-size:.78rem;font-weight:800;letter-spacing:.02em;color:#839087;margin-right:5px}
 @media(max-width:620px){.encounter-grid{grid-template-columns:1fr}}
