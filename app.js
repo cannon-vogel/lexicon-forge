@@ -4,6 +4,7 @@ let ALL_WORDS=[];
 let WORD_META={};
 let CORE_WORDS=[];
 let SOURCE_INFO={};
+let STATIC_WORD_DATA={};
 
 const KEY='lexiconForge.v1';
 const DAY=86400000;
@@ -35,10 +36,12 @@ function parseCSV(text){
 }
 
 async function loadData(){
-  const [qText,tText]=await Promise.all([
+  const [qText,tText,wordData]=await Promise.all([
     fetch('questions.csv').then(r=>{if(!r.ok)throw new Error('questions.csv');return r.text()}),
-    fetch('terms.csv').then(r=>{if(!r.ok)throw new Error('terms.csv');return r.text()})
+    fetch('terms.csv').then(r=>{if(!r.ok)throw new Error('terms.csv');return r.text()}),
+    fetch('word_data.json').then(r=>{if(!r.ok)throw new Error('word_data.json');return r.json()})
   ]);
+  STATIC_WORD_DATA=wordData.words||{};
   const qr=parseCSV(qText), qh=qr.shift(), qi=Object.fromEntries(qh.map((h,i)=>[h,i]));
   QUESTIONS=qr.filter(r=>r.length>1).map(r=>({
     id:'q'+r[qi.question_number],n:Number(r[qi.question_number]),prompt:r[qi.prompt],block:r[qi.block],pick:Number(r[qi.pick]),
@@ -182,26 +185,64 @@ function localStory(word){
   return {word,definition,relation,neighbors,sourceCue,questions:src.questions||meta.questionNumbers||[]};
 }
 
-async function renderLessonWord(){
+function renderLessonWord(){
   if(!lesson)return;
   if(lesson.index>=lesson.words.length)return finishLesson();
-  const word=lesson.words[lesson.index],local=localStory(word),card=document.getElementById('learnCard');
-  document.getElementById('learnCount').textContent=(lesson.index+1)+' / '+lesson.words.length;document.getElementById('learnBar').style.width=(100*lesson.index/lesson.words.length)+'%';
+  const word=lesson.words[lesson.index],local=localStory(word),story=staticWordStory(word),card=document.getElementById('learnCard');
+  lesson.stories[word]=story;
+  document.getElementById('learnCount').textContent=(lesson.index+1)+' / '+lesson.words.length;
+  document.getElementById('learnBar').style.width=(100*lesson.index/lesson.words.length)+'%';
   card.innerHTML='';
-  const top=el('div',{class:'storytop'}),wh=el('div',{class:'wordhero'});wh.append(el('div',{class:'eyebrow'},'WORD '+(lesson.index+1)),el('h2',{},word),el('div',{class:'phonetic',id:'storyPhonetic'},'Pronunciation available through your browser'));
-  const speak=el('button',{class:'btn secondary mini'},'Hear it');speak.onclick=()=>speakWord(word);top.append(wh,speak);card.append(top);
+
+  const top=el('div',{class:'storytop'}),wh=el('div',{class:'wordhero'});
+  const pron=[story.partOfSpeech,(story.ipa||[])[0]].filter(Boolean).join(' · ');
+  wh.append(
+    el('div',{class:'eyebrow'},'WORD '+(lesson.index+1)),
+    el('h2',{},word),
+    el('div',{class:'phonetic'},pron||'Tap “Hear it” for pronunciation')
+  );
+  const speak=el('button',{class:'btn secondary mini'},'Hear it');
+  speak.onclick=()=>playWordAudio(word,story);
+  top.append(wh,speak);card.append(top);
+
   const grid=el('div',{class:'storygrid'});
-  grid.append(storyPanel('Meaning','storyMeaning',local.definition||local.relation||'Looking up a clear definition…'));
-  grid.append(storyPanel('Word history','storyEtymology','Looking up the etymology…',true));
-  const context=storyPanel('In the wild','storyExample','Looking for a real usage example…',true);context.classList.add('full');grid.append(context);
-  const connect=el('div',{class:'storypanel full'});connect.append(el('h4',{},'Connections'));
+  const meaning=story.sourceDefinition||story.definition||local.definition||local.relation||'Meaning unavailable.';
+  grid.append(storyPanel('Meaning','storyMeaning',meaning));
+
+  const history=story.etymology||'No etymology was available in the bundled lexical record.';
+  const hp=storyPanel('Word history','storyEtymology',history);
+  if(story.entryAvailable)hp.append(sourceLink('https://en.wiktionary.org/wiki/'+encodeURIComponent(word),'Wiktionary-derived data'));
+  grid.append(hp);
+
+  const exampleText=story.example||'No example sentence was available for this entry.';
+  const context=storyPanel('In the wild','storyExample',exampleText);
+  context.classList.add('full');
+  if(story.example)context.querySelector('p').classList.add('quote');
+  if(story.exampleCitation)context.append(el('div',{class:'sourcefoot'},story.exampleCitation));
+  grid.append(context);
+
+  const connect=el('div',{class:'storypanel full'});
+  connect.append(el('h4',{},'Connections'));
   if(local.sourceCue)connect.append(el('p',{},local.sourceCue));
-  const chips=el('div',{class:'connection-list'});for(const n of local.neighbors.slice(0,6))chips.append(el('span',{class:'connection'},n));if(local.neighbors.length)connect.append(chips);
-  if(!local.sourceCue&&!local.neighbors.length)connect.append(el('p',{},'No source-test relationship is encoded for this distractor; the dictionary material will carry more of the load.'));
+
+  const related=[...(story.synonyms||[]),...(story.sourceNeighbors||[]),...(story.related||[])];
+  const uniq=[...new Set(related.filter(x=>normalize(x)!==normalize(word)))].slice(0,10);
+  if(uniq.length){
+    const chips=el('div',{class:'connection-list'});
+    for(const n of uniq)chips.append(el('span',{class:'connection'},n));
+    connect.append(chips);
+  }
+  if((story.usageLabels||[]).length){
+    connect.append(el('p',{class:'micro',style:'margin-top:10px'},'Usage: '+story.usageLabels.join(' · ')));
+  }
+  if(!local.sourceCue&&!uniq.length)connect.append(el('p',{},'This word has no encoded source-test relation beyond its lexical entry.'));
   grid.append(connect);card.append(grid);
-  const actions=el('div',{class:'teachactions'}),status=el('span',{class:'micro',id:'storyStatus'},'Local cues are ready; enrichment is fetching in the background.'),check=el('button',{class:'btn primary',id:'quickCheckBtn'},'Quick meaning check →');
-  check.onclick=()=>showLearningCheck(word,lesson.stories[word]||local);actions.append(status,check);card.append(actions);
-  getWordStory(word).then(story=>{if(!lesson||lesson.words[lesson.index]!==word)return;lesson.stories[word]=story;hydrateStory(word,story)});
+
+  const actions=el('div',{class:'teachactions'});
+  const status=el('span',{class:'micro'},'Bundled locally — no dictionary lookup is needed.');
+  const check=el('button',{class:'btn primary',id:'quickCheckBtn'},'Quick meaning check →');
+  check.onclick=()=>showLearningCheck(word,story);
+  actions.append(status,check);card.append(actions);
 }
 function storyPanel(title,id,text,loading=false){const p=el('div',{class:'storypanel'});p.append(el('h4',{},title),el('p',{id,class:loading?'loading':''},text));return p}
 function hydrateStory(word,story){
@@ -210,7 +251,7 @@ function hydrateStory(word,story){
   if(ety){ety.classList.remove('loading');ety.textContent=story.etymology||'Etymology was not available in this lookup.';if(story.etymologySource)ety.parentElement.append(sourceLink(story.etymologySource,'Wiktionary'))}
   if(ex){ex.classList.remove('loading');ex.textContent=story.example||'No cited/example sentence was available for this entry.';if(story.example)ex.classList.add('quote');if(story.exampleSource)ex.parentElement.append(sourceLink(story.exampleSource,story.exampleSourceLabel||'source'))}
   if(ph)ph.textContent=[story.partOfSpeech,story.phonetic].filter(Boolean).join(' · ')||'Tap “Hear it” for browser pronunciation';
-  if(status)status.textContent=story.networkOk?'Enrichment loaded and cached for future visits.':'External lookup was unavailable; the local source cues remain usable.';
+  if(status)status.textContent=story.networkOk?'Bundled lexical data loaded.':'Bundled lexical data is unavailable for this item.';
 }
 function sourceLink(url,label){const foot=el('div',{class:'sourcefoot'},'Source: '),a=el('a',{href:url,target:'_blank',rel:'noopener'},label);foot.append(a);return foot}
 function showLearningCheck(word,story){
@@ -242,47 +283,37 @@ function finishLesson(){
   const row=el('div',{class:'actions'}),review=el('button',{class:'btn primary'},'Review these words now'),more=el('button',{class:'btn'},'Learn another set'),home=el('button',{class:'btn ghost'},'Home');review.onclick=()=>{lesson=null;startSession('full',words)};more.onclick=startLesson;home.onclick=()=>{lesson=null;switchView('home')};row.append(review,more,home);card.append(row);updateDashboard();
 }
 
-// ---------- Network enrichment ----------
-async function fetchJSON(url,timeout=5000){
-  const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),timeout);
-  try{const r=await fetch(url,{signal:ctrl.signal,headers:{Accept:'application/json'}});if(!r.ok)throw new Error('HTTP '+r.status);return await r.json()}finally{clearTimeout(timer)}
-}
-function cleanText(s){return String(s||'').replace(/\[[0-9]+\]/g,'').replace(/\s+/g,' ').trim()}
-function stripNode(node){const c=node.cloneNode(true);c.querySelectorAll('sup,.mw-editsection,table,style,script,ol,ul,dl').forEach(x=>x.remove());return cleanText(c.textContent)}
-async function fetchDictionaryApi(word){
-  const data=await fetchJSON('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(word),3800);let out={};
-  for(const e of Array.isArray(data)?data:[]){
-    out.phonetic=out.phonetic||e.phonetic||'';out.audio=out.audio||(e.phonetics||[]).find(x=>x.audio)?.audio||'';
-    for(const m of e.meanings||[]){for(const d of m.definitions||[]){if(!out.definition&&d.definition){out.definition=cleanText(d.definition);out.partOfSpeech=m.partOfSpeech||''}if(!out.example&&d.example)out.example=cleanText(d.example)}}
-  }
-  if(!out.definition)throw new Error('no definition');out.exampleSource='https://dictionaryapi.dev/';out.exampleSourceLabel='Dictionary API';return out;
-}
-async function fetchWiktionary(word){
-  const url='https://en.wiktionary.org/w/api.php?'+new URLSearchParams({origin:'*',action:'parse',page:word,prop:'text',format:'json',redirects:'1'});
-  const data=await fetchJSON(url,5600);const html=data?.parse?.text?.['*'];if(!html)throw new Error('no page');
-  const doc=new DOMParser().parseFromString(html,'text/html'),h2=[...doc.querySelectorAll('h2')].find(h=>cleanText(h.textContent)==='English');if(!h2)throw new Error('no English');
-  const section=document.createElement('div');let n=h2.nextElementSibling;while(n&&n.tagName!=='H2'){section.append(n.cloneNode(true));n=n.nextElementSibling}
-  let etymology='';const eh=[...section.querySelectorAll('h3,h4,h5')].find(h=>/^Etymology(?:\s+\d+)?$/i.test(cleanText(h.textContent)));
-  if(eh){let parts=[];for(let s=eh.nextElementSibling;s&&!/^H[2-5]$/.test(s.tagName);s=s.nextElementSibling){if(s.matches('p')){const t=stripNode(s);if(t)parts.push(t)}if(parts.join(' ').length>650)break}etymology=cleanText(parts.join(' ')).slice(0,850)}
-  let definition='',partOfSpeech='';const posNames=/^(Noun|Verb|Adjective|Adverb|Interjection|Preposition|Conjunction|Pronoun|Determiner|Numeral|Proper noun)$/i;
-  for(const h of section.querySelectorAll('h3,h4,h5')){
-    const title=cleanText(h.textContent);if(!posNames.test(title))continue;let s=h.nextElementSibling;while(s&&!/^H[2-5]$/.test(s.tagName)){if(s.matches('ol')){const li=s.querySelector(':scope > li');if(li){definition=stripNode(li);partOfSpeech=title.toLowerCase();break}}s=s.nextElementSibling}if(definition)break;
-  }
-  let example='';const stem=normalize(word).slice(0,Math.max(3,Math.min(5,word.length)));
-  const candidates=[...section.querySelectorAll('blockquote,.quotation,.e-example,.h-usage-example,dd')];
-  for(const x of candidates){let t=cleanText(x.textContent);if(t.length<28||t.length>420)continue;const nt=normalize(t);if(stem&&nt.includes(stem)){example=t.replace(/^[-–—\s]+/,'').slice(0,420);break}}
-  return {definition,partOfSpeech,etymology,example,etymologySource:'https://en.wiktionary.org/wiki/'+encodeURIComponent(word),exampleSource:example?'https://en.wiktionary.org/wiki/'+encodeURIComponent(word):'',exampleSourceLabel:'Wiktionary'};
-}
-async function getWordStory(word,force=false){
-  const local=localStory(word),cached=state.enrich[word];if(!force&&cached&&Date.now()-(cached.fetchedAt||0)<ENRICH_TTL)return Object.assign({},local,cached);
-  const [dictRes,wikRes]=await Promise.allSettled([fetchDictionaryApi(word),fetchWiktionary(word)]),dict=dictRes.status==='fulfilled'?dictRes.value:{},wik=wikRes.status==='fulfilled'?wikRes.value:{};
-  const story={
-    word,definition:wik.definition||dict.definition||local.definition||local.relation||'',relation:local.relation,neighbors:local.neighbors||[],
-    partOfSpeech:wik.partOfSpeech||dict.partOfSpeech||'',phonetic:dict.phonetic||'',audio:dict.audio||'',etymology:wik.etymology||'',
-    example:wik.example||dict.example||'',etymologySource:wik.etymologySource||'',exampleSource:wik.example?wik.exampleSource:(dict.example?dict.exampleSource:''),exampleSourceLabel:wik.example?'Wiktionary':(dict.example?'Dictionary API':''),
-    networkOk:dictRes.status==='fulfilled'||wikRes.status==='fulfilled',fetchedAt:Date.now()
+// ---------- Bundled lexical enrichment ----------
+function staticWordStory(word){
+  const local=localStory(word),d=STATIC_WORD_DATA[word]||{};
+  return {
+    word,
+    definition:d.definition||local.definition||local.relation||'',
+    sourceDefinition:d.sourceDefinition||local.definition||'',
+    relation:local.relation,
+    neighbors:local.neighbors||[],
+    partOfSpeech:d.partOfSpeech||'',
+    ipa:Array.isArray(d.ipa)?d.ipa:[],
+    phonetic:Array.isArray(d.ipa)&&d.ipa.length?d.ipa[0]:'',
+    audio:d.audio||'',
+    etymology:d.etymology||'',
+    example:d.example||'',
+    exampleCitation:d.exampleCitation||'',
+    synonyms:Array.isArray(d.synonyms)?d.synonyms:[],
+    related:Array.isArray(d.related)?d.related:[],
+    usageLabels:Array.isArray(d.usageLabels)?d.usageLabels:[],
+    sourceNeighbors:Array.isArray(d.sourceNeighbors)?d.sourceNeighbors:[],
+    sourceQuestions:Array.isArray(d.sourceQuestions)?d.sourceQuestions:[],
+    entryAvailable:!!d.entryAvailable,
+    sourceCue:local.sourceCue
   };
-  state.enrich[word]=story;if(dict.definition)state.dict[word]={word,definition:dict.definition,partOfSpeech:dict.partOfSpeech||'',example:dict.example||'',phonetic:dict.phonetic||'',audio:dict.audio||''};save(false);return Object.assign({},local,story);
+}
+async function getWordStory(word){return staticWordStory(word)}
+function playWordAudio(word,story){
+  const audio=story?.audio;
+  if(audio){
+    new Audio(audio.startsWith('//')?'https:'+audio:audio).play().catch(()=>speakWord(word));
+  }else speakWord(word);
 }
 
 // ---------- Review mode ----------
@@ -313,7 +344,7 @@ function submitCore(q,answer,isTyped){if(session.locked)return;session.locked=tr
 async function renderFull(word){
   const p=prog('full',word),card=document.getElementById('gameCard');document.getElementById('modePill').textContent=p.stage>=3?'GENERATE':'RECOGNIZE';const local=localStory(word);
   card.innerHTML='';card.append(el('div',{class:'micro'},'Full lexicon · '+stageName(p.stage)),el('div',{class:'prompt'},local.definition||local.relation||'Loading a meaning cue…'));
-  const story=await getWordStory(word);if(!session||session.queue[session.index]?.id!==word)return;card.innerHTML='';card.append(el('div',{class:'micro'},'Full lexicon · '+stageName(p.stage)+(story.partOfSpeech?' · '+story.partOfSpeech:'')));
+  const story=staticWordStory(word);if(!session||session.queue[session.index]?.id!==word)return;card.innerHTML='';card.append(el('div',{class:'micro'},'Full lexicon · '+stageName(p.stage)+(story.partOfSpeech?' · '+story.partOfSpeech:'')));
   const clue=story.definition||story.relation||story.sourceCue;if(!clue){card.append(el('div',{class:'prompt'},word),el('div',{class:'feedback bad'},'A usable meaning cue was not available after the lookup timeout. This card will be skipped.'));const b=el('button',{class:'btn',style:'margin-top:12px'},'Continue');b.onclick=()=>{session.index++;renderCard()};card.append(b);return}
   card.append(el('div',{class:'prompt'},clue));if(p.stage>=3)renderFullTyped(card,word,story);else renderFullChoices(card,word,story);
 }
@@ -343,7 +374,7 @@ function renderWords(){
   for(const w of words){const p=state.full[w],meta=WORD_META[w]||{},c=el('div',{class:'wordcard'});c.append(el('h4',{},w),el('div',{class:'wordmeta'},(state.learn[w]?.introduced?'introduced':'not yet learned')+(p?.attempts?(' · stage '+p.stage+' · '+fmtDue(p.due)):'')+(meta.questionNumbers?.length?' · Q'+meta.questionNumbers.join(', Q'):'')));
     const def=el('div',{class:'definition'});const cached=state.enrich[w];if(cached?.definition)def.textContent=cached.definition;else if(localStory(w).definition||localStory(w).relation)def.textContent=localStory(w).definition||localStory(w).relation;c.append(def);
     const row=el('div',{class:'minirow'}),storyBtn=el('button',{class:'btn mini'},'Word story'),learnBtn=el('button',{class:'btn mini secondary'},state.learn[w]?.introduced?'Relearn':'Learn');
-    storyBtn.onclick=async()=>{def.innerHTML='<em>Fetching briefly…</em>';const d=await getWordStory(w,true);def.textContent=d.definition||d.relation||'No meaning cue was available after the timeout.'};
+    storyBtn.onclick=()=>{const d=staticWordStory(w);def.textContent=d.sourceDefinition||d.definition||d.relation||'No meaning cue is bundled for this word.'};
     learnBtn.onclick=()=>{lesson={scope:'custom',words:[w],index:0,stories:{},checked:{}};document.getElementById('learnEmpty').classList.add('hidden');document.getElementById('learnStage').classList.remove('hidden');switchView('learn');renderLessonWord()};row.append(storyBtn,learnBtn);c.append(row);grid.append(c)}
 }
 function safeId(s){return s.replace(/[^a-z0-9]/gi,'_')}
