@@ -13,8 +13,8 @@
       "partOfSpeech": "verb",
       "etymology": "From Late Middle English abaishen, abashen, abaisse, abassen, abesse, abessen (“to be upset; to embarrass; to surprise; to confound; to bend down, stoop; to abase, degrade, disgrace”), from Middle French abaisser, from Old French abaissier, abessier (“to prostrate oneself; to lower, reduce”) (also compare Old French esbahir (“to amaze”), Vulgar Latin abbassiāre (“to lower”)), from a- (prefix indicating movement towards something) (from Latin ad (“toward, to”), ultimately from Proto-Indo-European *h₂éd (“at, to”)) + baissier (“to lower”) (from Medieval Latin bassus (“short of stature, low; base”), possibly from Ancient Greek βᾰ́σῐς (bắsĭs, “foot; base, foundation”), ultimately from Proto-Indo-European *gʷem- (“to step”)). The spelling of the English word has been influenced by base, thus ostensibly analyzable as a- (“towards”) + base. There exist verb cognates in Gallo-Romance languages such as Catalan abaixar (“lower; abase”) and Occitan abaissar, and similar word construction in other romance languages as Spanish abajo (“down, downstairs; below”).",
       "etymologyBrief": "From Late Middle English abaishen, ultimately from Medieval Latin bassus (“short of stature, low; base”).",
-      "example": "For whoſoeuer exalteth himſelfe ſhalbe abaſed: and hee that humbleth himſelfe, ſhalbe exalted.",
-      "exampleCitation": "1611, The Holy Bible, […] (King James Version), London: […] Robert Barker, […], →OCLC, Luke 14:11:",
+      "example": "He refused to abase himself merely to win the official’s favor.",
+      "exampleCitation": "",
       "ipa": [
         "/əˈbeɪs/"
       ],
@@ -59,12 +59,12 @@
       ],
       "encounters": [
         {
-          "place": "Long-form news feature",
-          "phrase": "“to abase someone publicly”"
+          "place": "Literary novel or historical biography",
+          "phrase": "“refused to abase himself before the court”"
         },
         {
-          "place": "Novel or memoir",
-          "phrase": "“to abase someone publicly”"
+          "place": "Essay about status or humiliation",
+          "phrase": "“designed to abase a political rival”"
         }
       ],
       "sourceQuestions": [
@@ -146,8 +146,8 @@
       "partOfSpeech": "verb",
       "etymology": "From Middle English abetten, abette, from Old French abeter (“to entice”), from a- (“to”) + beter (“hound on, urge, to bait”), either from Middle Dutch bētan (“incite”) or from Old Norse beita (“to cause to bite, bait, incite”), from Proto-Germanic *baitijaną (“to cause to bite”), from Proto-Indo-European *bʰeyd- (“to split”). Cognate with Icelandic beita (“to set dogs on; to feed”). Alternate etymology traces the Middle English and Old French words through Old English *ābǣtan (“to hound on”), from ā- + bǣtan (“to bait”), from the same source (Proto-Germanic *baitijaną). See also bait, bet.",
       "etymologyBrief": "From Middle English abetten, ultimately from Old Norse beita (“to cause to bite, bait, incite”).",
-      "example": "Those who would exalt themselves by abetting the strength of the Godless, and the wrength of the oppressors.",
-      "exampleCitation": "1823, John Galt, Ringan Gilhaize or The Covenanters:",
+      "example": "The prosecutor argued that the accountant had helped abet the fraud.",
+      "exampleCitation": "",
       "ipa": [
         "/əˈbɛt/"
       ],
@@ -184,12 +184,12 @@
       ],
       "encounters": [
         {
-          "place": "Court filing or legal explainer",
-          "phrase": "“to abet the scheme”"
+          "place": "Criminal-law article or indictment",
+          "phrase": "“accused of aiding and abetting the scheme”"
         },
         {
-          "place": "Newspaper public-affairs article",
-          "phrase": "“to abet the scheme”"
+          "place": "News report on wrongdoing",
+          "phrase": "“did nothing to abet the fraud”"
         }
       ],
       "sourceQuestions": [
@@ -346,8 +346,8 @@
       "partOfSpeech": "noun",
       "etymology": "From Middle English ablucioun (“cleansing of impurities”), from Old French ablution, and its source, Late Latin ablūtiō (“a washing away”), from abluō (“wash away”), from ab- (“away”) + lavō (“wash”).",
       "etymologyBrief": "From Middle English ablucioun (“cleansing of impurities”), ultimately from Late Latin ablūtiō (“a washing away”).",
-      "example": "Let water be brought to perform my ablutions, and let the pious Fakreddin be called to offer up his prayers with mine.",
-      "exampleCitation": "1786, William Beckford, Vathek; an Arabian Tale:",
+      "example": "Pilgrims washed at the fountain before performing the ritual ablution.",
+      "exampleCitation": "",
       "ipa": [
         "/əˈbluː.ʃn̩/",
         "/əˈblu.ʃn̩/"
@@ -371,12 +371,12 @@
       ],
       "encounters": [
         {
-          "place": "Essay, review, or long-form article",
-          "phrase": "“a striking display of ablution”"
+          "place": "Religion / ritual studies textbook",
+          "phrase": "“perform the morning ablutions”"
         },
         {
-          "place": "Academic or cultural criticism",
-          "phrase": "“a striking display of ablution”"
+          "place": "Historical travel writing",
+          "phrase": "“a basin for ritual ablution”"
         }
       ],
       "sourceQuestions": [],
@@ -398,7 +398,7 @@
       "partOfSpeech": "adj",
       "etymology": "From abrogate + -ive.",
       "etymologyBrief": "From abrogate + -ive.",
-      "example": "In this vocabulary set, “abrogative” is used for the idea “Serving to repeal, cancel, or abolish a law, rule, or agreement.”",
+      "example": "The court considered whether the new clause had an abrogative effect.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -414,12 +414,12 @@
       ],
       "encounters": [
         {
-          "place": "Court filing or legal explainer",
-          "phrase": "“an abrogative provision”"
+          "place": "Statutory or constitutional analysis",
+          "phrase": "“an abrogative clause repealing the old rule”"
         },
         {
-          "place": "Newspaper public-affairs article",
-          "phrase": "“an abrogative provision”"
+          "place": "Legal commentary",
+          "phrase": "“the amendment has an abrogative effect”"
         }
       ],
       "sourceQuestions": [],
@@ -3833,8 +3833,8 @@
       "partOfSpeech": "adv",
       "etymology": "From bountiful + -ly.",
       "etymologyBrief": "From bountiful + -ly.",
-      "example": "And the man that has anything bountifully laughable about him, be sure there is more in that man than you perhaps think for.",
-      "exampleCitation": "1851, Herman Melville, Moby Dick, Chapter 5:",
+      "example": "After a wet spring, the orchard yielded bountifully.",
+      "exampleCitation": "",
       "ipa": [],
       "audio": "",
       "synonyms": [],
@@ -3853,12 +3853,12 @@
       ],
       "encounters": [
         {
-          "place": "Character description in a novel",
-          "phrase": "“responded bountifully”"
+          "place": "Food or gardening writing",
+          "phrase": "“the orchard yielded bountifully”"
         },
         {
-          "place": "Book / film review",
-          "phrase": "“man that has anything bountifully laughable about him, be sure”"
+          "place": "Literary prose",
+          "phrase": "“the table was bountifully supplied”"
         }
       ],
       "sourceQuestions": [
@@ -28272,7 +28272,7 @@
       "partOfSpeech": "noun",
       "etymology": "",
       "etymologyBrief": "Probably imitative of a horse’s soft breathy call; it belongs semantically with neigh and whinny, though its deeper historical origin is uncertain.",
-      "example": "In context, “whicker” names or describes The soft neigh made by a horse.",
+      "example": "The mare gave a soft whicker when she saw the feed bucket.",
       "exampleCitation": "",
       "ipa": [
         "/ˈwɪkə/",
@@ -28296,12 +28296,12 @@
       ],
       "encounters": [
         {
-          "place": "Magazine feature or reference entry",
-          "phrase": "“a whicker in the passage”"
+          "place": "Horse-training book or stable conversation",
+          "phrase": "“the mare gave a soft whicker”"
         },
         {
-          "place": "Textbook, catalog, or museum label",
-          "phrase": "“a whicker in the passage”"
+          "place": "Novel set around horses",
+          "phrase": "“a quiet whicker from the stall”"
         }
       ],
       "sourceQuestions": [
@@ -28325,8 +28325,8 @@
       "partOfSpeech": "noun",
       "etymology": "",
       "etymologyBrief": "Built from whisper (“To speak softly or under one's breath, so as to be heard only by one near at hand;…”). From Middle English whisperen, ultimately from Old English hwisprian (“to mutter, murmur, whisper”).",
-      "example": "\"Witches feel that anyone who is against them has to be destroyed. The method is to give the victim what we call a whispering. It is similar to the aborigine ceremony in Australia of singing someone to death. The witches gather in a circle and focus their hate on the persons they have in mind. These vibrations from their minds and voices carry whispers to the one who they are working against.\"",
-      "exampleCitation": "1965, Attila Zohar, Kings Cross Black Magic, Sydney: Horwitz Publications, page 66:",
+      "example": "They sat in the back row, whispering so quietly that no one else noticed.",
+      "exampleCitation": "",
       "ipa": [
         "/ˈ(h)wɪspəɹɪŋ/"
       ],
@@ -28350,12 +28350,12 @@
       ],
       "encounters": [
         {
-          "place": "Magazine feature or reference entry",
-          "phrase": "“a whispering in the passage”"
+          "place": "Dialogue in a novel or screenplay",
+          "phrase": "“they were whispering in the back row”"
         },
         {
-          "place": "Textbook, catalog, or museum label",
-          "phrase": "“what we call a whispering. It is similar to”"
+          "place": "Voice / audio description",
+          "phrase": "“a whispering voice just above silence”"
         }
       ],
       "sourceQuestions": [
@@ -28379,8 +28379,8 @@
       "partOfSpeech": "noun",
       "etymology": "From Middle English wympel, wimpel, from Old English wimpel (“veil, an article of women's dress; a covering for the neck, a cloak, a hood”), from Proto-Germanic *wimpilaz (“wimple, scarf, veil”). Cognate with Scots wympill (“wimple”), Dutch wimpel (“streamer, pennant”), German Wimpel (“pennant”), Swedish vimpel (“pennant, banner”), Icelandic vimpill (“hood, cowl”).",
       "etymologyBrief": "From Middle English wympel, ultimately from Old English wimpel (“veil, an article of women's dress; a covering for the neck, a cloak, a hood”).",
-      "example": "[T]he people all wore hosen and shoon and smocks and jupes and jerkins and wimples.",
-      "exampleCitation": "1936, Norman Lindsay, The Flyaway Highway, Sydney: Angus and Robertson, page 55:",
+      "example": "The portrait shows a linen wimple wrapped around the woman’s head and neck.",
+      "exampleCitation": "",
       "ipa": [
         "/ˈwɪmpəl/"
       ],
@@ -28397,12 +28397,12 @@
       ],
       "encounters": [
         {
-          "place": "Vintage clothing listing",
-          "phrase": "“the wimple in the catalog”"
+          "place": "Medieval-art museum label",
+          "phrase": "“a linen wimple framing her face”"
         },
         {
-          "place": "Costume-museum or fashion-history label",
-          "phrase": "“the wimple in the catalog”"
+          "place": "Historical costume guide",
+          "phrase": "“the nun’s white wimple”"
         }
       ],
       "sourceQuestions": [],
@@ -28424,7 +28424,7 @@
       "partOfSpeech": "noun",
       "etymology": "From wrist + lock.",
       "etymologyBrief": "From wrist + lock.",
-      "example": "In context, “wristlock” names or describes A wrestling hold in which the opponent is immobilized by having their wrist tightly held.",
+      "example": "The instructor demonstrated a wristlock and then showed the safe escape.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -28440,12 +28440,12 @@
       ],
       "encounters": [
         {
-          "place": "Magazine feature or reference entry",
-          "phrase": "“a wristlock in the passage”"
+          "place": "Judo / grappling instruction",
+          "phrase": "“finish the hold with a wristlock”"
         },
         {
-          "place": "Textbook, catalog, or museum label",
-          "phrase": "“a wristlock in the passage”"
+          "place": "Combat-sports commentary",
+          "phrase": "“he escaped the wristlock”"
         }
       ],
       "sourceQuestions": [],
