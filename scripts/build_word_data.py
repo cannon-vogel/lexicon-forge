@@ -927,58 +927,92 @@ def base_word_info(base):
     raw=best_raw_etymology(entries,entry)
     return clean(gloss), clean(raw)
 
-def concise_origin(raw, max_chars=300):
+def concise_origin(raw, max_chars=320):
     t=clean_etymology_text(raw)
     if not t:
         return ""
-    # Remove long afterthought sections that are useful to lexicographers but noisy for learners.
     t=re.split(r"\b(?:Cognates?|Further reading|References?|Etymology note)\b",t,maxsplit=1,flags=re.I)[0].strip(" ;")
     matches=[]
+    seen=set()
     for m in LANGUAGE_RE.finditer(t):
-        lang=m.group(1)
-        form=m.group(2)
-        gloss=clean(m.group(3) or "")
+        lang=clean(m.group(1)); form=clean(m.group(2)); gloss=clean(m.group(3) or "")
         key=(lang.lower(),form.lower())
-        if key not in {(x[0].lower(),x[1].lower()) for x in matches}:
-            matches.append((lang,form,gloss))
+        if key not in seen:
+            seen.add(key); matches.append((lang,form,gloss))
     if len(matches)>=2:
-        first=matches[0]; last=matches[-1]
-        a=f"{first[0]} {first[1]}" + (f" (“{first[2]}”)" if first[2] else "")
-        b=f"{last[0]} {last[1]}" + (f" (“{last[2]}”)" if last[2] else "")
-        out=f"From {a}, ultimately from {b}."
-        return out[:max_chars]
-    # First sentence is usually enough once trees/cognate catalogues are removed.
+        first=matches[0]
+        # Proto reconstructions are often visually noisy and less useful to a learner;
+        # prefer the deepest attested classical/historical language in a short note.
+        nonproto=[x for x in matches[1:] if not x[0].lower().startswith("proto-") and not x[1].startswith("*")]
+        last=(nonproto[-1] if nonproto else matches[1])
+        def fmt(x):
+            lang,form,gloss=x
+            f=f"{lang} {form}"
+            if gloss: f+=f" (“{gloss}”)"
+            return f
+        return f"From {fmt(first)}, ultimately from {fmt(last)}."
     sent=re.split(r"(?<=[.!?])\s+",t)[0]
     if len(sent)<=max_chars:
         return sent
     cut=sent[:max_chars].rsplit(",",1)[0].rsplit(";",1)[0].strip()
     return (cut if len(cut)>80 else sent[:max_chars].rstrip())+"…"
 
+def heuristic_base(word):
+    w=word.lower()
+    candidates=[]
+    if w.endswith("ing") and len(w)>6:
+        candidates += [w[:-3], w[:-3]+"e"]
+    if w.endswith("ied") and len(w)>6:
+        candidates += [w[:-3]+"y"]
+    elif w.endswith("ed") and len(w)>5:
+        candidates += [w[:-2], w[:-1]]
+    if w.endswith("ness") and len(w)>7:
+        stem=w[:-4]; candidates += [stem, stem[:-1]+"y" if stem.endswith("i") else stem]
+    if w.endswith("ly") and len(w)>6:
+        candidates += [w[:-2]]
+    if w.endswith("s") and len(w)>5 and not w.endswith(("ss","us","is")):
+        candidates += [w[:-1], w[:-2] if w.endswith("es") else ""]
+    for c in candidates:
+        if not c or normalize_word(c)==normalize_word(word): continue
+        entries,_=get_jsonl(c)
+        if entries:
+            return c
+    return ""
+
+def origin_for_base(base, depth=0):
+    if not base or depth>2:
+        return ""
+    base_gloss,base_raw=base_word_info(base)
+    nested,suffix=derivational_info(base,base_raw,base_gloss)
+    if not nested and (not base_raw or re.match(r"^(?:From|Equivalent to)\s+"+re.escape(base)+r"\s+\+\s+-",base_raw,re.I)):
+        nested=heuristic_base(base)
+        suffix=""
+    if nested and normalize_word(nested)!=normalize_word(base):
+        deeper=origin_for_base(nested,depth+1)
+        stem=f"{base} is built from {nested}" + (f" + {suffix}" if suffix else "") + "."
+        return f"{stem} {deeper}".strip()
+    return concise_origin(base_raw)
+
 def etymology_brief(word, entries, entry, raw_gloss):
     if word in ETYMOLOGY_OVERRIDES:
         return ETYMOLOGY_OVERRIDES[word]
     raw=best_raw_etymology(entries,entry)
     base,suffix=derivational_info(word,raw,raw_gloss)
+    if not base and (not raw or re.match(r"^(?:From|Equivalent to)\s+\S+\s+\+\s+-",raw,re.I)):
+        base=heuristic_base(word)
+        suffix=""
     if base:
-        base_gloss,base_raw=base_word_info(base)
-        origin=concise_origin(base_raw)
+        base_gloss,_=base_word_info(base)
         gloss_part=""
         if base_gloss:
             bg=clean(base_gloss).rstrip(".")
-            if len(bg)>100: bg=bg[:97].rsplit(" ",1)[0]+"…"
+            if len(bg)>88: bg=bg[:85].rsplit(" ",1)[0]+"…"
             gloss_part=f" (“{bg}”)"
-        if suffix:
-            lead=f"Built from {base}{gloss_part} + {suffix}."
-        else:
-            lead=f"The base word is {base}{gloss_part}."
-        if origin:
-            # Avoid a second bare morphology statement such as “From base + -ness.”
-            if re.match(r"^(?:From|Equivalent to)\s+"+re.escape(base)+r"\s+\+\s+-",origin,re.I):
-                _,_,deeper=base_word_info(base)
-                origin=concise_origin(deeper)
-            if origin:
-                return f"{lead} {origin}"
-        return lead+" The bundled dictionary source does not give a deeper origin."
+        lead=(f"Built from {base}{gloss_part}" + (f" + {suffix}" if suffix else "") + ".")
+        origin=origin_for_base(base)
+        if origin and not re.match(r"^(?:From|Equivalent to)\s+"+re.escape(base)+r"\s+\+\s+-",origin,re.I):
+            return (f"{lead} {origin}")[:520]
+        return lead+" A deeper origin is not stated in the bundled source."
     brief=concise_origin(raw)
     if brief:
         return brief
@@ -988,33 +1022,61 @@ def phrase_from_example(word, example):
     e=clean(example)
     if not e or e.startswith(("In context,", "The writer chose", "The description was", "In this vocabulary set")):
         return ""
+    if any(ch in e for ch in ("ſ","þ","ð")):
+        return ""
     m=re.search(r"\b"+re.escape(word)+r"\b",e,re.I)
     if not m:
         return ""
     before=e[:m.start()].split()
     after=e[m.end():].split()
-    chunk=" ".join(before[-5:]+[e[m.start():m.end()]]+after[:6]).strip(" ,;:")
-    if len(chunk)>105:
-        chunk=chunk[:102].rsplit(" ",1)[0]+"…"
+    chunk=" ".join(before[-4:]+[e[m.start():m.end()]]+after[:5]).strip(" ,;:")
+    chunk=re.sub(r"\s+([,.;:!?])",r"\1",chunk)
+    if len(chunk)>92:
+        chunk=chunk[:89].rsplit(" ",1)[0]+"…"
     return "“"+chunk.rstrip(".")+"”"
 
-def generic_phrase(word, pos, definition, index=0):
+def indefinite(word):
+    return "an" if word[:1].lower() in "aeiou" else "a"
+
+def generic_phrase(word, pos, definition, index=0, place=""):
     p=(pos or "").lower()
     d=clean(definition).lower()
+    pl=place.lower()
     if p in ("adj","adjective"):
-        return f"“a {word} response”" if index==0 else f"“the tone felt {word}”"
+        noun="finding" if "medical" in pl or "clinic" in pl else "provision" if "legal" in pl or "court" in pl else "style" if "fashion" in pl else "response"
+        return f"“{indefinite(word)} {word} {noun}”"
     if p in ("adv","adverb"):
-        return f"“answered {word}”" if index==0 else f"“moved {word} through the scene”"
+        return f"“responded {word}”" if index==0 else f"“described it {word}”"
     if p=="verb":
         if word.endswith("ed"):
-            return f"“concerns were {word}”" if any(k in d for k in ("calm","reliev","less intense","reduce")) else f"“they had {word} by then”"
+            if any(k in d for k in ("calm","reliev","less intense","reduce")):
+                return f"“their fears were {word}”"
+            return f"“they had {word} before noon”"
         if word.endswith("ing"):
             return f"“kept {word} through the scene”"
-        return f"“to {word} rather than wait”"
-    # noun-ish fallbacks; choose syntax that works for count and mass nouns alike.
+        if any(k in d for k in ("crime","wrongdoing","assist","encourage")):
+            return f"“to {word} the scheme”"
+        if any(k in d for k in ("reject","renounce","disavow")):
+            return f"“to {word} the old belief”"
+        if any(k in d for k in ("walk","move","wander")):
+            return f"“to {word} across the room”"
+        return f"“to {word} the problem”"
+    person=re.search(r"^(?:a|an)\s+(?:person|man|woman|someone)|^one who",d)
+    if person:
+        return f"“{indefinite(word)} {word} in the story”"
+    if "court" in pl or "legal" in pl:
+        return f"“the {word} in the filing”"
+    if "medical" in pl or "clinic" in pl:
+        return f"“{word} noted in the chart”"
+    if "museum" in pl or "exhibit" in pl:
+        return f"“the {word} on display”"
+    if "menu" in pl or "cookbook" in pl:
+        return f"“{word} on the menu”"
     if word.endswith("s") and not word.endswith(("ss","us")):
-        return f"“the {word} described in the report”"
-    return f"“the word {word} in context”"
+        return f"“several {word} in the account”"
+    if re.match(r"^(?:the )?(?:act|state|quality|process|condition|practice|ability)\b",d):
+        return f"“a striking example of {word}”"
+    return f"“the {word} described in the article”"
 
 def encounter_cards(word, definition, pos, labels, example):
     if word in ENCOUNTER_OVERRIDES:
@@ -1029,13 +1091,13 @@ def encounter_cards(word, definition, pos, labels, example):
         (("gene","chromosome","cell","protein","species","animal","bird","insect","fish","plant","biology","axon"),
          ["Biology textbook or lab handout","Field guide or science-museum label"]),
         (("chemical","compound","polymer","acid","carbon","oxide","mineral","molten"),
-         ["Chemistry or materials-science lab manual","Technical datasheet or geology text"]),
+         ["Chemistry / materials-science lab manual","Technical datasheet or geology textbook"]),
         (("law","legal","court","crime","government","vote","treaty","policy","trustee"),
-         ["Court filing / legal explainer","Newspaper public-affairs article"]),
+         ["Court filing or legal explainer","Newspaper public-affairs article"]),
         (("money","coin","fund","debt","business","market","insured","finance"),
          ["Insurance policy or financial statement","Business-news article"]),
         (("language","speech","grammar","pronoun","syllable","vowel","consonant","linguist"),
-         ["Grammar / linguistics textbook","Editor’s note or literary analysis"]),
+         ["Grammar / linguistics textbook","Editor’s margin note or literary analysis"]),
         (("music","note","sung","instrument","song","melody"),
          ["Album review or concert program","Music-history textbook"]),
         (("food","dish","meal","cook","meat","sauce","drink","bread","stew","herb"),
@@ -1047,7 +1109,7 @@ def encounter_cards(word, definition, pos, labels, example):
         (("room","building","roof","architecture","railroad","track","cable","road","soil","construction"),
          ["Engineering / maintenance manual","Architecture or infrastructure description"]),
         (("emotion","mood","behavior","foolish","stubborn","cheerful","angry","calm","style","manner"),
-         ["Novel or character profile","Book / film review"]),
+         ["Character description in a novel","Book / film review"]),
     ]
     places=None
     for keys,p in domains:
@@ -1059,29 +1121,14 @@ def encounter_cards(word, definition, pos, labels, example):
         elif (pos or "").lower() in ("adj","adjective","adv","adverb"):
             places=["Book / film review","Character description in fiction"]
         elif (pos or "").lower()=="verb":
-            places=["Narrative nonfiction or news feature","Novel or memoir"]
+            places=["Long-form news feature","Novel or memoir"]
         else:
-            places=["Feature article or nonfiction book","Specialist textbook / museum label"]
-    ex_phrase=phrase_from_example(word,example)
-    p1=ex_phrase or generic_phrase(word,pos,definition,0)
-    p2=generic_phrase(word,pos,definition,1)
+            places=["Feature article / reference book","Specialist textbook or museum label"]
+    p1=generic_phrase(word,pos,definition,0,places[0])
+    p2=phrase_from_example(word,example) or generic_phrase(word,pos,definition,1,places[1])
     if p2==p1:
-        p2=f"“{word}”"
+        p2=generic_phrase(word,pos,definition,1,places[1])
     return [{"place":places[0],"phrase":p1},{"place":places[1],"phrase":p2}]
-
-def clean_etymology_text(text):
-    t=clean(text)
-    if not t: return ""
-    if t.startswith("Etymology tree"):
-        for marker in ("Borrowed from ", "Inherited from ", "Learned borrowing from ", "Ultimately from "):
-            p=t.rfind(marker)
-            if p>=0:
-                return t[p:]
-        # Last-resort: retain only the last reasonably sentence-like "From ..." clause.
-        p=t.rfind(" From ")
-        if p>=0:
-            return t[p+1:]
-    return t
 
 def modern_uses(word, definition, pos, labels):
     if word in MODERN_CONTEXT_OVERRIDES:
