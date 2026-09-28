@@ -4130,15 +4130,15 @@
     },
     "chamois": {
       "word": "chamois",
-      "definition": "A short-horned goat antelope native to mountainous terrain in southern Europe; Rupicapra rupicapra.",
-      "quizDefinition": "A short-horned goat antelope native to mountainous terrain in southern Europe; Rupicapra rupicapra.",
-      "rawDictionaryDefinition": "A short-horned goat antelope native to mountainous terrain in southern Europe; Rupicapra rupicapra.",
+      "definition": "A small goat-antelope of European mountains; also the soft leather traditionally made from its hide or a similar cleaning cloth.",
+      "quizDefinition": "A small goat-antelope of European mountains; also the soft leather traditionally made from its hide or a similar cleaning cloth.",
+      "rawDictionaryDefinition": "Ellipsis of chamois leather (“soft pliable leather originally made from the skin of chamois (nowadays the hides of deer, sheep, and other species of goat are alternatively used)”).",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from Middle French chamois, from Late Latin camox, from Gaulish camox (5th c. AD, Polemius Silvius), probably from an extinct Alpine language (Raetic, Ancient Ligurian), possibly Proto-Indo-European *kem- (“without horns”). Compare also Old High German gamiza (“chamois”) (whence modern German Gämse).",
-      "example": "When my father returned from Milan, he found playing with me in the hall of our villa a child fairer than pictured cherub – a creature who seemed to shed radiance from her looks and whose form and motions were lighter than the chamois of the hills.",
-      "exampleCitation": "1831 October 31, Mary W[ollstonecraft] Shelley, chapter I, in Frankenstein: Or, The Modern Prometheus (Standard Novels; IX), 3rd edition, London: Henry Colburn and Richard Bentley, […], →OCLC, page 22:",
+      "example": "[H]e seldom donned his armour, substituted costly damask and silk for his war-worn shamoy doublet, and affected at his advanced time of life more gaiety of attire than his contemporaries remembered as distinguishing his early youth.",
+      "exampleCitation": "1825 June 22, [Walter Scott], chapter XVI, in Tales of the Crusaders. […], volume I (The Betrothed), Edinburgh: […] [James Ballantyne and Co.] for Archibald Constable and Co.; London: Hurst, Robinson, and Co., →OCLC, page 317:",
       "ipa": [
         "/ˈʃæmwɑː/",
         "/ˈʃæmwɑːz/",
@@ -4167,7 +4167,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ch/chamois.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 99,
+        "length": 128,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -4940,8 +4940,8 @@
     },
     "concretive": {
       "word": "concretive",
-      "definition": "Tending to form, promote, or produce a concretion or solid mass.",
-      "quizDefinition": "Tending to form, promote, or produce a concretion or solid mass.",
+      "definition": "Promoting the formation of a solid mass, deposit, or concretion.",
+      "quizDefinition": "Promoting the formation of a solid mass, deposit, or concretion.",
       "rawDictionaryDefinition": "Promoting concretion.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -5079,8 +5079,8 @@
     },
     "confirmatively": {
       "word": "confirmatively",
-      "definition": "With confirmation from other sources.",
-      "quizDefinition": "With confirmation from other sources.",
+      "definition": "In a way that confirms, supports, or verifies something.",
+      "quizDefinition": "In a way that confirms, supports, or verifies something.",
       "rawDictionaryDefinition": "With confirmation from other sources",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -5104,7 +5104,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/co/confirmatively.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 37,
+        "length": 56,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -6397,8 +6397,8 @@
     },
     "demurrer": {
       "word": "demurrer",
-      "definition": "A motion by a party to a legal action for the immediate or summary judgment of the court on the question of whether, assuming the truth of the matter alleged by the opposite party, it is sufficient in law to sustain the action or defense, and hence whether the party bringing the motion is required to answer or proceed further.",
-      "quizDefinition": "A motion by a party to a legal action for the immediate or summary judgment of the court on the question of whether, assuming the truth of the matter alleged by the opposite party, it is sufficient in law to sustain the action or defense, and hence whether the party bringing the motion is required to answer or proceed further.",
+      "definition": "A legal objection arguing that, even if the opponent's alleged facts are true, they do not establish a legally sufficient claim.",
+      "quizDefinition": "A legal objection arguing that, even if the opponent's alleged facts are true, they do not establish a legally sufficient claim.",
       "rawDictionaryDefinition": "A motion by a party to a legal action for the immediate or summary judgment of the court on the question of whether, assuming the truth of the matter alleged by the opposite party, it is sufficient in law to sustain the action or defense, and hence whether the party bringing the motion is required to answer or proceed further.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -6427,7 +6427,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/demurrer.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 328,
+        "length": 128,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -6555,14 +6555,14 @@
     },
     "dewiness": {
       "word": "dewiness",
-      "definition": "The state or quality of being dewy.",
-      "quizDefinition": "The state or quality of being dewy.",
+      "definition": "Fresh moisture like tiny droplets of dew; figuratively, a fresh or youthful appearance.",
+      "quizDefinition": "Fresh moisture like tiny droplets of dew; figuratively, a fresh or youthful appearance.",
       "rawDictionaryDefinition": "The state or quality of being dewy.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From dewy + -ness.",
-      "example": "In context, “dewiness” names or describes The state or quality of being dewy.",
+      "example": "In context, “dewiness” names or describes Fresh moisture like tiny droplets of dew; figuratively, a fresh or youthful appearance.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -6580,7 +6580,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/dewiness.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 35,
+        "length": 87,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -8536,8 +8536,8 @@
     },
     "extenuating": {
       "word": "extenuating",
-      "definition": "That attenuates or lessens the seriousness of something, e.g. by providing a mitigating excuse for it.",
-      "quizDefinition": "That attenuates or lessens the seriousness of something, e.g. by providing a mitigating excuse for it.",
+      "definition": "Making a fault or offense seem less serious by providing mitigating circumstances.",
+      "quizDefinition": "Making a fault or offense seem less serious by providing mitigating circumstances.",
       "rawDictionaryDefinition": "That attenuates or lessens the seriousness of something, e.g. by providing a mitigating excuse for it.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -8566,7 +8566,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/ex/extenuating.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 102,
+        "length": 82,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -10171,14 +10171,14 @@
     },
     "glossarist": {
       "word": "glossarist",
-      "definition": "someone who writes a glossary.",
-      "quizDefinition": "someone who writes a glossary.",
+      "definition": "A person who compiles, writes, or edits a glossary.",
+      "quizDefinition": "A person who compiles, writes, or edits a glossary.",
       "rawDictionaryDefinition": "someone who writes a glossary",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From glossary + -ist.",
-      "example": "In context, “glossarist” names or describes someone who writes a glossary.",
+      "example": "In context, “glossarist” names or describes A person who compiles, writes, or edits a glossary.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -10196,7 +10196,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/g/gl/glossarist.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 30,
+        "length": 51,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -10771,8 +10771,8 @@
     },
     "hook": {
       "word": "hook",
-      "definition": "A point in a system, especially software, where behavior can be intercepted, extended, or modified.",
-      "quizDefinition": "A point in a system, especially software, where behavior can be intercepted, extended, or modified.",
+      "definition": "A curved device for catching or holding something; in software, a point where behavior can be intercepted, extended, or modified.",
+      "quizDefinition": "A curved device for catching or holding something; in software, a point where behavior can be intercepted, extended, or modified.",
       "rawDictionaryDefinition": "Part of a system's operation that can be intercepted to change or augment its behaviour.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -10823,7 +10823,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/h/ho/hook.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 99,
+        "length": 129,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -11144,8 +11144,8 @@
     },
     "impetuous": {
       "word": "impetuous",
-      "definition": "Making arbitrary decisions, especially in an impulsive and forceful manner.",
-      "quizDefinition": "Making arbitrary decisions, especially in an impulsive and forceful manner.",
+      "definition": "Acting quickly and forcefully without enough thought; impulsive or rash.",
+      "quizDefinition": "Acting quickly and forcefully without enough thought; impulsive or rash.",
       "rawDictionaryDefinition": "Making arbitrary decisions, especially in an impulsive and forceful manner.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -11181,7 +11181,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/im/impetuous.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 75,
+        "length": 72,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -11561,15 +11561,15 @@
     },
     "indiscriminate": {
       "word": "indiscriminate",
-      "definition": "Not marked by discrimination or discernment; (by extension) confused, promiscuous.",
-      "quizDefinition": "Not marked by discrimination or discernment; (by extension) confused, promiscuous.",
-      "rawDictionaryDefinition": "Not marked by discrimination or discernment; (by extension) confused, promiscuous.",
+      "definition": "Done without careful selection or distinction; random, unselective, or lacking judgment.",
+      "quizDefinition": "Done without careful selection or distinction; random, unselective, or lacking judgment.",
+      "rawDictionaryDefinition": "Without care in making distinctions, thoughtless.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "First attested in 1598; from in- + discriminate.",
-      "example": "Otanes […] commanded an indiscriminate slaughter, without regard to age or to place.",
-      "exampleCitation": "1838, Connop Thirwall, History of Greece, volume II. xiv. 195:",
+      "example": "How can anyone be so indiscriminate in making friends as he is?",
+      "exampleCitation": "",
       "ipa": [
         "/ɪn.dɪsˈkɹɪm.ɪn.ət/"
       ],
@@ -11599,7 +11599,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/in/indiscriminate.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 82,
+        "length": 88,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -12990,8 +12990,8 @@
     },
     "leatherhead": {
       "word": "leatherhead",
-      "definition": "The friarbird.",
-      "quizDefinition": "The friarbird.",
+      "definition": "A friarbird, especially an Australian honeyeater with a bare dark head.",
+      "quizDefinition": "A friarbird, especially an Australian honeyeater with a bare dark head.",
       "rawDictionaryDefinition": "The friarbird.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -13015,8 +13015,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/l/le/leatherhead.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 14,
-        "clarityPenalty": 7
+        "length": 71,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -13193,8 +13193,8 @@
     },
     "ludicrous": {
       "word": "ludicrous",
-      "definition": "Idiotic or unthinkable, often to the point of being funny; amusing by being plainly incongruous or absurd.",
-      "quizDefinition": "Idiotic or unthinkable, often to the point of being funny; amusing by being plainly incongruous or absurd.",
+      "definition": "So absurd, unreasonable, or incongruous as to provoke laughter.",
+      "quizDefinition": "So absurd, unreasonable, or incongruous as to provoke laughter.",
       "rawDictionaryDefinition": "Idiotic or unthinkable, often to the point of being funny; amusing by being plainly incongruous or absurd.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -13243,7 +13243,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/l/lu/ludicrous.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 106,
+        "length": 63,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -14697,14 +14697,14 @@
     },
     "octavo": {
       "word": "octavo",
-      "definition": "A sheet of paper 7 to 10 inches (= 17.78 to 25.4 cm) high and 4.5 to 6 inches (= 11.43 to 15.24 cm) wide, the size varying with the large original sheet used to create it. It is made by folding the original sheet three times to produce eight leaves.",
-      "quizDefinition": "A sheet of paper 7 to 10 inches (= 17.78 to 25.4 cm) high and 4.5 to 6 inches (= 11.43 to 15.24 cm) wide, the size varying with the large original sheet used to create it. It is made by folding the original sheet three times to produce eight leaves.",
+      "definition": "A book format made by folding a printed sheet three times to form eight leaves, or sixteen pages.",
+      "quizDefinition": "A book format made by folding a printed sheet three times to form eight leaves, or sixteen pages.",
       "rawDictionaryDefinition": "A sheet of paper 7 to 10 inches (= 17.78 to 25.4 cm) high and 4.5 to 6 inches (= 11.43 to 15.24 cm) wide, the size varying with the large original sheet used to create it. It is made by folding the original sheet three times to produce eight leaves.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From Latin octavo. Doublet of octave, oitava, and ochava.",
-      "example": "In context, “octavo” names or describes A sheet of paper 7 to 10 inches (= 17.78 to 25.4 cm) high and 4.5 to 6 inches (= 11.43 to 15.24 cm) wide, the size varying with the large original sheet used to create it. It is made by folding the original sheet three times to produce eight leaves.",
+      "example": "In context, “octavo” names or describes A book format made by folding a printed sheet three times to form eight leaves, or sixteen pages.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -14729,7 +14729,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/o/oc/octavo.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 249,
+        "length": 97,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -15694,15 +15694,15 @@
     },
     "philanthropy": {
       "word": "philanthropy",
-      "definition": "Benevolent altruism with the intention of increasing the well-being of humankind.",
-      "quizDefinition": "Benevolent altruism with the intention of increasing the well-being of humankind.",
-      "rawDictionaryDefinition": "Benevolent altruism with the intention of increasing the well-being of humankind.",
+      "definition": "The giving of money, time, or resources to promote the welfare of others or the public good.",
+      "quizDefinition": "The giving of money, time, or resources to promote the welfare of others or the public good.",
+      "rawDictionaryDefinition": "Charitable giving, charity.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from Late Latin philanthrōpia, itself a borrowing from Ancient Greek φιλανθρωπία (philanthrōpía). By surface analysis, phil- + -anthropy.",
-      "example": "Secondly, Another excellent Diſpoſition in Chriſt, is his Love, not only his Phylanthropy, or good Will he bears to all men, and the Deſire he hath of their Salvation, Ezek[iel] 33. 11.",
-      "exampleCitation": "1681, Bartholomew Ashwood, “Chap. IX. Opening somewhat of the Sweet Dispositions of Christ, viz. His Goodness, Love, and the Riches thereof, as to the Kind, Fruits, and Effects of It.”, in The Best Treasure, or, The Way to be Truly Rich. Being a Discourse on Ephes[ians] 3. 8. Wherein is Opened and Commended to Saints and Sinners the Personal and Purchased Riches of Christ, as the Best Treasure, to be Pursu'd, and Endur'd by All that Would Be Happy here and hereafter, London: Printed for William Marshal, at the Bible in Newgate-Street, at the corner of Ivy Lane, →OCLC, page 139:",
+      "example": "As public funding is reduced, we depend increasingly on private philanthropy.",
+      "exampleCitation": "",
       "ipa": [
         "/fɪˈlæn.θɹə.pi/",
         "/fəˈlæn.θɹə.pi/",
@@ -15742,7 +15742,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/ph/philanthropy.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 81,
+        "length": 92,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -16133,42 +16133,42 @@
     },
     "pliant": {
       "word": "pliant",
-      "definition": "Capable of plying or bending; readily yielding to force or pressure without breaking.",
-      "quizDefinition": "Capable of plying or bending; readily yielding to force or pressure without breaking.",
-      "rawDictionaryDefinition": "Capable of plying or bending; readily yielding to force or pressure without breaking.",
+      "definition": "Flexible and easily bent; figuratively, readily influenced or adaptable.",
+      "quizDefinition": "Flexible and easily bent; figuratively, readily influenced or adaptable.",
+      "rawDictionaryDefinition": "Easily influenced; tractable.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "From Middle English pliaunt, from Old French ploiant, present participle of ploiier (“to fold”).",
-      "example": "Whether in its northern or southern home, the black-throated blue warbler builds its nest of bark, roots, and other pliant material, loose and rather bulky, in a variety of saplings, bushes, and weeds, but always a few inches or a few feet from the ground.",
-      "exampleCitation": "1917 April, “The Warblers of North America”, in The National Geographic Magazine:",
+      "example": "I muſt haue wanton Poets, pleaſant wits, Muſitians, that with touching of a ſtring May draw the pliant king which way I pleaſe: […]",
+      "exampleCitation": "1594, Christopher Marlow[e], The Troublesome Raigne and Lamentable Death of Edward the Second, King of England: […], London: […] [R. Robinson] for William Iones […], →OCLC, [Act I], signature A3, recto:",
       "ipa": [
         "/ˈplaɪənt/"
       ],
       "audio": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/LL-Q1860_%28eng%29-Vealhurl-pliant.wav/LL-Q1860_%28eng%29-Vealhurl-pliant.wav.mp3",
       "synonyms": [
-        "flexible",
-        "pliable",
-        "lithe",
-        "limber",
-        "plastic",
-        "supple",
-        "malleable",
-        "yielding"
+        "compliant",
+        "controllable",
+        "yielding",
+        "amenable",
+        "biddable",
+        "complaisant",
+        "docile",
+        "governable"
       ],
       "related": [
-        "flexible",
-        "pliable",
-        "lithe",
-        "limber",
-        "plastic",
-        "supple",
-        "malleable",
+        "compliant",
+        "controllable",
         "yielding",
-        "ductile",
-        "nonpliant",
-        "pliantly",
-        "pliantness"
+        "amenable",
+        "biddable",
+        "complaisant",
+        "docile",
+        "governable",
+        "indulgent",
+        "manageable",
+        "maniable",
+        "meek"
       ],
       "usageLabels": [],
       "sourceNeighbors": [],
@@ -16182,7 +16182,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pl/pliant.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 85,
+        "length": 72,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -17863,56 +17863,36 @@
     },
     "reprobate": {
       "word": "reprobate",
-      "definition": "Immoral, having no religious or principled character.",
-      "quizDefinition": "Immoral, having no religious or principled character.",
-      "rawDictionaryDefinition": "Immoral, having no religious or principled character.",
+      "definition": "Morally unprincipled or depraved; as a noun, a person regarded as lacking principles.",
+      "quizDefinition": "Morally unprincipled or depraved; as a noun, a person regarded as lacking principles.",
+      "rawDictionaryDefinition": "A person with low morals or principles.",
       "linkedLemma": "",
       "sourceDefinition": "",
-      "partOfSpeech": "adj",
+      "partOfSpeech": "noun",
       "etymology": "First attested in c. 1425, in Middle English; inherited from Middle English reprobat(e) (“condemned, damned”, also used as the past participle of reprobaten), borrowed from Latin reprobātus (“disapproved, rejected, condemned”), perfect passive participle of reprobō, see -ate (adjective-forming suffix). The noun was derived from the adjective by substantivization, see -ate (noun-forming suffix).",
-      "example": "The reprobate criminal sneered at me.",
-      "exampleCitation": "",
+      "example": "I acknowledge myself for a reprobate, a villain, a traitor to the king.",
+      "exampleCitation": "c. 1603, Walter Raleigh, Apology for the Voyage to Guiana:",
       "ipa": [
         "/ˈɹɛpɹəbət/"
       ],
       "audio": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7f/LL-Q1860_%28eng%29-Vealhurl-reprobate1.wav/LL-Q1860_%28eng%29-Vealhurl-reprobate1.wav.mp3",
-      "synonyms": [
-        "dissolute",
-        "licentious",
-        "profligate",
-        "aberrant",
-        "corrupt",
-        "corrupted",
-        "depraved",
-        "lost"
-      ],
+      "synonyms": [],
       "related": [
-        "dissolute",
-        "licentious",
-        "profligate",
-        "aberrant",
-        "corrupt",
-        "corrupted",
-        "depraved",
-        "lost",
-        "dirty-handed",
-        "effete",
-        "errant",
-        "questionable"
+        "depraved"
       ],
       "usageLabels": [],
       "sourceNeighbors": [],
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Book reviews, profiles, or essays — giving a precise judgment about tone, behavior, or quality.",
-        "Fiction and descriptive prose — adding a more exact shade of description."
+        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
+        "Specialist or academic writing — where a compact technical or literary term is useful."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/r/re/reprobate.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 53,
+        "length": 85,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -18159,8 +18139,8 @@
     },
     "roulade": {
       "word": "roulade",
-      "definition": "An elaborate embellishment of several notes sung to one syllable.",
-      "quizDefinition": "An elaborate embellishment of several notes sung to one syllable.",
+      "definition": "A decorative run of several musical notes sung on one syllable; also a rolled food preparation.",
+      "quizDefinition": "A decorative run of several musical notes sung on one syllable; also a rolled food preparation.",
       "rawDictionaryDefinition": "An elaborate embellishment of several notes sung to one syllable.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -18187,7 +18167,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/r/ro/roulade.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 65,
+        "length": 95,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -19051,8 +19031,8 @@
     },
     "sizzle": {
       "word": "sizzle",
-      "definition": "To make the sound of water boiling on a hot surface.",
-      "quizDefinition": "To make the sound of water boiling on a hot surface.",
+      "definition": "To make a sharp hissing sound like food cooking on a hot surface.",
+      "quizDefinition": "To make a sharp hissing sound like food cooking on a hot surface.",
       "rawDictionaryDefinition": "To make the sound of water boiling on a hot surface.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -19081,7 +19061,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/si/sizzle.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 52,
+        "length": 65,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -20661,14 +20641,14 @@
     },
     "terrine": {
       "word": "terrine",
-      "definition": "A deep type of dish or pan, typically used for casseroles and made out of pottery.",
-      "quizDefinition": "A deep type of dish or pan, typically used for casseroles and made out of pottery.",
+      "definition": "A loaf-like preparation of meat, fish, or vegetables cooked and often served in a deep earthenware dish; also the dish itself.",
+      "quizDefinition": "A loaf-like preparation of meat, fish, or vegetables cooked and often served in a deep earthenware dish; also the dish itself.",
       "rawDictionaryDefinition": "A deep type of dish or pan, typically used for casseroles and made out of pottery.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from French terrine (“a clay dish; that which is cooked in the dish”). Doublet of tureen.",
-      "example": "In context, “terrine” names or describes A deep type of dish or pan, typically used for casseroles and made out of pottery.",
+      "example": "In context, “terrine” names or describes A loaf-like preparation of meat, fish, or vegetables cooked and often served in a deep earthenware dish; also the dish itself.",
       "exampleCitation": "",
       "ipa": [
         "/təˈɹin/"
@@ -20688,7 +20668,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/te/terrine.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 82,
+        "length": 126,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -20831,8 +20811,8 @@
     },
     "tintype": {
       "word": "tintype",
-      "definition": "An early, remarkably durable form of photograph (technically a photographic negative), printed on a tin plate, then varnished.",
-      "quizDefinition": "An early, remarkably durable form of photograph (technically a photographic negative), printed on a tin plate, then varnished.",
+      "definition": "An early photograph made as a positive image on a thin lacquered iron plate.",
+      "quizDefinition": "An early photograph made as a positive image on a thin lacquered iron plate.",
       "rawDictionaryDefinition": "An early, remarkably durable form of photograph (technically a photographic negative), printed on a tin plate, then varnished.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -20862,7 +20842,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/ti/tintype.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 126,
+        "length": 76,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -21147,25 +21127,22 @@
     },
     "totter": {
       "word": "totter",
-      "definition": "To be on the brink of collapse.",
-      "quizDefinition": "To be on the brink of collapse.",
-      "rawDictionaryDefinition": "To be on the brink of collapse.",
+      "definition": "To sway or move unsteadily as if about to fall; figuratively, to be close to collapse.",
+      "quizDefinition": "To sway or move unsteadily as if about to fall; figuratively, to be close to collapse.",
+      "rawDictionaryDefinition": "To walk, move or stand unsteadily or falteringly; threatening to fall.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "From Middle English totren, toteren, from earlier *tolteren (compare dialectal English tolter (“to struggle, flounder”); Scots tolter (“unstable, wonky”)), from Old English tealtrian (“to totter, vacillate”), from Proto-Germanic *taltrōną, a frequentative form of Proto-Germanic *taltōną (“to sway, dangle, hesitate”), from Proto-Indo-European *del-, *dul- (“to shake, hesitate”). Cognate with Dutch touteren (“to tremble”), Norwegian dialectal totra (“to quiver, shake”), North Frisian talt, tolt (“unstable, shaky”). Related to tilt.",
-      "example": "[…]the folly of this Iland, they ſay there's but fiue vpon this Iſle ; we are three of them, if th' other two be brain'd like vs, the State totters.",
-      "exampleCitation": "1610–1611 (date written), William Shakespeare, “The Tempest”, in Mr. William Shakespeares Comedies, Histories, & Tragedies […] (First Folio), London: […] Isaac Iaggard, and Ed[ward] Blount, published 1623, →OCLC, [Act III, scene ii], page 11:",
+      "example": "The baby tottered from the table to the chair.",
+      "exampleCitation": "",
       "ipa": [
         "/ˈtɒtə/",
         "/ˈtɑtɚ/"
       ],
       "audio": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/43/LL-Q1860_%28eng%29-Vealhurl-totter.wav/LL-Q1860_%28eng%29-Vealhurl-totter.wav.mp3",
-      "synonyms": [
-        "topple"
-      ],
+      "synonyms": [],
       "related": [
-        "topple",
         "reel",
         "teeter",
         "toddle",
@@ -21176,7 +21153,8 @@
         "teeter-totter",
         "totterer",
         "tottergrass",
-        "tottering"
+        "tottering",
+        "totteringly"
       ],
       "usageLabels": [],
       "sourceNeighbors": [
@@ -21198,7 +21176,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/to/totter.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 31,
+        "length": 86,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -21861,8 +21839,8 @@
     },
     "uproarious": {
       "word": "uproarious",
-      "definition": "Extremely funny; hilarious.",
-      "quizDefinition": "Extremely funny; hilarious.",
+      "definition": "Extremely noisy and boisterous, or extremely funny.",
+      "quizDefinition": "Extremely noisy and boisterous, or extremely funny.",
       "rawDictionaryDefinition": "Extremely funny; hilarious.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -21919,7 +21897,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/u/up/uproarious.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 27,
+        "length": 51,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -22272,8 +22250,8 @@
     },
     "ward": {
       "word": "ward",
-      "definition": "A person or place under someone's care or protection; also a division of a hospital, city, or institution.",
-      "quizDefinition": "A person or place under someone's care or protection; also a division of a hospital, city, or institution.",
+      "definition": "A person under another's legal care or protection; also a division of a hospital, city, prison, or other institution.",
+      "quizDefinition": "A person under another's legal care or protection; also a division of a hospital, city, prison, or other institution.",
       "rawDictionaryDefinition": "A person under guardianship.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -22321,7 +22299,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/w/wa/ward.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 106,
+        "length": 117,
         "clarityPenalty": 0
       },
       "entryAvailable": true
