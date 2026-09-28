@@ -1545,7 +1545,7 @@ def main():
 
     # Final learner-facing normalization is intentionally applied to the finished
     # rows as a backstop: no card may ship with a bare "base + suffix" origin.
-    morph_pat=re.compile(r"^(?:From|Built from)\\s+([A-Za-z][A-Za-z'’-]*)\\s+\\+\\s+(-[A-Za-z-]+)\\.$",re.I)
+    morph_pat=re.compile(r"^(?:From|Built from)\s+([A-Za-z][A-Za-z'’-]*)\s+\+\s+(-[A-Za-z-]+)\.$",re.I)
     for w,row in data.items():
         brief=clean(row.get("etymologyBrief") or "")
         m=morph_pat.match(brief)
