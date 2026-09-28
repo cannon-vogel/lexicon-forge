@@ -1193,6 +1193,22 @@ def phrase_from_example(word, example):
         chunk=chunk[:89].rsplit(" ",1)[0]+"…"
     return "“"+chunk.rstrip(".")+"”"
 
+def source_place_from_citation(citation):
+    """Turn a long Wiktionary quotation citation into a compact, concrete source label."""
+    c=clean(citation).strip(" :")
+    if not c:
+        return ""
+    c=re.sub(r"→(?:ISBN|OCLC)\S*","",c)
+    c=re.sub(r"\s+"," ",c).strip(" ,;:")
+    parts=[clean(x) for x in c.split(",") if clean(x)]
+    if not parts:
+        return ""
+    # Year + author + title/chapter is usually enough to recognize the actual source.
+    label=", ".join(parts[:3])
+    if len(label)>96:
+        label=label[:93].rsplit(" ",1)[0]+"…"
+    return "Real quotation — "+label
+
 def indefinite(word):
     return "an" if word[:1].lower() in "aeiou" else "a"
 
@@ -1278,7 +1294,7 @@ def generic_phrase(word, pos, definition, index=0, place="", domain="general"):
         return f"“several {word} in the account”" if index==0 else f"“the {word} mentioned in the text”"
     return f"“{indefinite(word)} {word} in the passage”" if index==0 else f"“a reference to {word}”"
 
-def encounter_cards(word, definition, pos, labels, example):
+def encounter_cards(word, definition, pos, labels, example, example_citation=""):
     if word in ENCOUNTER_OVERRIDES:
         return ENCOUNTER_OVERRIDES[word]
     d=clean(definition).lower()
@@ -1331,11 +1347,18 @@ def encounter_cards(word, definition, pos, labels, example):
         else:
             places=["Magazine feature or reference entry","Textbook, catalog, or museum label"]
     ex=phrase_from_example(word,example)
+    citation_place=source_place_from_citation(example_citation)
     p1=generic_phrase(word,pos,definition,0,places[0],domain)
-    p2=ex or generic_phrase(word,pos,definition,1,places[1],domain)
+    if ex and citation_place:
+        p2=ex
+        place2=citation_place
+    else:
+        p2=ex or generic_phrase(word,pos,definition,1,places[1],domain)
+        place2=places[1]
     if p2==p1:
         p2=generic_phrase(word,pos,definition,1,places[1],domain)
-    return [{"place":places[0],"phrase":p1},{"place":places[1],"phrase":p2}]
+        place2=places[1]
+    return [{"place":places[0],"phrase":p1},{"place":place2,"phrase":p2}]
 
 def modern_uses(word, definition, pos, labels):
     if word in MODERN_CONTEXT_OVERRIDES:
@@ -1475,7 +1498,7 @@ def build_one(word):
         "courseSynonyms":src.get("neighbors",[]),
         "courseCue":source_definition,
         "modernUses":modern_uses(word, definition, pos, labels),
-        "encounters":encounter_cards(word,definition,pos,labels,ex),
+        "encounters":encounter_cards(word,definition,pos,labels,ex,exref),
         "sourceQuestions":src.get("questions",[]),
         "kaikkiUrl":url or "",
         "definitionQuality":{
@@ -1514,7 +1537,7 @@ def main():
                     "courseSynonyms":src.get("neighbors",[]),
                     "courseCue":(src.get("definitions") or [""])[0],
                     "modernUses":modern_uses(w,(src.get("definitions") or [""])[0],"",[]),
-                    "encounters":encounter_cards(w,(src.get("definitions") or [""])[0],"",[],fallback_example(w,(src.get("definitions") or [""])[0],"")),
+                    "encounters":encounter_cards(w,(src.get("definitions") or [""])[0],"",[],fallback_example(w,(src.get("definitions") or [""])[0],""),""),
                     "sourceQuestions":src.get("questions",[]),"kaikkiUrl":"","entryAvailable":False
                 }
             done+=1
