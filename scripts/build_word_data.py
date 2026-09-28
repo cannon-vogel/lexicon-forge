@@ -1214,17 +1214,19 @@ def generic_phrase(word, pos, definition, index=0, place="", domain="general"):
     abstract=bool(re.match(r"^(?:the )?(?:act|state|quality|process|condition|practice|ability|degree)\b",d))
     if p in ("adj","adjective"):
         nouns={"fashion":"style","medical":"finding","biology":"trait","chemistry":"compound","legal":"provision","finance":"policy","language":"construction","music":"passage","food":"flavor","military":"description","religion":"doctrine","engineering":"component","personality":"remark"}
-        return f"“{indefinite(word)} {word} {nouns.get(domain,'description')}”"
+        noun=nouns.get(domain,"description")
+        return f"“{indefinite(word)} {word} {noun}”" if index==0 else f"“the {noun} seemed {word}”"
     if p in ("adv","adverb"):
         verbs={"medical":"presented","legal":"argued","music":"played","personality":"responded"}
-        return f"“{verbs.get(domain,'responded')} {word}”"
+        v=verbs.get(domain,"responded")
+        return f"“{v} {word}”" if index==0 else f"“did so {word}”"
     if p=="verb":
         if word.endswith("ed"):
             if any(k in d for k in ("calm","reliev","less intense","reduce")):
-                return f"“their fears were {word}”"
-            return f"“they had {word} it by then”"
+                return f"“their fears were {word}”" if index==0 else f"“the pain was {word} by morning”"
+            return f"“they had {word} it by then”" if index==0 else f"“it was {word} before noon”"
         if word.endswith("ing"):
-            return f"“kept {word} through the scene”"
+            return f"“kept {word} through the scene”" if index==0 else f"“was {word} again”"
         frames=[
             (("humiliat","degrad","lower"),"someone publicly"),
             (("crime","wrongdoing","assist","encourage"),"the scheme"),
@@ -1240,39 +1242,41 @@ def generic_phrase(word, pos, definition, index=0, place="", domain="general"):
         ]
         for keys,obj in frames:
             if any(k in d for k in keys):
-                return f"“to {word} {obj}”"
-        return f"“decided to {word}”"
+                return f"“to {word} {obj}”" if index==0 else f"“they chose to {word} {obj}”"
+        return f"“decided to {word}”" if index==0 else f"“was ready to {word}”"
     if person:
-        return f"“{indefinite(word)} {word} in the account”"
+        return f"“{indefinite(word)} {word} in the account”" if index==0 else f"“described as {indefinite(word)} {word}”"
     if domain=="medical":
-        return f"“the {word} on the scan”" if any(k in d for k in ("bone","muscle","membrane","organ","structure")) else f"“{word} noted in the chart”"
+        if any(k in d for k in ("bone","muscle","membrane","organ","structure")):
+            return f"“the {word} on the scan”" if index==0 else f"“injury near the {word}”"
+        return f"“{word} noted in the chart”" if index==0 else f"“evidence of {word}”"
     if domain=="biology":
-        return f"“the {word} in the specimen”"
+        return f"“the {word} in the specimen”" if index==0 else f"“{word} in the field guide”"
     if domain=="chemistry":
-        return f"“the {word} in the sample”"
+        return f"“the {word} in the sample”" if index==0 else f"“a sample containing {word}”"
     if domain=="legal":
-        return f"“the {word} in the filing”"
+        return f"“the {word} in the filing”" if index==0 else f"“a dispute over {word}”"
     if domain=="finance":
-        return f"“the {word} in the policy”"
+        return f"“the {word} in the policy”" if index==0 else f"“costs associated with {word}”"
     if domain=="language":
-        return f"“the {word} in the sentence”"
+        return f"“the {word} in the sentence”" if index==0 else f"“an example of {word}”"
     if domain=="music":
-        return f"“a {word} in the score”"
+        return f"“a {word} in the score”" if index==0 else f"“a passage featuring {word}”"
     if domain=="food":
-        return f"“{word} on the menu”"
+        return f"“{word} on the menu”" if index==0 else f"“a recipe using {word}”"
     if domain=="military":
-        return f"“the {word} in the museum collection”"
+        return f"“the {word} in the museum collection”" if index==0 else f"“a period {word}”"
     if domain=="religion":
-        return f"“the {word} in the theology text”"
+        return f"“the {word} in the theology text”" if index==0 else f"“a discussion of {word}”"
     if domain=="engineering":
-        return f"“the {word} in the assembly”"
+        return f"“the {word} in the assembly”" if index==0 else f"“inspect the {word} for damage”"
     if domain=="fashion":
-        return f"“the {word} in the catalog”"
+        return f"“the {word} in the catalog”" if index==0 else f"“a vintage {word}”"
     if domain=="personality" or abstract:
-        return f"“a striking display of {word}”"
+        return f"“a striking display of {word}”" if index==0 else f"“showed remarkable {word}”"
     if word.endswith("s") and not word.endswith(("ss","us")):
-        return f"“several {word} in the account”"
-    return f"“{indefinite(word)} {word} in the passage”"
+        return f"“several {word} in the account”" if index==0 else f"“the {word} mentioned in the text”"
+    return f"“{indefinite(word)} {word} in the passage”" if index==0 else f"“a reference to {word}”"
 
 def encounter_cards(word, definition, pos, labels, example):
     if word in ENCOUNTER_OVERRIDES:
