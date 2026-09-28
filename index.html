@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171a20">
+<meta name="description" content="Lexicon Forge — an adaptive vocabulary mastery game built from the TakeTest 108-item vocabulary pool.">
+<title>Lexicon Forge — 537-word mastery game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><div class="mark">LF</div><div><h1>Lexicon Forge</h1><div class="subtitle">Adaptive mastery of the TakeTest 108 / 537-word bank</div></div></div>
+    <div class="topstats"><span class="pill">Level <b id="levelTop">1</b></span><span class="pill">XP <b id="xpTop">0</b></span><span class="pill">Due <b id="dueTop">0</b></span></div>
+  </header>
+  <nav aria-label="Primary">
+    <button class="navbtn active" data-view="home">Home</button>
+    <button class="navbtn" data-view="words">Word bank</button>
+    <button class="navbtn" data-view="settings">Progress & settings</button>
+  </nav>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div class="card">
+          <span class="tag">retrieval practice</span><span class="tag">spacing</span><span class="tag">feedback</span>
+          <h2>Build durable vocabulary, not short-lived familiarity.</h2>
+          <p class="lede">Short runs prioritize material that is due, force an answer before feedback, and resurface misses after a brief lag. Once an item is stable, recognition questions become typed recall.</p>
+          <div class="actions">
+            <button class="btn primary" id="dailyBtn">Start a 12-card mastery run</button>
+            <button class="btn secondary" id="coreBtn">Study source deck</button>
+            <button class="btn" id="fullBtn">Study full 537</button>
+          </div>
+          <p class="micro" style="margin-top:10px">Progress stays in this browser. No account or backend is required.</p>
+        </div>
+        <div class="card">
+          <div class="metricgrid">
+            <div class="metric"><div class="big" id="coreMastered">0</div><div class="label">of 108 source relations mastered</div></div>
+            <div class="metric"><div class="big" id="fullMastered">0</div><div class="label">of 537 dictionary words mastered</div></div>
+            <div class="metric"><div class="big" id="retention">—</div><div class="label">recent retrieval accuracy</div></div>
+            <div class="metric"><div class="big" id="reviewDue">0</div><div class="label">reviews due now</div></div>
+          </div>
+          <div style="margin-top:15px"><div class="micro" style="margin-bottom:5px">Source mastery</div><div class="progress"><span id="coreBar"></span></div></div>
+        </div>
+      </div>
+
+      <div class="sectiontitle"><div><h3>Two complementary decks</h3><small>The exact test relationships stay offline; the full lexicon is enriched on demand.</small></div></div>
+      <div class="deckgrid">
+        <div class="card deck"><h3>Source Mastery · 108</h3><p>The exact clues and five-word option sets extracted from the current TakeTest full form. Early practice uses discrimination; later practice removes the choices and requires generation.</p><span class="tag">offline</span><span class="tag">test-specific</span><span class="tag">typed recall</span></div>
+        <div class="card deck"><h3>Full Lexicon · 537</h3><p>Every unique vocabulary term found in the test. Definitions are fetched lazily from the free Dictionary API, then cached in your browser. This prevents the app from inventing meanings for obscure words.</p><span class="tag">dictionary-enriched</span><span class="tag">cached locally</span></div>
+      </div>
+    </section>
+
+    <section id="game" class="view">
+      <div class="gamewrap">
+        <div class="gamehead"><button class="btn ghost" id="quitBtn">← End run</button><div class="count" id="gameCount">1 / 12</div><div class="pill" id="modePill">RECALL</div></div>
+        <div class="progress" style="margin-bottom:14px"><span id="sessionBar"></span></div>
+        <div class="card" id="gameCard" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="words" class="view">
+      <div class="sectiontitle"><div><h3>537-word bank</h3><small>Search, inspect source appearances, fetch a dictionary definition, or add a word to immediate study.</small></div></div>
+      <div class="wordtools"><input id="wordSearch" class="search" type="search" placeholder="Search words…" autocomplete="off"><button class="btn" id="shuffleWords">Random 30</button></div>
+      <div id="wordGrid" class="wordgrid"></div>
+      <div class="actions" style="justify-content:center"><button class="btn" id="moreWords">Show more</button></div>
+    </section>
+
+    <section id="settings" class="view">
+      <div class="settingsgrid">
+        <div class="card"><h3>Progress portability</h3><p class="lede">Everything is stored in localStorage. Exporting gives you a small JSON backup that can be imported on another browser.</p><div class="actions"><button class="btn" id="exportBtn">Export progress</button><label class="btn filelabel">Import progress<input id="importInput" type="file" accept="application/json"></label></div></div>
+        <div class="card"><h3>Session settings</h3><label>Cards per run <input id="sessionSize" type="number" min="5" max="30" step="1" style="width:80px;margin-left:10px;background:#11151b;border:1px solid var(--line);border-radius:8px;padding:7px;color:var(--ink)"></label><p class="micro">12 is a good default: long enough for a few delayed retries, short enough to repeat daily.</p><div class="actions"><button class="btn danger" id="resetBtn">Reset all progress</button></div></div>
+      </div>
+      <div class="card" style="margin-top:14px"><h3>Scheduling model</h3><p class="lede">A correct retrieval advances the item through expanding intervals: about 5 minutes → 20 minutes → 1 day → 3 days → 7 days → 14 days → 30 days → 90 days. A miss drops the item back and schedules a same-run retry when possible. The model is intentionally transparent rather than pretending to estimate memory with false precision.</p><div class="note">For word material, this app does <b>not</b> randomly interleave everything just because “interleaving” is fashionable. It mainly uses spacing, and uses contrastive choice practice where the source test itself requires discrimination.</div></div>
+    </section>
+  </main>
+  <div class="footer">Lexicon Forge stores no server-side data. Source deck derived from the supplied TakeTest HAR capture. Dictionary mode uses dictionaryapi.dev when online.</div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
