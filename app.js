@@ -235,15 +235,18 @@ function renderLessonWord(){
   if(story.exampleCitation)context.append(el('div',{class:'sourcefoot'},story.exampleCitation));
   grid.append(context);
 
-  const modern=el('div',{class:'storypanel full'});
-  modern.append(el('h4',{},'Where it might show up now'));
-  const uses=el('ul',{class:'use-list'});
+  const modern=el('div',{class:'storypanel full encounter-panel'});
+  modern.append(el('h4',{},'Where you might actually encounter it'));
+  const uses=el('div',{class:'encounter-grid'});
   const modernUses=(story.modernUses||[]).length?story.modernUses:[
-    'Reading or writing where a more precise word would replace a longer paraphrase.',
-    'School, work, or news contexts where this meaning is relevant.',
-    'Conversation or creative writing when you want a more specific tone.'
+    'Explanatory nonfiction — where a compact, precise term is useful.',
+    'Specialist or literary writing — where the word carries a particular register or nuance.'
   ];
-  for(const use of modernUses.slice(0,3))uses.append(el('li',{},use));
+  for(const use of modernUses.slice(0,2)){
+    const parts=String(use).split(' — '),item=el('div',{class:'encounter'});
+    item.append(el('div',{class:'encounter-label'},parts[0]||'In context'),el('div',{class:'encounter-copy'},parts.slice(1).join(' — ')||parts[0]));
+    uses.append(item);
+  }
   modern.append(uses);grid.append(modern);
 
   const connect=el('div',{class:'storypanel full'});
@@ -286,7 +289,7 @@ function sourceLink(url,label){const foot=el('div',{class:'sourcefoot'},'Source:
 function showLearningCheck(word,story){
   if(!lesson||lesson.checked[word])return;
   lesson.checked[word]=true;
-  const card=document.getElementById('learnCard'),box=el('div',{class:'checkbox'}),clue=story.definition||story.relation||localStory(word).sourceCue||'the word you just studied';
+  const card=document.getElementById('learnCard'),box=el('div',{class:'checkbox'}),clue=story.quizDefinition||story.definition||story.relation||localStory(word).sourceCue||'the word you just studied';
   box.append(el('h4',{},'One quick check'),el('p',{},'Which word best matches this clue?'),el('div',{class:'prompt'},clue));
   const options=el('div',{class:'options'}),choices=learningDistractors(word,3);choices.push(word);
   for(const w of shuffle(choices)){
@@ -331,6 +334,8 @@ function staticWordStory(word){
   return {
     word,
     definition:d.definition||local.definition||local.relation||'',
+    quizDefinition:d.quizDefinition||d.definition||local.definition||local.relation||'',
+    rawDictionaryDefinition:d.rawDictionaryDefinition||'',
     sourceDefinition:d.sourceDefinition||local.definition||'',
     relation:local.relation,
     neighbors:local.neighbors||[],
