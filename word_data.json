@@ -647,8 +647,8 @@
     },
     "adamancy": {
       "word": "adamancy",
-      "definition": "The property of being adamant.",
-      "quizDefinition": "The property of being adamant.",
+      "definition": "Unyielding firmness or determination; refusal to change one's position.",
+      "quizDefinition": "Unyielding firmness or determination; refusal to change one's position.",
       "rawDictionaryDefinition": "The property of being adamant.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -678,15 +678,15 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ad/adamancy.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 30,
+        "length": 71,
         "clarityPenalty": 0
       },
       "entryAvailable": true
     },
     "adenosine": {
       "word": "adenosine",
-      "definition": "A nucleoside derived from adenine and ribose, found in striated muscle tissue.",
-      "quizDefinition": "A nucleoside derived from adenine and ribose, found in striated muscle tissue.",
+      "definition": "A nucleoside made of adenine and ribose that plays important roles in cellular energy transfer and signaling.",
+      "quizDefinition": "A nucleoside made of adenine and ribose that plays important roles in cellular energy transfer and signaling.",
       "rawDictionaryDefinition": "A nucleoside derived from adenine and ribose, found in striated muscle tissue.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -720,14 +720,14 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Clinical or health writing — naming a body structure, symptom, condition, or measurement.",
-        "Biology and anatomy coursework — using the precise technical term rather than a loose everyday substitute."
+        "Product listings or fashion writing — identifying materials, garments, or period styles.",
+        "Museum, costume, or tailoring discussions — describing how an item is made or worn."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ad/adenosine.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 78,
+        "length": 109,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -1453,8 +1453,8 @@
     },
     "anthracite": {
       "word": "anthracite",
-      "definition": "carbonized ancient plants; the hardest and cleanest-burning of all the coals.",
-      "quizDefinition": "carbonized ancient plants; the hardest and cleanest-burning of all the coals.",
+      "definition": "A hard, glossy coal with a high carbon content that burns relatively cleanly.",
+      "quizDefinition": "A hard, glossy coal with a high carbon content that burns relatively cleanly.",
       "rawDictionaryDefinition": "A form of carbonized ancient plants; the hardest and cleanest-burning of all the coals.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -1481,8 +1481,8 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Biology textbooks or field guides — naming an organism, structure, or biological process.",
-        "Science reporting or museum material — explaining the term to a general audience."
+        "Product listings or fashion writing — identifying materials, garments, or period styles.",
+        "Museum, costume, or tailoring discussions — describing how an item is made or worn."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/an/anthracite.jsonl",
@@ -1643,8 +1643,8 @@
     },
     "archduke": {
       "word": "archduke",
-      "definition": "The son or male-line grandson of an emperor of the Austro-Hungarian Empire.",
-      "quizDefinition": "The son or male-line grandson of an emperor of the Austro-Hungarian Empire.",
+      "definition": "A historical royal title associated especially with the Habsburg family, ranking below emperor or king.",
+      "quizDefinition": "A historical royal title associated especially with the Habsburg family, ranking below emperor or king.",
       "rawDictionaryDefinition": "The son or male-line grandson of an emperor of the Austro-Hungarian Empire.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -1680,15 +1680,15 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ar/archduke.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 75,
+        "length": 103,
         "clarityPenalty": 0
       },
       "entryAvailable": true
     },
     "armistice": {
       "word": "armistice",
-      "definition": "A (short) cessation of combat.",
-      "quizDefinition": "A (short) cessation of combat.",
+      "definition": "An agreement between opposing sides to stop fighting, usually temporarily.",
+      "quizDefinition": "An agreement between opposing sides to stop fighting, usually temporarily.",
       "rawDictionaryDefinition": "A (short) cessation of combat.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -1732,7 +1732,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ar/armistice.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 30,
+        "length": 74,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -2471,8 +2471,8 @@
     },
     "bemoaning": {
       "word": "bemoaning",
-      "definition": "A moaning or lamentation that is loudly expressed.",
-      "quizDefinition": "A moaning or lamentation that is loudly expressed.",
+      "definition": "Expressing sorrow, regret, or complaint about something.",
+      "quizDefinition": "Expressing sorrow, regret, or complaint about something.",
       "rawDictionaryDefinition": "A moaning or lamentation that is loudly expressed.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -2489,14 +2489,14 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Product listings or fashion writing — identifying materials, garments, or period styles.",
-        "Museum, costume, or tailoring discussions — describing how an item is made or worn."
+        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
+        "Specialist or academic writing — where a compact technical or literary term is useful."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/be/bemoaning.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 50,
+        "length": 56,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -3251,8 +3251,8 @@
     },
     "brogue": {
       "word": "brogue",
-      "definition": "A strong Oxford shoe, with ornamental perforations and wing tips.",
-      "quizDefinition": "A strong Oxford shoe, with ornamental perforations and wing tips.",
+      "definition": "A sturdy perforated shoe; also a strong regional accent, especially an Irish or Scottish one.",
+      "quizDefinition": "A sturdy perforated shoe; also a strong regional accent, especially an Irish or Scottish one.",
       "rawDictionaryDefinition": "A strong Oxford shoe, with ornamental perforations and wing tips.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -3288,7 +3288,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/br/brogue.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 65,
+        "length": 93,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -3554,8 +3554,8 @@
     },
     "buttressed": {
       "word": "buttressed",
-      "definition": "Having buttresses or supports.",
-      "quizDefinition": "Having buttresses or supports.",
+      "definition": "Strengthened or supported, literally by projecting supports or figuratively by reinforcing evidence or arguments.",
+      "quizDefinition": "Strengthened or supported, literally by projecting supports or figuratively by reinforcing evidence or arguments.",
       "rawDictionaryDefinition": "Having buttresses or supports.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -3581,7 +3581,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/bu/buttressed.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 30,
+        "length": 113,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -3620,14 +3620,14 @@
     },
     "cabinetwork": {
       "word": "cabinetwork",
-      "definition": "Synonym of cabinetmaking.",
-      "quizDefinition": "Synonym of cabinetmaking.",
+      "definition": "The craft or work of making cabinets and fine wooden furniture.",
+      "quizDefinition": "The craft or work of making cabinets and fine wooden furniture.",
       "rawDictionaryDefinition": "Synonym of cabinetmaking.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From cabinet + -work.",
-      "example": "In context, “cabinetwork” names or describes Synonym of cabinetmaking.",
+      "example": "In context, “cabinetwork” names or describes The craft or work of making cabinets and fine wooden furniture.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -3652,7 +3652,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ca/cabinetwork.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 25,
+        "length": 63,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -3925,14 +3925,14 @@
     },
     "carob": {
       "word": "carob",
-      "definition": "An evergreen shrub or tree, Ceratonia siliqua, native to the Mediterranean region.",
-      "quizDefinition": "An evergreen shrub or tree, Ceratonia siliqua, native to the Mediterranean region.",
+      "definition": "A Mediterranean tree whose sweet edible pods are used as food and as a cocoa-like flavoring.",
+      "quizDefinition": "A Mediterranean tree whose sweet edible pods are used as food and as a cocoa-like flavoring.",
       "rawDictionaryDefinition": "An evergreen shrub or tree, Ceratonia siliqua, native to the Mediterranean region.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from Middle French carobe, from Arabic خَرُّوب (ḵarrūb), from Classical Syriac ܚܪܘܒܐ (ḥarrūḇā).",
-      "example": "In context, “carob” names or describes An evergreen shrub or tree, Ceratonia siliqua, native to the Mediterranean region.",
+      "example": "In context, “carob” names or describes A Mediterranean tree whose sweet edible pods are used as food and as a cocoa-like flavoring.",
       "exampleCitation": "",
       "ipa": [
         "/ˈkæɹəb/"
@@ -3954,14 +3954,14 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
-        "Specialist or academic writing — where a compact technical or literary term is useful."
+        "Menus, cookbooks, or food journalism — naming an ingredient, dish, preparation, or flavor.",
+        "Travel and restaurant writing — identifying something a reader might actually encounter on a menu."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ca/carob.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 82,
+        "length": 92,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -4418,8 +4418,8 @@
     },
     "chicory": {
       "word": "chicory",
-      "definition": "Either of two plants of the Asteraceae family.",
-      "quizDefinition": "Either of two plants of the Asteraceae family.",
+      "definition": "A plant whose leaves are eaten as salad and whose roasted root can flavor or substitute for coffee.",
+      "quizDefinition": "A plant whose leaves are eaten as salad and whose roasted root can flavor or substitute for coffee.",
       "rawDictionaryDefinition": "Either of two plants of the Asteraceae family.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -4469,7 +4469,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ch/chicory.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 46,
+        "length": 99,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -4751,8 +4751,8 @@
     },
     "coinsurance": {
       "word": "coinsurance",
-      "definition": "The amount paid by the insured in accordance with this risk sharing.",
-      "quizDefinition": "The amount paid by the insured in accordance with this risk sharing.",
+      "definition": "An insurance arrangement in which the insured pays a percentage of covered costs and the insurer pays the rest.",
+      "quizDefinition": "An insurance arrangement in which the insured pays a percentage of covered costs and the insurer pays the rest.",
       "rawDictionaryDefinition": "The amount paid by the insured in accordance with this risk sharing.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -4780,7 +4780,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/co/coinsurance.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 68,
+        "length": 111,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -6944,8 +6944,8 @@
     },
     "discomposure": {
       "word": "discomposure",
-      "definition": "The state of being discomposed.",
-      "quizDefinition": "The state of being discomposed.",
+      "definition": "Loss of calm or self-possession; agitation or embarrassment.",
+      "quizDefinition": "Loss of calm or self-possession; agitation or embarrassment.",
       "rawDictionaryDefinition": "The state of being discomposed.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -6962,14 +6962,14 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
-        "Specialist or academic writing — where a compact technical or literary term is useful."
+        "Character sketches, profiles, or reviews — describing a person's manner, mood, or behavior precisely.",
+        "Fiction and narrative nonfiction — giving a more exact shade of personality than a generic adjective."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/di/discomposure.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 31,
+        "length": 60,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -7708,8 +7708,8 @@
     },
     "egregious": {
       "word": "egregious",
-      "definition": "Conspicuous, exceptional, outstanding; usually in a negative sense.",
-      "quizDefinition": "Conspicuous, exceptional, outstanding; usually in a negative sense.",
+      "definition": "Outstandingly bad, shocking, or flagrant.",
+      "quizDefinition": "Outstandingly bad, shocking, or flagrant.",
       "rawDictionaryDefinition": "Conspicuous, exceptional, outstanding; usually in a negative sense.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -7742,7 +7742,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/eg/egregious.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 67,
+        "length": 41,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -8254,8 +8254,8 @@
     },
     "execratory": {
       "word": "execratory",
-      "definition": "Tending to execrate or cause execration.",
-      "quizDefinition": "Tending to execrate or cause execration.",
+      "definition": "Expressing a curse, denunciation, or intense condemnation.",
+      "quizDefinition": "Expressing a curse, denunciation, or intense condemnation.",
       "rawDictionaryDefinition": "Tending to execrate or cause execration.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -8279,7 +8279,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/ex/execratory.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 40,
+        "length": 58,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -10650,14 +10650,14 @@
     },
     "hedonic": {
       "word": "hedonic",
-      "definition": "Pursuing pleasure in a devoted manner.",
-      "quizDefinition": "Pursuing pleasure in a devoted manner.",
+      "definition": "Relating to pleasure, enjoyment, or the pursuit of pleasure.",
+      "quizDefinition": "Relating to pleasure, enjoyment, or the pursuit of pleasure.",
       "rawDictionaryDefinition": "Pursuing pleasure in a devoted manner",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "From Ancient Greek ἡδονικός (hēdonikós, “pleasant”), equivalent to Ancient Greek ἡδονή (hēdonḗ, “pleasure”) + -ic.",
-      "example": "In this vocabulary set, “hedonic” is used for the idea “Pursuing pleasure in a devoted manner.”",
+      "example": "In this vocabulary set, “hedonic” is used for the idea “Relating to pleasure, enjoyment, or the pursuit of pleasure.”",
       "exampleCitation": "",
       "ipa": [
         "/ˈhiːdənɪk/"
@@ -10692,14 +10692,14 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "News and public-affairs writing — describing a legal, political, or diplomatic event.",
-        "History, civics, or policy analysis — using a formal term with a specific institutional meaning."
+        "Book reviews, profiles, or essays — giving a precise judgment about tone, behavior, or quality.",
+        "Fiction and descriptive prose — adding a more exact shade of description."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/h/he/hedonic.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 38,
+        "length": 60,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -10809,8 +10809,8 @@
     },
     "hook": {
       "word": "hook",
-      "definition": "Part of a system's operation that can be intercepted to change or augment its behaviour.",
-      "quizDefinition": "Part of a system's operation that can be intercepted to change or augment its behaviour.",
+      "definition": "A point in a system, especially software, where behavior can be intercepted, extended, or modified.",
+      "quizDefinition": "A point in a system, especially software, where behavior can be intercepted, extended, or modified.",
       "rawDictionaryDefinition": "Part of a system's operation that can be intercepted to change or augment its behaviour.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -10852,8 +10852,8 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Product listings or fashion writing — identifying materials, garments, or period styles.",
-        "Museum, costume, or tailoring discussions — describing how an item is made or worn."
+        "Military history or museum labels — identifying equipment, ranks, weapons, or practices.",
+        "Historical nonfiction — using the period-specific term in context."
       ],
       "sourceQuestions": [
         107
@@ -10861,7 +10861,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/h/ho/hook.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 88,
+        "length": 99,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -10981,8 +10981,8 @@
     },
     "huff": {
       "word": "huff",
-      "definition": "A heavy breath; a grunt or sigh.",
-      "quizDefinition": "A heavy breath; a grunt or sigh.",
+      "definition": "A short forceful breath or snort; also a state of offended anger.",
+      "quizDefinition": "A short forceful breath or snort; also a state of offended anger.",
       "rawDictionaryDefinition": "A heavy breath; a grunt or sigh.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -11018,7 +11018,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/h/hu/huff.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 32,
+        "length": 65,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -11565,8 +11565,8 @@
     },
     "indicant": {
       "word": "indicant",
-      "definition": "indicative; that points out.",
-      "quizDefinition": "indicative; that points out.",
+      "definition": "Something that points out, indicates, or serves as a sign.",
+      "quizDefinition": "Something that points out, indicates, or serves as a sign.",
       "rawDictionaryDefinition": "indicative; that points out.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -11592,7 +11592,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/in/indicant.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 28,
+        "length": 58,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -12551,14 +12551,14 @@
     },
     "kilting": {
       "word": "kilting",
-      "definition": "A method of vertically arranging flat plaits such that each plait is folded so as to cover half the of the one before it.",
-      "quizDefinition": "A method of vertically arranging flat plaits such that each plait is folded so as to cover half the of the one before it.",
+      "definition": "Arranging fabric into overlapping vertical pleats, as in the construction of a kilt.",
+      "quizDefinition": "Arranging fabric into overlapping vertical pleats, as in the construction of a kilt.",
       "rawDictionaryDefinition": "A method of vertically arranging flat plaits such that each plait is folded so as to cover half the of the one before it.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “kilting” names or describes A method of vertically arranging flat plaits such that each plait is folded so as to cover half the of the one before it.",
+      "example": "In context, “kilting” names or describes Arranging fabric into overlapping vertical pleats, as in the construction of a kilt.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -12576,7 +12576,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/k/ki/kilting.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 121,
+        "length": 84,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -13466,8 +13466,8 @@
     },
     "mendacity": {
       "word": "mendacity",
-      "definition": "A deceit, falsehood, or lie.",
-      "quizDefinition": "A deceit, falsehood, or lie.",
+      "definition": "Untruthfulness or a tendency to lie.",
+      "quizDefinition": "Untruthfulness or a tendency to lie.",
       "rawDictionaryDefinition": "A deceit, falsehood, or lie.",
       "linkedLemma": "",
       "sourceDefinition": "deceit",
@@ -13500,7 +13500,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/m/me/mendacity.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 28,
+        "length": 36,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -14545,8 +14545,8 @@
     },
     "oafish": {
       "word": "oafish",
-      "definition": "Characteristic of or resembling an oaf; clumsy, stupid.",
-      "quizDefinition": "Characteristic of or resembling an oaf; clumsy, stupid.",
+      "definition": "Clumsy, stupid, or socially awkward.",
+      "quizDefinition": "Clumsy, stupid, or socially awkward.",
       "rawDictionaryDefinition": "Characteristic of or resembling an oaf; clumsy, stupid.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -14574,8 +14574,8 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Character sketches, profiles, or reviews — describing a person's manner, mood, or behavior precisely.",
-        "Fiction and narrative nonfiction — giving a more exact shade of personality than a generic adjective."
+        "Military history or museum labels — identifying equipment, ranks, weapons, or practices.",
+        "Historical nonfiction — using the period-specific term in context."
       ],
       "sourceQuestions": [
         91
@@ -14583,7 +14583,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/o/oa/oafish.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 55,
+        "length": 36,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -15965,14 +15965,14 @@
     },
     "pithiness": {
       "word": "pithiness",
-      "definition": "The condition of being pithy.",
-      "quizDefinition": "The condition of being pithy.",
+      "definition": "Concise, forceful expression using few words.",
+      "quizDefinition": "Concise, forceful expression using few words.",
       "rawDictionaryDefinition": "The condition of being pithy.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From pithy + -ness.",
-      "example": "In context, “pithiness” names or describes The condition of being pithy.",
+      "example": "In context, “pithiness” names or describes Concise, forceful expression using few words.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -15989,8 +15989,8 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
-        "Specialist or academic writing — where a compact technical or literary term is useful."
+        "Linguistics, grammar, or editing — analyzing how language, sounds, or references work.",
+        "Literary criticism and wordplay — discussing style, diction, or structure."
       ],
       "sourceQuestions": [
         104
@@ -15998,7 +15998,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pi/pithiness.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 29,
+        "length": 45,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -16564,14 +16564,14 @@
     },
     "primogenitary": {
       "word": "primogenitary",
-      "definition": "Relating to primogeniture.",
-      "quizDefinition": "Relating to primogeniture.",
+      "definition": "Relating to inheritance by the eldest child, traditionally the eldest son.",
+      "quizDefinition": "Relating to inheritance by the eldest child, traditionally the eldest son.",
       "rawDictionaryDefinition": "Relating to primogeniture.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "",
-      "example": "In this vocabulary set, “primogenitary” is used for the idea “Relating to primogeniture.”",
+      "example": "In this vocabulary set, “primogenitary” is used for the idea “Relating to inheritance by the eldest child, traditionally the eldest son.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -16589,7 +16589,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pr/primogenitary.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 26,
+        "length": 74,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -17465,14 +17465,14 @@
     },
     "ranginess": {
       "word": "ranginess",
-      "definition": "The state of being rangy.",
-      "quizDefinition": "The state of being rangy.",
+      "definition": "The quality of being long-limbed, loosely built, or spread over a wide area.",
+      "quizDefinition": "The quality of being long-limbed, loosely built, or spread over a wide area.",
       "rawDictionaryDefinition": "The state of being rangy.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From rangy + -ness.",
-      "example": "In context, “ranginess” names or describes The state of being rangy.",
+      "example": "In context, “ranginess” names or describes The quality of being long-limbed, loosely built, or spread over a wide area.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -17490,7 +17490,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/r/ra/ranginess.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 25,
+        "length": 76,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -17823,8 +17823,8 @@
     },
     "renormalize": {
       "word": "renormalize",
-      "definition": "To subject to renormalization.",
-      "quizDefinition": "To subject to renormalization.",
+      "definition": "To adjust a quantity or model to a new normalization scale or reference, especially in mathematical physics.",
+      "quizDefinition": "To adjust a quantity or model to a new normalization scale or reference, especially in mathematical physics.",
       "rawDictionaryDefinition": "To subject to renormalization",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -17853,7 +17853,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/r/re/renormalize.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 30,
+        "length": 108,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -17958,8 +17958,8 @@
     },
     "resurvey": {
       "word": "resurvey",
-      "definition": "To survey again; to perform another survey on.",
-      "quizDefinition": "To survey again; to perform another survey on.",
+      "definition": "To examine, measure, or map an area again.",
+      "quizDefinition": "To examine, measure, or map an area again.",
       "rawDictionaryDefinition": "To survey again; to perform another survey on.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -17983,7 +17983,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/r/re/resurvey.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 46,
+        "length": 42,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -18284,8 +18284,8 @@
     },
     "sack": {
       "word": "sack",
-      "definition": "To plunder or pillage, especially after capture; to obtain spoils of war from.",
-      "quizDefinition": "To plunder or pillage, especially after capture; to obtain spoils of war from.",
+      "definition": "A large bag; as a verb, to dismiss someone from a job or to plunder a captured place.",
+      "quizDefinition": "A large bag; as a verb, to dismiss someone from a job or to plunder a captured place.",
       "rawDictionaryDefinition": "To plunder or pillage, especially after capture; to obtain spoils of war from.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -18325,8 +18325,8 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Military history or museum labels — identifying equipment, ranks, weapons, or practices.",
-        "Historical nonfiction — using the period-specific term in context."
+        "Narrative prose — describing a specific action more precisely than a generic verb.",
+        "News, history, or essays — compressing a fairly specific action into one word."
       ],
       "sourceQuestions": [
         99
@@ -18334,7 +18334,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/sa/sack.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 78,
+        "length": 85,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -19991,14 +19991,14 @@
     },
     "stultification": {
       "word": "stultification",
-      "definition": "The process of stultifying.",
-      "quizDefinition": "The process of stultifying.",
+      "definition": "The process of making something ineffective, absurd, or intellectually dull.",
+      "quizDefinition": "The process of making something ineffective, absurd, or intellectually dull.",
       "rawDictionaryDefinition": "The process of stultifying.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “stultification” names or describes The process of stultifying.",
+      "example": "In context, “stultification” names or describes The process of making something ineffective, absurd, or intellectually dull.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -20018,7 +20018,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/st/stultification.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 27,
+        "length": 76,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -20172,14 +20172,14 @@
     },
     "summate": {
       "word": "summate",
-      "definition": "To sum, add up; perform a summation.",
-      "quizDefinition": "To sum, add up; perform a summation.",
+      "definition": "To add a set of quantities together.",
+      "quizDefinition": "To add a set of quantities together.",
       "rawDictionaryDefinition": "To sum, add up; perform a summation.",
       "linkedLemma": "",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "From sum + -ate (verb-forming suffix).",
-      "example": "The writer chose the verb “summate” to convey the idea “To sum, add up; perform a summation.”",
+      "example": "The writer chose the verb “summate” to convey the idea “To add a set of quantities together.”",
       "exampleCitation": "",
       "ipa": [
         "/ˈsʌm.eɪt/",
@@ -21475,8 +21475,8 @@
     },
     "trusteeship": {
       "word": "trusteeship",
-      "definition": "The office, responsibility, or guardianship of a trustee: managing property or affairs on behalf of another.",
-      "quizDefinition": "The office, responsibility, or guardianship of a trustee: managing property or affairs on behalf of another.",
+      "definition": "Responsibility for managing property, assets, or affairs on behalf of another person or group.",
+      "quizDefinition": "Responsibility for managing property, assets, or affairs on behalf of another person or group.",
       "rawDictionaryDefinition": "Office or function of a trustee.",
       "linkedLemma": "",
       "sourceDefinition": "auspices",
@@ -21493,8 +21493,8 @@
       "courseSynonyms": [],
       "courseCue": "auspices",
       "modernUses": [
-        "News and public-affairs writing — describing a legal, political, or diplomatic event.",
-        "History, civics, or policy analysis — using a formal term with a specific institutional meaning."
+        "Character sketches, profiles, or reviews — describing a person's manner, mood, or behavior precisely.",
+        "Fiction and narrative nonfiction — giving a more exact shade of personality than a generic adjective."
       ],
       "sourceQuestions": [
         44
@@ -21502,7 +21502,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/tr/trusteeship.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 108,
+        "length": 94,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -21677,8 +21677,8 @@
     },
     "uncritical": {
       "word": "uncritical",
-      "definition": "Lacking critique or critical examination; undiscriminating.",
-      "quizDefinition": "Lacking critique or critical examination; undiscriminating.",
+      "definition": "Not evaluating something carefully or questioning its assumptions or claims.",
+      "quizDefinition": "Not evaluating something carefully or questioning its assumptions or claims.",
       "rawDictionaryDefinition": "Lacking critique or critical examination; undiscriminating.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -21707,7 +21707,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/u/un/uncritical.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 59,
+        "length": 76,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -22010,8 +22010,8 @@
     },
     "vacuole": {
       "word": "vacuole",
-      "definition": "A small empty or air-filled space or vacuity.",
-      "quizDefinition": "A small empty or air-filled space or vacuity.",
+      "definition": "A membrane-bound sac inside a cell used for storage, waste handling, or water balance; more generally, a small cavity.",
+      "quizDefinition": "A membrane-bound sac inside a cell used for storage, waste handling, or water balance; more generally, a small cavity.",
       "rawDictionaryDefinition": "A small empty or air-filled space or vacuity.",
       "linkedLemma": "",
       "sourceDefinition": "",
@@ -22043,14 +22043,14 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Explanatory nonfiction — naming a specific object, idea, condition, or role without a long paraphrase.",
-        "Specialist or academic writing — where a compact technical or literary term is useful."
+        "Biology textbooks or field guides — naming an organism, structure, or biological process.",
+        "Science reporting or museum material — explaining the term to a general audience."
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/v/va/vacuole.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 45,
+        "length": 118,
         "clarityPenalty": 0
       },
       "entryAvailable": true
