@@ -1278,11 +1278,11 @@
     },
     "anachronously": {
       "word": "anachronously",
-      "definition": "anachronistically.",
+      "definition": "In a way that is chronologically out of place or assigned to the wrong historical period.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "From anachronous + -ly.",
-      "example": "In this vocabulary set, “anachronously” is used for the idea “anachronistically.”",
+      "example": "In this vocabulary set, “anachronously” is used for the idea “In a way that is chronologically out of place or assigned to the wrong historical period.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -1293,16 +1293,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Precise description",
-        "Literary or analytical writing",
-        "Conversation and storytelling"
+        "Clothing or product descriptions",
+        "Tailoring and textile discussions",
+        "Fashion history or vintage catalogs"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/an/anachronously.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 18,
-        "clarityPenalty": 7
+        "length": 89,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -2006,7 +2006,7 @@
     },
     "awhirl": {
       "word": "awhirl",
-      "definition": "Whirling.",
+      "definition": "Spinning or whirling; in rapid circular motion.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "From a- + whirl.",
@@ -2032,8 +2032,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/aw/awhirl.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 9,
-        "clarityPenalty": 18
+        "length": 47,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -2920,7 +2920,7 @@
     },
     "bountifully": {
       "word": "bountifully",
-      "definition": "In a bountiful manner.",
+      "definition": "In a generous or abundant manner; plentifully.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "Etymology tree English bountiful Middle English -ly English -ly English bountifully From bountiful + -ly.",
@@ -2949,8 +2949,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/b/bo/bountifully.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 22,
-        "clarityPenalty": 7
+        "length": 46,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -3491,11 +3491,11 @@
     },
     "caddishly": {
       "word": "caddishly",
-      "definition": "In a caddish manner.",
+      "definition": "In a rude, selfish, or dishonorable manner.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "Etymology tree English caddish Middle English -ly English -ly English caddishly From caddish + -ly.",
-      "example": "In this vocabulary set, “caddishly” is used for the idea “In a caddish manner.”",
+      "example": "In this vocabulary set, “caddishly” is used for the idea “In a rude, selfish, or dishonorable manner.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -3514,8 +3514,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ca/caddishly.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 20,
-        "clarityPenalty": 7
+        "length": 43,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -4000,7 +4000,7 @@
     },
     "changefulness": {
       "word": "changefulness",
-      "definition": "Propensity to change.",
+      "definition": "The quality of changing often; variability or instability.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From changeful + -ness.",
@@ -4023,8 +4023,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/ch/changefulness.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 21,
-        "clarityPenalty": 7
+        "length": 58,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -4741,7 +4741,7 @@
     },
     "concretive": {
       "word": "concretive",
-      "definition": "Promoting concretion.",
+      "definition": "Tending to form, promote, or produce a concretion or solid mass.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "From concrete + -ive?",
@@ -4766,8 +4766,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/c/co/concretive.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 21,
-        "clarityPenalty": 7
+        "length": 64,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -5805,11 +5805,11 @@
     },
     "decantate": {
       "word": "decantate",
-      "definition": "To decant.",
+      "definition": "To pour a liquid carefully from one container into another, usually leaving sediment behind; to decant.",
       "sourceDefinition": "",
       "partOfSpeech": "verb",
       "etymology": "",
-      "example": "The writer chose the verb “decantate” to convey the idea “To decant.”",
+      "example": "The writer chose the verb “decantate” to convey the idea “To pour a liquid carefully from one container into another, usually leaving sediment behind; to decant.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -5830,18 +5830,18 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/decantate.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 10,
-        "clarityPenalty": 18
+        "length": 103,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
     "deflowerer": {
       "word": "deflowerer",
-      "definition": "One who deflowers.",
+      "definition": "A person who deflowers another; historically, a person who takes another person's virginity.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From deflower + -er.",
-      "example": "In context, “deflowerer” names or describes One who deflowers.",
+      "example": "In context, “deflowerer” names or describes A person who deflowers another; historically, a person who takes another person's virginity.",
       "exampleCitation": "",
       "ipa": [
         "/dɪˈflaʊəɹə(ɹ)/"
@@ -5858,16 +5858,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/de/deflowerer.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 18,
-        "clarityPenalty": 7
+        "length": 92,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -6550,11 +6550,11 @@
     },
     "disapprobative": {
       "word": "disapprobative",
-      "definition": "disapproving.",
+      "definition": "Expressing disapproval or condemnation.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "",
-      "example": "In this vocabulary set, “disapprobative” is used for the idea “disapproving.”",
+      "example": "In this vocabulary set, “disapprobative” is used for the idea “Expressing disapproval or condemnation.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -6573,8 +6573,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/d/di/disapprobative.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 13,
-        "clarityPenalty": 7
+        "length": 39,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -8190,11 +8190,11 @@
     },
     "extoller": {
       "word": "extoller",
-      "definition": "One who extols.",
+      "definition": "A person who praises someone or something very highly.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From extol + -er.",
-      "example": "In context, “extoller” names or describes One who extols.",
+      "example": "In context, “extoller” names or describes A person who praises someone or something very highly.",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -8205,16 +8205,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/e/ex/extoller.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 15,
-        "clarityPenalty": 7
+        "length": 54,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -8376,7 +8376,7 @@
     },
     "farcically": {
       "word": "farcically",
-      "definition": "In a farcical manner.",
+      "definition": "In an absurd, ridiculous, or farce-like way.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "Etymology tree English farcical Middle English -ly English -ly English farcically From farcical + -ly.",
@@ -8399,8 +8399,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/f/fa/farcically.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 21,
-        "clarityPenalty": 7
+        "length": 44,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -9880,7 +9880,7 @@
     },
     "harnesser": {
       "word": "harnesser",
-      "definition": "One who harnesses.",
+      "definition": "A person or device that harnesses, controls, or puts something to use.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From harness + -er.",
@@ -9895,16 +9895,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Clothing or product descriptions",
+        "Tailoring and textile discussions",
+        "Fashion history or vintage catalogs"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/h/ha/harnesser.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 18,
-        "clarityPenalty": 7
+        "length": 70,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -10726,7 +10726,7 @@
     },
     "imputable": {
       "word": "imputable",
-      "definition": "That may be imputed.",
+      "definition": "Able to be attributed or assigned to a person, cause, or source.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "Etymology tree English impute Proto-Indo-European *-dʰlom Proto-Italic *-ðlom Proto-Italic *-ðlis Latin -bilis Latin -ābilis Old French -ablebor. Middle English -able English -able English imputable From impute + -able.",
@@ -10757,16 +10757,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Clothing or product descriptions",
-        "Tailoring and textile discussions",
-        "Fashion history or vintage catalogs"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/im/imputable.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 20,
-        "clarityPenalty": 7
+        "length": 64,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -10939,7 +10939,7 @@
     },
     "inconsistent": {
       "word": "inconsistent",
-      "definition": "Not consistent:.",
+      "definition": "Not remaining the same in behavior, quality, or logic; containing contradictions or varying unpredictably.",
       "sourceDefinition": "",
       "partOfSpeech": "adj",
       "etymology": "Etymology tree Proto-Indo-European *né Proto-Indo-European *n̥- Proto-Italic *n̥- Latin in-bor. Middle English in- English in- Proto-Indo-European *ḱe? Proto-Indo-European *ḱóm Proto-Italic *kom Proto-Italic *kom- Latin con- Proto-Indo-European *steh₂- Proto-Indo-European *stísteh₂ti Proto-Italic *sistō Latin sistō Latin cōnsistō Proto-Indo-European *-onts Latin -ns Latin -ens Latin consistensbor. English consistent English inconsistent From in- + consistent.",
@@ -10966,22 +10966,22 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Precise description",
-        "Literary or analytical writing",
+        "Character descriptions",
+        "Psychology or social writing",
         "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/in/inconsistent.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 16,
-        "clarityPenalty": 7
+        "length": 106,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
     "inculcator": {
       "word": "inculcator",
-      "definition": "One who inculcates.",
+      "definition": "A person who teaches or impresses an idea through repeated instruction.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Latin",
@@ -10998,16 +10998,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/i/in/inculcator.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 19,
-        "clarityPenalty": 7
+        "length": 71,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -13439,11 +13439,11 @@
     },
     "munificently": {
       "word": "munificently",
-      "definition": "In a munificent manner.",
+      "definition": "In an exceptionally generous or lavish manner.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "Etymology tree English munificent Middle English -ly English -ly English munificently From munificent + -ly.",
-      "example": "In this vocabulary set, “munificently” is used for the idea “In a munificent manner.”",
+      "example": "In this vocabulary set, “munificently” is used for the idea “In an exceptionally generous or lavish manner.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -13468,8 +13468,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/m/mu/munificently.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 23,
-        "clarityPenalty": 7
+        "length": 46,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -15135,11 +15135,11 @@
     },
     "pianoforte": {
       "word": "pianoforte",
-      "definition": "A piano.",
+      "definition": "A piano; the full historical name for the keyboard instrument.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Etymology tree Italian piano Proto-Indo-European *bʰerǵʰ- Proto-Indo-European *dʰer-? Proto-Indo-European *dʰerǵʰ- Proto-Italic *forktis Old Latin forctis Latin fortis Italian forte Italian pianofortebor. English pianoforte Borrowed from Italian pianoforte.",
-      "example": "In context, “pianoforte” names or describes A piano.",
+      "example": "In context, “pianoforte” names or describes A piano; the full historical name for the keyboard instrument.",
       "exampleCitation": "",
       "ipa": [
         "/piˌænəʊˈfɔːteɪ/",
@@ -15169,8 +15169,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pi/pianoforte.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 8,
-        "clarityPenalty": 18
+        "length": 62,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -15247,11 +15247,11 @@
     },
     "plaintively": {
       "word": "plaintively",
-      "definition": "In a plaintive manner.",
+      "definition": "In a sad, mournful, or pleading manner.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "Etymology tree English plaintive Middle English -ly English -ly English plaintively From plaintive + -ly.",
-      "example": "In this vocabulary set, “plaintively” is used for the idea “In a plaintive manner.”",
+      "example": "In this vocabulary set, “plaintively” is used for the idea “In a sad, mournful, or pleading manner.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -15270,8 +15270,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pl/plaintively.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 22,
-        "clarityPenalty": 7
+        "length": 39,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -15744,7 +15744,7 @@
     },
     "prevaricator": {
       "word": "prevaricator",
-      "definition": "One who prevaricates.",
+      "definition": "A person who avoids telling the truth directly by being evasive or misleading.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From prevaricate + -or or Latin praevaricator: compare French prévaricateur.",
@@ -15763,9 +15763,9 @@
       ],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Character descriptions",
+        "Psychology or social writing",
+        "Conversation and storytelling"
       ],
       "sourceQuestions": [
         71
@@ -15773,8 +15773,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/p/pr/prevaricator.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 21,
-        "clarityPenalty": 7
+        "length": 78,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -17760,11 +17760,11 @@
     },
     "seizer": {
       "word": "seizer",
-      "definition": "One who seizes.",
+      "definition": "A person or thing that takes hold of, captures, or confiscates something.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From seize + -er.",
-      "example": "In context, “seizer” names or describes One who seizes.",
+      "example": "In context, “seizer” names or describes A person or thing that takes hold of, captures, or confiscates something.",
       "exampleCitation": "",
       "ipa": [
         "/ˈsiːzə/",
@@ -17778,16 +17778,16 @@
       "courseSynonyms": [],
       "courseCue": "",
       "modernUses": [
-        "Essays and nonfiction",
-        "Academic or specialist writing",
-        "Literary and descriptive prose"
+        "Clothing or product descriptions",
+        "Tailoring and textile discussions",
+        "Fashion history or vintage catalogs"
       ],
       "sourceQuestions": [],
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/se/seizer.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 15,
-        "clarityPenalty": 7
+        "length": 73,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -20046,11 +20046,11 @@
     },
     "tonally": {
       "word": "tonally",
-      "definition": "In a tonal manner.",
+      "definition": "In relation to tone, pitch, or a tonal system.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "Etymology tree English tonal Middle English -ly English -ly English tonally From tonal + -ly.",
-      "example": "In this vocabulary set, “tonally” is used for the idea “In a tonal manner.”",
+      "example": "In this vocabulary set, “tonally” is used for the idea “In relation to tone, pitch, or a tonal system.”",
       "exampleCitation": "",
       "ipa": [],
       "audio": "",
@@ -20069,8 +20069,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/t/to/tonally.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 18,
-        "clarityPenalty": 7
+        "length": 46,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -20836,7 +20836,7 @@
     },
     "unwontedly": {
       "word": "unwontedly",
-      "definition": "Unusually.",
+      "definition": "In an unusual or unaccustomed way.",
       "sourceDefinition": "",
       "partOfSpeech": "adv",
       "etymology": "From unwonted + -ly.",
@@ -20864,8 +20864,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/u/un/unwontedly.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 10,
-        "clarityPenalty": 18
+        "length": 34,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
@@ -20934,7 +20934,7 @@
     },
     "usherette": {
       "word": "usherette",
-      "definition": "A female usher.",
+      "definition": "A female usher, especially one who shows patrons to seats in a theater or cinema; the term is now dated.",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "From usher + -ette.",
@@ -20959,8 +20959,8 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/u/us/usherette.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 15,
-        "clarityPenalty": 7
+        "length": 104,
+        "clarityPenalty": 0
       },
       "entryAvailable": true
     },
