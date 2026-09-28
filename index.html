@@ -34,7 +34,7 @@
             <button class="btn secondary" id="dailyBtn">Review what I’ve learned</button>
             <button class="btn ghost" id="coreBtn">Source-deck challenge</button>
           </div>
-          <p class="micro" style="margin-top:12px">External lookups now time out quickly. If a dictionary is unavailable, the app falls back to the source-test relationships instead of spinning forever.</p>
+          <p class="micro" style="margin-top:12px">Word Stories are prebuilt and shipped with the site, so definitions, examples, and etymology do not depend on a live dictionary service.</p>
         </div>
         <div class="card stats-card">
           <div class="metricgrid">
@@ -82,7 +82,7 @@
     </section>
 
     <section id="words" class="view">
-      <div class="sectiontitle"><div><h3>537-word bank</h3><small>Search any term. “Word story” uses the same fast-failing enrichment as Learn mode.</small></div></div>
+      <div class="sectiontitle"><div><h3>537-word bank</h3><small>Search any term. Word Stories use the same bundled lexical dataset as Learn mode.</small></div></div>
       <div class="wordtools"><input id="wordSearch" class="search" type="search" placeholder="Search words…" autocomplete="off"><button class="btn" id="shuffleWords">Surprise me</button></div>
       <div id="wordGrid" class="wordgrid"></div>
       <div class="actions center"><button class="btn" id="moreWords">Show more</button></div>
@@ -93,10 +93,10 @@
         <div class="card"><h3>Progress portability</h3><p class="lede">Everything stays in your browser. Export a small JSON backup to move progress between devices.</p><div class="actions"><button class="btn" id="exportBtn">Export progress</button><label class="btn filelabel">Import progress<input id="importInput" type="file" accept="application/json"></label></div></div>
         <div class="card"><h3>Review settings</h3><label class="fieldline">Cards per run <input id="sessionSize" type="number" min="5" max="30" step="1"></label><p class="micro">12 is the default: enough room for delayed retries without making a session drag.</p><div class="actions"><button class="btn danger" id="resetBtn">Reset all progress</button></div></div>
       </div>
-      <div class="card method-card"><h3>What changed</h3><p class="lede">New words are no longer thrown straight into the full-deck quiz. Learn mode introduces them first. Review still uses expanding intervals: roughly 5 minutes → 20 minutes → 1 day → 3 days → 7 days → 14 days → 30 days → 90 days.</p><div class="note">Dictionary/Wiktionary requests use hard timeouts and cached results. A failed lookup becomes a visible fallback state, not an endless spinner.</div></div>
+      <div class="card method-card"><h3>What changed</h3><p class="lede">New words are no longer thrown straight into the full-deck quiz. Learn mode introduces them first. Review still uses expanding intervals: roughly 5 minutes → 20 minutes → 1 day → 3 days → 7 days → 14 days → 30 days → 90 days.</p><div class="note">Definitions, examples, pronunciation metadata, and etymology are bundled into the site as static data. Study sessions do not depend on external APIs.</div></div>
     </section>
   </main>
-  <div class="footer">Source deck derived from the supplied TakeTest HAR capture. Enrichment uses Wiktionary and dictionaryapi.dev when reachable; source-test cues remain available offline.</div>
+  <div class="footer">Source deck derived from the supplied TakeTest HAR capture. Lexical enrichment is prebuilt from Wiktionary-derived Kaikki/Wiktextract data and stored locally with the site.</div>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="app.js" defer></script>
