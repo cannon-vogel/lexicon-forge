@@ -506,7 +506,16 @@ EXAMPLE_OVERRIDES = {
     "acmes": "The exhibition compared the artistic acmes of several dynasties.",
     "detente": "The agreement opened a period of détente between the rival governments.",
     "morass": "The project became trapped in a morass of overlapping permits and appeals.",
-    "conniption": "He nearly had a conniption when he saw the repair estimate."
+    "conniption": "He nearly had a conniption when he saw the repair estimate.",
+    "whicker": "The mare gave a soft whicker when she saw the feed bucket.",
+    "whispering": "They sat in the back row, whispering so quietly that no one else noticed.",
+    "wimple": "The portrait shows a linen wimple wrapped around the woman’s head and neck.",
+    "wristlock": "The instructor demonstrated a wristlock and then showed the safe escape.",
+    "abase": "He refused to abase himself merely to win the official’s favor.",
+    "abet": "The prosecutor argued that the accountant had helped abet the fraud.",
+    "ablution": "Pilgrims washed at the fountain before performing the ritual ablution.",
+    "abrogative": "The court considered whether the new clause had an abrogative effect.",
+    "bountifully": "After a wet spring, the orchard yielded bountifully."
 }
 
 
@@ -708,6 +717,42 @@ ENCOUNTER_OVERRIDES = {
     "zaniness": [
         {"place":"Comedy review","phrase":"“the show’s cheerful zaniness”"},
         {"place":"Animation or game criticism","phrase":"“lean into the visual zaniness”"}
+    ],
+    "whicker": [
+        {"place":"Horse-training book or stable conversation","phrase":"“the mare gave a soft whicker”"},
+        {"place":"Novel set around horses","phrase":"“a quiet whicker from the stall”"}
+    ],
+    "whispering": [
+        {"place":"Dialogue in a novel or screenplay","phrase":"“they were whispering in the back row”"},
+        {"place":"Voice / audio description","phrase":"“a whispering voice just above silence”"}
+    ],
+    "wimple": [
+        {"place":"Medieval-art museum label","phrase":"“a linen wimple framing her face”"},
+        {"place":"Historical costume guide","phrase":"“the nun’s white wimple”"}
+    ],
+    "wristlock": [
+        {"place":"Judo / grappling instruction","phrase":"“finish the hold with a wristlock”"},
+        {"place":"Combat-sports commentary","phrase":"“he escaped the wristlock”"}
+    ],
+    "abase": [
+        {"place":"Literary novel or historical biography","phrase":"“refused to abase himself before the court”"},
+        {"place":"Essay about status or humiliation","phrase":"“designed to abase a political rival”"}
+    ],
+    "abet": [
+        {"place":"Criminal-law article or indictment","phrase":"“accused of aiding and abetting the scheme”"},
+        {"place":"News report on wrongdoing","phrase":"“did nothing to abet the fraud”"}
+    ],
+    "ablution": [
+        {"place":"Religion / ritual studies textbook","phrase":"“perform the morning ablutions”"},
+        {"place":"Historical travel writing","phrase":"“a basin for ritual ablution”"}
+    ],
+    "abrogative": [
+        {"place":"Statutory or constitutional analysis","phrase":"“an abrogative clause repealing the old rule”"},
+        {"place":"Legal commentary","phrase":"“the amendment has an abrogative effect”"}
+    ],
+    "bountifully": [
+        {"place":"Food or gardening writing","phrase":"“the orchard yielded bountifully”"},
+        {"place":"Literary prose","phrase":"“the table was bountifully supplied”"}
     ]
 }
 
