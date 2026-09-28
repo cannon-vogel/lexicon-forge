@@ -169,7 +169,7 @@ def fallback_example(word, definition, pos):
     if p=="verb":
         return f"The writer chose the verb “{word}” to convey the idea “{d}.”"
     if p=="adverb":
-        return f“She moved {word}, in a way that could be described as “{d}.”"
+        return f"She moved {word}, in a way that could be described as '{d}.'"
     if p=="adjective":
         return f"The description was deliberately {word}: “{d}.”"
     if p=="noun":
