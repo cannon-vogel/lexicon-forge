@@ -57,6 +57,17 @@ assert 'data-view="pigeons"' in index and 'id="pigeonShop"' in index and 'id="pi
 assert "dictionaryapi.dev/api" not in app
 assert "/w/api.php" not in app
 
+# Quick-check regression guard: adding an empty class token throws a DOMException.
+assert "classList.add(ok?'selected':'')" not in app
+assert "classList.add(ok?'selected':'wrong')" in app
+
+# Licensing / disclaimer files must ship with the public build.
+assert (ROOT/"LICENSE").exists()
+assert (ROOT/"THIRD_PARTY_NOTICES.md").exists()
+assert "Unofficial educational study tool" in index
+assert 'href="THIRD_PARTY_NOTICES.md"' in index
+assert 'href="LICENSE"' in index
+
 print("Lexicon Forge smoke test passed:")
 print("  108 source items")
 print("  537 lexical entries")
@@ -64,3 +75,5 @@ print("  186 core targets")
 print("  537 definitions + examples + >=3 modern-use ideas")
 print("  7-pigeon shop with full-XP mythic bird")
 print("  no runtime dictionary API dependency")
+print("  quick-check empty-class regression guarded")
+print("  license + third-party notice + subtle disclaimer present")
