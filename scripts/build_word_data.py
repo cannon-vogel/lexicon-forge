@@ -202,6 +202,28 @@ def related_words(entry, sense):
             if w and w not in vals: vals.append(w)
     return vals[:12]
 
+def modern_uses(word, definition, pos, labels):
+    d=clean(definition).rstrip(".")
+    p=(pos or "").lower()
+    rare=any(x in (labels or []) for x in ("archaic","obsolete","rare","dated","historical","literary"))
+    if rare:
+        first=f"Historical or literary writing — “{word}” can add period flavor when the context matches its sense: {d}."
+    else:
+        first=f"News, essays, or explanatory writing — “{word}” is useful when you want a precise way to express: {d}."
+    if p=="verb":
+        second=f"Work or school — use “{word}” when describing an action or process rather than a vague verb like “do” or “make happen.”"
+        third=f"Conversation or storytelling — it can sharpen a sentence about someone actively doing something connected to this meaning."
+    elif p in ("adj","adjective"):
+        second=f"Work or school — use “{word}” to characterize a person, situation, argument, or result more precisely."
+        third=f"Conversation or storytelling — it works well as a vivid descriptor when the ordinary adjective feels too broad."
+    elif p=="adverb":
+        second=f"Work or school — use “{word}” to specify how an action happens, especially when manner or speed matters."
+        third=f"Conversation or storytelling — it can make movement, speech, or behavior feel more exact and visual."
+    else:
+        second=f"Work or school — it can name a concept, object, condition, or role more precisely than a longer paraphrase."
+        third=f"Conversation, reading, or storytelling — recognizing “{word}” helps when a writer chooses a compact or specialized noun for this idea."
+    return [first, second, third]
+
 def build_one(word):
     src=SOURCE.get(word, {"definitions":[],"neighbors":[],"questions":[]})
     entries,url=get_jsonl(word)
@@ -216,6 +238,7 @@ def build_one(word):
     ex,exref=example_from(sense,entry)
     pos=clean(entry.get("pos") or "")
     ipas,audio=pronunciation(entry)
+    labels=usage_labels(sense,entry)
     if not definition:
         definition=source_definition or (("Closely related to "+", ".join(src.get("neighbors",[])[:3])) if src.get("neighbors") else "")
     if not ex:
@@ -232,8 +255,11 @@ def build_one(word):
         "audio":audio,
         "synonyms":sense_synonyms(sense)[:8],
         "related":related_words(entry,sense),
-        "usageLabels":usage_labels(sense,entry),
+        "usageLabels":labels,
         "sourceNeighbors":src.get("neighbors",[]),
+        "courseSynonyms":src.get("neighbors",[]),
+        "courseCue":source_definition,
+        "modernUses":modern_uses(word, definition, pos, labels),
         "sourceQuestions":src.get("questions",[]),
         "kaikkiUrl":url or "",
         "entryAvailable":bool(entries),
@@ -260,6 +286,9 @@ def main():
                     "example":fallback_example(w,(src.get("definitions") or [""])[0],""),
                     "exampleCitation":"","ipa":[],"audio":"","synonyms":[],"related":[],
                     "usageLabels":[],"sourceNeighbors":src.get("neighbors",[]),
+                    "courseSynonyms":src.get("neighbors",[]),
+                    "courseCue":(src.get("definitions") or [""])[0],
+                    "modernUses":modern_uses(w,(src.get("definitions") or [""])[0],"",[]),
                     "sourceQuestions":src.get("questions",[]),"kaikkiUrl":"","entryAvailable":False
                 }
             done+=1
