@@ -15,13 +15,9 @@ The default Learn pool is the **186 actual target/answer words** represented in 
 
 ## Reliable enrichment
 
-External enrichment is optional rather than a hard dependency:
+Lexical enrichment is generated ahead of time and committed as `word_data.json`. Study sessions do not call a live dictionary API.
 
-- Wiktionary is queried through the MediaWiki Action API for definitions, etymology, and usage material.
-- Dictionary API is used as a secondary definition/pronunciation/example source.
-- Both requests have hard timeouts.
-- Results are cached in `localStorage`.
-- If both sources fail, the interface immediately falls back to relationships and definitions encoded in the source test where available. It never leaves an indefinite loading state.
+The bundled dataset contains definitions, etymology when available, examples, pronunciation metadata, dictionary relationships, course/source relationships, and modern-use ideas for the finite 537-word pool. The build script derives the lexical material from Wiktionary through Kaikki.org / Wiktextract.
 
 ## Source data
 
@@ -43,4 +39,12 @@ The repository is configured for GitHub Pages using `.github/workflows/pages.yml
 
 ## Privacy
 
-Progress, cached word enrichment, and settings stay in the browser. There is no application account or server-side learner database.
+Progress, XP purchases, pigeons, and settings stay in the browser. There is no application account or server-side learner database.
+
+## Licensing and attribution
+
+Original Lexicon Forge application code, interface logic, and pigeon artwork are licensed under the MIT License in `LICENSE`.
+
+Bundled lexical data derived from Wiktionary/Kaikki/Wiktextract retains its upstream licensing and attribution requirements; see `THIRD_PARTY_NOTICES.md`. TakeTest-derived source-test material is not relicensed under MIT by this repository.
+
+Lexicon Forge is an unofficial educational study tool and is not affiliated with or endorsed by TakeTest.
