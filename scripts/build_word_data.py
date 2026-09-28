@@ -164,10 +164,10 @@ def normalize_word(s):
     return re.sub(r"[^a-z]+","",clean(s).lower())
 
 FORM_PATTERNS = [
-    r"^(?:plural|comparative|superlative)(?: form)? of\\s+([^:.;]+?)[.]?$",
-    r"^(?:simple past(?: and past participle)?|past participle|present participle(?: and gerund)?|third-person singular simple present indicative) of\\s+([^:.;]+?)[.]?$",
-    r"^alternative (?:form|spelling|letter-case form) of\\s+([^:.;]+?)(?:\\s*\\([^)]*\\))?[.]?$",
-    r"^(?:us|uk) standard (?:form|spelling) of\\s+([^:.;]+?)[.]?$",
+    r"^(?:plural|comparative|superlative)(?: form)? of\s+([^:.;]+?)[.]?$",
+    r"^(?:simple past(?: and past participle)?|past participle|present participle(?: and gerund)?|third-person singular simple present indicative) of\s+([^:.;]+?)[.]?$",
+    r"^alternative (?:form|spelling|letter-case form) of\s+([^:.;]+?)(?:\s*\([^)]*\))?[.]?$",
+    r"^(?:us|uk) standard (?:form|spelling) of\s+([^:.;]+?)[.]?$",
 ]
 def form_reference(gloss):
     g=clean(gloss).lower()
