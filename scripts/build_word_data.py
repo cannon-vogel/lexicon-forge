@@ -1420,7 +1420,7 @@ def modern_uses(word, definition, pos, labels):
         ]),
     ]
     for keys,uses in domains:
-        if any(re.search(r"\\b"+re.escape(k)+r"\\w*\\b", d) for k in keys):
+        if any(re.search(r"\b"+re.escape(k)+r"\w*\b", d) for k in keys):
             return uses
     if rare:
         return [
@@ -1446,12 +1446,12 @@ def modern_uses(word, definition, pos, labels):
 def quiz_definition(word, definition, raw_gloss):
     """Return an answer-safe clue: no target word and no morphology-only linked lemma."""
     q=clean(definition)
-    target=re.compile(r"\\b"+re.escape(word)+r"\\b",re.I)
+    target=re.compile(r"\b"+re.escape(word)+r"\b",re.I)
     q=target.sub("the term",q)
     lemma=form_reference(raw_gloss)
     if lemma:
-        q=re.sub(r"\\b"+re.escape(lemma)+r"\\b","",q,flags=re.I)
-        q=re.sub(r"\\s+"," ",q).replace("“”","").strip(" :;,-")
+        q=re.sub(r"\b"+re.escape(lemma)+r"\b","",q,flags=re.I)
+        q=re.sub(r"\s+"," ",q).replace("“”","").strip(" :;,-")
     return q
 
 def build_one(word):
@@ -1502,7 +1502,7 @@ def build_one(word):
         "sourceQuestions":src.get("questions",[]),
         "kaikkiUrl":url or "",
         "definitionQuality":{
-            "selfContained": not bool(form_reference(definition)) and not bool(re.match(r"^(?:a|an|the)?\\s*similar\\b",definition,re.I)),
+            "selfContained": not bool(form_reference(definition)) and not bool(re.match(r"^(?:a|an|the)?\s*similar\b",definition,re.I)),
             "length": len(definition),
             "clarityPenalty": clarity_penalty(definition)
         },
