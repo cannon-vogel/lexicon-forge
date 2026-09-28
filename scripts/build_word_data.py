@@ -286,6 +286,42 @@ DEFINITION_OVERRIDES.update({
     "usherette": "A woman whose job is to guide patrons to seats in a theater or cinema; the term is now dated."
 })
 
+DEFINITION_OVERRIDES.update({
+    "adamancy": "Unyielding firmness or determination; refusal to change one's position.",
+    "adenosine": "A nucleoside made of adenine and ribose that plays important roles in cellular energy transfer and signaling.",
+    "anthracite": "A hard, glossy coal with a high carbon content that burns relatively cleanly.",
+    "archduke": "A historical royal title associated especially with the Habsburg family, ranking below emperor or king.",
+    "armistice": "An agreement between opposing sides to stop fighting, usually temporarily.",
+    "bemoaning": "Expressing sorrow, regret, or complaint about something.",
+    "brogue": "A sturdy perforated shoe; also a strong regional accent, especially an Irish or Scottish one.",
+    "buttressed": "Strengthened or supported, literally by projecting supports or figuratively by reinforcing evidence or arguments.",
+    "cabinetwork": "The craft or work of making cabinets and fine wooden furniture.",
+    "carob": "A Mediterranean tree whose sweet edible pods are used as food and as a cocoa-like flavoring.",
+    "chicory": "A plant whose leaves are eaten as salad and whose roasted root can flavor or substitute for coffee.",
+    "coinsurance": "An insurance arrangement in which the insured pays a percentage of covered costs and the insurer pays the rest.",
+    "discomposure": "Loss of calm or self-possession; agitation or embarrassment.",
+    "egregious": "Outstandingly bad, shocking, or flagrant.",
+    "execratory": "Expressing a curse, denunciation, or intense condemnation.",
+    "hedonic": "Relating to pleasure, enjoyment, or the pursuit of pleasure.",
+    "hook": "A point in a system, especially software, where behavior can be intercepted, extended, or modified.",
+    "huff": "A short forceful breath or snort; also a state of offended anger.",
+    "indicant": "Something that points out, indicates, or serves as a sign.",
+    "kilting": "Arranging fabric into overlapping vertical pleats, as in the construction of a kilt.",
+    "mendacity": "Untruthfulness or a tendency to lie.",
+    "oafish": "Clumsy, stupid, or socially awkward.",
+    "pithiness": "Concise, forceful expression using few words.",
+    "primogenitary": "Relating to inheritance by the eldest child, traditionally the eldest son.",
+    "ranginess": "The quality of being long-limbed, loosely built, or spread over a wide area.",
+    "renormalize": "To adjust a quantity or model to a new normalization scale or reference, especially in mathematical physics.",
+    "resurvey": "To examine, measure, or map an area again.",
+    "sack": "A large bag; as a verb, to dismiss someone from a job or to plunder a captured place.",
+    "stultification": "The process of making something ineffective, absurd, or intellectually dull.",
+    "summate": "To add a set of quantities together.",
+    "trusteeship": "Responsibility for managing property, assets, or affairs on behalf of another person or group.",
+    "uncritical": "Not evaluating something carefully or questioning its assumptions or claims.",
+    "vacuole": "A membrane-bound sac inside a cell used for storage, waste handling, or water balance; more generally, a small cavity."
+})
+
 MODERN_CONTEXT_OVERRIDES = {
     "gendarme": [
         "French news or travel writing — referring to officers of the national gendarmerie.",
