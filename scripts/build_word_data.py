@@ -114,39 +114,104 @@ def sense_gloss(sense):
             return g
     return clean(gs[0]) if gs else ""
 
-def sense_score(word, sense, src):
-    gloss=sense_gloss(sense)
-    if not gloss: return -100
-    score=0.0
-    gt=tokens(gloss)
-    for d in src.get("definitions",[]):
-        dt=tokens(d)
-        score += 7*len(gt & dt)
-        if clean(d).lower() in gloss.lower(): score += 20
-    syn={normalize_word(x) for x in sense_synonyms(sense)}
-    for n in src.get("neighbors",[]):
-        if normalize_word(n) in syn: score += 20
-        score += 2*len(tokens(n)&gt)
-    tags=set(sense.get("tags") or [])
-    if "form-of" in tags or sense.get("form_of"): score -= 20
-    return score
-
 def normalize_word(s):
     return re.sub(r"[^a-z]+","",clean(s).lower())
+
+FORM_PATTERNS = [
+    r"^(?:plural|comparative|superlative) (?:form )?of\s+(.+?)[.]?$",
+    r"^(?:simple past|past participle|present participle(?: and gerund)?|third-person singular simple present indicative) of\s+(.+?)[.]?$",
+    r"^alternative (?:form|spelling) of\s+(.+?)[.]?$",
+    r"^(?:us|uk) standard (?:form|spelling) of\s+(.+?)[.]?$",
+]
+
+def form_reference(gloss):
+    g=clean(gloss).lower()
+    for pat in FORM_PATTERNS:
+        m=re.match(pat,g,re.I)
+        if m:
+            return clean(m.group(1)).strip(" .")
+    return ""
+
+def clarity_penalty(gloss):
+    g=clean(gloss)
+    low=g.lower()
+    p=0
+    if len(g)<12: p+=18
+    elif len(g)<24: p+=7
+    if g.endswith(":"): p+=25
+    if re.match(r"^(a|an|the)?\s*similar\b",low): p+=35
+    if re.match(r"^(alternative|variant) (form|spelling)\b",low): p+=55
+    if re.match(r"^(plural|comparative|superlative|simple past|past participle|present participle|third-person)",low): p+=55
+    if re.search(r"\b(?:same as|see also|see )\b",low): p+=20
+    return p
+
+def sense_score(word, sense, src, entry=None, ei=0, si=0):
+    gloss=sense_gloss(sense)
+    if not gloss: return -1000
+    score=24.0-clarity_penalty(gloss)
+    gt=tokens(gloss)
+    # Source cues distinguish the intended sense, but never substitute for a real definition.
+    for d in src.get("definitions",[]):
+        dt=tokens(d)
+        score += 3.5*len(gt & dt)
+        if clean(d).lower() in gloss.lower(): score += 8
+    syn={normalize_word(x) for x in sense_synonyms(sense)}
+    for n in src.get("neighbors",[]):
+        if normalize_word(n) in syn: score += 8
+        score += 1.2*len(tokens(n)&gt)
+    tags={clean(x).lower() for x in (sense.get("tags") or [])}
+    if "form-of" in tags or sense.get("form_of"): score -= 45
+    if any(t in tags for t in ("obsolete","archaic","rare","dated","historical")): score -= 12
+    if sense.get("examples"): score += 5
+    if sense_synonyms(sense): score += 3
+    # Mildly favor earlier dictionary senses only after clarity/commonness checks.
+    score -= 0.35*ei + 0.12*si
+    return score
 
 def pick_entry(entries, word, src):
     candidates=[]
     for ei,e in enumerate(entries):
-        for si,s in enumerate(e.get("senses") or []):
-            gloss=sense_gloss(s)
+        for si,sense in enumerate(e.get("senses") or []):
+            gloss=sense_gloss(sense)
             if gloss:
-                candidates.append((sense_score(word,s,src), ei, si, e, s))
+                candidates.append((sense_score(word,sense,src,e,ei,si), ei, si, e, sense))
     if candidates:
-        candidates.sort(key=lambda x:(x[0], -x[1], -x[2]), reverse=True)
+        candidates.sort(key=lambda x:x[0],reverse=True)
         return candidates[0][3], candidates[0][4]
     if entries:
         return entries[0], (entries[0].get("senses") or [{}])[0]
     return {}, {}
+
+def resolve_reference_definition(gloss, depth=0):
+    if depth>1: return gloss
+    lemma=form_reference(gloss)
+    if not lemma or normalize_word(lemma)==normalize_word(gloss): return gloss
+    entries,_=get_jsonl(lemma)
+    if not entries: return gloss
+    e,s=pick_entry(entries,lemma,{"definitions":[],"neighbors":[]})
+    base=sense_gloss(s)
+    if not base or form_reference(base): return gloss
+    low=clean(gloss).lower()
+    if low.startswith("plural"):
+        lead=f"Plural of {lemma}"
+    elif "past" in low or "participle" in low:
+        lead=f"Inflected form of {lemma}"
+    elif "alternative" in low or "standard" in low or "spelling" in low:
+        lead=f"Variant of {lemma}"
+    else:
+        lead=f"Form of {lemma}"
+    return f"{lead}: {base[0].lower()+base[1:] if base else base}"
+
+def improve_definition(word, gloss, sense, pos):
+    g=clean(gloss).strip()
+    if not g: return g
+    if form_reference(g):
+        return resolve_reference_definition(g)
+    # Secondary senses that depend on a missing antecedent are not self-contained.
+    g=re.sub(r"^A similar\s+", "A ", g, flags=re.I)
+    g=re.sub(r"^An? form of\s+", "", g, flags=re.I)
+    if g and g[-1] not in ".!?": g+="."
+    return g
 
 def example_from(sense, entry):
     pools=[]
@@ -204,32 +269,36 @@ def related_words(entry, sense):
     return vals[:12]
 
 def modern_uses(word, definition, pos, labels):
-    d=clean(definition).rstrip(".")
-    p=(pos or "").lower()
+    d=clean(definition).lower()
     rare=any(x in (labels or []) for x in ("archaic","obsolete","rare","dated","historical","literary"))
+    domains=[
+        (("fabric","cloth","garment","hat","clothing","wool","cotton","dress","coat"), ["Clothing or product descriptions","Tailoring and textile discussions","Fashion history or vintage catalogs"]),
+        (("anatom","body","bone","muscle","organ","tissue","medical","disease","surgical"), ["Medical or anatomy writing","Clinical or health discussions","Biology coursework"]),
+        (("food","dish","meal","cook","meat","sauce","drink","bread"), ["Menus and food writing","Cooking discussions","Restaurant or travel descriptions"]),
+        (("law","legal","crime","court","government","politic"), ["News and public-affairs writing","Legal or policy discussions","History and civics coursework"]),
+        (("plant","animal","bird","insect","fish","species","genus"), ["Biology or field guides","Nature writing","Museum or science descriptions"]),
+        (("word","language","speech","grammar","letter","sound","linguistic"), ["Language and linguistics","Editing or literary analysis","Vocabulary and wordplay"]),
+        (("money","trade","business","market","economic","finance"), ["Business or finance writing","News reporting","Workplace discussions"]),
+        (("emotion","feeling","mood","behavior","person","character"), ["Character descriptions","Psychology or social writing","Conversation and storytelling"]),
+        (("building","architecture","room","house","wall","road"), ["Architecture or design","Property descriptions","Historical or travel writing"]),
+    ]
+    for keys,uses in domains:
+        if any(k in d for k in keys):
+            return uses
     if rare:
-        first=f"Historical or literary writing — “{word}” can add period flavor when the context matches its sense: {d}."
-    else:
-        first=f"News, essays, or explanatory writing — “{word}” is useful when you want a precise way to express: {d}."
+        return ["Historical writing","Literary or period dialogue","Older texts and archives"]
+    p=(pos or "").lower()
     if p=="verb":
-        second=f"Work or school — use “{word}” when describing an action or process rather than a vague verb like “do” or “make happen.”"
-        third=f"Conversation or storytelling — it can sharpen a sentence about someone actively doing something connected to this meaning."
-    elif p in ("adj","adjective"):
-        second=f"Work or school — use “{word}” to characterize a person, situation, argument, or result more precisely."
-        third=f"Conversation or storytelling — it works well as a vivid descriptor when the ordinary adjective feels too broad."
-    elif p=="adverb":
-        second=f"Work or school — use “{word}” to specify how an action happens, especially when manner or speed matters."
-        third=f"Conversation or storytelling — it can make movement, speech, or behavior feel more exact and visual."
-    else:
-        second=f"Work or school — it can name a concept, object, condition, or role more precisely than a longer paraphrase."
-        third=f"Conversation, reading, or storytelling — recognizing “{word}” helps when a writer chooses a compact or specialized noun for this idea."
-    return [first, second, third]
+        return ["Essays and nonfiction","Work or academic writing","Storytelling and dialogue"]
+    if p in ("adj","adjective","adv","adverb"):
+        return ["Precise description","Literary or analytical writing","Conversation and storytelling"]
+    return ["Essays and nonfiction","Academic or specialist writing","Literary and descriptive prose"]
 
 def build_one(word):
     src=SOURCE.get(word, {"definitions":[],"neighbors":[],"questions":[]})
     entries,url=get_jsonl(word)
     entry,sense=pick_entry(entries,word,src)
-    definition=sense_gloss(sense)
+    definition=improve_definition(word,sense_gloss(sense),sense,clean(entry.get("pos") or ""))
     if src.get("definitions"):
         # The source-test sense is authoritative for these items; dictionary gloss adds detail separately.
         source_definition=src["definitions"][0]
@@ -263,6 +332,11 @@ def build_one(word):
         "modernUses":modern_uses(word, definition, pos, labels),
         "sourceQuestions":src.get("questions",[]),
         "kaikkiUrl":url or "",
+        "definitionQuality":{
+            "selfContained": not bool(form_reference(definition)) and not bool(re.match(r"^(?:a|an|the)?\\s*similar\\b",definition,re.I)),
+            "length": len(definition),
+            "clarityPenalty": clarity_penalty(definition)
+        },
         "entryAvailable":bool(entries),
     }
 
