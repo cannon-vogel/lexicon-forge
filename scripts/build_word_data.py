@@ -60,6 +60,29 @@ def read_words():
 SOURCE = read_source()
 WORDS = read_words()
 
+# Curated overrides for words where an automatically selected Wiktionary sense can be
+# technically valid but pedagogically misleading or unusually niche.
+DEFINITION_OVERRIDES = {
+    "apotheoses": "Plural of apotheosis: the highest point or idealized culmination of something; also the elevation of a person to divine or exalted status.",
+    "ax": "An axe: a tool with a heavy bladed head on a handle, used especially for chopping wood; figuratively, a dismissal or cut.",
+    "conglomerate": "A group made up of unlike parts; in business, a corporation composed of several different companies.",
+    "delineation": "A description, outline, or representation that clearly shows the form, features, or boundaries of something.",
+    "evanescent": "Quickly fading or disappearing; short-lived or fleeting.",
+    "excursive": "Wandering or digressive; tending to stray from a direct course or main topic.",
+    "exultancy": "A state or expression of triumphant joy; exultation.",
+    "millinery": "The making and selling of hats, especially women's hats; also hats collectively.",
+    "morass": "Literally, soft marshy ground; figuratively, a complicated or confusing situation that is difficult to escape.",
+    "natty": "Neat, stylish, and smart in appearance or dress.",
+    "perambulation": "The act of walking around or through a place; a stroll, walk, or walking tour.",
+    "polemics": "Strong written or spoken arguments attacking a position or opponent; controversial debate.",
+    "ramified": "Divided or spread into branches or subdivisions; extensively branched.",
+    "sinuousness": "The quality of curving, winding, or bending in a smooth, wave-like way.",
+    "soya": "Soy or soybean, especially in British usage; also food or products made from soybeans.",
+    "torpid": "Sluggish, inactive, or lacking energy; moving or responding slowly.",
+    "trusteeship": "The office, responsibility, or guardianship of a trustee: managing property or affairs on behalf of another.",
+    "umbra": "A shadow, especially the darkest central part of a shadow, such as the region of total shadow in an eclipse."
+}
+
 def urls(word):
     q = urllib.parse.quote
     a = q(word[0].lower(), safe="")
@@ -118,12 +141,11 @@ def normalize_word(s):
     return re.sub(r"[^a-z]+","",clean(s).lower())
 
 FORM_PATTERNS = [
-    r"^(?:plural|comparative|superlative) (?:form )?of\s+(.+?)[.]?$",
-    r"^(?:simple past|past participle|present participle(?: and gerund)?|third-person singular simple present indicative) of\s+(.+?)[.]?$",
-    r"^alternative (?:form|spelling) of\s+(.+?)[.]?$",
-    r"^(?:us|uk) standard (?:form|spelling) of\s+(.+?)[.]?$",
+    r"^(?:plural|comparative|superlative)(?: form)? of\\s+([^:.;]+?)[.]?$",
+    r"^(?:simple past(?: and past participle)?|past participle|present participle(?: and gerund)?|third-person singular simple present indicative) of\\s+([^:.;]+?)[.]?$",
+    r"^alternative (?:form|spelling|letter-case form) of\\s+([^:.;]+?)(?:\\s*\\([^)]*\\))?[.]?$",
+    r"^(?:us|uk) standard (?:form|spelling) of\\s+([^:.;]+?)[.]?$",
 ]
-
 def form_reference(gloss):
     g=clean(gloss).lower()
     for pat in FORM_PATTERNS:
@@ -193,16 +215,24 @@ def resolve_reference_definition(gloss, depth=0):
     if not base or form_reference(base): return gloss
     low=clean(gloss).lower()
     if low.startswith("plural"):
-        lead=f"Plural of {lemma}"
-    elif "past" in low or "participle" in low:
-        lead=f"Inflected form of {lemma}"
+        lead=f"Plural of “{lemma}”"
+    elif low.startswith("superlative"):
+        lead=f"Superlative form of “{lemma}”"
+    elif low.startswith("comparative"):
+        lead=f"Comparative form of “{lemma}”"
+    elif "past" in low:
+        lead=f"Past-tense form of “{lemma}”"
+    elif "participle" in low:
+        lead=f"Participle of “{lemma}”"
     elif "alternative" in low or "standard" in low or "spelling" in low:
-        lead=f"Variant of {lemma}"
+        lead=f"Variant of “{lemma}”"
     else:
-        lead=f"Form of {lemma}"
+        lead=f"Form of “{lemma}”"
     return f"{lead}: {base[0].lower()+base[1:] if base else base}"
 
 def improve_definition(word, gloss, sense, pos):
+    if word in DEFINITION_OVERRIDES:
+        return DEFINITION_OVERRIDES[word]
     g=clean(gloss).strip()
     if not g: return g
     if form_reference(g):
