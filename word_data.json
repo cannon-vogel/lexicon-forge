@@ -2132,14 +2132,14 @@
     },
     "ax": {
       "word": "ax",
-      "definition": "An axe: a tool with a heavy bladed head on a handle, used especially for chopping wood; figuratively, a dismissal or cut.",
-      "quizDefinition": "An axe: a tool with a heavy bladed head on a handle, used especially for chopping wood; figuratively, a dismissal or cut.",
+      "definition": "A chopping tool with a heavy bladed head on a handle; figuratively, a dismissal or cut.",
+      "quizDefinition": "A chopping tool with a heavy bladed head on a handle; figuratively, a dismissal or cut.",
       "rawDictionaryDefinition": "US standard spelling of axe.",
       "linkedLemma": "axe",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "",
-      "example": "In context, “ax” names or describes An axe: a tool with a heavy bladed head on a handle, used especially for chopping wood; figuratively, a dismissal or cut.",
+      "example": "In context, “ax” names or describes A chopping tool with a heavy bladed head on a handle; figuratively, a dismissal or cut.",
       "exampleCitation": "",
       "ipa": [
         "/æks/"
@@ -2177,7 +2177,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/a/ax/ax.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 121,
+        "length": 87,
         "clarityPenalty": 0
       },
       "entryAvailable": true
@@ -19475,14 +19475,14 @@
     },
     "soya": {
       "word": "soya",
-      "definition": "Soy or soybean, especially in British usage; also food or products made from soybeans.",
-      "quizDefinition": "Soy or soybean, especially in British usage; also food or products made from soybeans.",
+      "definition": "The soybean plant or foods and products made from its beans, especially in British usage.",
+      "quizDefinition": "The soybean plant or foods and products made from its beans, especially in British usage.",
       "rawDictionaryDefinition": "Alternative form of soy.",
       "linkedLemma": "soy",
       "sourceDefinition": "",
       "partOfSpeech": "noun",
       "etymology": "Borrowed from Dutch soja; from the Satsuma dialectal Japanese そや (soya), which is the topicalized form of 醤油 (そい, soi) (cognate to standard Japanese 醤油 (しょうゆ, shōyu)), from Late Middle Japanese 醤油 (しやうゆ, shiyauyu), orthographic borrowing from Middle Chinese 醬油 (tsjàng-yuw), from 醬 (tsjangᴴ, “bean paste”) + 油 (“oil”).",
-      "example": "In context, “soya” names or describes Soy or soybean, especially in British usage; also food or products made from soybeans.",
+      "example": "In context, “soya” names or describes The soybean plant or foods and products made from its beans, especially in British usage.",
       "exampleCitation": "",
       "ipa": [
         "/ˈsɔɪ.ə/"
@@ -19507,7 +19507,7 @@
       "kaikkiUrl": "https://kaikki.org/dictionary/English/meaning/s/so/soya.jsonl",
       "definitionQuality": {
         "selfContained": true,
-        "length": 86,
+        "length": 89,
         "clarityPenalty": 0
       },
       "entryAvailable": true
