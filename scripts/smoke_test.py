@@ -9,6 +9,7 @@ with (ROOT/"questions.csv").open(encoding="utf-8",newline="") as f:
 with (ROOT/"terms.csv").open(encoding="utf-8",newline="") as f:
     terms=list(csv.DictReader(f))
 data=json.loads((ROOT/"word_data.json").read_text(encoding="utf-8"))
+stats=json.loads((ROOT/"word_data_stats.json").read_text(encoding="utf-8"))
 words=data["words"]
 app=(ROOT/"app.js").read_text(encoding="utf-8")
 index=(ROOT/"index.html").read_text(encoding="utf-8")
@@ -16,6 +17,9 @@ index=(ROOT/"index.html").read_text(encoding="utf-8")
 assert len(questions)==108, len(questions)
 assert len(terms)==537, len(terms)
 assert data["count"]==537 and len(words)==537
+assert stats.get("failures")==[], stats.get("failures",[])[:10]
+unavailable=[w for w,d in words.items() if not d.get("entryAvailable")]
+assert not unavailable, unavailable[:10]
 
 # Recompute the actual target/answer pool.
 core=[]
@@ -38,6 +42,33 @@ assert not missing_examples, missing_examples[:10]
 assert not missing_uses, missing_uses[:10]
 assert not missing_course_fields, missing_course_fields[:10]
 assert not missing_quiz, missing_quiz[:10]
+
+# Every card must carry its full learner-facing material locally.
+missing_origins=[w for w,d in words.items() if not str(d.get("etymologyBrief","")).strip()]
+bad_origins=[]
+bad_encounters=[]
+placeholder_phrases=re.compile(r"(?:the word .+ in context|rather than wait|the problem|described in the article| on display[”"]?$)",re.I)
+morph_only=re.compile(r"^(?:From|Built from)\s+\S+\s+\+\s+-[^.]+\.$",re.I)
+for w,d in words.items():
+    brief=str(d.get("etymologyBrief","")).strip()
+    if len(brief)>520 or "Etymology tree" in brief or morph_only.match(brief):
+        bad_origins.append((w,brief))
+    if re.search(r"No reliable deeper origin|deeper origin is not stated",brief,re.I):
+        bad_origins.append((w,brief))
+    encounters=d.get("encounters") or []
+    if len(encounters)<2:
+        bad_encounters.append((w,encounters))
+        continue
+    nw=re.sub(r"[^a-z0-9]","",w.lower())
+    for e in encounters[:2]:
+        place=str(e.get("place","")).strip()
+        phrase=str(e.get("phrase","")).strip()
+        np=re.sub(r"[^a-z0-9]","",phrase.lower())
+        if not place or not phrase or placeholder_phrases.search(phrase) or (nw and nw not in np):
+            bad_encounters.append((w,e))
+assert not missing_origins, missing_origins[:10]
+assert not bad_origins, bad_origins[:15]
+assert not bad_encounters, bad_encounters[:15]
 
 # Quick-check clues must not leak the answer or a linked conjugation/base form.
 answer_leaks=[]
@@ -78,6 +109,11 @@ assert "directed traffic" in words["gendarme"]["example"]
 assert "oak cask" in words["cask"]["example"]
 assert "blood pressure" in words["systolic"]["example"]
 assert "guitar" in words["skiffle"]["example"]
+assert "gens d’armes" in words["gendarme"]["etymologyBrief"]
+assert "pith" in words["pithiness"]["etymologyBrief"].lower()
+assert words["gendarme"]["encounters"][0]["place"].startswith("French news")
+assert "gendarme" in words["gendarme"]["encounters"][0]["phrase"].lower()
+assert "wristlock" in words["wristlock"]["encounters"][0]["phrase"].lower()
 
 # Modern-use prompts should be concrete context notes: a setting plus a short explanation.
 bad_uses=[]
@@ -123,8 +159,10 @@ print("  108 source items")
 print("  537 lexical entries")
 print("  186 core targets")
 print("  537 definitions + examples + >=2 concrete encounter contexts")
+print("  537 locally bundled learner etymologies")
 print("  definition audit: no unresolved/secondary-sense patterns")
-print("  modern-use contexts are concrete and bounded")
+print("  encounter cards have specific source types + usable phrases")
+print("  no bare conjugation/suffix-only etymologies")
 print("  7-pigeon shop with full-XP mythic bird")
 print("  no runtime dictionary API dependency")
 print("  quick-check empty-class regression guarded")
