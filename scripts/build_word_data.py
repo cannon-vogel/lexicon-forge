@@ -327,6 +327,32 @@ DEFINITION_OVERRIDES.update({
     "soya": "The soybean plant or foods and products made from its beans, especially in British usage."
 })
 
+DEFINITION_OVERRIDES.update({
+    "chamois": "A small goat-antelope of European mountains; also the soft leather traditionally made from its hide or a similar cleaning cloth.",
+    "confirmatively": "In a way that confirms, supports, or verifies something.",
+    "concretive": "Promoting the formation of a solid mass, deposit, or concretion.",
+    "demurrer": "A legal objection arguing that, even if the opponent's alleged facts are true, they do not establish a legally sufficient claim.",
+    "dewiness": "Fresh moisture like tiny droplets of dew; figuratively, a fresh or youthful appearance.",
+    "extenuating": "Making a fault or offense seem less serious by providing mitigating circumstances.",
+    "glossarist": "A person who compiles, writes, or edits a glossary.",
+    "hook": "A curved device for catching or holding something; in software, a point where behavior can be intercepted, extended, or modified.",
+    "impetuous": "Acting quickly and forcefully without enough thought; impulsive or rash.",
+    "indiscriminate": "Done without careful selection or distinction; random, unselective, or lacking judgment.",
+    "leatherhead": "A friarbird, especially an Australian honeyeater with a bare dark head.",
+    "ludicrous": "So absurd, unreasonable, or incongruous as to provoke laughter.",
+    "octavo": "A book format made by folding a printed sheet three times to form eight leaves, or sixteen pages.",
+    "philanthropy": "The giving of money, time, or resources to promote the welfare of others or the public good.",
+    "pliant": "Flexible and easily bent; figuratively, readily influenced or adaptable.",
+    "reprobate": "Morally unprincipled or depraved; as a noun, a person regarded as lacking principles.",
+    "roulade": "A decorative run of several musical notes sung on one syllable; also a rolled food preparation.",
+    "sizzle": "To make a sharp hissing sound like food cooking on a hot surface.",
+    "terrine": "A loaf-like preparation of meat, fish, or vegetables cooked and often served in a deep earthenware dish; also the dish itself.",
+    "tintype": "An early photograph made as a positive image on a thin lacquered iron plate.",
+    "totter": "To sway or move unsteadily as if about to fall; figuratively, to be close to collapse.",
+    "uproarious": "Extremely noisy and boisterous, or extremely funny.",
+    "ward": "A person under another's legal care or protection; also a division of a hospital, city, prison, or other institution."
+})
+
 MODERN_CONTEXT_OVERRIDES = {
     "gendarme": [
         "French news or travel writing — referring to officers of the national gendarmerie.",
