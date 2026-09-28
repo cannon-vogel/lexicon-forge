@@ -1,0 +1,109 @@
+question_number,prompt,block,pick,option_1,option_2,option_3,option_4,option_5,correct_indices
+1,Which word means “slave”?,def,1,bondman,deflowerer,discomposure,harnesser,renormalize,0
+2,Which word means “empire”?,def,1,archduke,conglomerate,extenuating,rapport,smarty,1
+3,Which word means “quickly”?,def,1,apace,carob,frond,snook,steppe,0
+4,Which word means “a type of smokeless powder”?,def,1,ablution,anaphase,cordite,endogenous,howsoever,2
+5,Which word means “deceit”?,def,1,bronchus,mendacity,scrapple,sump,wimple,1
+6,Which word means “lackadaisical”?,def,1,awhirl,gorger,languorous,owlet,oxyacetylene,2
+7,Which word means “advocate”?,def,1,barrister,doughboy,downing,ruddy,triplicate,0
+8,Which word means “flatteries”?,def,1,blandishments,consubstantiation,crosstie,incautious,karting,0
+9,Which word means “illness”?,def,1,flyweight,indisposition,normative,skitter,spasmodic,1
+10,Which word means “dome”?,def,1,caddishly,confirmatively,cupola,featherstitch,roulade,2
+11,Which word means “relating to the right”?,def,1,changefulness,dextral,insectivorous,matchlock,synod,1
+12,Which word means “a type of fabric”?,def,1,gabardine,insensate,pleura,ragout,umlaut,0
+13,Which word means “couch”?,def,1,amortize,divan,interment,paucity,turnbuckle,1
+14,Which word means “stagger”?,def,1,botfly,dodder,seizer,suspensor,transshipment,1
+15,Which word means “transportation”?,def,1,allele,ducat,gnosis,haulage,trammel,3
+16,Which word means “sketch”?,def,1,delineation,leatherhead,modularity,plaintively,uncrushed,0
+17,Which word means “celebration”?,def,1,coinsurance,exultancy,flaunter,iconoclastically,puppyhood,1
+18,Which word means “a type of sound”?,def,1,daystar,expiatory,otosclerosis,salicylate,sibilance,4
+19,Which word means “sluggish”?,def,1,cabinetwork,causticity,corroder,fluorination,torpid,4
+20,Which word means “sensitivity”?,def,1,acuity,egregious,palatial,patella,reprobate,0
+21,Which word means “shadows”?,def,1,contraindicate,kilting,lineally,umbra,usherette,3
+22,Which word means “sag”?,def,1,ennoble,loll,mete,milksop,tangs,1
+23,Which word means “somber”?,def,1,bandoleer,drachma,lugubrious,nark,polestar,2
+24,Which word means “cheat”?,def,1,abut,bilk,gendarme,lacuna,lavage,1
+25,Which word means “divergence”?,def,1,bifurcation,boric,farcically,gatecrash,univalve,0
+26,Which word means “relevant”?,def,1,aplomb,chicory,dewiness,germane,krill,3
+27,Which word means “excite”?,def,1,enrapture,expressible,invitingly,latticed,trackside,0
+28,Which word means “a type of overshoe”?,def,1,exchequer,patten,perspicacious,phlebitis,rapprochement,1
+29,Which word means “stroll”?,def,1,besotting,clausal,exceptionably,perambulation,pressmark,3
+30,Which word means “a type of sword”?,def,1,claymore,cryonic,diadem,patchouli,sputum,0
+31,Which word means “sporadic”?,def,1,bemoaning,derisive,fitful,greenroom,uncritical,2
+32,Which word means “greed”?,def,1,aberrant,avarice,brogue,hazmat,systolic,1
+33,Which word means “impromptu”?,def,1,diaphoresis,extempore,jollification,octavo,superposed,1
+34,Which word means “diatribes”?,def,1,cringle,papilla,polemics,semiquaver,somnambulistic,2
+35,Which word means “meal”?,def,1,bugaboo,catatonia,elfin,hedonic,repast,4
+36,Which word means “a type of wavy form”?,def,1,anachronously,courter,fatigable,sinuousness,subunit,3
+37,Which word means “vulgar”?,def,1,caliph,conniption,prestidigitation,ribald,semaphore,3
+38,Which word means “wandering”?,def,1,disposure,excursive,extoller,presbytery,putatively,1
+39,Which word means “schemer”?,def,1,cardsharp,chervil,concretive,myeloid,peahen,0
+40,Which word means “brief”?,def,1,evanescent,federacy,individualizer,owlishly,tonally,0
+41,Which word means “bow”?,def,1,genuflect,hearken,pleurisy,slangy,statin,0
+42,Which word means “entanglement”?,def,1,canard,lucre,morass,tipple,valise,2
+43,Which word means “environment”?,def,1,clime,pyloric,quicklime,soya,terrine,0
+44,Which word means “auspices”?,def,1,affectless,layback,resurvey,retrogressive,trusteeship,4
+45,Which word means “stylish”?,def,1,chamois,environs,mulatto,natty,pianoforte,3
+46,Which word means “disjoined”?,def,1,avionics,cochairman,ramified,unexhausted,wristlock,2
+47,Which word means “pamper”?,def,1,affecter,cosset,forbiddingness,infill,vacuole,1
+48,Which word means “unhealthful”?,def,1,concomitant,demurrer,jodhpurs,noisome,tintype,3
+49,Which word means “referendum”?,def,1,hokum,insensate,intrauterine,plebiscite,tannic,3
+50,Which word means “a type of hat”?,def,1,bawd,garrote,millinery,piquet,sultana,2
+51,Which word means “tyrant”?,def,1,burgh,cabalism,distaff,martinet,pyrrhic,3
+52,Find the synonym for “sapiential”.,1of5,1,inchoate,ineffable,petulant,sagacious,suspiration,3
+53,Find the synonym for “susurrate”.,1of5,1,circuitous,rambunctious,unfathomable,vociferous,whispering,4
+54,Find the synonym for “redolence”.,1of5,1,decantate,deliquesce,fragrance,quiddity,swivet,2
+55,Pick the 2 synonyms.,2of5,2,almsgiving,philanthropy,hostelry,herpetology,vicissitude,0;1
+56,Pick the 2 synonyms.,2of5,2,castigation,chastisement,gelatinization,reconvention,esotericism,0;1
+57,Pick the 2 synonyms.,2of5,2,intellection,cogitation,stultification,expunction,myelination,0;1
+58,Pick the 2 synonyms.,2of5,2,connubial,nuptial,abrogative,reduplicative,shoofly,0;1
+59,Pick the 2 synonyms.,2of5,2,adroitly,deftly,contrastively,colliery,unwontedly,0;1
+60,Pick the 2 synonyms.,2of5,2,bumptious,haughty,vendible,sigmoid,tenthly,0;1
+61,Pick the 2 synonyms.,2of5,2,foment,abet,tippet,misogamist,prion,0;1
+62,Pick the 2 synonyms.,2of5,2,abstinence,temperance,sumptuousness,blitheness,equitableness,0;1
+63,Pick the 2 synonyms.,2of5,2,traipsed,ambulated,meniscal,ammonic,operand,0;1
+64,Pick the 2 synonyms.,2of5,2,indiscriminate,assorted,palliate,pulmonic,bayed,0;1
+65,Pick the 2 synonyms.,2of5,2,munificently,bountifully,primogenitary,adenosine,pronominally,0;1
+66,Pick the 2 synonyms.,2of5,2,wastrel,spendthrift,hornswoggle,glossarist,revolute,0;1
+67,Pick the 2 synonyms.,2of5,2,forestall,obviate,bezel,anthracite,interblend,0;1
+68,Pick the 2 synonyms.,2of5,2,asininity,foppery,hydromancy,comorbidity,ascendancy,0;1
+69,Pick the 2 synonyms.,2of5,2,inclement,squally,foliation,imputable,instillation,0;1
+70,Pick the 2 synonyms.,2of5,2,baneful,pernicious,recallable,extrusive,fireless,0;1
+71,Pick the 2 synonyms.,2of5,2,prevaricator,fibber,conducer,copolymer,intercessor,0;1
+72,Pick the 2 synonyms.,2of5,2,bonhomie,amity,skiffle,chiasm,pyorrhea,0;1
+73,Pick the 2 synonyms.,2of5,2,blackleg,knave,donative,inhalational,punctate,0;1
+74,Pick the 2 synonyms.,2of5,2,adamancy,implacability,execratory,clotty,scurrilousness,0;1
+75,Pick the 2 synonyms.,2of5,2,doughtiness,stoutness,sententiousness,ranginess,amusingness,0;1
+76,Pick the 2 synonyms.,2of5,2,whicker,neigh,lancelet,fuliginous,indicant,0;1
+77,Pick the 2 synonyms.,2of5,2,augury,presaging,mescal,coulter,covenantal,0;1
+78,Pick the 2 synonyms.,2of5,2,phlegmatic,stoic,serrate,exertive,extractive,0;1
+79,Pick the 2 synonyms.,2of5,2,literalism,verisimilitude,demureness,ideography,disunion,0;1
+80,Pick the 2 synonyms.,2of5,2,abjure,forswear,misdeem,forwent,trifurcate,0;1
+81,Pick the 2 synonyms.,2of5,2,invidiousness,covetousness,confidentialness,euphoniousness,determinativeness,0;1
+82,Pick the 2 synonyms.,2of5,2,apotheoses,acmes,amorist,dietarian,tillage,0;1
+83,Pick the 2 synonyms.,2of5,2,tortuous,serpentine,acquiescent,anaphoric,summate,0;1
+84,Pick the 2 synonyms.,2of5,2,primogenitor,progenitor,inculcator,pronator,abettor,0;1
+85,Pick the 2 synonyms.,2of5,2,inefficacious,unavailing,banausic,incognizant,inconsistent,0;1
+86,Pick the 2 synonyms.,2of5,2,discomposing,disquieting,disgorger,disapprobative,disremember,0;1
+87,Pick the 3 words that belong together.,3of5,3,dodder,totter,waddle,cur,lax,0;1;2
+88,Pick the 3 words that belong together.,3of5,3,finicky,persnickety,fussbudgety,putatively,dubitable,0;1;2
+89,Pick the 3 words that belong together.,3of5,3,brassy,audacious,brazen,pliant,jaunty,0;1;2
+90,Pick the 3 words that belong together.,3of5,3,demote,abase,subvert,sizzle,bedeck,0;1;2
+91,Pick the 3 words that belong together.,3of5,3,oafish,doltish,dopey,cherub,hammy,0;1;2
+92,Pick the 3 words that belong together.,3of5,3,profuse,riotous,bountiful,dinky,genteel,0;1;2
+93,Pick the 3 words that belong together.,3of5,3,cairn,heap,mound,tote,orb,0;1;2
+94,Pick the 3 words that belong together.,3of5,3,exiguous,scarce,skimpy,derisive,orgulous,0;1;2
+95,Pick the 3 words that belong together.,3of5,3,deluges,inundations,alluvions,enspheres,proboscis,0;1;2
+96,Pick the 3 words that belong together.,3of5,3,pertinacity,doggedness,obdurateness,receptivity,zaniness,0;1;2
+97,Pick the 3 words that belong together.,3of5,3,armistice,detente,reconciliation,discordance,cortege,0;1;2
+98,Pick the 3 words that belong together.,3of5,3,allayed,assuaged,mitigated,approbated,buttressed,0;1;2
+99,Pick the 3 words that belong together.,3of5,3,furlough,sack,ax,occlude,mislay,0;1;2
+100,Pick the 3 words that belong together.,3of5,3,sobersided,weighty,staid,jocular,jaunty,0;1;2
+101,Pick the 3 words that belong together.,3of5,3,swivet,huff,tizzy,expo,motley,0;1;2
+102,Pick the 3 words that belong together.,3of5,3,ludicrous,risible,uproarious,dexterous,imperious,0;1;2
+103,Pick the 3 words that belong together.,3of5,3,peccadilloes,foibles,malefactions,agglomerations,cudgels,0;1;2
+104,Pick the 3 words that belong together.,3of5,3,laconism,terseness,pithiness,pulchritude,scruffiest,0;1;2
+105,Pick the 3 words that belong together.,3of5,3,concoction,contrivance,brainchild,facsimile,agitation,0;1;2
+106,Pick the 3 words that belong together.,3of5,3,bulwark,ward,forfend,bung,sorb,0;1;2
+107,Pick the 3 words that belong together.,3of5,3,thump,pound,hook,cask,conduit,0;1;2
+108,Pick the 3 words that belong together.,3of5,3,shrewdness,acumen,canniness,ingenuousness,impetuous,0;1;2
