@@ -80,7 +80,30 @@ DEFINITION_OVERRIDES = {
     "soya": "Soy or soybean, especially in British usage; also food or products made from soybeans.",
     "torpid": "Sluggish, inactive, or lacking energy; moving or responding slowly.",
     "trusteeship": "The office, responsibility, or guardianship of a trustee: managing property or affairs on behalf of another.",
-    "umbra": "A shadow, especially the darkest central part of a shadow, such as the region of total shadow in an eclipse."
+    "umbra": "A shadow, especially the darkest central part of a shadow, such as the region of total shadow in an eclipse.",
+    "anachronously": "In a way that is chronologically out of place or assigned to the wrong historical period.",
+    "awhirl": "Spinning or whirling; in rapid circular motion.",
+    "bountifully": "In a generous or abundant manner; plentifully.",
+    "caddishly": "In a rude, selfish, or dishonorable manner.",
+    "changefulness": "The quality of changing often; variability or instability.",
+    "concretive": "Tending to form, promote, or produce a concretion or solid mass.",
+    "decantate": "To pour a liquid carefully from one container into another, usually leaving sediment behind; to decant.",
+    "deflowerer": "A person who deflowers another; historically, a person who takes another person's virginity.",
+    "disapprobative": "Expressing disapproval or condemnation.",
+    "extoller": "A person who praises someone or something very highly.",
+    "farcically": "In an absurd, ridiculous, or farce-like way.",
+    "harnesser": "A person or device that harnesses, controls, or puts something to use.",
+    "imputable": "Able to be attributed or assigned to a person, cause, or source.",
+    "inculcator": "A person who teaches or impresses an idea through repeated instruction.",
+    "inconsistent": "Not remaining the same in behavior, quality, or logic; containing contradictions or varying unpredictably.",
+    "munificently": "In an exceptionally generous or lavish manner.",
+    "pianoforte": "A piano; the full historical name for the keyboard instrument.",
+    "plaintively": "In a sad, mournful, or pleading manner.",
+    "prevaricator": "A person who avoids telling the truth directly by being evasive or misleading.",
+    "seizer": "A person or thing that takes hold of, captures, or confiscates something.",
+    "tonally": "In relation to tone, pitch, or a tonal system.",
+    "unwontedly": "In an unusual or unaccustomed way.",
+    "usherette": "A female usher, especially one who shows patrons to seats in a theater or cinema; the term is now dated."
 }
 
 def urls(word):
